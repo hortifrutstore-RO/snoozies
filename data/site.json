@@ -1,0 +1,176 @@
+{
+ "name": "snoozies.ro",
+ "brand": "Snoozies",
+ "url": "https://snoozies.ro",
+ "company": {
+  "name": "HORTIFRUT CONSULTING SRL",
+  "cui": "37974874",
+  "reg": "J12/4952/2017",
+  "capital": "200 lei",
+  "address": "Str. Tășnad 19/8, Cluj-Napoca",
+  "vat": false
+ },
+ "contact": {
+  "phone": "0746 242 877",
+  "phoneHref": "+40746242877",
+  "email": "info@snoozies.ro",
+  "whatsapp": "40746242877"
+ },
+ "shipping": {
+  "freeOver": 200,
+  "cost": 16.99,
+  "returnCost": 16.99,
+  "carrier": "Sameday",
+  "days": "1–2 zile lucrătoare",
+  "trackingUrl": "https://sameday.ro/status-colet/?awb={awb}"
+ },
+ "announcement": "Livrare gratuită peste 200 lei · Retur în 14 zile · Plata la livrare",
+ "hero": {
+  "eyebrow": "Colecția de Crăciun",
+  "title": "Picioarele tale merită o vacanță de iarnă.",
+  "text": "Papuci de casă moi și călduroși, cu modele care te fac să zâmbești. Pentru tine, pentru toată familia și pentru cadourile de sub brad.",
+  "image": "/img/site/hero.jpg",
+  "imageAlt": "Picioare încălțate cu papuci Snoozies de Crăciun, sprijinite pe o masă lângă o cană cu om de zăpadă",
+  "sticker": "Cadoul perfect",
+  "cta": {
+   "label": "Vezi colecția",
+   "href": "/categorie/femei/"
+  },
+  "cta2": {
+   "label": "Pentru bărbați",
+   "href": "/categorie/barbati/"
+  }
+ },
+ "categories": [
+  {
+   "slug": "femei",
+   "name": "Femei",
+   "intro": "Pufoși, colorați și cu mult umor. Alege perechea care ți se potrivește sau una pentru cineva drag.",
+   "image": "/img/site/cat-femei.jpg"
+  },
+  {
+   "slug": "barbati",
+   "name": "Bărbați",
+   "intro": "Papuci de casă călduroși pentru bărbați, cu modele de Crăciun și mesaje haioase.",
+   "image": "/img/site/cat-barbati.jpg"
+  },
+  {
+   "slug": "copii",
+   "name": "Copii",
+   "intro": "Papuci veseli pentru cei mici: unicorni, dinozauri, albinuțe.",
+   "image": "/img/site/cat-copii.jpg"
+  },
+  {
+   "slug": "bebelusi",
+   "name": "Bebeluși",
+   "intro": "Papucei moi și pufoși pentru primii pași prin casă.",
+   "image": "/img/site/cat-bebelusi.jpg"
+  },
+  {
+   "slug": "sosete",
+   "name": "Șosete",
+   "intro": "Șosete pufoase și termice, pentru serile lungi de iarnă.",
+   "image": "/img/site/cat-sosete.jpg"
+  }
+ ],
+ "perks": [
+  {
+   "t": "Moi și călduroși",
+   "d": "Interior pufos, ca un pled"
+  },
+  {
+   "t": "Plata la livrare",
+   "d": "Plătești curierului, la primire"
+  },
+  {
+   "t": "Livrare cu Sameday",
+   "d": "În 1–2 zile lucrătoare"
+  },
+  {
+   "t": "Retur în 14 zile",
+   "d": "Conform OUG 34/2014"
+  }
+ ],
+ "featuredTitle": "Favoritele sezonului",
+ "popularSearches": [
+  "papuci crăciun",
+  "papuci pufoși",
+  "papuci bărbați",
+  "papuci copii",
+  "șosete pufoase",
+  "cadou"
+ ],
+ "synonyms": [
+  [
+   "papuci",
+   "papucei",
+   "slapi",
+   "slippers",
+   "pantofi de casa"
+  ],
+  [
+   "craciun",
+   "christmas",
+   "sarbatori",
+   "mos",
+   "ho"
+  ],
+  [
+   "pufosi",
+   "pufos",
+   "plus",
+   "blanita",
+   "fluffy"
+  ],
+  [
+   "sosete",
+   "ciorapi",
+   "socks"
+  ],
+  [
+   "bebe",
+   "bebelus",
+   "bebelusi",
+   "baby"
+  ],
+  [
+   "copii",
+   "copil",
+   "kids"
+  ],
+  [
+   "barbati",
+   "barbat",
+   "men",
+   "tata",
+   "dad"
+  ],
+  [
+   "femei",
+   "dama",
+   "women",
+   "mama"
+  ],
+  [
+   "cadou",
+   "cadouri",
+   "gift"
+  ]
+ ],
+ "analytics": {
+  "ga4": "",
+  "googleAds": ""
+ },
+ "story": {
+  "eyebrow": "De ce Snoozies",
+  "title": "Seara începe când te descalți.",
+  "text": "",
+  "image": "/img/site/story.jpg",
+  "imageAlt": "Șosete pufoase Snoozies purtate pe un pled roz, lângă o carte și o cană cu cacao",
+  "label": "",
+  "href": "/"
+ },
+ "reviews": [],
+ "emagUrl": "",
+ "sizeGuide": ""
+}

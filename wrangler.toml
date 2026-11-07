@@ -1,0 +1,11 @@
+name = "snoozies"
+pages_build_output_dir = "dist"
+compatibility_date = "2026-10-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "snoozies-comenzi"
+database_id = "COMPLETEAZA-DUPA-wrangler-d1-create"
+
+# Secrete (se setează din panoul Cloudflare sau cu `wrangler pages secret put`):
+# RESEND_API_KEY, MAIL_FROM (ex. "Snoozies <comenzi@snoozies.ro>"), NOTIFY_EMAIL, BANK_DETAILS

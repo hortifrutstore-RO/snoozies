@@ -1,0 +1,78 @@
+{% extends "base.html" %}{% from "_card.html" import card with context %}
+{% block title %}Snoozies – papuci de casă pufoși pentru toată familia{% endblock %}
+{% block main %}
+<section class="wrap hero">
+  <div class="hero-text">
+    {% if site.hero.eyebrow %}<span class="eyebrow">{{ site.hero.eyebrow }}</span>{% endif %}
+    <h1>{{ site.hero.title }}</h1>
+    <p>{{ site.hero.text }}</p>
+    <div class="btns">
+      <a class="btn" href="{{ site.hero.cta.href }}">{{ site.hero.cta.label }}</a>
+      {% if site.hero.cta2.label %}<a class="btn btn-ghost" href="{{ site.hero.cta2.href }}">{{ site.hero.cta2.label }}</a>{% endif %}
+    </div>
+  </div>
+  <div class="hero-pic">
+    <img class="hero-img" src="{{ site.hero.image }}" alt="{{ site.hero.imageAlt }}" width="1100" height="1100" fetchpriority="high">
+    {% if site.hero.sticker %}<span class="sticker" aria-hidden="true">{{ site.hero.sticker }}</span>{% endif %}
+  </div>
+</section>
+
+<section class="perks"><div class="wrap">
+  {% set icons = [
+    '<path d="M12 3c1 3 4 5 4 9a4 4 0 0 1-8 0c0-2 1-3 2-4 0 2 1 3 2 3 0-3-1-5 0-8z"/>',
+    '<rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18"/><path d="M7 15h3"/>',
+    '<path d="M3 7h11v9H3z"/><path d="M14 10h4l3 3v3h-7"/><circle cx="7" cy="18" r="1.8"/><circle cx="17" cy="18" r="1.8"/>',
+    '<path d="M4 12a8 8 0 1 0 3-6.2"/><path d="M4 4v4h4"/>'] %}
+  {% for p in site.perks %}<div class="perk"><b aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">{{ icons[loop.index0 % 4]|safe }}</svg></b><div><strong>{{ p.t }}</strong><span>{{ p.d }}</span></div></div>{% endfor %}
+</div></section>
+
+{% if featured %}
+<section class="wrap section" style="padding-top:24px">
+  <div class="section-head"><h2>{{ site.featuredTitle }}</h2><a class="more" href="/categorie/femei/">Vezi toate produsele</a></div>
+  <div class="grid">{% for p in featured %}{{ card(p) }}{% endfor %}</div>
+</section>
+{% endif %}
+
+<section class="cats-band"><div class="wrap">
+  <div class="section-head"><h2>Pentru fiecare pereche de picioare</h2><p>De la cei mai mici, la cei mai mari.</p></div>
+  <div class="cats">
+  {% for c in cats %}
+    <a class="cat" href="/categorie/{{ c.slug }}/">
+      <div class="cat-img"><img src="{{ c.img }}" alt="" loading="lazy" width="600" height="750"></div>
+      <strong>{{ c.name }} <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></strong>
+      <span>{{ c.count }} {{ 'model' if c.count == 1 else 'modele' }}</span>
+    </a>
+  {% endfor %}
+  </div>
+</div></section>
+
+{% if site.story.title %}
+<section class="story" style="margin-top:0">
+  <svg class="wave" viewBox="0 0 1440 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40C240 0 480 0 720 20s480 20 720-10v30z" fill="#2F5D50"/></svg>
+  <div class="wrap">
+    <img src="{{ site.story.image }}" alt="{{ site.story.imageAlt }}" loading="lazy" width="1000" height="1000">
+    <div class="story-text">
+      {% if site.story.eyebrow %}<span class="eyebrow pink">{{ site.story.eyebrow }}</span>{% endif %}
+      <h2>{{ site.story.title }}</h2>
+      {% if site.story.text %}<p>{{ site.story.text }}</p>{% endif %}
+      {% if site.story.label %}<a class="btn" href="{{ site.story.href }}">{{ site.story.label }}</a>{% endif %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% if site.reviews %}
+<section class="wrap section" style="padding-bottom:88px">
+  <div class="section-head"><h2>Ce spun clienții</h2></div>
+  <div class="reviews">
+  {% for r in site.reviews %}
+    <figure class="review">
+      <div class="stars" aria-hidden="true">{% for i in range(5) %}<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg>{% endfor %}</div>
+      <blockquote>{{ r.text }}</blockquote>
+      {% if r.who %}<figcaption>{{ r.who }}</figcaption>{% endif %}
+    </figure>
+  {% endfor %}
+  </div>
+</section>
+{% endif %}
+{% endblock %}

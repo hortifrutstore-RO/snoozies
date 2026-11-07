@@ -1,0 +1,31 @@
+{% extends "base.html" %}{% from "_card.html" import card with context %}
+{% block title %}Papuci de casă {{ cat.name|lower }} | Snoozies{% endblock %}
+{% block desc %}{{ cat.intro }}{% endblock %}
+{% block main %}
+<div class="wrap">
+  <nav class="crumbs" aria-label="Navigare"><a href="/">Acasă</a><span aria-hidden="true">/</span><span>{{ cat.name }}</span></nav>
+  {% if cat.image %}
+  <div class="cat-hero"><img src="{{ cat.image }}" alt="" width="1600" height="600"><div class="box"><h1>{{ cat.title or cat.name }}</h1><p>{{ cat.intro }}</p></div></div>
+  {% else %}
+  <div class="page-head"><h1>{{ cat.name }}</h1><p>{{ cat.intro }}</p></div>
+  {% endif %}
+  <div class="listing" data-listing>
+    <div class="toolbar">
+      {% if subs|length > 1 %}
+      <div class="chips" role="group" aria-label="Filtrează după colecție">
+        <button type="button" class="chip" data-f-col="" aria-pressed="true">Toate</button>
+        {% for s in subs %}<button type="button" class="chip" data-f-col="{{ s.name }}" aria-pressed="false">{{ s.name }}</button>{% endfor %}
+      </div>
+      {% else %}<span></span>{% endif %}
+      <div class="right">
+        <span data-count>{{ products|length }} {{ 'produs' if products|length == 1 else 'produse' }}</span>
+        <label>Sortează <select data-sort>
+          <option value="rec">Recomandate</option><option value="pa">Preț crescător</option><option value="pd">Preț descrescător</option><option value="off">Reduceri</option>
+        </select></label>
+      </div>
+    </div>
+    <div class="grid" data-grid>{% for p in products %}{{ card(p) }}{% endfor %}</div>
+    <div class="empty" data-empty hidden>Niciun produs în această colecție.</div>
+  </div>
+</div>
+{% endblock %}
