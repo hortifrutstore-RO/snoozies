@@ -26,10 +26,16 @@
       <div class="price"><span class="now">{{ p.price|lei }}</span>{% if p.oldPrice %}<s>{{ p.oldPrice|lei }}</s>{% endif %}</div>
       {% if p.short %}<p class="lead">{{ p.short }}</p>{% endif %}
       {% if p.inStock %}
+      {% if p.colors %}
+      <fieldset class="color-pick" data-colors>
+        <legend>Culoare: <span data-color-name>{{ p.colors[0].name }}</span></legend>
+        {% for c in p.colors %}<label class="swatch" title="{{ c.name }}"><input type="radio" name="color" value="{{ c.name }}" data-img="{{ ('/img/p/' ~ c.image) if c.image else '' }}"{% if loop.first %} checked{% endif %}><span>{% if c.image %}<img src="/img/p/{{ c.image }}" alt="" loading="lazy">{% else %}<i style="background:{{ c.hex or '#D9C7AE' }}"></i>{% endif %}<b class="sr">{{ c.name }}</b></span></label>{% endfor %}
+      </fieldset>
+      {% endif %}
       {% if p.sizes %}
       <fieldset class="size-pick" data-sizes>
-        <legend>Alege mărimea{% if site.sizeGuide %} · <a href="#ghid" data-open-guide>Ghid de mărimi</a>{% endif %}</legend>
-        {% for z in p.sizes %}<label class="size"><input type="radio" name="size" value="{{ p.sku }}-{{ z.size }}" data-size="{{ z.size }}"{% if not z.inStock %} disabled{% endif %}><span><b>{{ z.size }}</b>{% if z.range %}<small>{{ z.range }}</small>{% endif %}</span></label>{% endfor %}
+        <legend>Alege mărimea</legend>
+        {% for z in p.sizes %}<label class="size" data-color="{{ z.color }}"><input type="radio" name="size" value="{{ z.sku }}" data-size="{{ z.size }}"{% if not z.inStock %} disabled{% endif %}><span><b>{{ z.size if z.size != 'U' else 'Unică' }}</b>{% if z.range %}<small>{{ z.range }}</small>{% endif %}</span></label>{% endfor %}
       </fieldset>
       <p class="size-msg" data-size-msg role="alert" hidden>Alege mai întâi mărimea.</p>
       {% endif %}
@@ -50,7 +56,7 @@
       </div>
       <div class="acc">
         {% if p.description %}<details open><summary>Descriere</summary><div class="prose">{{ p.description|safe }}</div></details>{% endif %}
-        {% if site.sizeGuide and p.sizes %}<details id="ghid"><summary>Ghid de mărimi</summary><div class="prose">{{ site.sizeGuide|safe }}</div></details>{% endif %}
+        {% if site.sizeGuide and p.sizes and p.category != 'sosete' %}<details id="ghid"><summary>Ghid de mărimi</summary><div class="prose">{{ site.sizeGuide|safe }}</div></details>{% endif %}
         <details><summary>Livrare și retur</summary><div class="prose"><p>Livrăm prin {{ site.shipping.carrier }}, la adresă sau în easybox, în {{ site.shipping.days }}. Poți returna produsul în 14 zile de la primire; costul transportului de retur este suportat de client. Detalii în <a href="/retur/">pagina de retur</a>.</p></div></details>
       </div>
       <a href="tel:{{ site.contact.phoneHref }}" style="font-weight:700">Ai întrebări? Sună la {{ site.contact.phone }}</a>

@@ -13,7 +13,7 @@
  ],
  [
   "/papuci-de-casa-snoozies/papuci-de-casa-copii.html",
-  "/categorie/copii/"
+  "/categorie/copii-si-bebelusi/"
  ],
  [
   "/sosete.html",
@@ -54,5 +54,13 @@
  [
   "/contact",
   "/contact/"
+ ],
+ [
+  "/categorie/copii/",
+  "/categorie/copii-si-bebelusi/"
+ ],
+ [
+  "/categorie/bebelusi/",
+  "/categorie/copii-si-bebelusi/"
  ]
 ]

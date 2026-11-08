@@ -17,7 +17,7 @@ function catalog() {
     const by = {}; list.forEach(p => {
       if (p.sizes) {
         p.sizes.forEach(z => { if (z.sku in st) { z.left = st[z.sku]; z.i = st[z.sku] > 0; }
-          by[z.sku] = Object.assign({}, p, { sku: z.sku, size: z.s, name: p.name + ' – mărimea ' + z.s, inStock: z.i, left: z.left, parent: p.sku, sizes: null }); });
+          by[z.sku] = Object.assign({}, p, { sku: z.sku, size: z.s, name: z.n, inStock: z.i, left: z.left, parent: p.sku, sizes: null }); });
         p.inStock = p.sizes.some(z => z.i);
       } else if (p.sku in st) { p.left = st[p.sku]; p.inStock = st[p.sku] > 0; }
       by[p.sku] = p; p._n = norm([p.name, p.cat, p.sub || '', p.sku].join(' ')); p._w = p._n.split(/\s+/).filter(Boolean); });
@@ -76,7 +76,7 @@ liveStock().then(st => {
     const radios = $$('[data-sizes] input');
     radios.forEach(r => { const q = st[r.value]; if (q !== undefined && q <= 0) { r.disabled = true; r.checked = false; } });
     const sync = () => { const r = radios.find(x => x.checked); const q = r ? st[r.value] : undefined; qi.max = q !== undefined ? q : 99; if (+qi.value > +qi.max) qi.value = qi.max;
-      const sp = $('.stock span'); if (sp) sp.innerHTML = q !== undefined && q <= 5 ? `<strong>Ultimele ${q} ${q === 1 ? 'pereche' : 'perechi'}</strong> în mărimea ${esc(r.dataset.size)}` : '<strong>În stoc</strong> · expediere în 1–2 zile lucrătoare'; };
+      const sp = $('.stock span'); if (sp) sp.innerHTML = q !== undefined && q <= 5 ? `<strong>Ultimele ${q} ${q === 1 ? 'pereche' : 'perechi'}</strong>${r.dataset.size !== 'U' ? ' în mărimea ' + esc(r.dataset.size) : ''}` : '<strong>În stoc</strong> · expediere în 1–2 zile lucrătoare'; };
     radios.forEach(r => r.addEventListener('change', () => { const m = $('[data-size-msg]'); if (m) m.hidden = true; sync(); }));
     if (radios.every(r => r.disabled)) { $('.buy-row').outerHTML = '<div class="stock out"><i aria-hidden="true"></i><span><strong>Stoc epuizat</strong> în toate mărimile</span></div>'; const s0 = $('.stock:not(.out)'); if (s0) s0.remove(); }
     return;
@@ -108,6 +108,28 @@ if (listing) {
   listing.addEventListener('click', e => { const b = e.target.closest('[data-f-col]'); if (!b) return; col = b.dataset.fCol; $$('[data-f-col]', listing).forEach(x => x.setAttribute('aria-pressed', x === b ? 'true' : 'false')); apply(); });
   listing.addEventListener('change', apply);
   apply();
+}
+
+/* ---------- culoare + mărime pe pagina de produs ---------- */
+const colorBox = $('[data-colors]');
+if (colorBox) {
+  const sizeBox = $('[data-sizes]'), main = $('[data-main]');
+  const pickColor = () => {
+    const c = $('input:checked', colorBox); if (!c) return;
+    $('[data-color-name]').textContent = c.value;
+    if (c.dataset.img && main) { main.src = c.dataset.img; $$('.thumbs button').forEach(b => b.setAttribute('aria-current', b.dataset.src === c.dataset.img ? 'true' : 'false')); }
+    if (!sizeBox) return;
+    const labels = $$('.size', sizeBox);
+    labels.forEach(l => { const on = l.dataset.color === c.value; l.hidden = !on; if (!on) $('input', l).checked = false; });
+    const vis = labels.filter(l => !l.hidden), only = vis.length === 1 && $('input', vis[0]).dataset.size === 'U';
+    sizeBox.hidden = only;
+    if (only && !$('input', vis[0]).disabled) $('input', vis[0]).checked = true;
+    const m = $('[data-size-msg]'); if (m) { m.hidden = true; m.textContent = only ? 'Culoarea aleasă e epuizată.' : 'Alege mai întâi mărimea.'; }
+    $$('input', sizeBox).forEach(i => i.dispatchEvent(new Event('change')));
+  };
+  const firstFree = $$('input', colorBox).find(i => $$('.size[data-color="' + CSS.escape(i.value) + '"] input:not(:disabled)').length);
+  if (firstFree) firstFree.checked = true;
+  colorBox.addEventListener('change', pickColor); pickColor();
 }
 
 /* ---------- search ---------- */

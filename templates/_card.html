@@ -7,11 +7,12 @@
   <div class="card-body">
     <span class="label">{{ p.categoryName }}</span>
     <h3><a href="/produs/{{ p.slug }}/">{{ p.name|replace('Papuci de casă ', '')|replace('femei ', '')|replace('bărbați ', '')|replace('copii ', '')|replace('bebeluși ', '')|replace('Snoozies ', '') }}</a></h3>
-    {% if p.sizes %}<span class="sizes-hint">Mărimi: {% for z in p.sizes %}{% if z.inStock %}{{ z.size }}{% else %}<s>{{ z.size }}</s>{% endif %}{% if not loop.last %}, {% endif %}{% endfor %}</span>{% endif %}
+    {% if p.colors|length > 1 %}<span class="sizes-hint">{{ p.colors|length }} culori{% if p.sizes|map(attribute='size')|unique|list|length > 1 %} · {{ p.sizes|map(attribute='size')|unique|list|length }} mărimi{% endif %}</span>
+    {% elif p.sizes and p.sizes[0].size != 'U' %}<span class="sizes-hint">{% for z in p.sizes %}{% if z.inStock %}{{ z.range or z.size }}{% else %}<s>{{ z.range or z.size }}</s>{% endif %}{% if not loop.last %} · {% endif %}{% endfor %}</span>{% endif %}
     <div class="card-foot">
       <div class="price"><span class="now">{{ p.price|lei }}</span>{% if p.oldPrice %}<s>{{ p.oldPrice|lei }}</s>{% endif %}</div>
       {% if not p.inStock %}<span class="btn btn-ghost" aria-disabled="true">Epuizat</span>
-      {% elif p.sizes %}<a class="btn" href="/produs/{{ p.slug }}/">Alege mărimea</a>
+      {% elif p.sizes %}<a class="btn" href="/produs/{{ p.slug }}/">{{ 'Alege culoarea' if p.colors|length > 1 and p.sizes[0].size == 'U' else 'Alege mărimea' }}</a>
       {% else %}<button class="btn btn-cart" data-add="{{ p.sku }}">Adaugă</button>{% endif %}
     </div>
   </div>

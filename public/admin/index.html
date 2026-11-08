@@ -166,10 +166,15 @@
         <label class="fl">Preț vechi, tăiat (opțional)<input class="field" name="oldPrice" type="number" step="0.01" min="0"></label>
         <label class="fl" id="pstockWrap">Stoc (bucăți)<input class="field" name="stock" type="number" step="1" min="0" placeholder="în stoc"><small class="hint">0 = stoc epuizat · gol = în stoc, fără număr</small></label>
       </div>
-      <div class="fl">Mărimi
+      <div class="fl">Culori (opțional)
+        <div id="pcolors" class="sizes-ed"></div>
+        <div><button type="button" class="btn btn-ghost" id="paddcolor">+ Culoare</button></div>
+        <small class="hint">Pentru fiecare culoare alegi poza care apare când clientul o selectează (din pozele produsului de mai sus).</small>
+      </div>
+      <div class="fl">Variante (mărimi)
         <div id="psizes" class="sizes-ed"></div>
         <div style="display:flex;gap:8px;flex-wrap:wrap"><button type="button" class="btn btn-ghost" id="paddsize">+ Mărime</button><button type="button" class="link" id="pstdsizes">Pune S, M, L, XL</button></div>
-        <small class="hint">Stoc pe fiecare mărime: gol = în stoc, fără număr · 0 = epuizat. Fără mărimi, produsul are un singur stoc.</small>
+        <small class="hint">Fiecare rând = o variantă (culoare + mărime) cu codul ei (de ex. codul de pe eMAG). Mărime „U” = mărime unică. Stoc: gol = în stoc, fără număr · 0 = epuizat.</small>
       </div>
       <div class="form-grid">
         <label class="fl">Categorie<select class="field" name="category" id="pdCat"></select></label>

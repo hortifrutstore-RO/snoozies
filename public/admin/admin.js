@@ -130,7 +130,7 @@ function rowHtml(p, i) {
     <img src="${esc(imgUrl(p.images[0]))}" alt="" loading="lazy">
     <div class="pn" data-edit><strong>${esc(p.name)}</strong><small>${esc(catName(p.category))}${p.sub ? ' · ' + esc(p.sub) : ''} · cod ${esc(p.sku)}</small></div>
     <span class="pp">${lei(p.price)}${p.oldPrice ? `<s>${lei(p.oldPrice)}</s>` : ''}</span>
-    ${p.sizes && p.sizes.length ? `<button class="stockbtn${p.inStock ? '' : ' out'}" data-edit title="Stoc pe mărimi">${p.sizes.map(z => z.inStock ? esc(z.size) : `<s>${esc(z.size)}</s>`).join(' ')}</button>` : `<button class="stockbtn${p.inStock ? '' : ' out'}" data-stock title="Schimbă stocul">${p.inStock ? (p.stock ? 'Stoc: ' + p.stock : 'În stoc') : 'Epuizat'}</button>`}
+    ${p.sizes && p.sizes.length ? `<button class="stockbtn${p.inStock ? '' : ' out'}" data-edit title="Stoc pe mărimi">${p.colors && p.colors.length ? p.colors.length + ' culori · ' : ''}${p.sizes.filter(z => z.inStock).length}/${p.sizes.length} variante în stoc</button>` : `<button class="stockbtn${p.inStock ? '' : ' out'}" data-stock title="Schimbă stocul">${p.inStock ? (p.stock ? 'Stoc: ' + p.stock : 'În stoc') : 'Epuizat'}</button>`}
     <button class="iconbtn${p.featured ? ' on' : ''}" data-feat title="${p.featured ? 'Scoate din carusel' : 'Pune în caruselul de pe prima pagină'}" aria-label="Carusel">★</button>
   </div>`;
 }
@@ -150,25 +150,36 @@ $('#plist').addEventListener('click', e => {
 
 /* ---------- editor produs ---------- */
 const dlg = $('#pdlg'), pf = $('#pform'); let editIdx = null, editImgs = [], editSizes = [];
+let editColors = [];
 const STD = [['S', ''], ['M', ''], ['L', ''], ['XL', '']];
+function drawColors() {
+  $('#pcolors').innerHTML = editColors.map((c, k) => `<div class="crow"><input class="field" aria-label="Nume culoare" placeholder="ex. Roz" value="${esc(c.name)}" data-col="${k}" data-f="name"><select class="field" aria-label="Poza culorii" data-col="${k}" data-f="image"><option value="">(fără poză)</option>${editImgs.map(im => `<option value="${esc(im)}"${im === c.image ? ' selected' : ''}>${esc(im)}</option>`).join('')}</select><button type="button" class="iconbtn" data-colrm="${k}" aria-label="Șterge culoarea">✕</button></div>`).join('');
+}
 function drawSizes() {
-  $('#psizes').innerHTML = editSizes.map((z, k) => `<div class="srow"><input class="field" aria-label="Mărime" placeholder="M" value="${esc(z.size)}" data-sz="${k}" data-f="size"><input class="field" aria-label="Numere" placeholder="ex. 38–39" value="${esc(z.range || '')}" data-sz="${k}" data-f="range"><input class="field" type="number" min="0" step="1" aria-label="Stoc" placeholder="în stoc" value="${z.stock ?? (z.inStock === false ? 0 : '')}" data-sz="${k}" data-f="stock"><button type="button" class="iconbtn" data-szrm="${k}" aria-label="Șterge mărimea">✕</button></div>`).join('');
+  const opts = c => `<option value="">${editColors.length ? '(alege)' : '—'}</option>` + editColors.filter(x => x.name).map(x => `<option${x.name === c ? ' selected' : ''}>${esc(x.name)}</option>`).join('');
+  $('#psizes').innerHTML = editSizes.map((z, k) => `<div class="srow"><select class="field" aria-label="Culoare" data-sz="${k}" data-f="color"${editColors.length ? '' : ' disabled'}>${opts(z.color)}</select><input class="field" aria-label="Mărime" placeholder="M" value="${esc(z.size)}" data-sz="${k}" data-f="size"><input class="field" aria-label="Numere" placeholder="ex. 38–39" value="${esc(z.range || '')}" data-sz="${k}" data-f="range"><input class="field" aria-label="Cod variantă" placeholder="cod (opțional)" value="${esc(z.sku || '')}" data-sz="${k}" data-f="sku"><input class="field" type="number" min="0" step="1" aria-label="Stoc" placeholder="în stoc" value="${z.stock ?? (z.inStock === false ? 0 : '')}" data-sz="${k}" data-f="stock"><button type="button" class="iconbtn" data-szrm="${k}" aria-label="Șterge varianta">✕</button></div>`).join('');
   $('#pstockWrap').hidden = editSizes.length > 0;
 }
+$('#pcolors').addEventListener('input', e => { const t = e.target; if (t.dataset.col === undefined) return; const c = editColors[t.dataset.col], old = c.name; c[t.dataset.f] = t.value.trim();
+  if (t.dataset.f === 'name') { editSizes.forEach(z => { if (z.color === old) z.color = c.name; }); drawSizes(); } });
+$('#pcolors').addEventListener('change', e => { const t = e.target; if (t.dataset.col !== undefined) editColors[t.dataset.col][t.dataset.f] = t.value; });
+$('#pcolors').addEventListener('click', e => { const b = e.target.closest('[data-colrm]'); if (!b) return; const gone = editColors.splice(+b.dataset.colrm, 1)[0]; editSizes = editSizes.filter(z => z.color !== gone.name); drawColors(); drawSizes(); });
+$('#paddcolor').addEventListener('click', () => { editColors.push({ name: '', hex: '', image: '' }); drawColors(); drawSizes(); $('#pcolors .crow:last-child input').focus(); });
 $('#psizes').addEventListener('input', e => { const t = e.target; if (t.dataset.sz === undefined) return; const z = editSizes[t.dataset.sz];
   if (t.dataset.f === 'stock') { z.stock = t.value === '' ? null : Math.max(0, parseInt(t.value, 10) || 0); z.inStock = z.stock === null || z.stock > 0; } else z[t.dataset.f] = t.value.trim(); });
+$('#psizes').addEventListener('change', e => { const t = e.target; if (t.dataset.sz !== undefined && t.dataset.f === 'color') editSizes[t.dataset.sz].color = t.value; });
 $('#psizes').addEventListener('click', e => { const b = e.target.closest('[data-szrm]'); if (b) { editSizes.splice(+b.dataset.szrm, 1); drawSizes(); } });
-$('#paddsize').addEventListener('click', () => { editSizes.push({ size: '', range: '', stock: null, inStock: true }); drawSizes(); $('#psizes .srow:last-child input').focus(); });
-$('#pstdsizes').addEventListener('click', () => { const have = new Set(editSizes.map(z => z.size)); STD.forEach(([size, range]) => { if (!have.has(size)) editSizes.push({ size, range, stock: null, inStock: true }); }); drawSizes(); });
+$('#paddsize').addEventListener('click', () => { const last = editSizes[editSizes.length - 1]; editSizes.push({ size: '', range: '', color: last ? last.color : '', sku: '', stock: null, inStock: true }); drawSizes(); $('#psizes .srow:last-child input').focus(); });
+$('#pstdsizes').addEventListener('click', () => { const cols = editColors.filter(c => c.name).map(c => c.name); (cols.length ? cols : ['']).forEach(color => { const have = new Set(editSizes.filter(z => (z.color || '') === color).map(z => z.size)); STD.forEach(([size, range]) => { if (!have.has(size)) editSizes.push({ size, range, color, sku: '', stock: null, inStock: true }); }); }); drawSizes(); });
 function openEditor(i) {
   editIdx = i; const isNew = i === null; const p = isNew ? { name: '', price: '', oldPrice: '', sku: '', slug: '', category: $('#pCat').value || D.site.categories[0].slug, sub: '', inStock: true, stock: null, featured: false, short: '', description: '', images: [], weight: null, sizes: [] } : D.products[i];
-  editSizes = (p.sizes || []).map(z => ({ ...z }));
+  editSizes = (p.sizes || []).map(z => ({ ...z })); editColors = (p.colors || []).map(c => ({ ...c }));
   $('#pdlgTitle').textContent = isNew ? 'Produs nou' : 'Editează produsul';
   for (const k of ['name', 'price', 'oldPrice', 'sku', 'slug', 'category', 'sub', 'short']) pf[k].value = p[k] ?? '';
   pf.stock.value = p.inStock ? (p.stock ?? '') : 0;
   pf.weightG.value = p.weight ? Math.round(p.weight * 1000) : '';
   pf.featured.checked = !!p.featured; $('#pdesc').innerHTML = p.description || '';
-  editImgs = p.images.slice(); drawImgs(); drawSizes(); $('#pdel').hidden = isNew; $('#pmsg').classList.remove('show');
+  editImgs = p.images.slice(); drawImgs(); drawColors(); drawSizes(); $('#pdel').hidden = isNew; $('#pmsg').classList.remove('show');
   pf.dataset.new = isNew ? '1' : ''; dlg.showModal();
 }
 pf.name.addEventListener('input', () => { if (pf.dataset.new && !pf.dataset.slugTouched) { pf.slug.value = slugify(pf.name.value); if (!pf.sku.dataset.touched) pf.sku.value = ''; } });
@@ -176,6 +187,7 @@ pf.slug.addEventListener('input', () => pf.dataset.slugTouched = '1');
 function drawImgs() {
   $('#pimgs').innerHTML = editImgs.map((n, k) => n.startsWith('…') ? `<figure class="busy">${esc(n)}</figure>` :
     `<figure><img src="${esc(imgUrl(n))}" alt=""><div class="ia"><button type="button" data-mv="${k}" title="Mută la stânga" aria-label="Mută la stânga">‹</button><button type="button" data-rm="${k}" title="Șterge" aria-label="Șterge poza">✕</button></div></figure>`).join('');
+  if (typeof editColors !== 'undefined' && $('#pcolors')) drawColors();
 }
 $('#pimgs').addEventListener('click', e => {
   const m = e.target.closest('[data-mv]'), r = e.target.closest('[data-rm]');
@@ -204,8 +216,11 @@ pf.addEventListener('submit', e => {
   if (!pf.sku.value.trim()) return err('Completează codul produsului.');
   if (!/^[a-z0-9]+(-[a-z0-9]+)*$/.test(pf.slug.value)) return err('Adresa paginii poate conține doar litere mici, cifre și cratimă.');
   if (!editImgs.length) return err('Adaugă cel puțin o poză.');
+  const cols = editColors.filter(c => c.name);
+  if (new Set(cols.map(c => c.name)).size !== cols.length) return err('O culoare apare de două ori.');
   const szs = editSizes.filter(z => z.size);
-  if (new Set(szs.map(z => z.size)).size !== szs.length) return err('O mărime apare de două ori.');
+  if (cols.length && szs.some(z => !z.color)) return err('Alege culoarea pentru fiecare variantă.');
+  if (new Set(szs.map(z => (z.color || '') + '|' + z.size)).size !== szs.length) return err('O variantă (culoare + mărime) apare de două ori.');
   if (szs.some(z => !/^[A-Za-z0-9.,/–-]{1,12}$/.test(z.size))) return err('Mărimile pot conține doar litere, cifre, punct, virgulă, cratimă (ex. M sau 38-39).');
   const dupe = D.products.find((x, i) => i !== editIdx && (x.sku === pf.sku.value.trim() || x.slug === pf.slug.value));
   if (dupe) return err(`Codul sau adresa sunt deja folosite la „${dupe.name}”.`);
@@ -215,7 +230,8 @@ pf.addEventListener('submit', e => {
     stock: pf.stock.value === '' ? null : Math.max(0, parseInt(pf.stock.value, 10) || 0),
     description: $('#pdesc').innerHTML, images: editImgs.slice(), weight: pf.weightG.value ? Math.round(parseFloat(pf.weightG.value)) / 1000 : null });
   p.inStock = p.stock === null || p.stock > 0;
-  p.sizes = szs.map(z => ({ size: z.size, range: z.range || '', stock: z.stock ?? null, inStock: z.stock === null || z.stock === undefined ? z.inStock !== false : z.stock > 0 }));
+  p.colors = cols.map(c => ({ name: c.name, hex: c.hex || '', image: editImgs.includes(c.image) ? c.image : '' }));
+  p.sizes = szs.map(z => { const o = { size: z.size, range: z.range || '', color: z.color || '', stock: z.stock ?? null, inStock: z.stock === null || z.stock === undefined ? z.inStock !== false : z.stock > 0 }; if (z.sku) o.sku = z.sku; return o; });
   if (p.sizes.length) { p.stock = null; p.inStock = p.sizes.some(z => z.inStock); }
   if (pf.featured.checked && !p.featured) p.featuredOrder = Math.max(0, ...D.products.map(x => x.featuredOrder || 0)) + 1;
   p.featured = pf.featured.checked;

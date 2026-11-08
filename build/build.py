@@ -20,17 +20,28 @@ JUDETE = ["Alba","Arad","Argeș","Bacău","Bihor","Bistrița-Năsăud","Botoșan
 sg = (site.get('sizeGuide') or '').strip()
 if sg and '<' not in sg: sg = ''.join(f'<p>{html.escape(l)}</p>' for l in sg.splitlines() if l.strip())
 site['sizeGuide'] = bleach.clean(sg, tags=['p','br','ul','ol','li','strong','table','tbody','tr','td','th'], attributes={}, strip=True)
+COLS = ['Magia Crăciunului', 'Iubitori de animăluțe', 'Mici plăceri', 'Pufoși ca un nor']
 base = dict(site=site, v=V, year=datetime.date.today().year)
 
 for p in products:
     p['description'] = bleach.clean(p.get('description') or '', tags=['p','br','ul','ol','li','strong','h3','h4','table','tbody','tr','td','th'], attributes={}, strip=True)
     p['off'] = round((1 - p['price'] / p['oldPrice']) * 100) if p.get('oldPrice') else 0
     p['sizes'] = p.get('sizes') or []
+    p['colors'] = p.get('colors') or []
+    for z in p['sizes']:
+        z.setdefault('color', '')
+        z['sku'] = z.get('sku') or f"{p['sku']}-{z['color'] + '-' if z['color'] else ''}{z['size']}"
+    # culorile care au măcar o variantă; poza culorii trece prima în galerie la alegere
+    p['colorNames'] = [c['name'] for c in p['colors']]
     if p['sizes']: p['inStock'] = any(z.get('inStock', True) for z in p['sizes'])
 
+def vsku(p, z): return z.get('sku') or f"{p['sku']}-{z['color'] + '-' if z.get('color') else ''}{z['size']}"
+def vlabel(p, z):
+    bits = [z.get('color') or '', ('mărimea ' + z['size'] + (f" ({z['range']})" if z.get('range') else '')) if z['size'] != 'U' else '']
+    return p['name'] + ' – ' + ', '.join(b for b in bits if b)
 def variants(p):
     if not p['sizes']: return [dict(sku=p['sku'], name=p['name'], size=None, inStock=p['inStock'])]
-    return [dict(sku=f"{p['sku']}-{z['size']}", name=f"{p['name']} – mărimea {z['size']}", size=z['size'], inStock=z.get('inStock', True)) for z in p['sizes']]
+    return [dict(sku=vsku(p, z), name=vlabel(p, z), size=z['size'], color=z.get('color') or '', inStock=z.get('inStock', True)) for z in p['sizes']]
 
 def write(path, htmltext):
     out = os.path.join(DIST, path.strip('/'), 'index.html') if not path.endswith('.html') else os.path.join(DIST, path.strip('/'))
@@ -61,7 +72,7 @@ for c in site['categories']:
         if p.get('sub'): subs[p['sub']] = subs.get(p['sub'], 0) + 1
     prices = [p['price'] for p in items] or [0]
     render('category.html', f"/categorie/{c['slug']}/", cat=c, products=items, active_cat=c['slug'],
-           subs=[dict(name=k, n=v) for k, v in sorted(subs.items(), key=lambda x: -x[1])],
+           subs=[dict(name=k, n=v) for k, v in sorted(subs.items(), key=lambda x: (COLS.index(x[0]) if x[0] in COLS else 99, -x[1]))],
            pmin=int(min(prices)), pmax=int(max(prices)) + 1)
 
 # Produse
@@ -97,7 +108,7 @@ open(os.path.join(DIST, '404.html'), 'w', encoding='utf-8').write(env.get_templa
 os.makedirs(os.path.join(DIST, 'data'), exist_ok=True)
 idx = [dict(sku=p['sku'], slug=p['slug'], name=p['name'], cat=p['categoryName'], catSlug=p['category'], sub=p.get('sub'),
             price=p['price'], old=p.get('oldPrice'), off=p['off'], inStock=p['inStock'], img=p['images'][0], featured=p.get('featured', False),
-            sizes=[dict(s=z['size'], r=z.get('range', ''), sku=v['sku'], i=v['inStock']) for z, v in zip(p['sizes'], variants(p))] if p['sizes'] else None)
+            sizes=[dict(s=z['size'], c=z.get('color', ''), r=z.get('range', ''), sku=v['sku'], n=v['name'], i=v['inStock']) for z, v in zip(p['sizes'], variants(p))] if p['sizes'] else None)
        for p in products]
 json.dump(idx, open(os.path.join(DIST, 'data/search.json'), 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
 

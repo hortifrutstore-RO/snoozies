@@ -1,10 +1,12 @@
-// Mărimi: fiecare mărime a unui produs are propriul cod (sku-ul produsului + "-" + mărimea), folosit în coș, comenzi și stoc.
-export const vsku = (p, s) => `${p.sku}-${s.size}`;
+// Variante: fiecare combinație culoare + mărime a unui produs are propriul cod (de obicei codul de pe eMAG),
+// folosit în coș, comenzi și stoc. Fără cod explicit: sku-ul produsului + "-" + mărimea.
+export const vsku = (p, s) => s.sku || `${p.sku}-${s.color ? s.color + '-' : ''}${s.size}`;
+export const vlabel = (p, s) => `${p.name} – ${[s.color, s.size && s.size !== 'U' ? 'mărimea ' + s.size + (s.range ? ' (' + s.range + ')' : '') : ''].filter(Boolean).join(', ')}`;
 export function variants(p) {
   if (!Array.isArray(p.sizes) || !p.sizes.length) return [{ sku: p.sku, name: p.name, stock: p.stock ?? null, inStock: !!p.inStock, ref: p }];
-  return p.sizes.map(s => ({ sku: vsku(p, s), name: `${p.name} – mărimea ${s.size}`, stock: s.stock ?? null, inStock: !!s.inStock, ref: s }));
+  return p.sizes.map(s => ({ sku: vsku(p, s), name: vlabel(p, s), stock: s.stock ?? null, inStock: !!s.inStock, ref: s }));
 }
-// După o schimbare de stoc pe mărimi, produsul e „în stoc” dacă măcar o mărime e disponibilă.
+// După o schimbare de stoc, produsul e „în stoc” dacă măcar o variantă e disponibilă.
 export function refreshInStock(p) {
   if (Array.isArray(p.sizes) && p.sizes.length) p.inStock = p.sizes.some(s => s.inStock);
 }

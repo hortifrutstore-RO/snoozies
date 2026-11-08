@@ -55,21 +55,15 @@
    "image": "/img/site/cat-barbati.jpg"
   },
   {
-   "slug": "copii",
-   "name": "Copii",
-   "intro": "Papuci veseli pentru cei mici: unicorni, dinozauri, albinuțe.",
-   "image": "/img/site/cat-copii.jpg"
-  },
-  {
-   "slug": "bebelusi",
-   "name": "Bebeluși",
-   "intro": "Papucei moi și pufoși pentru primii pași prin casă.",
+   "slug": "copii-si-bebelusi",
+   "name": "Copii și bebeluși",
+   "intro": "Botoșei pufoși pentru bebeluși, de la 0 la 12 luni, și papuci veseli pentru cei mici.",
    "image": "/img/site/cat-bebelusi.jpg"
   },
   {
    "slug": "sosete",
    "name": "Șosete",
-   "intro": "Șosete pufoase și termice, pentru serile lungi de iarnă.",
+   "intro": "Șosete termice pufoase, mărime unică, pentru serile lungi de iarnă.",
    "image": "/img/site/cat-sosete.jpg"
   }
  ],

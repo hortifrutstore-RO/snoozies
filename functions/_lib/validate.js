@@ -1,4 +1,5 @@
 // Validare și curățare a datelor trimise din panou, înainte de salvare.
+import { variants } from './variants.js';
 const ALLOWED = ['p', 'br', 'ul', 'ol', 'li', 'strong', 'h3', 'h4'];
 export function cleanHtml(h) {
   h = String(h || '').slice(0, 20000);
@@ -11,15 +12,29 @@ const str = (v, n) => String(v ?? '').replace(/[<>]/g, '').trim().slice(0, n);
 const num = v => { const x = Math.round(parseFloat(v) * 100) / 100; return Number.isFinite(x) && x >= 0 ? x : null; };
 const IMG = /^[a-z0-9][a-z0-9._-]{0,150}\.(jpg|jpeg|png|webp)$/i;
 const SLUG = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
-export const CATS = ['femei', 'barbati', 'copii', 'bebelusi', 'sosete'];
+export const CATS = ['femei', 'barbati', 'copii-si-bebelusi', 'sosete'];
 const SIZE = /^[A-Za-z0-9.,/–-]{1,12}$/;
-function cleanSizes(list) {
+const VSKU = /^[A-Za-z0-9._-]{1,40}$/;
+function cleanColors(list, images) {
   if (!Array.isArray(list)) return [];
   const seen = new Set(), out = [];
-  for (const s of list.slice(0, 12)) {
-    const size = str(s && s.size, 12); if (!SIZE.test(size) || seen.has(size)) continue; seen.add(size);
+  for (const c of list.slice(0, 16)) {
+    const name = str(c && c.name, 30); if (!name || seen.has(name)) continue; seen.add(name);
+    out.push({ name, hex: /^#[0-9a-fA-F]{6}$/.test(c.hex || '') ? c.hex : '', image: images.includes(c.image) ? c.image : '' });
+  }
+  return out;
+}
+function cleanSizes(list, colors) {
+  if (!Array.isArray(list)) return [];
+  const names = new Set(colors.map(c => c.name)), seen = new Set(), out = [];
+  for (const s of list.slice(0, 120)) {
+    const size = str(s && s.size, 12); if (!SIZE.test(size)) continue;
+    const color = names.has(s.color) ? s.color : '';
+    const key = color + '|' + size; if (seen.has(key)) continue; seen.add(key);
     const stock = s.stock === null || s.stock === undefined || s.stock === '' ? null : Math.max(0, Math.min(100000, parseInt(s.stock, 10) || 0));
-    out.push({ size, range: str(s.range, 30), stock, inStock: stock !== null ? stock > 0 : s.inStock !== false });
+    const o = { size, range: str(s.range, 30), color, stock, inStock: stock !== null ? stock > 0 : s.inStock !== false };
+    if (VSKU.test(s.sku || '')) o.sku = s.sku;
+    out.push(o);
   }
   return out;
 }
@@ -35,8 +50,11 @@ export function cleanProducts(list, catNames = {}) {
       stock: p.stock === null || p.stock === undefined || p.stock === '' ? null : Math.max(0, Math.min(100000, parseInt(p.stock, 10) || 0)), short: str(p.short, 400),
       description: cleanHtml(p.description), images: (Array.isArray(p.images) ? p.images : []).filter(x => IMG.test(x)).slice(0, 20),
       weight: p.weight ? num(p.weight) : null, featured: !!p.featured, featuredOrder: parseInt(p.featuredOrder, 10) || 0, oldUrl: p.oldUrl ? str(p.oldUrl, 200) : null,
-      sizes: cleanSizes(p.sizes)
+      colors: [],
+      sizes: []
     };
+    o.colors = cleanColors(p.colors, o.images);
+    o.sizes = cleanSizes(p.sizes, o.colors);
     if (o.sizes.length) { o.stock = null; o.inStock = o.sizes.some(s => s.inStock); }
     const who = o.name || o.sku || '(fără nume)';
     if (!o.sku) return { error: `Produsul „${who}” nu are cod.` };
@@ -48,6 +66,7 @@ export function cleanProducts(list, catNames = {}) {
     if (!o.images.length) return { error: `Produsul „${who}” are nevoie de cel puțin o poză.` };
     if (skus.has(o.sku)) return { error: `Codul ${o.sku} apare de două ori.` };
     if (slugs.has(o.slug)) return { error: `Adresa ${o.slug} apare de două ori.` };
+    for (const v of o.sizes.length ? variants(o) : []) { if (skus.has(v.sku)) return { error: `Codul ${v.sku} apare de două ori.` }; skus.add(v.sku); }
     skus.add(o.sku); slugs.add(o.slug); out.push(o);
   }
   return { list: out };

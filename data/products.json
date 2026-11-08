@@ -1,12 +1,229 @@
 [
  {
-  "sku": "SNZ-101",
+  "sku": "SNZ-CHEVRON",
   "slug": "papuci-de-casa-femei-snoozies-chevron",
-  "name": "Papuci de casă femei Snoozies Chevron",
+  "name": "Papuci de casă Snoozies Chevron",
   "category": "femei",
   "categoryName": "Femei",
-  "sub": null,
+  "sub": "Pufoși ca un nor",
   "price": 62.99,
+  "oldPrice": null,
+  "inStock": true,
+  "stock": null,
+  "short": "",
+  "description": "",
+  "images": [],
+  "weight": 0.3,
+  "featured": true,
+  "featuredOrder": 3,
+  "oldUrl": "papuci-de-casa-femei-snoozies-chevron.html",
+  "colors": [
+   {
+    "name": "Alb",
+    "hex": "#F4F1EA",
+    "image": ""
+   },
+   {
+    "name": "Albastru",
+    "hex": "#4C6FA5",
+    "image": ""
+   },
+   {
+    "name": "Negru",
+    "hex": "#1F1B1A",
+    "image": ""
+   },
+   {
+    "name": "Vișiniu",
+    "hex": "#7A1F45",
+    "image": ""
+   }
+  ],
+  "sizes": [
+   {
+    "size": "S",
+    "range": "36–37",
+    "color": "Alb",
+    "sku": "Snz-ChevronAlbS",
+    "stock": null,
+    "inStock": true
+   },
+   {
+    "size": "M",
+    "range": "37.5–38.5",
+    "color": "Alb",
+    "sku": "Snz-ChevronAlbM",
+    "stock": null,
+    "inStock": true
+   },
+   {
+    "size": "L",
+    "range": "38.5–40",
+    "color": "Alb",
+    "sku": "Snz-ChevronAlbL",
+    "stock": null,
+    "inStock": true
+   },
+   {
+    "size": "XL",
+    "range": "40–42",
+    "color": "Alb",
+    "sku": "Snz-ChevronAlbXL",
+    "stock": null,
+    "inStock": true
+   },
+   {
+    "size": "S",
+    "range": "36–37",
+    "color": "Albastru",
+    "sku": "Snz-ChevronAlbastruS",
+    "stock": null,
+    "inStock": true
+   },
+   {
+    "size": "M",
+    "range": "37.5–38.5",
+    "color": "Albastru",
+    "sku": "Snz-ChevronAlbastruM",
+    "stock": null,
+    "inStock": true
+   },
+   {
+    "size": "L",
+    "range": "38.5–40",
+    "color": "Albastru",
+    "sku": "Snz-ChevronAlbastruL",
+    "stock": null,
+    "inStock": true
+   },
+   {
+    "size": "XL",
+    "range": "40–42",
+    "color": "Albastru",
+    "sku": "Snz-ChevronAlbastruXL",
+    "stock": null,
+    "inStock": true
+   },
+   {
+    "size": "S",
+    "range": "36–37",
+    "color": "Negru",
+    "sku": "Snz-ChevronNegruS",
+    "stock": null,
+    "inStock": true
+   },
+   {
+    "size": "M",
+    "range": "37.5–38.5",
+    "color": "Negru",
+    "sku": "Snz-ChevronNegruM",
+    "stock": null,
+    "inStock": true
+   },
+   {
+    "size": "L",
+    "range": "38.5–40",
+    "color": "Negru",
+    "sku": "Snz-ChevronNegruL",
+    "stock": null,
+    "inStock": true
+   },
+   {
+    "size": "XL",
+    "range": "40–42",
+    "color": "Negru",
+    "sku": "Snz-ChevronNegruXL",
+    "stock": null,
+    "inStock": true
+   },
+   {
+    "size": "S",
+    "range": "36–37",
+    "color": "Vișiniu",
+    "sku": "Snz-ChevronVisiniuS",
+    "stock": null,
+    "inStock": true
+   },
+   {
+    "size": "M",
+    "range": "37.5–38.5",
+    "color": "Vișiniu",
+    "sku": "Snz-ChevronVisiniuM",
+    "stock": null,
+    "inStock": true
+   },
+   {
+    "size": "L",
+    "range": "38.5–40",
+    "color": "Vișiniu",
+    "sku": "Snz-ChevronVisiniuL",
+    "stock": null,
+    "inStock": true
+   },
+   {
+    "size": "XL",
+    "range": "40–42",
+    "color": "Vișiniu",
+    "sku": "Snz-ChevronVisiniuXL",
+    "stock": null,
+    "inStock": true
+   }
+  ]
+ },
+ {
+  "sku": "SNZ-REN",
+  "slug": "papuci-de-casa-snoozies-ren",
+  "name": "Papuci de casă Snoozies Ren",
+  "category": "femei",
+  "categoryName": "Femei",
+  "sub": "Magia Crăciunului",
+  "price": 51.99,
+  "oldPrice": null,
+  "inStock": true,
+  "stock": null,
+  "short": "",
+  "description": "",
+  "images": [],
+  "weight": 0.3,
+  "featured": true,
+  "featuredOrder": 1,
+  "oldUrl": "papuci-de-casa-snoozies-ren.html",
+  "colors": [],
+  "sizes": [
+   {
+    "size": "S",
+    "range": "36–37",
+    "color": "",
+    "sku": "Snz-ReindS",
+    "stock": null,
+    "inStock": true
+   },
+   {
+    "size": "M",
+    "range": "37–38",
+    "color": "",
+    "sku": "Snz-ReindM",
+    "stock": null,
+    "inStock": true
+   },
+   {
+    "size": "L",
+    "range": "38–40",
+    "color": "",
+    "sku": "Snz-ReindL",
+    "stock": null,
+    "inStock": true
+   }
+  ]
+ },
+ {
+  "sku": "SNZ-MERRY",
+  "slug": "papuci-de-casa-snoozies-craciun-fericit",
+  "name": "Papuci de casă Snoozies Crăciun Fericit",
+  "category": "femei",
+  "categoryName": "Femei",
+  "sub": "Magia Crăciunului",
+  "price": 51.99,
   "oldPrice": null,
   "inStock": true,
   "stock": null,
@@ -16,42 +233,181 @@
   "weight": 0.3,
   "featured": false,
   "featuredOrder": 0,
-  "oldUrl": "papuci-de-casa-femei-snoozies-chevron.html",
+  "oldUrl": "papuci-de-casa-snoozies-craciun-fericit.html",
+  "colors": [],
   "sizes": [
    {
     "size": "S",
-    "range": "",
+    "range": "36–37",
+    "color": "",
+    "sku": "Snz-MerryxS",
     "stock": null,
     "inStock": true
    },
    {
     "size": "M",
-    "range": "",
+    "range": "37–38",
+    "color": "",
+    "sku": "Snz-MerryxM",
     "stock": null,
     "inStock": true
    },
    {
     "size": "L",
-    "range": "",
-    "stock": null,
-    "inStock": true
-   },
-   {
-    "size": "XL",
-    "range": "",
+    "range": "38–40",
+    "color": "",
+    "sku": "Snz-MerryxL",
     "stock": null,
     "inStock": true
    }
   ]
  },
  {
-  "sku": "SNZ-102",
-  "slug": "papuci-de-casa-femei-snoozies-snow-good",
-  "name": "Papuci de casă femei Snoozies Snow Good",
+  "sku": "SNZ-ESQUAD",
+  "slug": "papuci-de-casa-snoozies-echipa-elf",
+  "name": "Papuci de casă Snoozies Echipa Elf",
   "category": "femei",
   "categoryName": "Femei",
-  "sub": "Crăciun",
-  "price": 58.42,
+  "sub": "Magia Crăciunului",
+  "price": 51.99,
+  "oldPrice": null,
+  "inStock": true,
+  "stock": null,
+  "short": "",
+  "description": "",
+  "images": [],
+  "weight": 0.3,
+  "featured": false,
+  "featuredOrder": 0,
+  "oldUrl": "papuci-de-casa-snoozies-echipa-elf.html",
+  "colors": [],
+  "sizes": [
+   {
+    "size": "S",
+    "range": "36–37",
+    "color": "",
+    "sku": "Snz-EsquadS",
+    "stock": null,
+    "inStock": true
+   },
+   {
+    "size": "M",
+    "range": "37–38",
+    "color": "",
+    "sku": "Snz-EsquadM",
+    "stock": null,
+    "inStock": true
+   },
+   {
+    "size": "L",
+    "range": "38–40",
+    "color": "",
+    "sku": "Snz-EsquadL",
+    "stock": null,
+    "inStock": true
+   }
+  ]
+ },
+ {
+  "sku": "SNZ-FROSTY",
+  "slug": "papuci-de-casa-snoozies-feeling-frosty",
+  "name": "Papuci de casă Snoozies Feeling Frosty",
+  "category": "femei",
+  "categoryName": "Femei",
+  "sub": "Magia Crăciunului",
+  "price": 51.99,
+  "oldPrice": null,
+  "inStock": true,
+  "stock": null,
+  "short": "",
+  "description": "",
+  "images": [],
+  "weight": 0.3,
+  "featured": false,
+  "featuredOrder": 0,
+  "oldUrl": "papuci-de-casa-snoozies-feeling-frosty.html",
+  "colors": [],
+  "sizes": [
+   {
+    "size": "S",
+    "range": "36–37",
+    "color": "",
+    "sku": "Snz-FrostyS",
+    "stock": null,
+    "inStock": true
+   },
+   {
+    "size": "M",
+    "range": "37–38",
+    "color": "",
+    "sku": "Snz-FrostyM",
+    "stock": null,
+    "inStock": true
+   },
+   {
+    "size": "L",
+    "range": "38–40",
+    "color": "",
+    "sku": "Snz-FrostyL",
+    "stock": null,
+    "inStock": true
+   }
+  ]
+ },
+ {
+  "sku": "SNZ-SNOWWINE",
+  "slug": "papuci-de-casa-snoozies-snow-wine",
+  "name": "Papuci de casă Snoozies Snow Wine",
+  "category": "femei",
+  "categoryName": "Femei",
+  "sub": "Magia Crăciunului",
+  "price": 51.99,
+  "oldPrice": null,
+  "inStock": true,
+  "stock": null,
+  "short": "",
+  "description": "",
+  "images": [],
+  "weight": 0.3,
+  "featured": false,
+  "featuredOrder": 0,
+  "oldUrl": "papuci-de-casa-snoozies-snow-wine.html",
+  "colors": [],
+  "sizes": [
+   {
+    "size": "S",
+    "range": "36–37",
+    "color": "",
+    "sku": "Snz-SnowWineS",
+    "stock": null,
+    "inStock": true
+   },
+   {
+    "size": "M",
+    "range": "37–38",
+    "color": "",
+    "sku": "Snz-SnowWineM",
+    "stock": null,
+    "inStock": true
+   },
+   {
+    "size": "L",
+    "range": "38–40",
+    "color": "",
+    "sku": "Snz-SnowWineL",
+    "stock": null,
+    "inStock": true
+   }
+  ]
+ },
+ {
+  "sku": "SNZ-SNOWGOOD",
+  "slug": "papuci-de-casa-femei-snoozies-snow-good",
+  "name": "Papuci de casă Snoozies Snow Good",
+  "category": "femei",
+  "categoryName": "Femei",
+  "sub": "Magia Crăciunului",
+  "price": 51.99,
   "oldPrice": null,
   "inStock": true,
   "stock": null,
@@ -62,35 +418,42 @@
   "featured": false,
   "featuredOrder": 0,
   "oldUrl": "papuci-de-casa-femei-snoozies-snow-good.html",
+  "colors": [],
   "sizes": [
    {
     "size": "S",
-    "range": "",
+    "range": "36–37",
+    "color": "",
+    "sku": "Snz-SnowGoodS",
     "stock": null,
     "inStock": true
    },
    {
     "size": "M",
-    "range": "",
+    "range": "37–38",
+    "color": "",
+    "sku": "Snz-SnowGoodM",
     "stock": null,
     "inStock": true
    },
    {
     "size": "L",
-    "range": "",
+    "range": "38–40",
+    "color": "",
+    "sku": "Snz-SnowGoodL",
     "stock": null,
     "inStock": true
    }
   ]
  },
  {
-  "sku": "SNZ-103",
+  "sku": "SNZ-BEMERRY",
   "slug": "papuci-de-casa-femei-snoozies-be-merry",
-  "name": "Papuci de casă femei Snoozies Be Merry",
+  "name": "Papuci de casă Snoozies Be Merry",
   "category": "femei",
   "categoryName": "Femei",
-  "sub": "Crăciun",
-  "price": 58.42,
+  "sub": "Magia Crăciunului",
+  "price": 51.99,
   "oldPrice": null,
   "inStock": true,
   "stock": null,
@@ -101,35 +464,34 @@
   "featured": false,
   "featuredOrder": 0,
   "oldUrl": "papuci-de-casa-femei-snoozies-be-merry.html",
+  "colors": [],
   "sizes": [
    {
     "size": "S",
-    "range": "",
-    "stock": null,
-    "inStock": true
-   },
-   {
-    "size": "M",
-    "range": "",
+    "range": "36–37",
+    "color": "",
+    "sku": "Snz-BeMerryS",
     "stock": null,
     "inStock": true
    },
    {
     "size": "L",
-    "range": "",
+    "range": "38–40",
+    "color": "",
+    "sku": "Snz-BeMerryL",
     "stock": null,
     "inStock": true
    }
   ]
  },
  {
-  "sku": "SNZ-104",
+  "sku": "SNZ-XELF",
   "slug": "papuci-de-casa-femei-snoozies-christmas-elf",
-  "name": "Papuci de casă femei Snoozies Christmas Elf",
+  "name": "Papuci de casă Snoozies Christmas Elf",
   "category": "femei",
   "categoryName": "Femei",
-  "sub": "Crăciun",
-  "price": 58.42,
+  "sub": "Magia Crăciunului",
+  "price": 51.99,
   "oldPrice": null,
   "inStock": true,
   "stock": null,
@@ -140,35 +502,42 @@
   "featured": false,
   "featuredOrder": 0,
   "oldUrl": "papuci-de-casa-femei-snoozies-christmas-elf.html",
+  "colors": [],
   "sizes": [
    {
     "size": "S",
-    "range": "",
+    "range": "36–37",
+    "color": "",
+    "sku": "Snz-WineELFS",
     "stock": null,
     "inStock": true
    },
    {
     "size": "M",
-    "range": "",
+    "range": "37–38",
+    "color": "",
+    "sku": "Snz-WineELFM",
     "stock": null,
     "inStock": true
    },
    {
     "size": "L",
-    "range": "",
+    "range": "38–40",
+    "color": "",
+    "sku": "Snz-WineELFL",
     "stock": null,
     "inStock": true
    }
   ]
  },
  {
-  "sku": "SNZ-105",
+  "sku": "SNZ-WHITEX",
   "slug": "papuci-de-casa-femei-snoozies-white-christmas",
-  "name": "Papuci de casă femei Snoozies White Christmas",
+  "name": "Papuci de casă Snoozies White Christmas",
   "category": "femei",
   "categoryName": "Femei",
-  "sub": "Crăciun",
-  "price": 59.32,
+  "sub": "Magia Crăciunului",
+  "price": 51.99,
   "oldPrice": null,
   "inStock": true,
   "stock": null,
@@ -179,35 +548,126 @@
   "featured": false,
   "featuredOrder": 0,
   "oldUrl": "papuci-de-casa-femei-snoozies-white-christmas.html",
+  "colors": [],
   "sizes": [
    {
     "size": "S",
-    "range": "",
+    "range": "36–37",
+    "color": "",
+    "sku": "Snz-WhiteChristmasS",
     "stock": null,
     "inStock": true
    },
    {
     "size": "M",
-    "range": "",
+    "range": "37–38",
+    "color": "",
+    "sku": "Snz-WhiteChristmasM",
     "stock": null,
     "inStock": true
    },
    {
     "size": "L",
-    "range": "",
+    "range": "38–40",
+    "color": "",
+    "sku": "Snz-WhiteChristmasL",
     "stock": null,
     "inStock": true
    }
   ]
  },
  {
-  "sku": "SNZ-106",
-  "slug": "papuci-de-casa-femei-snoozies-just-chilling",
-  "name": "Papuci de casă femei Snoozies Just Chilling",
+  "sku": "SNZ-MEOWY",
+  "slug": "papuci-de-casa-snoozies-meowy-christmas",
+  "name": "Papuci de casă Snoozies Meowy Christmas",
   "category": "femei",
   "categoryName": "Femei",
-  "sub": "Cu mesaj",
-  "price": 58.36,
+  "sub": "Magia Crăciunului",
+  "price": 51.99,
+  "oldPrice": null,
+  "inStock": true,
+  "stock": null,
+  "short": "",
+  "description": "",
+  "images": [],
+  "weight": 0.3,
+  "featured": true,
+  "featuredOrder": 6,
+  "oldUrl": "papuci-de-casa-snoozies-meowy-christmas.html",
+  "colors": [],
+  "sizes": [
+   {
+    "size": "S",
+    "range": "36–37",
+    "color": "",
+    "sku": "SnzMewowyChristmasS",
+    "stock": null,
+    "inStock": true
+   },
+   {
+    "size": "M",
+    "range": "37–38",
+    "color": "",
+    "sku": "SnzMewowyChristmasM",
+    "stock": null,
+    "inStock": true
+   },
+   {
+    "size": "L",
+    "range": "38–40",
+    "color": "",
+    "sku": "SnzMewowyChristmasL",
+    "stock": null,
+    "inStock": true
+   }
+  ]
+ },
+ {
+  "sku": "SNZ-SNOWMIES",
+  "slug": "papuci-de-casa-snoozies-chilling-with-my-snowmies",
+  "name": "Papuci de casă Snoozies Chilling with my Snowmies",
+  "category": "femei",
+  "categoryName": "Femei",
+  "sub": "Magia Crăciunului",
+  "price": 51.99,
+  "oldPrice": null,
+  "inStock": true,
+  "stock": null,
+  "short": "",
+  "description": "",
+  "images": [],
+  "weight": 0.3,
+  "featured": false,
+  "featuredOrder": 0,
+  "oldUrl": "papuci-de-casa-snoozies-chilling-with-my-snowmies.html",
+  "colors": [],
+  "sizes": [
+   {
+    "size": "S",
+    "range": "36–37",
+    "color": "",
+    "sku": "Snz-07SnowmiesS",
+    "stock": null,
+    "inStock": true
+   },
+   {
+    "size": "L",
+    "range": "38–40",
+    "color": "",
+    "sku": "Snz-07SnowmiesL",
+    "stock": null,
+    "inStock": true
+   }
+  ]
+ },
+ {
+  "sku": "SNZ-CHILLING",
+  "slug": "papuci-de-casa-femei-snoozies-just-chilling",
+  "name": "Papuci de casă Snoozies Just Chilling",
+  "category": "femei",
+  "categoryName": "Femei",
+  "sub": "Mici plăceri",
+  "price": 51.99,
   "oldPrice": null,
   "inStock": true,
   "stock": null,
@@ -218,35 +678,42 @@
   "featured": false,
   "featuredOrder": 0,
   "oldUrl": "papuci-de-casa-femei-snoozies-just-chilling.html",
+  "colors": [],
   "sizes": [
    {
     "size": "S",
-    "range": "",
+    "range": "36–37",
+    "color": "",
+    "sku": "Snz-JustChillingS",
     "stock": null,
     "inStock": true
    },
    {
     "size": "M",
-    "range": "",
+    "range": "37–38",
+    "color": "",
+    "sku": "Snz-JustChillingM",
     "stock": null,
     "inStock": true
    },
    {
     "size": "L",
-    "range": "",
+    "range": "38–40",
+    "color": "",
+    "sku": "Snz-JustChillingL",
     "stock": null,
     "inStock": true
    }
   ]
  },
  {
-  "sku": "SNZ-107",
-  "slug": "papuci-de-casa-femei-snoozies-christmas-tree",
-  "name": "Papuci de casă femei Snoozies Christmas Tree",
+  "sku": "SNZ-CHOCO",
+  "slug": "papuci-de-casa-snoozies-ciocolata",
+  "name": "Papuci de casă Snoozies Chocolate makes me happy",
   "category": "femei",
   "categoryName": "Femei",
-  "sub": "Crăciun",
-  "price": 58.99,
+  "sub": "Mici plăceri",
+  "price": 51.99,
   "oldPrice": null,
   "inStock": true,
   "stock": null,
@@ -256,420 +723,43 @@
   "weight": 0.3,
   "featured": false,
   "featuredOrder": 0,
-  "oldUrl": "papuci-de-casa-femei-snoozies-christmas-tree.html",
+  "oldUrl": "papuci-de-casa-snoozies-ciocolata.html",
+  "colors": [],
   "sizes": [
    {
     "size": "S",
-    "range": "",
+    "range": "36–37",
+    "color": "",
+    "sku": "Snz-ChocoS",
     "stock": null,
     "inStock": true
    },
    {
     "size": "M",
-    "range": "",
+    "range": "37–38",
+    "color": "",
+    "sku": "Snz-ChocoM",
     "stock": null,
     "inStock": true
    },
    {
     "size": "L",
-    "range": "",
+    "range": "38–40",
+    "color": "",
+    "sku": "Snz-ChocoL",
     "stock": null,
     "inStock": true
    }
   ]
  },
  {
-  "sku": "SNZ-108",
-  "slug": "papuci-de-casa-femei-snoozies-christmas-gnomes",
-  "name": "Papuci de casă femei Snoozies Christmas Gnomes",
-  "category": "femei",
-  "categoryName": "Femei",
-  "sub": "Crăciun",
-  "price": 58.99,
-  "oldPrice": null,
-  "inStock": true,
-  "stock": null,
-  "short": "",
-  "description": "",
-  "images": [],
-  "weight": 0.3,
-  "featured": false,
-  "featuredOrder": 0,
-  "oldUrl": "papuci-de-casa-femei-snoozies-christmas-gnomes.html",
-  "sizes": [
-   {
-    "size": "S",
-    "range": "",
-    "stock": null,
-    "inStock": true
-   },
-   {
-    "size": "M",
-    "range": "",
-    "stock": null,
-    "inStock": true
-   },
-   {
-    "size": "L",
-    "range": "",
-    "stock": null,
-    "inStock": true
-   }
-  ]
- },
- {
-  "sku": "SNZ-109",
-  "slug": "papuci-de-casa-femei-snoozies-ho-ho-ho",
-  "name": "Papuci de casă femei Snoozies Ho Ho Ho",
-  "category": "femei",
-  "categoryName": "Femei",
-  "sub": "Crăciun",
-  "price": 58.99,
-  "oldPrice": null,
-  "inStock": true,
-  "stock": null,
-  "short": "",
-  "description": "",
-  "images": [],
-  "weight": 0.3,
-  "featured": true,
-  "featuredOrder": 1,
-  "oldUrl": "papuci-de-casa-femei-snoozies-ho-ho-ho.html",
-  "sizes": [
-   {
-    "size": "S",
-    "range": "",
-    "stock": null,
-    "inStock": true
-   },
-   {
-    "size": "M",
-    "range": "",
-    "stock": null,
-    "inStock": true
-   },
-   {
-    "size": "L",
-    "range": "",
-    "stock": null,
-    "inStock": true
-   }
-  ]
- },
- {
-  "sku": "SNZ-110",
-  "slug": "papuci-de-casa-femei-snoozies-snowflake",
-  "name": "Papuci de casă femei Snoozies Snowflake",
-  "category": "femei",
-  "categoryName": "Femei",
-  "sub": "Crăciun",
-  "price": 58.99,
-  "oldPrice": null,
-  "inStock": true,
-  "stock": null,
-  "short": "",
-  "description": "",
-  "images": [],
-  "weight": 0.3,
-  "featured": false,
-  "featuredOrder": 0,
-  "oldUrl": "papuci-de-casa-femei-snoozies-snowflake.html",
-  "sizes": [
-   {
-    "size": "S",
-    "range": "",
-    "stock": null,
-    "inStock": true
-   },
-   {
-    "size": "M",
-    "range": "",
-    "stock": null,
-    "inStock": true
-   },
-   {
-    "size": "L",
-    "range": "",
-    "stock": null,
-    "inStock": true
-   }
-  ]
- },
- {
-  "sku": "SNZ-111",
-  "slug": "papuci-de-casa-snoozies-meowy-christmas",
-  "name": "Papuci de casă Snoozies Meowy Christmas",
-  "category": "femei",
-  "categoryName": "Femei",
-  "sub": "Crăciun",
-  "price": 58.99,
-  "oldPrice": null,
-  "inStock": true,
-  "stock": null,
-  "short": "",
-  "description": "",
-  "images": [],
-  "weight": 0.3,
-  "featured": false,
-  "featuredOrder": 0,
-  "oldUrl": "papuci-de-casa-snoozies-meowy-christmas.html",
-  "sizes": [
-   {
-    "size": "S",
-    "range": "",
-    "stock": null,
-    "inStock": true
-   },
-   {
-    "size": "M",
-    "range": "",
-    "stock": null,
-    "inStock": true
-   },
-   {
-    "size": "L",
-    "range": "",
-    "stock": null,
-    "inStock": true
-   }
-  ]
- },
- {
-  "sku": "SNZ-112",
-  "slug": "papuci-de-casa-snoozies-gold-bling",
-  "name": "Papuci de casă Snoozies Gold Bling",
-  "category": "femei",
-  "categoryName": "Femei",
-  "sub": "Crăciun",
-  "price": 58.99,
-  "oldPrice": null,
-  "inStock": true,
-  "stock": null,
-  "short": "",
-  "description": "",
-  "images": [],
-  "weight": 0.3,
-  "featured": true,
-  "featuredOrder": 3,
-  "oldUrl": "papuci-de-casa-snoozies-gold-bling.html",
-  "sizes": [
-   {
-    "size": "S",
-    "range": "",
-    "stock": null,
-    "inStock": true
-   },
-   {
-    "size": "M",
-    "range": "",
-    "stock": null,
-    "inStock": true
-   },
-   {
-    "size": "L",
-    "range": "",
-    "stock": null,
-    "inStock": true
-   }
-  ]
- },
- {
-  "sku": "SNZ-113",
-  "slug": "papuci-de-casa-snoozies-red-bling",
-  "name": "Papuci de casă Snoozies Red Bling",
-  "category": "femei",
-  "categoryName": "Femei",
-  "sub": "Crăciun",
-  "price": 58.99,
-  "oldPrice": null,
-  "inStock": true,
-  "stock": null,
-  "short": "",
-  "description": "",
-  "images": [],
-  "weight": 0.3,
-  "featured": true,
-  "featuredOrder": 2,
-  "oldUrl": "papuci-de-casa-snoozies-red-bling.html",
-  "sizes": [
-   {
-    "size": "S",
-    "range": "",
-    "stock": null,
-    "inStock": true
-   },
-   {
-    "size": "M",
-    "range": "",
-    "stock": null,
-    "inStock": true
-   },
-   {
-    "size": "L",
-    "range": "",
-    "stock": null,
-    "inStock": true
-   }
-  ]
- },
- {
-  "sku": "SNZ-114",
-  "slug": "papuci-de-casa-snoozies-sassy-slide",
-  "name": "Papuci de casă Snoozies Sassy Slide",
-  "category": "femei",
-  "categoryName": "Femei",
-  "sub": "Pufoși",
-  "price": 66.84,
-  "oldPrice": null,
-  "inStock": true,
-  "stock": null,
-  "short": "",
-  "description": "",
-  "images": [],
-  "weight": 0.3,
-  "featured": true,
-  "featuredOrder": 4,
-  "oldUrl": "papuci-de-casa-snoozies-sassy-slide.html",
-  "sizes": [
-   {
-    "size": "S",
-    "range": "",
-    "stock": null,
-    "inStock": true
-   },
-   {
-    "size": "M",
-    "range": "",
-    "stock": null,
-    "inStock": true
-   },
-   {
-    "size": "L",
-    "range": "",
-    "stock": null,
-    "inStock": true
-   }
-  ]
- },
- {
-  "sku": "SNZ-115",
-  "slug": "papuci-de-casa-snoozies-crosetati",
-  "name": "Papuci de casă Snoozies Croșetați",
-  "category": "femei",
-  "categoryName": "Femei",
-  "sub": "Pufoși",
-  "price": 54.86,
-  "oldPrice": null,
-  "inStock": true,
-  "stock": null,
-  "short": "",
-  "description": "",
-  "images": [],
-  "weight": 0.3,
-  "featured": true,
-  "featuredOrder": 7,
-  "oldUrl": "papuci-de-casa-snoozies-crosetati.html",
-  "sizes": [
-   {
-    "size": "S",
-    "range": "",
-    "stock": null,
-    "inStock": true
-   },
-   {
-    "size": "M",
-    "range": "",
-    "stock": null,
-    "inStock": true
-   },
-   {
-    "size": "L",
-    "range": "",
-    "stock": null,
-    "inStock": true
-   }
-  ]
- },
- {
-  "sku": "SNZ-116",
-  "slug": "papuci-de-casa-snoozies-inimioare",
-  "name": "Papuci de casă Snoozies Inimioare",
-  "category": "femei",
-  "categoryName": "Femei",
-  "sub": "Pufoși",
-  "price": 54.86,
-  "oldPrice": null,
-  "inStock": true,
-  "stock": null,
-  "short": "",
-  "description": "",
-  "images": [],
-  "weight": 0.3,
-  "featured": false,
-  "featuredOrder": 0,
-  "oldUrl": "papuci-de-casa-snoozies-inimioare.html",
-  "sizes": [
-   {
-    "size": "S",
-    "range": "",
-    "stock": null,
-    "inStock": true
-   },
-   {
-    "size": "M",
-    "range": "",
-    "stock": null,
-    "inStock": true
-   },
-   {
-    "size": "L",
-    "range": "",
-    "stock": null,
-    "inStock": true
-   }
-  ]
- },
- {
-  "sku": "SNZ-117",
-  "slug": "papuci-de-casa-snoozies-home-is-where-my-dog-is",
-  "name": "Papuci de casă Snoozies Home is where my dog is",
-  "category": "femei",
-  "categoryName": "Femei",
-  "sub": "Cu mesaj",
-  "price": 54.86,
-  "oldPrice": null,
-  "inStock": true,
-  "stock": null,
-  "short": "",
-  "description": "",
-  "images": [],
-  "weight": 0.3,
-  "featured": false,
-  "featuredOrder": 0,
-  "oldUrl": "papuci-de-casa-snoozies-home-is-where-my-dog-is.html",
-  "sizes": [
-   {
-    "size": "S",
-    "range": "",
-    "stock": null,
-    "inStock": true
-   },
-   {
-    "size": "M",
-    "range": "",
-    "stock": null,
-    "inStock": true
-   }
-  ]
- },
- {
-  "sku": "SNZ-118",
+  "sku": "SNZ-WINETIME",
   "slug": "papuci-de-casa-snoozies-any-time-is-wine-time",
-  "name": "Papuci de casă Snoozies Any time is WINE time",
+  "name": "Papuci de casă Snoozies Wine Time",
   "category": "femei",
   "categoryName": "Femei",
-  "sub": "Cu mesaj",
-  "price": 54.86,
+  "sub": "Mici plăceri",
+  "price": 51.99,
   "oldPrice": null,
   "inStock": true,
   "stock": null,
@@ -680,74 +770,34 @@
   "featured": false,
   "featuredOrder": 0,
   "oldUrl": "papuci-de-casa-snoozies-any-time-is-wine-time.html",
+  "colors": [],
   "sizes": [
    {
     "size": "S",
-    "range": "",
-    "stock": null,
-    "inStock": true
-   },
-   {
-    "size": "M",
-    "range": "",
+    "range": "36–37",
+    "color": "",
+    "sku": "Snz-WineTimeS",
     "stock": null,
     "inStock": true
    },
    {
     "size": "L",
-    "range": "",
+    "range": "38–40",
+    "color": "",
+    "sku": "Snz-WineTimeL",
     "stock": null,
     "inStock": true
    }
   ]
  },
  {
-  "sku": "SNZ-119",
-  "slug": "papuci-de-casa-snoozies-ciocolata",
-  "name": "Papuci de casă Snoozies Chocolate makes me happy",
+  "sku": "SNZ-AMPM",
+  "slug": "papuci-de-casa-snoozies-am-pm",
+  "name": "Papuci de casă Snoozies AM-PM",
   "category": "femei",
   "categoryName": "Femei",
-  "sub": "Cu mesaj",
-  "price": 54.86,
-  "oldPrice": null,
-  "inStock": true,
-  "stock": null,
-  "short": "",
-  "description": "",
-  "images": [],
-  "weight": 0.3,
-  "featured": true,
-  "featuredOrder": 5,
-  "oldUrl": "papuci-de-casa-snoozies-ciocolata.html",
-  "sizes": [
-   {
-    "size": "S",
-    "range": "",
-    "stock": null,
-    "inStock": true
-   },
-   {
-    "size": "M",
-    "range": "",
-    "stock": null,
-    "inStock": true
-   },
-   {
-    "size": "L",
-    "range": "",
-    "stock": null,
-    "inStock": true
-   }
-  ]
- },
- {
-  "sku": "SNZ-120",
-  "slug": "papuci-de-casa-snoozies-buburuza",
-  "name": "Papuci de casă Snoozies Buburuză",
-  "category": "femei",
-  "categoryName": "Femei",
-  "sub": "Pufoși",
-  "price": 43.99,
+  "sub": "Mici plăceri",
+  "price": 51.99,
   "oldPrice": null,
   "inStock": true,
   "stock": null,
@@ -757,36 +807,35 @@
   "weight": 0.3,
   "featured": false,
   "featuredOrder": 0,
-  "oldUrl": "papuci-de-casa-snoozies-buburuza.html",
+  "oldUrl": "papuci-de-casa-snoozies-am-pm.html",
+  "colors": [],
   "sizes": [
    {
     "size": "S",
-    "range": "",
+    "range": "36–37",
+    "color": "",
+    "sku": "Snz-01AMPMS",
     "stock": null,
     "inStock": true
    },
    {
     "size": "M",
-    "range": "",
-    "stock": null,
-    "inStock": true
-   },
-   {
-    "size": "L",
-    "range": "",
+    "range": "37–38",
+    "color": "",
+    "sku": "Snz-01AMPMM",
     "stock": null,
     "inStock": true
    }
   ]
  },
  {
-  "sku": "SNZ-121",
+  "sku": "SNZ-CATITUDE",
   "slug": "papuci-de-casa-snoozies-catitude",
   "name": "Papuci de casă Snoozies Catitude",
   "category": "femei",
   "categoryName": "Femei",
-  "sub": "Cu mesaj",
-  "price": 54.86,
+  "sub": "Iubitori de animăluțe",
+  "price": 51.99,
   "oldPrice": null,
   "inStock": true,
   "stock": null,
@@ -797,35 +846,42 @@
   "featured": false,
   "featuredOrder": 0,
   "oldUrl": "papuci-de-casa-snoozies-catitude.html",
+  "colors": [],
   "sizes": [
    {
     "size": "S",
-    "range": "",
+    "range": "36–37",
+    "color": "",
+    "sku": "Snz-CatitudeS",
     "stock": null,
     "inStock": true
    },
    {
     "size": "M",
-    "range": "",
+    "range": "37–38",
+    "color": "",
+    "sku": "Snz-CatitudeM",
     "stock": null,
     "inStock": true
    },
    {
     "size": "L",
-    "range": "",
+    "range": "38–40",
+    "color": "",
+    "sku": "Snz-CatitudeL",
     "stock": null,
     "inStock": true
    }
   ]
  },
  {
-  "sku": "SNZ-122",
+  "sku": "SNZ-CATLADY",
   "slug": "papuci-de-casa-snoozies-cat-lady-36-37",
   "name": "Papuci de casă Snoozies Cat Lady",
   "category": "femei",
   "categoryName": "Femei",
-  "sub": "Cu mesaj",
-  "price": 54.86,
+  "sub": "Iubitori de animăluțe",
+  "price": 51.99,
   "oldPrice": null,
   "inStock": true,
   "stock": null,
@@ -836,74 +892,42 @@
   "featured": false,
   "featuredOrder": 0,
   "oldUrl": "papuci-de-casa-snoozies-cat-lady-36-37.html",
+  "colors": [],
   "sizes": [
    {
     "size": "S",
-    "range": "",
+    "range": "36–37",
+    "color": "",
+    "sku": "SnzCatladyS",
     "stock": null,
     "inStock": true
    },
    {
     "size": "M",
-    "range": "",
+    "range": "37–38",
+    "color": "",
+    "sku": "SnzCatladyM",
     "stock": null,
     "inStock": true
    },
    {
     "size": "L",
-    "range": "",
+    "range": "38–40",
+    "color": "",
+    "sku": "SnzCatLdyL",
     "stock": null,
     "inStock": true
    }
   ]
  },
  {
-  "sku": "SNZ-123",
-  "slug": "papuci-de-casa-snoozies-buline",
-  "name": "Papuci de casă Snoozies Buline",
+  "sku": "SNZ-CAINE",
+  "slug": "papuci-de-casa-snoozies-home-is-where-my-dog-is",
+  "name": "Papuci de casă Snoozies Home is where my dog is",
   "category": "femei",
   "categoryName": "Femei",
-  "sub": "Pufoși",
-  "price": 54.86,
-  "oldPrice": null,
-  "inStock": true,
-  "stock": null,
-  "short": "",
-  "description": "",
-  "images": [],
-  "weight": 0.3,
-  "featured": true,
-  "featuredOrder": 8,
-  "oldUrl": "papuci-de-casa-snoozies-buline.html",
-  "sizes": [
-   {
-    "size": "S",
-    "range": "",
-    "stock": null,
-    "inStock": true
-   },
-   {
-    "size": "M",
-    "range": "",
-    "stock": null,
-    "inStock": true
-   },
-   {
-    "size": "L",
-    "range": "",
-    "stock": null,
-    "inStock": true
-   }
-  ]
- },
- {
-  "sku": "SNZ-124",
-  "slug": "papuci-de-casa-snoozies-om-de-zapada",
-  "name": "Papuci de casă Snoozies Om de zăpadă",
-  "category": "femei",
-  "categoryName": "Femei",
-  "sub": "Crăciun",
-  "price": 54.86,
+  "sub": "Iubitori de animăluțe",
+  "price": 51.99,
   "oldPrice": null,
   "inStock": true,
   "stock": null,
@@ -913,42 +937,35 @@
   "weight": 0.3,
   "featured": false,
   "featuredOrder": 0,
-  "oldUrl": "papuci-de-casa-snoozies-om-de-zapada.html",
+  "oldUrl": "papuci-de-casa-snoozies-home-is-where-my-dog-is.html",
+  "colors": [],
   "sizes": [
    {
     "size": "S",
-    "range": "",
+    "range": "36–37",
+    "color": "",
+    "sku": "Snz-CaineS",
     "stock": null,
     "inStock": true
    },
    {
     "size": "M",
-    "range": "",
-    "stock": null,
-    "inStock": true
-   },
-   {
-    "size": "L",
-    "range": "",
-    "stock": null,
-    "inStock": true
-   },
-   {
-    "size": "XL",
-    "range": "",
+    "range": "37.5–38.5",
+    "color": "",
+    "sku": "Snz-CaineM",
     "stock": null,
     "inStock": true
    }
   ]
  },
  {
-  "sku": "SNZ-125",
-  "slug": "papuci-de-casa-snoozies-am-pm",
-  "name": "Papuci de casă Snoozies AM-PM",
+  "sku": "SNZ-BUBURUZA",
+  "slug": "papuci-de-casa-snoozies-buburuza",
+  "name": "Papuci de casă Snoozies Buburuză",
   "category": "femei",
   "categoryName": "Femei",
-  "sub": "Cu mesaj",
-  "price": 54.86,
+  "sub": "Iubitori de animăluțe",
+  "price": 51.99,
   "oldPrice": null,
   "inStock": true,
   "stock": null,
@@ -956,38 +973,45 @@
   "description": "",
   "images": [],
   "weight": 0.3,
-  "featured": true,
-  "featuredOrder": 6,
-  "oldUrl": "papuci-de-casa-snoozies-am-pm.html",
+  "featured": false,
+  "featuredOrder": 0,
+  "oldUrl": "papuci-de-casa-snoozies-buburuza.html",
+  "colors": [],
   "sizes": [
    {
     "size": "S",
-    "range": "",
+    "range": "36–37",
+    "color": "",
+    "sku": "Snz-BuburuzaS",
     "stock": null,
     "inStock": true
    },
    {
     "size": "M",
-    "range": "",
+    "range": "37.5–38.5",
+    "color": "",
+    "sku": "Snz-BuburuzaM",
     "stock": null,
     "inStock": true
    },
    {
     "size": "L",
-    "range": "",
+    "range": "38–40",
+    "color": "",
+    "sku": "Snz-BuburuzaL",
     "stock": null,
     "inStock": true
    }
   ]
  },
  {
-  "sku": "SNZ-126",
+  "sku": "SNZ-ELEFANT",
   "slug": "papuci-de-casa-snoozies-elefant",
   "name": "Papuci de casă Snoozies Elefant",
   "category": "femei",
   "categoryName": "Femei",
-  "sub": "Pufoși",
-  "price": 54.86,
+  "sub": "Iubitori de animăluțe",
+  "price": 51.99,
   "oldPrice": null,
   "inStock": true,
   "stock": null,
@@ -998,35 +1022,42 @@
   "featured": false,
   "featuredOrder": 0,
   "oldUrl": "papuci-de-casa-snoozies-elefant.html",
+  "colors": [],
   "sizes": [
    {
     "size": "S",
-    "range": "",
+    "range": "36–37",
+    "color": "",
+    "sku": "Snz-06ElfS",
     "stock": null,
     "inStock": true
    },
    {
     "size": "M",
-    "range": "",
+    "range": "37–38",
+    "color": "",
+    "sku": "Snz-06ElfM",
     "stock": null,
     "inStock": true
    },
    {
     "size": "L",
-    "range": "",
+    "range": "38.5–40",
+    "color": "",
+    "sku": "Snz-06ElfL",
     "stock": null,
     "inStock": true
    }
   ]
  },
  {
-  "sku": "SNZ-127",
+  "sku": "SNZ-BUFNITA",
   "slug": "papuci-de-casa-snoozies-bufnita",
   "name": "Papuci de casă Snoozies Bufniță",
   "category": "femei",
   "categoryName": "Femei",
-  "sub": "Pufoși",
-  "price": 54.86,
+  "sub": "Iubitori de animăluțe",
+  "price": 51.99,
   "oldPrice": null,
   "inStock": true,
   "stock": null,
@@ -1037,35 +1068,34 @@
   "featured": false,
   "featuredOrder": 0,
   "oldUrl": "papuci-de-casa-snoozies-bufnita.html",
+  "colors": [],
   "sizes": [
    {
     "size": "S",
-    "range": "",
+    "range": "36–37",
+    "color": "",
+    "sku": "Snz-03BufS",
     "stock": null,
     "inStock": true
    },
    {
     "size": "M",
-    "range": "",
-    "stock": null,
-    "inStock": true
-   },
-   {
-    "size": "L",
-    "range": "",
+    "range": "37–38",
+    "color": "",
+    "sku": "Snz-03BufM",
     "stock": null,
     "inStock": true
    }
   ]
  },
  {
-  "sku": "SNZ-128",
+  "sku": "SNZ-ALBINUTA",
   "slug": "papuci-de-casa-snoozies-albinuta",
   "name": "Papuci de casă Snoozies Albinuță",
   "category": "femei",
   "categoryName": "Femei",
-  "sub": "Pufoși",
-  "price": 54.86,
+  "sub": "Iubitori de animăluțe",
+  "price": 51.99,
   "oldPrice": null,
   "inStock": true,
   "stock": null,
@@ -1076,34 +1106,253 @@
   "featured": false,
   "featuredOrder": 0,
   "oldUrl": "papuci-de-casa-snoozies-albinuta.html",
+  "colors": [],
   "sizes": [
    {
     "size": "S",
-    "range": "",
+    "range": "36–37",
+    "color": "",
+    "sku": "Snz-05AlbS",
     "stock": null,
     "inStock": true
    },
    {
     "size": "M",
-    "range": "",
-    "stock": null,
-    "inStock": true
-   },
-   {
-    "size": "L",
-    "range": "",
+    "range": "37.5–38.5",
+    "color": "",
+    "sku": "Snz-05AlbM",
     "stock": null,
     "inStock": true
    }
   ]
  },
  {
-  "sku": "SNZ-129",
-  "slug": "papuci-de-casa-snoozies-chicken-and-pig",
-  "name": "Papuci de casă Snoozies Chicken and Pig",
+  "sku": "SNZ-SASSY",
+  "slug": "papuci-de-casa-snoozies-sassy-slide",
+  "name": "Papuci de casă Snoozies Sassy Slide",
   "category": "femei",
   "categoryName": "Femei",
-  "sub": "Cu mesaj",
+  "sub": "Pufoși ca un nor",
+  "price": 66.84,
+  "oldPrice": null,
+  "inStock": true,
+  "stock": null,
+  "short": "",
+  "description": "",
+  "images": [],
+  "weight": 0.3,
+  "featured": true,
+  "featuredOrder": 2,
+  "oldUrl": "papuci-de-casa-snoozies-sassy-slide.html",
+  "colors": [
+   {
+    "name": "Maro",
+    "hex": "#8A5A3C",
+    "image": ""
+   },
+   {
+    "name": "Negru",
+    "hex": "#1F1B1A",
+    "image": ""
+   },
+   {
+    "name": "Portocaliu",
+    "hex": "#F2A65A",
+    "image": ""
+   },
+   {
+    "name": "Roz",
+    "hex": "#F28DB2",
+    "image": ""
+   }
+  ],
+  "sizes": [
+   {
+    "size": "S",
+    "range": "36–37",
+    "color": "Maro",
+    "sku": "Snz-SassyMaroS",
+    "stock": null,
+    "inStock": true
+   },
+   {
+    "size": "M",
+    "range": "37–38",
+    "color": "Maro",
+    "sku": "Snz-SassyMaroM",
+    "stock": null,
+    "inStock": true
+   },
+   {
+    "size": "L",
+    "range": "38–40",
+    "color": "Maro",
+    "sku": "Snz-SassyMaroL",
+    "stock": null,
+    "inStock": true
+   },
+   {
+    "size": "S",
+    "range": "36–37",
+    "color": "Negru",
+    "sku": "Snz-SassyNegruS",
+    "stock": null,
+    "inStock": true
+   },
+   {
+    "size": "M",
+    "range": "37–38",
+    "color": "Negru",
+    "sku": "Snz-SassyNegruM",
+    "stock": null,
+    "inStock": true
+   },
+   {
+    "size": "L",
+    "range": "38–40",
+    "color": "Negru",
+    "sku": "Snz-SassyNegruL",
+    "stock": null,
+    "inStock": true
+   },
+   {
+    "size": "S",
+    "range": "36–37",
+    "color": "Portocaliu",
+    "sku": "Snz-SassyOrangeS",
+    "stock": null,
+    "inStock": true
+   },
+   {
+    "size": "M",
+    "range": "37–38",
+    "color": "Portocaliu",
+    "sku": "Snz-SassyOrangeM",
+    "stock": null,
+    "inStock": true
+   },
+   {
+    "size": "L",
+    "range": "38–40",
+    "color": "Portocaliu",
+    "sku": "Snz-SassyOrangeL",
+    "stock": null,
+    "inStock": true
+   },
+   {
+    "size": "S",
+    "range": "36–37",
+    "color": "Roz",
+    "sku": "Snz-SassyRozS",
+    "stock": null,
+    "inStock": true
+   },
+   {
+    "size": "M",
+    "range": "37–38",
+    "color": "Roz",
+    "sku": "Snz-SassyRozM",
+    "stock": null,
+    "inStock": true
+   },
+   {
+    "size": "L",
+    "range": "38–40",
+    "color": "Roz",
+    "sku": "Snz-SassyRozL",
+    "stock": null,
+    "inStock": true
+   }
+  ]
+ },
+ {
+  "sku": "SNZ-BLING",
+  "slug": "papuci-de-casa-snoozies-bling",
+  "name": "Papuci de casă Snoozies Bling",
+  "category": "femei",
+  "categoryName": "Femei",
+  "sub": "Pufoși ca un nor",
+  "price": 51.99,
+  "oldPrice": null,
+  "inStock": true,
+  "stock": null,
+  "short": "",
+  "description": "",
+  "images": [],
+  "weight": 0.3,
+  "featured": true,
+  "featuredOrder": 4,
+  "oldUrl": "papuci-de-casa-snoozies-bling.html",
+  "colors": [
+   {
+    "name": "Auriu",
+    "hex": "#C9A646",
+    "image": ""
+   },
+   {
+    "name": "Roșu",
+    "hex": "#C8102E",
+    "image": ""
+   }
+  ],
+  "sizes": [
+   {
+    "size": "S",
+    "range": "36–37",
+    "color": "Auriu",
+    "sku": "GoldBlingS",
+    "stock": null,
+    "inStock": true
+   },
+   {
+    "size": "M",
+    "range": "37–38",
+    "color": "Auriu",
+    "sku": "GoldBlingM",
+    "stock": null,
+    "inStock": true
+   },
+   {
+    "size": "L",
+    "range": "38–40",
+    "color": "Auriu",
+    "sku": "GoldBlingL",
+    "stock": null,
+    "inStock": true
+   },
+   {
+    "size": "S",
+    "range": "36–37",
+    "color": "Roșu",
+    "sku": "RedBlingS",
+    "stock": null,
+    "inStock": true
+   },
+   {
+    "size": "M",
+    "range": "37–38",
+    "color": "Roșu",
+    "sku": "RedBlingM",
+    "stock": null,
+    "inStock": true
+   },
+   {
+    "size": "L",
+    "range": "38–40",
+    "color": "Roșu",
+    "sku": "RedBlingL",
+    "stock": null,
+    "inStock": true
+   }
+  ]
+ },
+ {
+  "sku": "SNZ-CROSETATI",
+  "slug": "papuci-de-casa-snoozies-crosetati",
+  "name": "Papuci de casă Snoozies Croșetați",
+  "category": "femei",
+  "categoryName": "Femei",
+  "sub": "Pufoși ca un nor",
   "price": 54.86,
   "oldPrice": null,
   "inStock": true,
@@ -1114,174 +1363,236 @@
   "weight": 0.3,
   "featured": false,
   "featuredOrder": 0,
-  "oldUrl": "papuci-de-casa-snoozies-chicken-and-pig.html",
+  "oldUrl": "papuci-de-casa-snoozies-crosetati.html",
+  "colors": [
+   {
+    "name": "Albastru",
+    "hex": "#4C6FA5",
+    "image": ""
+   },
+   {
+    "name": "Mov",
+    "hex": "#A68BD1",
+    "image": ""
+   },
+   {
+    "name": "Roz",
+    "hex": "#F28DB2",
+    "image": ""
+   }
+  ],
   "sizes": [
    {
-    "size": "S",
-    "range": "",
+    "size": "M",
+    "range": "37–38",
+    "color": "Albastru",
+    "sku": "Snz-CrosetatiAlbastruM",
     "stock": null,
     "inStock": true
    },
    {
     "size": "M",
-    "range": "",
+    "range": "37–38",
+    "color": "Mov",
+    "sku": "Snz-CrosetatiMovM",
+    "stock": null,
+    "inStock": true
+   },
+   {
+    "size": "M",
+    "range": "37–38",
+    "color": "Roz",
+    "sku": "Snz-CrosetatiRozM",
+    "stock": null,
+    "inStock": true
+   }
+  ]
+ },
+ {
+  "sku": "SNZ-BULINE",
+  "slug": "papuci-de-casa-snoozies-buline",
+  "name": "Papuci de casă Snoozies Buline",
+  "category": "femei",
+  "categoryName": "Femei",
+  "sub": "Pufoși ca un nor",
+  "price": 51.99,
+  "oldPrice": null,
+  "inStock": true,
+  "stock": null,
+  "short": "",
+  "description": "",
+  "images": [],
+  "weight": 0.3,
+  "featured": true,
+  "featuredOrder": 7,
+  "oldUrl": "papuci-de-casa-snoozies-buline.html",
+  "colors": [
+   {
+    "name": "Albastru",
+    "hex": "#4C6FA5",
+    "image": ""
+   },
+   {
+    "name": "Gri",
+    "hex": "#9A9A9A",
+    "image": ""
+   },
+   {
+    "name": "Mov",
+    "hex": "#A68BD1",
+    "image": ""
+   },
+   {
+    "name": "Roz",
+    "hex": "#F28DB2",
+    "image": ""
+   }
+  ],
+  "sizes": [
+   {
+    "size": "S",
+    "range": "36–37",
+    "color": "Albastru",
+    "sku": "Snz-08LotsaBlueS",
+    "stock": null,
+    "inStock": true
+   },
+   {
+    "size": "M",
+    "range": "37–38",
+    "color": "Albastru",
+    "sku": "Snz-08LotsaBlueM",
     "stock": null,
     "inStock": true
    },
    {
     "size": "L",
-    "range": "",
-    "stock": null,
-    "inStock": true
-   }
-  ]
- },
- {
-  "sku": "SNZ-130",
-  "slug": "papuci-de-casa-barbati-snoozies-christmas-tree",
-  "name": "Papuci de casă bărbați Snoozies Christmas Tree",
-  "category": "barbati",
-  "categoryName": "Bărbați",
-  "sub": "Crăciun",
-  "price": 58.99,
-  "oldPrice": null,
-  "inStock": true,
-  "stock": null,
-  "short": "",
-  "description": "",
-  "images": [],
-  "weight": 0.3,
-  "featured": false,
-  "featuredOrder": 0,
-  "oldUrl": "papuci-de-casa-barbati-snoozies-christmas-tree.html",
-  "sizes": [
-   {
-    "size": "S",
-    "range": "",
+    "range": "38–40",
+    "color": "Albastru",
+    "sku": "Snz-08LotsaBlueL",
     "stock": null,
     "inStock": true
    },
    {
-    "size": "M",
-    "range": "",
-    "stock": null,
-    "inStock": true
-   }
-  ]
- },
- {
-  "sku": "SNZ-131",
-  "slug": "papuci-de-casa-barbati-snoozies-christmas-gnomes",
-  "name": "Papuci de casă bărbați Snoozies Christmas Gnomes",
-  "category": "barbati",
-  "categoryName": "Bărbați",
-  "sub": "Crăciun",
-  "price": 58.99,
-  "oldPrice": null,
-  "inStock": true,
-  "stock": null,
-  "short": "",
-  "description": "",
-  "images": [],
-  "weight": 0.3,
-  "featured": false,
-  "featuredOrder": 0,
-  "oldUrl": "papuci-de-casa-barbati-snoozies-christmas-gnomes.html",
-  "sizes": [
-   {
     "size": "S",
-    "range": "",
-    "stock": null,
-    "inStock": true
-   },
-   {
-    "size": "M",
-    "range": "",
-    "stock": null,
-    "inStock": true
-   }
-  ]
- },
- {
-  "sku": "SNZ-132",
-  "slug": "papuci-de-casa-barbati-snoozies-snowflake",
-  "name": "Papuci de casă bărbați Snoozies Snowflake",
-  "category": "barbati",
-  "categoryName": "Bărbați",
-  "sub": "Crăciun",
-  "price": 58.99,
-  "oldPrice": null,
-  "inStock": true,
-  "stock": null,
-  "short": "",
-  "description": "",
-  "images": [],
-  "weight": 0.3,
-  "featured": false,
-  "featuredOrder": 0,
-  "oldUrl": "papuci-de-casa-barbati-snoozies-snowflake.html",
-  "sizes": [
-   {
-    "size": "S",
-    "range": "",
-    "stock": null,
-    "inStock": true
-   },
-   {
-    "size": "M",
-    "range": "",
-    "stock": null,
-    "inStock": true
-   }
-  ]
- },
- {
-  "sku": "SNZ-133",
-  "slug": "papuci-de-casa-barbati-snoozies-ho-ho-ho",
-  "name": "Papuci de casă bărbați Snoozies Ho Ho Ho",
-  "category": "barbati",
-  "categoryName": "Bărbați",
-  "sub": "Crăciun",
-  "price": 58.99,
-  "oldPrice": null,
-  "inStock": true,
-  "stock": null,
-  "short": "",
-  "description": "",
-  "images": [],
-  "weight": 0.3,
-  "featured": false,
-  "featuredOrder": 0,
-  "oldUrl": "papuci-de-casa-barbati-snoozies-ho-ho-ho.html",
-  "sizes": [
-   {
-    "size": "S",
-    "range": "",
-    "stock": null,
-    "inStock": true
-   },
-   {
-    "size": "M",
-    "range": "",
+    "range": "36–37",
+    "color": "Gri",
+    "sku": "Snz-08LotsaGriS",
     "stock": null,
     "inStock": true
    },
    {
     "size": "L",
-    "range": "",
+    "range": "38–40",
+    "color": "Gri",
+    "sku": "Snz-08LotsaGriL",
+    "stock": null,
+    "inStock": true
+   },
+   {
+    "size": "S",
+    "range": "36–37",
+    "color": "Mov",
+    "sku": "Snz-08LotsaMovS",
+    "stock": null,
+    "inStock": true
+   },
+   {
+    "size": "M",
+    "range": "37–38",
+    "color": "Mov",
+    "sku": "Snz-08LotsaMovM",
+    "stock": null,
+    "inStock": true
+   },
+   {
+    "size": "S",
+    "range": "36–37",
+    "color": "Roz",
+    "sku": "Snz-08LotsaPinkS",
+    "stock": null,
+    "inStock": true
+   },
+   {
+    "size": "M",
+    "range": "37–38",
+    "color": "Roz",
+    "sku": "Snz-08LotsaPinkM",
+    "stock": null,
+    "inStock": true
+   },
+   {
+    "size": "L",
+    "range": "38–40",
+    "color": "Roz",
+    "sku": "Snz-08LotsaPinkL",
     "stock": null,
     "inStock": true
    }
   ]
  },
  {
-  "sku": "SNZ-134",
-  "slug": "papuci-de-casa-snoozies-mens-fisherman",
-  "name": "Papuci de casă bărbați Snoozies Fisherman",
+  "sku": "SNZ-B-LUMINITE",
+  "slug": "papuci-de-casa-barbati-snoozies-luminite",
+  "name": "Papuci de casă bărbați Snoozies Luminițe",
   "category": "barbati",
   "categoryName": "Bărbați",
-  "sub": "Cu mesaj",
-  "price": 58.99,
+  "sub": "Magia Crăciunului",
+  "price": 51.99,
+  "oldPrice": null,
+  "inStock": true,
+  "stock": null,
+  "short": "",
+  "description": "",
+  "images": [],
+  "weight": 0.3,
+  "featured": true,
+  "featuredOrder": 5,
+  "oldUrl": "papuci-de-casa-barbati-snoozies-luminite.html",
+  "colors": [],
+  "sizes": [
+   {
+    "size": "S",
+    "range": "38–40",
+    "color": "",
+    "sku": "Snz-LuminiteBarbS",
+    "stock": null,
+    "inStock": true
+   },
+   {
+    "size": "M",
+    "range": "40–41",
+    "color": "",
+    "sku": "Snz-LuminiteBarbM",
+    "stock": null,
+    "inStock": true
+   },
+   {
+    "size": "L",
+    "range": "41–43",
+    "color": "",
+    "sku": "Snz-LuminiteBarbL",
+    "stock": null,
+    "inStock": true
+   },
+   {
+    "size": "XL",
+    "range": "43–45",
+    "color": "",
+    "sku": "Snz-LuminiteBarbXL",
+    "stock": null,
+    "inStock": true
+   }
+  ]
+ },
+ {
+  "sku": "SNZ-B-CRACIUN",
+  "slug": "papuci-de-casa-barbati-snoozies-craciun-fericit",
+  "name": "Papuci de casă bărbați Snoozies Crăciun Fericit",
+  "category": "barbati",
+  "categoryName": "Bărbați",
+  "sub": "Magia Crăciunului",
+  "price": 51.99,
   "oldPrice": null,
   "inStock": true,
   "stock": null,
@@ -1291,36 +1602,119 @@
   "weight": 0.3,
   "featured": false,
   "featuredOrder": 0,
-  "oldUrl": "papuci-de-casa-snoozies-mens-fisherman.html",
+  "oldUrl": "papuci-de-casa-barbati-snoozies-craciun-fericit.html",
+  "colors": [],
   "sizes": [
    {
     "size": "S",
-    "range": "",
-    "stock": null,
-    "inStock": true
-   },
-   {
-    "size": "M",
-    "range": "",
+    "range": "38–40",
+    "color": "",
+    "sku": "Snz-CraciunFericitBarbS",
     "stock": null,
     "inStock": true
    },
    {
     "size": "L",
-    "range": "",
+    "range": "41–43",
+    "color": "",
+    "sku": "Snz-CraciunFericitBarbL",
     "stock": null,
     "inStock": true
    }
   ]
  },
  {
-  "sku": "SNZ-135",
+  "sku": "SNZ-B-URS",
+  "slug": "papuci-de-casa-barbati-snoozies-urs-polar",
+  "name": "Papuci de casă bărbați Snoozies Urs Polar",
+  "category": "barbati",
+  "categoryName": "Bărbați",
+  "sub": "Magia Crăciunului",
+  "price": 51.99,
+  "oldPrice": null,
+  "inStock": true,
+  "stock": null,
+  "short": "",
+  "description": "",
+  "images": [],
+  "weight": 0.3,
+  "featured": false,
+  "featuredOrder": 0,
+  "oldUrl": "papuci-de-casa-barbati-snoozies-urs-polar.html",
+  "colors": [],
+  "sizes": [
+   {
+    "size": "S",
+    "range": "38–40",
+    "color": "",
+    "sku": "Snz-UrsPolarS",
+    "stock": null,
+    "inStock": true
+   },
+   {
+    "size": "M",
+    "range": "40–41",
+    "color": "",
+    "sku": "Snz-UrsPolarM",
+    "stock": null,
+    "inStock": true
+   },
+   {
+    "size": "L",
+    "range": "41–43",
+    "color": "",
+    "sku": "Snz-UrsPolarL",
+    "stock": null,
+    "inStock": true
+   },
+   {
+    "size": "XL",
+    "range": "43–45",
+    "color": "",
+    "sku": "Snz-UrsPolarXL",
+    "stock": null,
+    "inStock": true
+   }
+  ]
+ },
+ {
+  "sku": "SNZ-B-SNOWMIES",
+  "slug": "papuci-de-casa-barbati-snoozies-snowmies",
+  "name": "Papuci de casă bărbați Snoozies Chilling with my Snowmies",
+  "category": "barbati",
+  "categoryName": "Bărbați",
+  "sub": "Magia Crăciunului",
+  "price": 51.99,
+  "oldPrice": null,
+  "inStock": true,
+  "stock": null,
+  "short": "",
+  "description": "",
+  "images": [],
+  "weight": 0.3,
+  "featured": false,
+  "featuredOrder": 0,
+  "oldUrl": "papuci-de-casa-barbati-snoozies-snowmies.html",
+  "colors": [],
+  "sizes": [
+   {
+    "size": "L",
+    "range": "38–40",
+    "color": "",
+    "sku": "Snz-07SnowLbarb",
+    "stock": null,
+    "inStock": true
+   }
+  ]
+ },
+ {
+  "sku": "SNZ-B-SUPERDAD",
   "slug": "papuci-de-casa-snoozies-super-dad",
   "name": "Papuci de casă bărbați Snoozies Super Dad",
   "category": "barbati",
   "categoryName": "Bărbați",
-  "sub": "Cu mesaj",
-  "price": 58.99,
+  "sub": "Mici plăceri",
+  "price": 51.99,
   "oldPrice": null,
   "inStock": true,
   "stock": null,
@@ -1331,35 +1725,42 @@
   "featured": false,
   "featuredOrder": 0,
   "oldUrl": "papuci-de-casa-snoozies-super-dad.html",
+  "colors": [],
   "sizes": [
    {
     "size": "S",
-    "range": "",
+    "range": "38–39",
+    "color": "",
+    "sku": "Snz-SuperdadS",
     "stock": null,
     "inStock": true
    },
    {
     "size": "M",
-    "range": "",
+    "range": "40–41",
+    "color": "",
+    "sku": "Snz-SuperdadM",
     "stock": null,
     "inStock": true
    },
    {
     "size": "L",
-    "range": "",
+    "range": "41–43",
+    "color": "",
+    "sku": "Snz-SuperdadL",
     "stock": null,
     "inStock": true
    }
   ]
  },
  {
-  "sku": "SNZ-136",
-  "slug": "papuci-de-casa-snoozies-copii-model-albina",
-  "name": "Papuci de casă copii Snoozies Albinuță",
-  "category": "copii",
-  "categoryName": "Copii",
-  "sub": null,
-  "price": 43.0,
+  "sku": "SNZ-B-FISH",
+  "slug": "papuci-de-casa-snoozies-mens-fisherman",
+  "name": "Papuci de casă bărbați Snoozies Fisherman",
+  "category": "barbati",
+  "categoryName": "Bărbați",
+  "sub": "Mici plăceri",
+  "price": 51.99,
   "oldPrice": null,
   "inStock": true,
   "stock": null,
@@ -1369,36 +1770,43 @@
   "weight": 0.3,
   "featured": false,
   "featuredOrder": 0,
-  "oldUrl": "papuci-de-casa-snoozies-copii-model-albina.html",
+  "oldUrl": "papuci-de-casa-snoozies-mens-fisherman.html",
+  "colors": [],
   "sizes": [
    {
     "size": "S",
-    "range": "",
+    "range": "38–39",
+    "color": "",
+    "sku": "Snz-04FishS",
     "stock": null,
     "inStock": true
    },
    {
     "size": "M",
-    "range": "",
+    "range": "40–41",
+    "color": "",
+    "sku": "Snz-04FishM",
     "stock": null,
     "inStock": true
    },
    {
     "size": "L",
-    "range": "",
+    "range": "41.5–43",
+    "color": "",
+    "sku": "Snz-04FishL",
     "stock": null,
     "inStock": true
    }
   ]
  },
  {
-  "sku": "SNZ-137",
-  "slug": "papuci-de-casa-snoozies-copii-model-unicorn",
-  "name": "Papuci de casă copii Snoozies Unicorn",
-  "category": "copii",
-  "categoryName": "Copii",
-  "sub": null,
-  "price": 43.0,
+  "sku": "SNZ-B-PIG",
+  "slug": "papuci-de-casa-snoozies-chicken-and-pig",
+  "name": "Papuci de casă bărbați Snoozies Chicken & Pig",
+  "category": "barbati",
+  "categoryName": "Bărbați",
+  "sub": "Iubitori de animăluțe",
+  "price": 51.99,
   "oldPrice": null,
   "inStock": true,
   "stock": null,
@@ -1408,36 +1816,43 @@
   "weight": 0.3,
   "featured": false,
   "featuredOrder": 0,
-  "oldUrl": "papuci-de-casa-snoozies-copii-model-unicorn.html",
+  "oldUrl": "papuci-de-casa-snoozies-chicken-and-pig.html",
+  "colors": [],
   "sizes": [
    {
     "size": "S",
-    "range": "",
+    "range": "38–39",
+    "color": "",
+    "sku": "Snz-02pigS",
     "stock": null,
     "inStock": true
    },
    {
     "size": "M",
-    "range": "",
+    "range": "40–41",
+    "color": "",
+    "sku": "Snz-02pigM",
     "stock": null,
     "inStock": true
    },
    {
     "size": "L",
-    "range": "",
+    "range": "41.5–43",
+    "color": "",
+    "sku": "Snz-02pigL",
     "stock": null,
     "inStock": true
    }
   ]
  },
  {
-  "sku": "SNZ-138",
-  "slug": "papuci-de-casa-snoozies-copii-model-dinozaur",
-  "name": "Papuci de casă copii Snoozies Dinozaur",
-  "category": "copii",
-  "categoryName": "Copii",
-  "sub": null,
-  "price": 43.0,
+  "sku": "SNZ-B-ELEFANT",
+  "slug": "papuci-de-casa-barbati-snoozies-elefant",
+  "name": "Papuci de casă bărbați Snoozies Elefant",
+  "category": "barbati",
+  "categoryName": "Bărbați",
+  "sub": "Iubitori de animăluțe",
+  "price": 51.99,
   "oldPrice": null,
   "inStock": true,
   "stock": null,
@@ -1447,308 +1862,26 @@
   "weight": 0.3,
   "featured": false,
   "featuredOrder": 0,
-  "oldUrl": "papuci-de-casa-snoozies-copii-model-dinozaur.html",
+  "oldUrl": "papuci-de-casa-barbati-snoozies-elefant.html",
+  "colors": [],
   "sizes": [
    {
-    "size": "S",
-    "range": "",
-    "stock": null,
-    "inStock": true
-   },
-   {
-    "size": "M",
-    "range": "",
-    "stock": null,
-    "inStock": true
-   },
-   {
     "size": "L",
-    "range": "",
+    "range": "38–40",
+    "color": "",
+    "sku": "Snz-06ElfLmen",
     "stock": null,
     "inStock": true
    }
   ]
  },
  {
-  "sku": "SNZ-139",
-  "slug": "papuci-de-casa-snoozies-copii-model-dream-big",
-  "name": "Papuci de casă copii Snoozies Dream Big",
-  "category": "copii",
-  "categoryName": "Copii",
-  "sub": null,
-  "price": 43.0,
-  "oldPrice": null,
-  "inStock": true,
-  "stock": null,
-  "short": "",
-  "description": "",
-  "images": [],
-  "weight": 0.3,
-  "featured": false,
-  "featuredOrder": 0,
-  "oldUrl": "papuci-de-casa-snoozies-copii-model-dream-big.html",
-  "sizes": [
-   {
-    "size": "S",
-    "range": "",
-    "stock": null,
-    "inStock": true
-   },
-   {
-    "size": "M",
-    "range": "",
-    "stock": null,
-    "inStock": true
-   },
-   {
-    "size": "L",
-    "range": "",
-    "stock": null,
-    "inStock": true
-   }
-  ]
- },
- {
-  "sku": "SNZ-140",
-  "slug": "papuci-de-casa-snoozies-copii-model-cupcake",
-  "name": "Papuci de casă copii Snoozies Cupcake",
-  "category": "copii",
-  "categoryName": "Copii",
-  "sub": null,
-  "price": 43.0,
-  "oldPrice": null,
-  "inStock": true,
-  "stock": null,
-  "short": "",
-  "description": "",
-  "images": [],
-  "weight": 0.3,
-  "featured": false,
-  "featuredOrder": 0,
-  "oldUrl": "papuci-de-casa-snoozies-copii-model-cupcake.html",
-  "sizes": [
-   {
-    "size": "S",
-    "range": "",
-    "stock": null,
-    "inStock": true
-   },
-   {
-    "size": "M",
-    "range": "",
-    "stock": null,
-    "inStock": true
-   },
-   {
-    "size": "L",
-    "range": "",
-    "stock": null,
-    "inStock": true
-   }
-  ]
- },
- {
-  "sku": "SNZ-141",
-  "slug": "papuci-de-casa-snoozies-copii-model-build-your-dreams",
-  "name": "Papuci de casă copii Snoozies Build Your Dreams",
-  "category": "copii",
-  "categoryName": "Copii",
-  "sub": null,
-  "price": 43.0,
-  "oldPrice": null,
-  "inStock": true,
-  "stock": null,
-  "short": "",
-  "description": "",
-  "images": [],
-  "weight": 0.3,
-  "featured": false,
-  "featuredOrder": 0,
-  "oldUrl": "papuci-de-casa-snoozies-copii-model-build-your-dreams.html",
-  "sizes": [
-   {
-    "size": "S",
-    "range": "",
-    "stock": null,
-    "inStock": true
-   },
-   {
-    "size": "M",
-    "range": "",
-    "stock": null,
-    "inStock": true
-   },
-   {
-    "size": "L",
-    "range": "",
-    "stock": null,
-    "inStock": true
-   }
-  ]
- },
- {
-  "sku": "SNZ-142",
-  "slug": "papuci-de-casa-snoozies-bebelus-model-caine",
-  "name": "Papuci de casă bebeluși Snoozies Cățel",
-  "category": "bebelusi",
-  "categoryName": "Bebeluși",
-  "sub": null,
-  "price": 43.0,
-  "oldPrice": null,
-  "inStock": true,
-  "stock": null,
-  "short": "",
-  "description": "",
-  "images": [],
-  "weight": 0.3,
-  "featured": false,
-  "featuredOrder": 0,
-  "oldUrl": "papuci-de-casa-snoozies-bebelus-model-caine.html",
-  "sizes": [
-   {
-    "size": "S",
-    "range": "",
-    "stock": null,
-    "inStock": true
-   },
-   {
-    "size": "M",
-    "range": "",
-    "stock": null,
-    "inStock": true
-   },
-   {
-    "size": "L",
-    "range": "",
-    "stock": null,
-    "inStock": true
-   }
-  ]
- },
- {
-  "sku": "SNZ-143",
-  "slug": "papuci-de-casa-snoozies-bebelus-model-maimuta",
-  "name": "Papuci de casă bebeluși Snoozies Maimuță",
-  "category": "bebelusi",
-  "categoryName": "Bebeluși",
-  "sub": null,
-  "price": 43.0,
-  "oldPrice": null,
-  "inStock": true,
-  "stock": null,
-  "short": "",
-  "description": "",
-  "images": [],
-  "weight": 0.3,
-  "featured": false,
-  "featuredOrder": 0,
-  "oldUrl": "papuci-de-casa-snoozies-bebelus-model-maimuta.html",
-  "sizes": [
-   {
-    "size": "S",
-    "range": "",
-    "stock": null,
-    "inStock": true
-   },
-   {
-    "size": "M",
-    "range": "",
-    "stock": null,
-    "inStock": true
-   },
-   {
-    "size": "L",
-    "range": "",
-    "stock": null,
-    "inStock": true
-   }
-  ]
- },
- {
-  "sku": "SNZ-144",
-  "slug": "papuci-de-casa-snoozies-bebelus-model-oita",
-  "name": "Papuci de casă bebeluși Snoozies Oiță",
-  "category": "bebelusi",
-  "categoryName": "Bebeluși",
-  "sub": null,
-  "price": 43.0,
-  "oldPrice": null,
-  "inStock": true,
-  "stock": null,
-  "short": "",
-  "description": "",
-  "images": [],
-  "weight": 0.3,
-  "featured": false,
-  "featuredOrder": 0,
-  "oldUrl": "papuci-de-casa-snoozies-bebelus-model-oita.html",
-  "sizes": [
-   {
-    "size": "S",
-    "range": "",
-    "stock": null,
-    "inStock": true
-   },
-   {
-    "size": "M",
-    "range": "",
-    "stock": null,
-    "inStock": true
-   },
-   {
-    "size": "L",
-    "range": "",
-    "stock": null,
-    "inStock": true
-   }
-  ]
- },
- {
-  "sku": "SNZ-145",
-  "slug": "papuci-de-casa-snoozies-bebelus-model-pudel",
-  "name": "Papuci de casă bebeluși Snoozies Pudel",
-  "category": "bebelusi",
-  "categoryName": "Bebeluși",
-  "sub": null,
-  "price": 43.0,
-  "oldPrice": null,
-  "inStock": true,
-  "stock": null,
-  "short": "",
-  "description": "",
-  "images": [],
-  "weight": 0.3,
-  "featured": false,
-  "featuredOrder": 0,
-  "oldUrl": "papuci-de-casa-snoozies-bebelus-model-pudel.html",
-  "sizes": [
-   {
-    "size": "S",
-    "range": "",
-    "stock": null,
-    "inStock": true
-   },
-   {
-    "size": "M",
-    "range": "",
-    "stock": null,
-    "inStock": true
-   },
-   {
-    "size": "L",
-    "range": "",
-    "stock": null,
-    "inStock": true
-   }
-  ]
- },
- {
-  "sku": "SNZ-146",
+  "sku": "SNZ-BB-PANDA",
   "slug": "papuci-de-casa-snoozies-bebelus-model-panda",
-  "name": "Papuci de casă bebeluși Snoozies Panda",
-  "category": "bebelusi",
-  "categoryName": "Bebeluși",
-  "sub": null,
+  "name": "Botoșei bebeluși Snoozies Panda",
+  "category": "copii-si-bebelusi",
+  "categoryName": "Copii și bebeluși",
+  "sub": "Iubitori de animăluțe",
   "price": 43.0,
   "oldPrice": null,
   "inStock": true,
@@ -1760,34 +1893,179 @@
   "featured": false,
   "featuredOrder": 0,
   "oldUrl": "papuci-de-casa-snoozies-bebelus-model-panda.html",
+  "colors": [],
   "sizes": [
    {
     "size": "S",
-    "range": "",
+    "range": "0–3 luni",
+    "color": "",
+    "sku": "Snz-BebepandaS",
     "stock": null,
     "inStock": true
    },
    {
     "size": "M",
-    "range": "",
+    "range": "3–6 luni",
+    "color": "",
+    "sku": "Snz-BebepandaM",
     "stock": null,
     "inStock": true
    },
    {
     "size": "L",
-    "range": "",
+    "range": "6–12 luni",
+    "color": "",
+    "sku": "Snz-BebepandaL",
     "stock": null,
     "inStock": true
    }
   ]
  },
  {
-  "sku": "SNZ-147",
+  "sku": "SNZ-BB-CAINE",
+  "slug": "papuci-de-casa-snoozies-bebelus-model-caine",
+  "name": "Botoșei bebeluși Snoozies Cățel",
+  "category": "copii-si-bebelusi",
+  "categoryName": "Copii și bebeluși",
+  "sub": "Iubitori de animăluțe",
+  "price": 43.0,
+  "oldPrice": null,
+  "inStock": true,
+  "stock": null,
+  "short": "",
+  "description": "",
+  "images": [],
+  "weight": 0.3,
+  "featured": false,
+  "featuredOrder": 0,
+  "oldUrl": "papuci-de-casa-snoozies-bebelus-model-caine.html",
+  "colors": [],
+  "sizes": [
+   {
+    "size": "S",
+    "range": "0–3 luni",
+    "color": "",
+    "sku": "Snz-BebeCaineS",
+    "stock": null,
+    "inStock": true
+   },
+   {
+    "size": "M",
+    "range": "3–6 luni",
+    "color": "",
+    "sku": "Snz-BebeCaineM",
+    "stock": null,
+    "inStock": true
+   },
+   {
+    "size": "L",
+    "range": "6–12 luni",
+    "color": "",
+    "sku": "Snz-BebeCaineL",
+    "stock": null,
+    "inStock": true
+   }
+  ]
+ },
+ {
+  "sku": "SNZ-BB-OITA",
+  "slug": "papuci-de-casa-snoozies-bebelus-model-oita",
+  "name": "Botoșei bebeluși Snoozies Oiță",
+  "category": "copii-si-bebelusi",
+  "categoryName": "Copii și bebeluși",
+  "sub": "Iubitori de animăluțe",
+  "price": 43.0,
+  "oldPrice": null,
+  "inStock": true,
+  "stock": null,
+  "short": "",
+  "description": "",
+  "images": [],
+  "weight": 0.3,
+  "featured": true,
+  "featuredOrder": 8,
+  "oldUrl": "papuci-de-casa-snoozies-bebelus-model-oita.html",
+  "colors": [],
+  "sizes": [
+   {
+    "size": "S",
+    "range": "0–3 luni",
+    "color": "",
+    "sku": "Snz-BebeOitaS",
+    "stock": null,
+    "inStock": true
+   },
+   {
+    "size": "M",
+    "range": "3–6 luni",
+    "color": "",
+    "sku": "Snz-BebeOitaM",
+    "stock": null,
+    "inStock": true
+   },
+   {
+    "size": "L",
+    "range": "6–12 luni",
+    "color": "",
+    "sku": "Snz-BebeOitaL",
+    "stock": null,
+    "inStock": true
+   }
+  ]
+ },
+ {
+  "sku": "SNZ-BB-MAIM",
+  "slug": "papuci-de-casa-snoozies-bebelus-model-maimuta",
+  "name": "Botoșei bebeluși Snoozies Maimuțică",
+  "category": "copii-si-bebelusi",
+  "categoryName": "Copii și bebeluși",
+  "sub": "Iubitori de animăluțe",
+  "price": 43.0,
+  "oldPrice": null,
+  "inStock": true,
+  "stock": null,
+  "short": "",
+  "description": "",
+  "images": [],
+  "weight": 0.3,
+  "featured": false,
+  "featuredOrder": 0,
+  "oldUrl": "papuci-de-casa-snoozies-bebelus-model-maimuta.html",
+  "colors": [],
+  "sizes": [
+   {
+    "size": "S",
+    "range": "0–3 luni",
+    "color": "",
+    "sku": "Snz-BebeMaimS",
+    "stock": null,
+    "inStock": true
+   },
+   {
+    "size": "M",
+    "range": "3–6 luni",
+    "color": "",
+    "sku": "Snz-BebeMaimM",
+    "stock": null,
+    "inStock": true
+   },
+   {
+    "size": "L",
+    "range": "6–12 luni",
+    "color": "",
+    "sku": "Snz-BebeMaimL",
+    "stock": null,
+    "inStock": true
+   }
+  ]
+ },
+ {
+  "sku": "SNZ-BB-URS",
   "slug": "papuci-de-casa-snoozies-bebelus-model-ursulet",
-  "name": "Papuci de casă bebeluși Snoozies Ursuleț",
-  "category": "bebelusi",
-  "categoryName": "Bebeluși",
-  "sub": null,
+  "name": "Botoșei bebeluși Snoozies Ursuleț",
+  "category": "copii-si-bebelusi",
+  "categoryName": "Copii și bebeluși",
+  "sub": "Iubitori de animăluțe",
   "price": 43.0,
   "oldPrice": null,
   "inStock": true,
@@ -1799,36 +2077,119 @@
   "featured": false,
   "featuredOrder": 0,
   "oldUrl": "papuci-de-casa-snoozies-bebelus-model-ursulet.html",
+  "colors": [],
   "sizes": [
    {
     "size": "S",
-    "range": "",
+    "range": "0–3 luni",
+    "color": "",
+    "sku": "Snz-BebeUrsuletS",
     "stock": null,
     "inStock": true
    },
    {
     "size": "M",
-    "range": "",
+    "range": "3–6 luni",
+    "color": "",
+    "sku": "Snz-BebeUrsuletM",
     "stock": null,
     "inStock": true
    },
    {
     "size": "L",
-    "range": "",
+    "range": "6–12 luni",
+    "color": "",
+    "sku": "Snz-BebeUrsuletL",
     "stock": null,
     "inStock": true
    }
   ]
  },
  {
-  "sku": "SNZ-148",
-  "slug": "sosete-pufoase-shea-roz",
-  "name": "Șosete pufoase Shea roz",
+  "sku": "SNZ-BB-PUDEL",
+  "slug": "papuci-de-casa-snoozies-bebelus-model-pudel",
+  "name": "Botoșei bebeluși Snoozies Pudel",
+  "category": "copii-si-bebelusi",
+  "categoryName": "Copii și bebeluși",
+  "sub": "Iubitori de animăluțe",
+  "price": 43.0,
+  "oldPrice": null,
+  "inStock": true,
+  "stock": null,
+  "short": "",
+  "description": "",
+  "images": [],
+  "weight": 0.3,
+  "featured": false,
+  "featuredOrder": 0,
+  "oldUrl": "papuci-de-casa-snoozies-bebelus-model-pudel.html",
+  "colors": [],
+  "sizes": [
+   {
+    "size": "S",
+    "range": "0–3 luni",
+    "color": "",
+    "sku": "Snz-BebePudelS",
+    "stock": null,
+    "inStock": true
+   },
+   {
+    "size": "M",
+    "range": "3–6 luni",
+    "color": "",
+    "sku": "Snz-BebePudelM",
+    "stock": null,
+    "inStock": true
+   },
+   {
+    "size": "L",
+    "range": "6–12 luni",
+    "color": "",
+    "sku": "Snz-BebePudelL",
+    "stock": null,
+    "inStock": true
+   }
+  ]
+ },
+ {
+  "sku": "SNZ-K-CUPCAKE",
+  "slug": "papuci-de-casa-snoozies-copii-model-cupcake",
+  "name": "Papuci de casă copii Snoozies Cupcake",
+  "category": "copii-si-bebelusi",
+  "categoryName": "Copii și bebeluși",
+  "sub": "Mici plăceri",
+  "price": 43.0,
+  "oldPrice": null,
+  "inStock": true,
+  "stock": null,
+  "short": "",
+  "description": "",
+  "images": [],
+  "weight": 0.3,
+  "featured": false,
+  "featuredOrder": 0,
+  "oldUrl": "papuci-de-casa-snoozies-copii-model-cupcake.html",
+  "colors": [],
+  "sizes": [
+   {
+    "size": "L",
+    "range": "25–27",
+    "color": "",
+    "sku": "Snz-CopiiCupcakeL",
+    "stock": null,
+    "inStock": true
+   }
+  ]
+ },
+ {
+  "sku": "SNZ-SHEA",
+  "slug": "sosete-termice-pufoase-shea",
+  "name": "Șosete termice pufoase Snoozies Shea",
   "category": "sosete",
   "categoryName": "Șosete",
-  "sub": "Shea",
+  "sub": "Pufoși ca un nor",
   "price": 47.99,
-  "oldPrice": 58.6,
+  "oldPrice": null,
   "inStock": true,
   "stock": null,
   "short": "",
@@ -1837,127 +2198,49 @@
   "weight": 0.3,
   "featured": false,
   "featuredOrder": 0,
-  "oldUrl": "sosete-pufoase-shea-roz.html",
-  "sizes": []
- },
- {
-  "sku": "SNZ-149",
-  "slug": "sosete-pufoase-shea-mov",
-  "name": "Șosete pufoase Shea mov",
-  "category": "sosete",
-  "categoryName": "Șosete",
-  "sub": "Shea",
-  "price": 47.99,
-  "oldPrice": 58.6,
-  "inStock": true,
-  "stock": null,
-  "short": "",
-  "description": "",
-  "images": [],
-  "weight": 0.3,
-  "featured": false,
-  "featuredOrder": 0,
-  "oldUrl": "sosete-pufoase-shea-mov.html",
-  "sizes": []
- },
- {
-  "sku": "SNZ-150",
-  "slug": "sosete-pufoase-shea-albastru-deschis",
-  "name": "Șosete pufoase Shea albastru deschis",
-  "category": "sosete",
-  "categoryName": "Șosete",
-  "sub": "Shea",
-  "price": 47.99,
-  "oldPrice": 58.6,
-  "inStock": true,
-  "stock": null,
-  "short": "",
-  "description": "",
-  "images": [],
-  "weight": 0.3,
-  "featured": false,
-  "featuredOrder": 0,
-  "oldUrl": "sosete-pufoase-shea-albastru-deschis.html",
-  "sizes": []
- },
- {
-  "sku": "SNZ-151",
-  "slug": "sosete-termice-pufoase-shea-verde-deschis",
-  "name": "Șosete pufoase Shea verde deschis",
-  "category": "sosete",
-  "categoryName": "Șosete",
-  "sub": "Shea",
-  "price": 47.99,
-  "oldPrice": 58.6,
-  "inStock": true,
-  "stock": null,
-  "short": "",
-  "description": "",
-  "images": [],
-  "weight": 0.3,
-  "featured": false,
-  "featuredOrder": 0,
-  "oldUrl": "sosete-termice-pufoase-shea-verde-deschis.html",
-  "sizes": []
- },
- {
-  "sku": "SNZ-152",
-  "slug": "sosete-termice-pufoase-si-calduroase-sherpa-roz",
-  "name": "Șosete termice pufoase Sherpa roz",
-  "category": "sosete",
-  "categoryName": "Șosete",
-  "sub": "Sherpa",
-  "price": 48.99,
-  "oldPrice": 62.15,
-  "inStock": true,
-  "stock": null,
-  "short": "",
-  "description": "",
-  "images": [],
-  "weight": 0.3,
-  "featured": false,
-  "featuredOrder": 0,
-  "oldUrl": "sosete-termice-pufoase-si-calduroase-sherpa-roz.html",
-  "sizes": []
- },
- {
-  "sku": "SNZ-153",
-  "slug": "sosete-termice-pufoase-si-calduroase-sherpa-mov",
-  "name": "Șosete termice pufoase Sherpa mov",
-  "category": "sosete",
-  "categoryName": "Șosete",
-  "sub": "Sherpa",
-  "price": 48.99,
-  "oldPrice": 62.15,
-  "inStock": true,
-  "stock": null,
-  "short": "",
-  "description": "",
-  "images": [],
-  "weight": 0.3,
-  "featured": false,
-  "featuredOrder": 0,
-  "oldUrl": "sosete-termice-pufoase-si-calduroase-sherpa-mov.html",
-  "sizes": []
- },
- {
-  "sku": "SNZ-154",
-  "slug": "sosete-termice-pufoase-si-calduroase-sherpa-albastru",
-  "name": "Șosete termice pufoase Sherpa albastru",
-  "category": "sosete",
-  "categoryName": "Șosete",
-  "sub": "Sherpa",
-  "price": 48.99,
-  "oldPrice": 62.15,
-  "inStock": true,
-  "stock": null,
-  "short": "",
-  "description": "",
-  "images": [],
-  "weight": 0.3,
-  "featured": false,
-  "featuredOrder": 0,
-  "oldUrl": "sosete-termice-pufoase-si-calduroase-sherpa-albastru.html",
-  "sizes": []
+  "oldUrl": "sosete-termice-pufoase-shea.html",
+  "colors": [
+   {
+    "name": "Albastru",
+    "hex": "#4C6FA5",
+    "image": ""
+   },
+   {
+    "name": "Roz",
+    "hex": "#F28DB2",
+    "image": ""
+   },
+   {
+    "name": "Verde",
+    "hex": "#8FBF9F",
+    "image": ""
+   }
+  ],
+  "sizes": [
+   {
+    "size": "U",
+    "range": "",
+    "color": "Albastru",
+    "sku": "SnzSoseteSheaAlbastru",
+    "stock": null,
+    "inStock": true
+   },
+   {
+    "size": "U",
+    "range": "",
+    "color": "Roz",
+    "sku": "SnzSoseteSheaRoz",
+    "stock": null,
+    "inStock": true
+   },
+   {
+    "size": "U",
+    "range": "",
+    "color": "Verde",
+    "sku": "SnzSoseteSheaVerde",
+    "stock": null,
+    "inStock": true
+   }
+  ]
  }
 ]
