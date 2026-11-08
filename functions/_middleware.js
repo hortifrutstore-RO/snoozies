@@ -1,0 +1,16 @@
+// Creează tabelele în baza D1 la prima cerere (o dată pe instanță), ca să nu fie nevoie de rulat schema manual.
+const SCHEMA = [
+ "CREATE TABLE IF NOT EXISTS orders ( id INTEGER PRIMARY KEY AUTOINCREMENT, number TEXT UNIQUE NOT NULL, created_at TEXT NOT NULL, status TEXT NOT NULL DEFAULT 'noua', name TEXT NOT NULL, phone TEXT NOT NULL, email TEXT NOT NULL, county TEXT, city TEXT, zip TEXT, address TEXT, delivery TEXT NOT NULL, easybox TEXT, payment TEXT NOT NULL, company_name TEXT, company_cui TEXT, notes TEXT, newsletter INTEGER DEFAULT 0, items_json TEXT NOT NULL, subtotal REAL NOT NULL, shipping REAL NOT NULL, total REAL NOT NULL, awb TEXT, admin_note TEXT, awb_notified_at TEXT )",
+ "CREATE INDEX IF NOT EXISTS orders_created ON orders(created_at)",
+ "CREATE TABLE IF NOT EXISTS login_attempts (ip TEXT NOT NULL, ts TEXT NOT NULL)",
+ "CREATE INDEX IF NOT EXISTS login_attempts_ip ON login_attempts(ip, ts)",
+ "CREATE TABLE IF NOT EXISTS stock (sku TEXT PRIMARY KEY, qty INTEGER NOT NULL)"
+];
+let ready = null;
+export async function onRequest(ctx) {
+  if (ctx.env.DB && /^\/api\//.test(new URL(ctx.request.url).pathname)) {
+    if (!ready) ready = ctx.env.DB.batch(SCHEMA.map(s => ctx.env.DB.prepare(s))).catch(e => { ready = null; throw e; });
+    await ready;
+  }
+  return ctx.next();
+}
