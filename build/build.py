@@ -26,6 +26,7 @@ base = dict(site=site, v=V, year=datetime.date.today().year)
 for p in products:
     p['description'] = bleach.clean(p.get('description') or '', tags=['p','br','ul','ol','li','strong','h3','h4','table','tbody','tr','td','th'], attributes={}, strip=True)
     p['off'] = round((1 - p['price'] / p['oldPrice']) * 100) if p.get('oldPrice') else 0
+    if not p.get('images'): p['images'] = ['fara-poza.jpg']  # până se încarcă pozele
     p['sizes'] = p.get('sizes') or []
     p['colors'] = p.get('colors') or []
     for z in p['sizes']:
