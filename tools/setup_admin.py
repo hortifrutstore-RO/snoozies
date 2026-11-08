@@ -7,7 +7,7 @@ salt = secrets.token_bytes(16); it = 100000  # limita maximă suportată de Clou
 h = hashlib.pbkdf2_hmac('sha256', pw.encode(), salt, it, 32)
 totp = base64.b32encode(secrets.token_bytes(20)).decode().rstrip('=')
 sess = secrets.token_urlsafe(48)
-uri = 'otpauth://totp/' + urllib.parse.quote('magazin-horticol.ro:admin') + f'?secret={totp}&issuer=magazin-horticol.ro&digits=6&period=30'
+uri = 'otpauth://totp/' + urllib.parse.quote('snoozies.ro:admin') + f'?secret={totp}&issuer=snoozies.ro&digits=6&period=30'
 print('\nPune aceste trei secrete în Cloudflare Pages → Settings → Variables and Secrets:\n')
 print(f'ADMIN_PASSWORD_HASH = pbkdf2${it}${salt.hex()}${h.hex()}')
 print(f'ADMIN_TOTP_SECRET   = {totp}')
