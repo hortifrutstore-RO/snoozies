@@ -323,10 +323,17 @@ h1,h2,.serif{font-family:var(--serif);font-weight:700;color:var(--ink);letter-sp
 .hero{align-items:center;padding-top:32px}
 .hero-img{max-height:min(76vh,620px)}
 .hero-text{gap:18px}
-/* Capturi recenzii eMAG sub butoanele din banner */
-.proof{display:flex;flex-direction:column;gap:10px;margin-top:10px;width:100%}
+/* Capturi recenzii eMAG sub butoanele din banner: carusel pe două rânduri */
+.proof{display:flex;flex-direction:column;gap:10px;margin-top:10px;width:100%;max-width:600px;min-width:0}
+.proof-head{display:flex;align-items:center;justify-content:space-between;gap:12px}
 .proof-label{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--muted-3)}
-.shots{display:flex;flex-wrap:wrap;gap:12px;width:100%;max-width:600px}.shots-wide{max-width:none;padding-bottom:64px}
-.shot{margin:0;background:#fff;border-radius:16px;padding:6px 8px;box-shadow:0 2px 0 var(--line),0 10px 24px rgba(46,36,32,.08)}
-.shot img{height:96px;width:auto;max-width:100%;object-fit:contain}.shots-wide .shot img{height:112px}
-@media (max-width:760px){.shots{display:flex;flex-wrap:nowrap;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px}.shot{flex:0 0 auto;scroll-snap-align:start}.shot img{height:92px}}
+.proof-nav{display:flex;gap:6px}
+.proof-nav button{width:36px;height:36px;border-radius:50%;border:2px solid var(--line);background:#fff;color:var(--ink);display:flex;align-items:center;justify-content:center;cursor:pointer}
+.proof-nav button:hover{border-color:var(--ink)}
+.shots{display:grid;grid-template-rows:auto auto;grid-auto-flow:column;grid-auto-columns:max-content;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;padding:2px 2px 14px;align-items:start}
+.shots::-webkit-scrollbar{display:none}
+.shot{margin:0;background:#fff;border-radius:16px;padding:6px 8px;box-shadow:0 2px 0 var(--line),0 10px 24px rgba(46,36,32,.08);scroll-snap-align:start;width:max-content}
+.shot img{height:96px;width:auto;display:block}
+@media (max-width:760px){.shot img{height:88px}}
+@media (prefers-reduced-motion:reduce){.shots{scroll-behavior:auto}}
+.shots{-webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 28px),transparent);mask-image:linear-gradient(90deg,#000 calc(100% - 28px),transparent)}

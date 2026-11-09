@@ -132,6 +132,31 @@ if (colorBox) {
   colorBox.addEventListener('change', pickColor); pickColor();
 }
 
+/* ---------- carusel recenzii eMAG ---------- */
+const proof = $('[data-proof]');
+if (proof) {
+  const track = $('[data-proof-track]', proof), figs = $$('.shot', track);
+  const lefts = () => [...new Set(figs.map(f => f.offsetLeft - track.offsetLeft))].sort((a, b) => a - b);
+  const go = dir => {
+    const L = lefts(), x = track.scrollLeft, w = track.clientWidth, max = track.scrollWidth - w - 2;
+    let to;
+    if (dir > 0) { if (x >= max) to = 0; else { const right = x + w; to = L.filter(l => l > x + 4 && figs.some(f => f.offsetLeft - track.offsetLeft === l && l + f.offsetWidth > right)).shift(); if (to === undefined) to = max; } }
+    else { if (x <= 2) to = max; else { to = L.filter(l => l >= x - w - 4 && l < x - 4).shift(); if (to === undefined) to = 0; } }
+    track.scrollTo({ left: Math.min(to, track.scrollWidth - w) });
+  };
+  $('[data-proof-next]', proof).addEventListener('click', () => go(1));
+  $('[data-proof-prev]', proof).addEventListener('click', () => go(-1));
+  let paused = false, timer;
+  ['mouseenter', 'focusin', 'touchstart'].forEach(ev => proof.addEventListener(ev, () => paused = true, { passive: true }));
+  ['mouseleave', 'focusout'].forEach(ev => proof.addEventListener(ev, () => paused = false));
+  const start = () => {
+    const more = track.scrollWidth > track.clientWidth + 4;
+    $('.proof-nav', proof).hidden = !more;
+    if (more && !timer && !matchMedia('(prefers-reduced-motion: reduce)').matches) timer = setInterval(() => { if (!paused && !document.hidden) go(1); }, 6000);
+  };
+  if (document.readyState === 'complete') start(); else addEventListener('load', start);
+}
+
 /* ---------- search ---------- */
 const SYN = {}; (S.syn || []).forEach(g => g.forEach(w => SYN[norm(w)] = g.map(norm)));
 function lev(a, b) {

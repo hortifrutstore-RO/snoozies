@@ -11,9 +11,12 @@
       {% if site.hero.cta2.label %}<a class="btn btn-ghost" href="{{ site.hero.cta2.href }}">{{ site.hero.cta2.label }}</a>{% endif %}
     </div>
     {% if site.reviewShots %}
-    <div class="proof">
-      <span class="proof-label"><svg width="16" height="16" viewBox="0 0 24 24" fill="#E3A832" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg>Recenzii reale de la clienții noștri de pe eMAG</span>
-      <div class="shots">{% for r in site.reviewShots[:4] %}<figure class="shot"><img src="{{ r.image }}" alt="{{ r.alt or 'Recenzie de 5 stele de pe eMAG' }}" loading="lazy"></figure>{% endfor %}</div>
+    <div class="proof" data-proof>
+      <div class="proof-head">
+        <span class="proof-label"><svg width="16" height="16" viewBox="0 0 24 24" fill="#E3A832" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg>Recenzii reale de pe eMAG</span>
+        <span class="proof-nav"><button type="button" data-proof-prev aria-label="Recenziile anterioare"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button><button type="button" data-proof-next aria-label="Recenziile următoare"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button></span>
+      </div>
+      <div class="shots" data-proof-track tabindex="0" aria-label="Recenzii de pe eMAG, derulează pentru mai multe">{% for r in site.reviewShots %}<figure class="shot"><img src="{{ r.image }}" alt="{{ r.alt or 'Recenzie de 5 stele de pe eMAG' }}"></figure>{% endfor %}</div>
     </div>
     {% endif %}
   </div>
@@ -67,15 +70,9 @@
 </section>
 {% endif %}
 
-{% if site.reviewShots|length > 4 %}
-<section class="wrap section" style="padding-bottom:24px">
-  <div class="section-head"><h2>Ce spun clienții</h2><p>Recenzii verificate de pe eMAG</p></div>
-  <div class="shots shots-wide">{% for r in site.reviewShots[4:] %}<figure class="shot"><img src="{{ r.image }}" alt="{{ r.alt or 'Recenzie de 5 stele de pe eMAG' }}" loading="lazy"></figure>{% endfor %}</div>
-</section>
-{% endif %}
 {% if site.reviews %}
 <section class="wrap section" style="padding-bottom:88px">
-  {% if site.reviewShots|length <= 4 %}<div class="section-head"><h2>Ce spun clienții</h2></div>{% endif %}
+  <div class="section-head"><h2>Ce spun clienții</h2></div>
   <div class="reviews">
   {% for r in site.reviews %}
     <figure class="review">
