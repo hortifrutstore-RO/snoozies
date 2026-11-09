@@ -166,5 +166,39 @@
  },
  "reviews": [],
  "emagUrl": "",
- "sizeGuide": ""
+ "sizeGuide": "",
+ "reviewShots": [
+  {
+   "image": "/img/site/recenzie-emag-mihaela.png",
+   "alt": "Mihaela, 5 stele: „Super, am făcut cadou.”"
+  },
+  {
+   "image": "/img/site/recenzie-emag-alexandra.png",
+   "alt": "Alexandra V, 5 stele: „Mamei îi plac. Îi poartă prin casă fără șosete.”"
+  },
+  {
+   "image": "/img/site/recenzie-emag-m4.png",
+   "alt": "5 stele: „Exact ca în poză, ușori, calzi, comozi.”"
+  },
+  {
+   "image": "/img/site/recenzie-emag-claudia.png",
+   "alt": "Claudia, 5 stele: „Călduroși și de calitate. Recomand.”"
+  },
+  {
+   "image": "/img/site/recenzie-emag-iulia.png",
+   "alt": "Iulia, 5 stele: „Sunt minunați! Pufoși și călduroși, dar și foarte ușori și comozi.”"
+  },
+  {
+   "image": "/img/site/recenzie-emag-roxanne.png",
+   "alt": "Roxanne, 5 stele: „Papuci pufoși, ușori, frumoși, rezistă excelent la spălat la mașină!”"
+  },
+  {
+   "image": "/img/site/recenzie-emag-visan.png",
+   "alt": "5 stele: „F. drăguți și comozi, călduroși. Recomand.”"
+  },
+  {
+   "image": "/img/site/recenzie-emag-florina.png",
+   "alt": "5 stele: „Super călduroși și comozi.”"
+  }
+ ]
 }

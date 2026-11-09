@@ -84,7 +84,7 @@ export function cleanSite(s) {
   o.story = { eyebrow: t(s.story?.eyebrow, 60), title: t(s.story?.title, 140), text: t(s.story?.text, 800), image: img(s.story?.image) || '/img/site/story.jpg',
     imageAlt: t(s.story?.imageAlt, 140), label: t(s.story?.label, 60), href: href(s.story?.href) };
   delete o.barnelBand;
-  o.reviewShots = (Array.isArray(s.reviewShots) ? s.reviewShots : []).slice(0, 4).map(r => ({ image: img(r && r.image), alt: t(r && r.alt, 200) })).filter(r => r.image);
+  o.reviewShots = (Array.isArray(s.reviewShots) ? s.reviewShots : []).slice(0, 8).map(r => ({ image: img(r && r.image), alt: t(r && r.alt, 200) })).filter(r => r.image);
   o.reviews = (Array.isArray(s.reviews) ? s.reviews : []).slice(0, 12).map(r => ({ text: t(r.text, 600), who: t(r.who, 80) })).filter(r => r.text);
   o.emagUrl = /^https:\/\/(www\.)?emag\.ro\/[^\s<>"]*$/.test(s.emagUrl || '') ? s.emagUrl : '';
   o.featuredTitle = t(s.featuredTitle, 80);
