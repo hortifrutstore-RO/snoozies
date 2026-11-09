@@ -88,6 +88,7 @@ export function cleanSite(s) {
   o.reviews = (Array.isArray(s.reviews) ? s.reviews : []).slice(0, 12).map(r => ({ text: t(r.text, 600), who: t(r.who, 80) })).filter(r => r.text);
   o.emagUrl = /^https:\/\/(www\.)?emag\.ro\/[^\s<>"]*$/.test(s.emagUrl || '') ? s.emagUrl : '';
   o.featuredTitle = t(s.featuredTitle, 80);
+  if (o.contact) o.contact.whatsapp = String(s.contact?.whatsapp || '').replace(/\D/g, '').slice(0, 15);
   o.sizeGuide = cleanHtml(s.sizeGuide);
   o.perks = (Array.isArray(s.perks) ? s.perks : []).slice(0, 6).map(p => ({ t: t(p.t, 60), d: t(p.d, 80) }));
   o.popularSearches = (Array.isArray(s.popularSearches) ? s.popularSearches : []).map(x => t(x, 40)).filter(Boolean).slice(0, 12);

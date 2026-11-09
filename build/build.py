@@ -4,6 +4,30 @@ import json, os, shutil, datetime, re, html
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 import bleach
 
+def split_desc(h):
+    h = re.sub(r'<strong>[^<]*ideali pentru:\s*</strong>', '', h or '')
+    h = re.sub(r'<br\s*/?>', '\n', h)
+    paras = [re.sub(r'\s+', ' ', x).strip() for x in re.split(r'</?p>|\n', h)]
+    paras = [x for x in paras if re.sub(r'<[^>]+>|&nbsp;', '', x).strip()]
+    lead, checks, more = [], [], []
+    for x in paras:
+        plain = re.sub(r'<[^>]+>', '', x).strip()
+        if plain.startswith('✔') or plain.startswith('✓'):
+            body = plain.lstrip('✔✓ ').strip()
+            m = re.match(r'(.{3,60}?)\s+[–—-]\s+(.+)', body)
+            checks.append(dict(t=m.group(1).rstrip(':'), d=m.group(2)) if m else dict(t='', d=body))
+        elif re.fullmatch(r'<strong>[^<]{0,80}</strong>', x) and not lead: continue  # titluri de tip „Papuci de casa pufosi Snoozies”
+        elif len(lead) < 1 and len(plain) > 40: lead.append(x)
+        else: more.append(x)
+    if len(checks) < 2:  # fără listă în descriere: avantajele menționate în text
+        low = re.sub(r'<[^>]+>', ' ', h or '').lower()
+        found = [('Interior pufos și călduros', 'blăniță moale care ține picioarele calde', ('blan', 'plus', 'pufos')),
+                 ('Talpă antiderapantă', 'inserții din silicon, pentru siguranță pe orice podea', ('antiderapant', 'silicon')),
+                 ('Exterior textil fin', 'plăcut la atingere și rezistent', ('textil',)),
+                 ('Se spală la mașină', 'își păstrează forma și moliciunea', ('spala', 'spală'))]
+        checks += [dict(t=a, d=b) for a, b, keys in found if any(k in low for k in keys) and not any(a.split()[0].lower() in (c['t'] or '').lower() for c in checks)]
+    return lead, checks, more
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DIST = os.path.join(ROOT, 'dist')
 site = json.load(open(os.path.join(ROOT, 'data/site.json'), encoding='utf-8'))
@@ -43,6 +67,7 @@ for p in products:
     p['description'] = bleach.clean(p.get('description') or '', tags=['p','br','ul','ol','li','strong','h3','h4','table','tbody','tr','td','th'], attributes={}, strip=True)
     p['off'] = round((1 - p['price'] / p['oldPrice']) * 100) if p.get('oldPrice') else 0
     if not p.get('images'): p['images'] = ['fara-poza.jpg']  # până se încarcă pozele
+    p['desc_lead'], p['desc_checks'], p['desc_more'] = split_desc(p.get('description'))
     p['sizes'] = p.get('sizes') or []
     p['colors'] = p.get('colors') or []
     for z in p['sizes']:

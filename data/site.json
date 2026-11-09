@@ -189,12 +189,20 @@
    "alt": "Recenzie de pe eMAG de la Carmen"
   },
   {
+   "image": "/img/site/recenzie-emag-cristina-n.png",
+   "alt": "Recenzie de pe eMAG de la Cristina"
+  },
+  {
    "image": "/img/site/recenzie-emag-iulia.png",
    "alt": "Recenzie de pe eMAG de la Iulia"
   },
   {
    "image": "/img/site/recenzie-emag-roxanne.png",
    "alt": "Recenzie de pe eMAG de la Roxanne"
+  },
+  {
+   "image": "/img/site/recenzie-emag-consuela.png",
+   "alt": "Recenzie de pe eMAG de la Consuela"
   },
   {
    "image": "/img/site/recenzie-emag-cristina-p.png",
@@ -209,8 +217,16 @@
    "alt": "Recenzie de pe eMAG de la Isabela"
   },
   {
+   "image": "/img/site/recenzie-emag-asz.png",
+   "alt": "Recenzie de pe eMAG de la A.Sz."
+  },
+  {
    "image": "/img/site/recenzie-emag-bogdan.png",
    "alt": "Recenzie de pe eMAG de la Bogdan"
+  },
+  {
+   "image": "/img/site/recenzie-emag-mihaela-c.png",
+   "alt": "Recenzie de pe eMAG de la Mihaela"
   },
   {
    "image": "/img/site/recenzie-emag-monica.png",
@@ -227,6 +243,14 @@
   {
    "image": "/img/site/recenzie-emag-andre.png",
    "alt": "Recenzie de pe eMAG de la Andre"
+  },
+  {
+   "image": "/img/site/recenzie-emag-oana.png",
+   "alt": "Recenzie de pe eMAG de la Oana"
+  },
+  {
+   "image": "/img/site/recenzie-emag-sandra.png",
+   "alt": "Recenzie de pe eMAG de la Sandra"
   },
   {
    "image": "/img/site/recenzie-emag-geany.png",
@@ -251,6 +275,10 @@
   {
    "image": "/img/site/recenzie-emag-valica.png",
    "alt": "Recenzie de pe eMAG de la Valica"
+  },
+  {
+   "image": "/img/site/recenzie-emag-fay.png",
+   "alt": "Recenzie de pe eMAG de la Fay"
   },
   {
    "image": "/img/site/recenzie-emag-jeni.png",

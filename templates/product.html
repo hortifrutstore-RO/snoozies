@@ -54,18 +54,34 @@
         <div class="fact"><strong>Retur în 14 zile</strong><span>Transportul de retur: {{ site.shipping.returnCost|lei }}</span></div>
         <div class="fact"><strong>{{ site.shipping.carrier }}</strong><span>Livrare în {{ site.shipping.days }}</span></div>
       </div>
-      {% if site.reviewShots and p.category != 'sosete' and 'bebelus' not in p.slug %}
-      {% set proof_label = "Ce spun clienții despre papucii Snoozies" %}{% include "_proof.html" %}
-      <p class="proof-note">Recenzii de pe eMAG pentru papucii Snoozies (diverse modele, aceeași calitate).</p>
-      {% endif %}
       <div class="acc">
-        {% if p.description %}<details open><summary>Descriere</summary><div class="prose">{{ p.description|safe }}</div></details>{% endif %}
         {% if site.sizeGuide and p.sizes and p.category != 'sosete' %}<details id="ghid"><summary>Ghid de mărimi</summary><div class="prose">{{ site.sizeGuide|safe }}</div></details>{% endif %}
         <details><summary>Livrare și retur</summary><div class="prose"><p>Livrăm prin {{ site.shipping.carrier }}, la adresă sau în easybox, în {{ site.shipping.days }}. Poți returna produsul în 14 zile de la primire; costul transportului de retur este suportat de client. Detalii în <a href="/retur/">pagina de retur</a>.</p></div></details>
       </div>
       <a href="tel:{{ site.contact.phoneHref }}" style="font-weight:700">Ai întrebări? Sună la {{ site.contact.phone }}</a>
     </div>
   </section>
+  {% if site.reviewShots and p.category != 'sosete' and 'bebelus' not in p.slug %}
+  <section class="proof-band">
+    {% set proof_label = "Ce spun clienții despre papucii Snoozies" %}{% include "_proof.html" %}
+    <p class="proof-note">Recenzii de pe eMAG pentru papucii Snoozies: diverse modele, aceeași calitate.</p>
+  </section>
+  {% endif %}
+  {% if p.desc_lead or p.desc_checks or p.desc_more %}
+  <section class="about">
+    <div class="about-text">
+      <span class="eyebrow pink">Despre model</span>
+      <h2>{{ p.name|replace('Papuci de casă ', 'Papucii ') }}</h2>
+      {% for para in p.desc_lead %}<p class="lead">{{ para|safe }}</p>{% endfor %}
+      {% if p.desc_more %}<details class="more-text"><summary>Citește mai mult</summary>{% for para in p.desc_more %}<p>{{ para|safe }}</p>{% endfor %}</details>{% endif %}
+    </div>
+    {% if p.desc_checks %}
+    <ul class="checks">
+      {% for c in p.desc_checks %}<li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><div>{% if c.t %}<strong>{{ c.t }}</strong>{% endif %}{% if c.d %}<span>{{ c.d }}</span>{% endif %}</div></li>{% endfor %}
+    </ul>
+    {% endif %}
+  </section>
+  {% endif %}
 </div>
 {% if related %}
 <section class="related"><div class="wrap">
