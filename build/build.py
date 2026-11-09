@@ -20,6 +20,22 @@ JUDETE = ["Alba","Arad","Argeș","Bacău","Bihor","Bistrița-Năsăud","Botoșan
 sg = (site.get('sizeGuide') or '').strip()
 if sg and '<' not in sg: sg = ''.join(f'<p>{html.escape(l)}</p>' for l in sg.splitlines() if l.strip())
 site['sizeGuide'] = bleach.clean(sg, tags=['p','br','ul','ol','li','strong','table','tbody','tr','td','th'], attributes={}, strip=True)
+def img_size(path):
+    # dimensiunile unei poze PNG/JPEG fără biblioteci externe
+    try:
+        b = open(path, 'rb').read()
+        if b[:8] == b'\x89PNG\r\n\x1a\n': return int.from_bytes(b[16:20], 'big'), int.from_bytes(b[20:24], 'big')
+        i = 2
+        while i < len(b):
+            if b[i] != 0xFF: i += 1; continue
+            m = b[i + 1]
+            if m in (0xC0, 0xC1, 0xC2): return int.from_bytes(b[i + 7:i + 9], 'big'), int.from_bytes(b[i + 5:i + 7], 'big')
+            i += 2 + int.from_bytes(b[i + 2:i + 4], 'big')
+    except Exception: pass
+    return None
+for r in site.get('reviewShots', []):
+    wh = img_size(os.path.join(ROOT, 'public', r['image'].lstrip('/')))
+    if wh: r['w'], r['h'] = round(wh[0] * .88), round(wh[1] * .88)
 COLS = ['Magia Crăciunului', 'Iubitori de animăluțe', 'Mici plăceri', 'Pufoși ca un nor']
 base = dict(site=site, v=V, year=datetime.date.today().year)
 

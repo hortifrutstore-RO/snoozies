@@ -259,7 +259,7 @@ const getP = (o, path) => path.split('.').reduce((a, k) => a == null ? a : a[k],
 const setP = (o, path, v) => { const ks = path.split('.'); let a = o; ks.slice(0, -1).forEach(k => a = a[k] = a[k] || {}); a[ks[ks.length - 1]] = v; };
 const siteImg = v => v ? (localImg[v.split('/').pop()] || v) : '';
 function renderHome() {
-  D.site.reviewShots = (D.site.reviewShots || []).concat([{}, {}, {}, {}, {}, {}, {}, {}]).slice(0, 8).map(r => ({ image: r.image || '', alt: r.alt || '' }));
+  D.site.reviewShots = (D.site.reviewShots || []).filter(r => r && r.image).concat([{}, {}]).slice(0, 40).map(r => ({ image: r.image || '', alt: r.alt || '' }));
   $('#shotsEd').innerHTML = D.site.reviewShots.map((r, k) => `<div class="fl"><div class="img-pick"><img data-s-img="reviewShots.${k}.image" alt=""><div><label class="btn btn-ghost">${r.image ? 'Schimbă' : 'Adaugă'} captura ${k + 1}<input type="file" accept="image/*" data-upload-site="reviewShots.${k}.image" hidden></label>${r.image ? `<button type="button" class="link" data-shot-rm="${k}">Șterge</button>` : ''}</div></div><input class="field" data-s="reviewShots.${k}.alt" placeholder="Textul recenziei (pentru Google și cititoare de ecran)"></div>`).join('');
   $$('[data-s]').forEach(i => i.value = getP(D.site, i.dataset.s) ?? '');
   $$('[data-s-img]').forEach(i => i.src = siteImg(getP(D.site, i.dataset.sImg)));

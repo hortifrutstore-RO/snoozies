@@ -135,7 +135,7 @@ if (colorBox) {
 /* ---------- carusel recenzii eMAG ---------- */
 const proof = $('[data-proof]');
 if (proof) {
-  const track = $('[data-proof-track]', proof), figs = $$('.shot', track);
+  const track = $('[data-proof-track]', proof), figs = $$('.shot-col', track);
   const lefts = () => [...new Set(figs.map(f => f.offsetLeft - track.offsetLeft))].sort((a, b) => a - b);
   const go = dir => {
     const L = lefts(), x = track.scrollLeft, w = track.clientWidth, max = track.scrollWidth - w - 2;
