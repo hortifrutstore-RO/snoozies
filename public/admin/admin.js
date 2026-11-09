@@ -259,6 +259,8 @@ const getP = (o, path) => path.split('.').reduce((a, k) => a == null ? a : a[k],
 const setP = (o, path, v) => { const ks = path.split('.'); let a = o; ks.slice(0, -1).forEach(k => a = a[k] = a[k] || {}); a[ks[ks.length - 1]] = v; };
 const siteImg = v => v ? (localImg[v.split('/').pop()] || v) : '';
 function renderHome() {
+  D.site.reviewShots = (D.site.reviewShots || []).concat([{}, {}, {}, {}]).slice(0, 4).map(r => ({ image: r.image || '', alt: r.alt || '' }));
+  $('#shotsEd').innerHTML = D.site.reviewShots.map((r, k) => `<div class="fl"><div class="img-pick"><img data-s-img="reviewShots.${k}.image" alt=""><div><label class="btn btn-ghost">${r.image ? 'Schimbă' : 'Adaugă'} captura ${k + 1}<input type="file" accept="image/*" data-upload-site="reviewShots.${k}.image" hidden></label>${r.image ? `<button type="button" class="link" data-shot-rm="${k}">Șterge</button>` : ''}</div></div><input class="field" data-s="reviewShots.${k}.alt" placeholder="Textul recenziei (pentru Google și cititoare de ecran)"></div>`).join('');
   $$('[data-s]').forEach(i => i.value = getP(D.site, i.dataset.s) ?? '');
   $$('[data-s-img]').forEach(i => i.src = siteImg(getP(D.site, i.dataset.sImg)));
   $('#perks').innerHTML = D.site.perks.map((p, k) => `<label class="fl">Avantaj ${k + 1}<input class="field" data-perk="${k}" data-f="t" value="${esc(p.t)}"><input class="field" data-perk="${k}" data-f="d" value="${esc(p.d)}" style="margin-top:6px"></label>`).join('');
@@ -290,6 +292,7 @@ document.addEventListener('input', e => {
   if (t.id === 'popular' || t.id === 'synonyms') markDirty('s');
   if (t.id === 'reviews') { readReviews(); markDirty('s'); }
 });
+document.addEventListener('click', e => { const b = e.target.closest('[data-shot-rm]'); if (!b) return; D.site.reviewShots[+b.dataset.shotRm] = { image: '', alt: '' }; markDirty('s'); renderHome(); });
 document.addEventListener('change', async e => {
   const t = e.target; if (!(t.dataset.uploadSite || t.dataset.catImg) || !t.files[0]) return;
   try {
