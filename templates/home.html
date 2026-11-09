@@ -10,15 +10,7 @@
       <a class="btn" href="{{ site.hero.cta.href }}">{{ site.hero.cta.label }}</a>
       {% if site.hero.cta2.label %}<a class="btn btn-ghost" href="{{ site.hero.cta2.href }}">{{ site.hero.cta2.label }}</a>{% endif %}
     </div>
-    {% if site.reviewShots %}
-    <div class="proof" data-proof>
-      <div class="proof-head">
-        <span class="proof-label"><svg width="16" height="16" viewBox="0 0 24 24" fill="#E3A832" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg>Recenzii reale de pe eMAG</span>
-        <span class="proof-nav"><button type="button" data-proof-prev aria-label="Recenziile anterioare"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button><button type="button" data-proof-next aria-label="Recenziile următoare"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button></span>
-      </div>
-      <div class="shots" data-proof-track tabindex="0" aria-label="Recenzii de pe eMAG, derulează pentru mai multe">{% for r in site.reviewShots %}<figure class="shot"><img src="{{ r.image }}" alt="{{ r.alt or 'Recenzie de 5 stele de pe eMAG' }}"></figure>{% endfor %}</div>
-    </div>
-    {% endif %}
+    {% set proof_label = "Recenzii reale de pe eMAG" %}{% include "_proof.html" %}
   </div>
   <div class="hero-pic">
     <img class="hero-img" src="{{ site.hero.image }}" alt="{{ site.hero.imageAlt }}" width="1100" height="1100" fetchpriority="high">

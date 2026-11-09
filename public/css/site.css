@@ -337,3 +337,4 @@ h1,h2,.serif{font-family:var(--serif);font-weight:700;color:var(--ink);letter-sp
 @media (max-width:760px){.shot img{height:88px}}
 @media (prefers-reduced-motion:reduce){.shots{scroll-behavior:auto}}
 .shots{-webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 28px),transparent);mask-image:linear-gradient(90deg,#000 calc(100% - 28px),transparent)}
+.proof-note{margin:-14px 0 0;font-size:13px;color:var(--muted-3)}.buy .proof{max-width:none}

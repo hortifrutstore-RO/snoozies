@@ -117,7 +117,7 @@ if (colorBox) {
   const pickColor = () => {
     const c = $('input:checked', colorBox); if (!c) return;
     $('[data-color-name]').textContent = c.value;
-    if (c.dataset.img && main) { main.src = c.dataset.img; $$('.thumbs button').forEach(b => b.setAttribute('aria-current', b.dataset.src === c.dataset.img ? 'true' : 'false')); }
+    if (c.dataset.img && main) { main.src = c.dataset.img; $$('.thumbs button').forEach(b => { b.setAttribute('aria-current', b.dataset.src === c.dataset.img ? 'true' : 'false'); b.hidden = !!b.dataset.imgColor && b.dataset.imgColor !== c.value; }); }
     if (!sizeBox) return;
     const labels = $$('.size', sizeBox);
     labels.forEach(l => { const on = l.dataset.color === c.value; l.hidden = !on; if (!on) $('input', l).checked = false; });

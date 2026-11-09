@@ -16,7 +16,7 @@
       </div>
       {% if p.images|length > 1 %}
       <div class="thumbs">
-        {% for im in p.images %}<button type="button" aria-label="Imaginea {{ loop.index }}" aria-current="{{ 'true' if loop.first else 'false' }}" data-src="/img/p/{{ im }}"><img src="/img/p/{{ im }}" alt="" loading="lazy"></button>{% endfor %}
+        {% for im in p.images %}<button type="button" data-img-color="{{ p.imgColor[loop.index0] }}" aria-label="Imaginea {{ loop.index }}" aria-current="{{ 'true' if loop.first else 'false' }}" data-src="/img/p/{{ im }}"><img src="/img/p/{{ im }}" alt="" loading="lazy"></button>{% endfor %}
       </div>
       {% endif %}
     </div>
@@ -54,6 +54,10 @@
         <div class="fact"><strong>Retur în 14 zile</strong><span>Transportul de retur: {{ site.shipping.returnCost|lei }}</span></div>
         <div class="fact"><strong>{{ site.shipping.carrier }}</strong><span>Livrare în {{ site.shipping.days }}</span></div>
       </div>
+      {% if site.reviewShots and p.category != 'sosete' and 'bebelus' not in p.slug %}
+      {% set proof_label = "Ce spun clienții despre papucii Snoozies" %}{% include "_proof.html" %}
+      <p class="proof-note">Recenzii de pe eMAG pentru papucii Snoozies (diverse modele, aceeași calitate).</p>
+      {% endif %}
       <div class="acc">
         {% if p.description %}<details open><summary>Descriere</summary><div class="prose">{{ p.description|safe }}</div></details>{% endif %}
         {% if site.sizeGuide and p.sizes and p.category != 'sosete' %}<details id="ghid"><summary>Ghid de mărimi</summary><div class="prose">{{ site.sizeGuide|safe }}</div></details>{% endif %}

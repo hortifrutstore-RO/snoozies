@@ -34,6 +34,14 @@ for p in products:
         z['sku'] = z.get('sku') or f"{p['sku']}-{z['color'] + '-' if z['color'] else ''}{z['size']}"
     # culorile care au măcar o variantă; poza culorii trece prima în galerie la alegere
     p['colorNames'] = [c['name'] for c in p['colors']]
+    # culoarea fiecărei poze: de la poza culorii până la poza următoarei culori
+    starts = sorted((p['images'].index(c['image']), c['name']) for c in p['colors'] if c.get('image') in p['images'])
+    p['imgColor'] = []
+    for i, _ in enumerate(p['images']):
+        cur = ''
+        for st, nm in starts:
+            if i >= st: cur = nm
+        p['imgColor'].append(cur)
     if p['sizes']: p['inStock'] = any(z.get('inStock', True) for z in p['sizes'])
 
 def vsku(p, z): return z.get('sku') or f"{p['sku']}-{z['color'] + '-' if z.get('color') else ''}{z['size']}"
