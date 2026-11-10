@@ -46,7 +46,8 @@
     <!-- COMENZI -->
     <section data-view="orders">
       <div class="adm-head"><h1>Comenzi</h1><button class="btn btn-ghost" id="reloadOrders">Reîncarcă</button></div>
-      <div class="chips" id="orderFilters"></div>
+      <div class="note warn" id="mailOff" hidden>Emailurile automate (confirmare comandă, AWB) nu sunt încă active: lipsesc cheile de email în Cloudflare. Comenzile se salvează oricum aici.</div>
+      <div class="ord-tools"><div class="chips" id="orderFilters"></div><input class="field" id="ordSearch" type="search" placeholder="Caută: nume, telefon, nr. comandă, oraș"></div>
       <div id="orders" class="orders"></div>
     </section>
 

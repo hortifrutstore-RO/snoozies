@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Configurare acces panou · snoozies.ro</title>
+<link rel="stylesheet" href="/css/site.css">
+<link rel="stylesheet" href="/admin/admin.css">
+<style>
+.setup{max-width:720px;margin:40px auto;padding:0 20px 60px}
+.setup .box{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:24px 26px;margin-bottom:18px}
+.setup h1{font-family:var(--serif);font-size:30px;margin:14px 0 6px}.setup h2{font-family:var(--serif);font-size:20px;margin:0 0 10px}
+.setup p,.setup li{font-size:15px;line-height:1.6}
+.kv{display:grid;gap:12px;margin-top:12px}
+.kv div{border:1px solid var(--line);border-radius:12px;padding:10px 12px;background:var(--cream)}
+.kv b{display:flex;justify-content:space-between;align-items:center;font-size:13px;letter-spacing:.04em}
+.kv code{display:block;word-break:break-all;font-size:13px;margin-top:6px;user-select:all}
+.qr{display:flex;gap:20px;align-items:center;flex-wrap:wrap}.qr svg{width:200px;height:200px;background:#fff;border-radius:12px;padding:8px;border:1px solid var(--line)}
+.ok{color:var(--ok);font-weight:700}
+</style>
+</head>
+<body class="adm">
+<div class="setup">
+  <img src="/img/site/logo.svg" alt="Snoozies" width="170" height="50">
+  <h1>Configurare acces la panou</h1>
+  <p>Pagina generează aici, în browserul tău, datele de acces pentru <b>/admin/</b>. Parola nu pleacă nicăieri: din ea se calculează doar o amprentă (hash), pe care o pui în Cloudflare. Fă asta o singură dată.</p>
+
+  <form class="box" id="f">
+    <h2>1. Alege parola panoului</h2>
+    <label class="fl">Parolă (minim 12 caractere)<input class="field" type="password" id="p1" autocomplete="new-password" minlength="12" required></label>
+    <label class="fl">Repetă parola<input class="field" type="password" id="p2" autocomplete="new-password" minlength="12" required></label>
+    <div class="form-msg" id="msg" role="alert"></div>
+    <button class="btn" type="submit" id="go">Generează datele de acces</button>
+  </form>
+
+  <div id="out" hidden>
+    <div class="box">
+      <h2>2. Scanează codul în aplicația de autentificare</h2>
+      <div class="qr"><div id="qr"></div>
+        <p style="flex:1;min-width:220px">Deschide <b>Google Authenticator</b> sau <b>Microsoft Authenticator</b> pe telefon → <b>+</b> → <b>Scanează un cod QR</b>. Apare „snoozies.ro (admin)” cu un cod de 6 cifre care se schimbă la 30 de secunde.</p></div>
+    </div>
+    <div class="box">
+      <h2>3. Pune cele trei valori în Cloudflare</h2>
+      <ol>
+        <li>Cloudflare → <b>Workers &amp; Pages</b> → <b>snoozies</b> → <b>Settings</b> → <b>Variables and Secrets</b> → <b>Add</b>.</li>
+        <li>Pentru fiecare: tip <b>Secret</b>, numele exact de mai jos, valoarea copiată cu butonul. Apoi <b>Save</b>.</li>
+        <li>La final: <b>Deployments</b> → ultimul deployment → <b>⋯</b> → <b>Retry deployment</b>, ca să preia secretele.</li>
+      </ol>
+      <div class="kv" id="kv"></div>
+    </div>
+    <div class="box"><p class="ok">După redeploy intri pe /admin/ cu parola aleasă și codul de 6 cifre din aplicație.</p>
+      <p>Închide pagina după ce ai terminat. Dacă o reîncarci, se generează alte valori, iar cele vechi nu mai sunt bune decât dacă le-ai salvat deja în Cloudflare.</p></div>
+  </div>
+</div>
+<script src="/admin/qrcode.min.js"></script>
+<script>
+const hex = b => [...new Uint8Array(b)].map(x => x.toString(16).padStart(2, '0')).join('');
+const rnd = n => crypto.getRandomValues(new Uint8Array(n));
+const b32 = bytes => { const a = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ234567'; let bits = '', out = ''; for (const x of bytes) bits += x.toString(2).padStart(8, '0'); for (let i = 0; i + 5 <= bits.length; i += 5) out += a[parseInt(bits.slice(i, i + 5), 2)]; return out; };
+const b64u = bytes => btoa(String.fromCharCode(...bytes)).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+document.getElementById('f').addEventListener('submit', async e => {
+  e.preventDefault();
+  const p1 = document.getElementById('p1').value, p2 = document.getElementById('p2').value, msg = document.getElementById('msg');
+  if (p1.length < 12) return msg.textContent = 'Parola trebuie să aibă cel puțin 12 caractere.';
+  if (p1 !== p2) return msg.textContent = 'Parolele nu coincid.';
+  msg.textContent = '';
+  const it = 100000, salt = rnd(16);  // 100000 = limita suportată de Cloudflare Workers
+  const key = await crypto.subtle.importKey('raw', new TextEncoder().encode(p1), 'PBKDF2', false, ['deriveBits']);
+  const bits = await crypto.subtle.deriveBits({ name: 'PBKDF2', hash: 'SHA-256', salt, iterations: it }, key, 256);
+  const vals = [['ADMIN_PASSWORD_HASH', `pbkdf2$${it}$${hex(salt)}$${hex(bits)}`], ['ADMIN_TOTP_SECRET', b32(rnd(20))], ['SESSION_SECRET', b64u(rnd(48))]];
+  const uri = `otpauth://totp/${encodeURIComponent('snoozies.ro:admin')}?secret=${vals[1][1]}&issuer=snoozies.ro&digits=6&period=30`;
+  const qr = qrcode(0, 'M'); qr.addData(uri); qr.make();
+  document.getElementById('qr').innerHTML = qr.createSvgTag({ cellSize: 5, margin: 2, scalable: true });
+  document.getElementById('kv').innerHTML = vals.map(([k, v]) => `<div><b>${k}<button class="link" type="button" data-v="${esc(v)}">Copiază</button></b><code>${esc(v)}</code></div>`).join('');
+  document.getElementById('p1').value = document.getElementById('p2').value = '';
+  document.getElementById('f').hidden = true; document.getElementById('out').hidden = false;
+});
+document.getElementById('kv').addEventListener('click', async e => {
+  const b = e.target.closest('[data-v]'); if (!b) return;
+  try { await navigator.clipboard.writeText(b.dataset.v); b.textContent = 'Copiat ✓'; setTimeout(() => b.textContent = 'Copiază', 1500); } catch { }
+});
+</script>
+</body>
+</html>

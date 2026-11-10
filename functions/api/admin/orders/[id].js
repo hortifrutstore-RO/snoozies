@@ -1,5 +1,6 @@
 import { json } from '../../../_lib/auth.js';
-import { sendMail, mailReady, esc } from '../../../_lib/mail.js';
+import { sendMail, mailReady } from '../../../_lib/mail.js';
+import { shipped, confirmation } from '../../../_lib/emails.js';
 import SHOP from '../../_shop.json';
 import { reserve, restore, getStock, syncCatalogStock } from '../../../_lib/stock.js';
 const STATUS = ['noua', 'expediata', 'livrata', 'anulata'];
@@ -31,16 +32,14 @@ export async function onRequestPatch({ request, env, params, waitUntil }) {
   const status = b.status ?? o.status, code = awb ?? o.awb;
   let mailed = false;
   if (status === 'expediata' && code && (!o.awb_notified_at || o.awb !== code || b.resend) && mailReady(env)) {
-    const link = SHOP.trackingUrl.replace('{awb}', encodeURIComponent(code));
-    const items = JSON.parse(o.items_json || '[]').map(i => `${i.qty} × ${esc(i.name)}`).join('<br>');
-    const r = await sendMail(env, { to: o.email, replyTo: SHOP.email, subject: `Comanda ${o.number} a fost expediată – AWB ${code}`,
-      html: `<p>Bună, ${esc(o.name)}!</p><p>Comanda <b>${esc(o.number)}</b> a fost predată curierului ${esc(SHOP.carrier)}.</p>
-        <p style="font-size:17px">AWB: <b>${esc(code)}</b></p>
-        <p><a href="${link}" style="display:inline-block;background:#9E2A5B;color:#FFFFFF;padding:12px 22px;border-radius:999px;text-decoration:none;font-weight:bold">Urmărește coletul</a></p>
-        <p style="color:#4A3D37">${items}</p>
-        ${o.payment === 'cod' ? `<p>Plata de <b>${o.total.toFixed(2).replace('.', ',')} lei</b> se face curierului, la livrare.</p>` : ''}
-        <p>Pentru orice întrebare răspunde la acest email sau sună la 0746 242 877.</p>` });
+    const m = shipped({ ...o, items: JSON.parse(o.items_json || '[]') }, code, { base: new URL(request.url).origin, shop: SHOP });
+    const r = await sendMail(env, { to: o.email, replyTo: SHOP.email, subject: m.subject, html: m.html });
     if (r.ok) { mailed = true; await env.DB.prepare('UPDATE orders SET awb_notified_at = ?1 WHERE id = ?2').bind(new Date().toISOString(), id).run(); }
+  }
+  if (b.resendConfirmation && mailReady(env)) {
+    const ord = { ...o, items: JSON.parse(o.items_json || '[]'), companyName: o.company_name, companyCui: o.company_cui };
+    const m = confirmation(ord, { base: new URL(request.url).origin, shop: SHOP });
+    mailed = (await sendMail(env, { to: o.email, replyTo: SHOP.email, subject: m.subject, html: m.html })).ok;
   }
   return json({ ok: true, mailed, mailConfigured: mailReady(env) });
 }

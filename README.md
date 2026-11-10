@@ -22,7 +22,7 @@ Comenzi (status, AWB), produse (preț, preț tăiat, stoc, poze, descriere, caru
 - Salvarea scrie în depozitul GitHub (`data/*.json`, `public/img/`), iar Cloudflare Pages reconstruiește site-ul automat în 1–2 minute. Fiecare salvare e un commit, deci orice modificare se poate anula.
 - Comenzile stau în baza D1 și se văd imediat.
 
-Configurare acces: `python3 tools/setup_admin.py` → afișează `ADMIN_PASSWORD_HASH`, `ADMIN_TOTP_SECRET`, `SESSION_SECRET` și salvează codul QR de scanat în aplicația de autentificare.
+Configurare acces: deschide `/admin/configurare.html` (generează în browser parola criptată, codul QR pentru 2FA și cheia de sesiune) sau rulează `python3 tools/setup_admin.py` → afișează `ADMIN_PASSWORD_HASH`, `ADMIN_TOTP_SECRET`, `SESSION_SECRET` și salvează codul QR de scanat în aplicația de autentificare.
 
 ## Publicare (o singură dată)
 0. Depozit privat pe GitHub cu acest folder. În Cloudflare Pages: Connect to Git, build command `pip install jinja2 bleach && python3 build/build.py`, output `dist`.

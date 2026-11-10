@@ -5,7 +5,7 @@ export async function sendMail(env, { to, subject, html, replyTo }) {
   if (!mailReady(env)) return { ok: false, skipped: true };
   const r = await fetch((env.RESEND_API || 'https://api.resend.com') + '/emails', {
     method: 'POST', headers: { authorization: `Bearer ${env.RESEND_API_KEY}`, 'content-type': 'application/json' },
-    body: JSON.stringify({ from: env.MAIL_FROM, to: Array.isArray(to) ? to : [to], reply_to: replyTo, subject, html: wrap(html) })
+    body: JSON.stringify({ from: env.MAIL_FROM, to: Array.isArray(to) ? to : [to], reply_to: replyTo, subject, html: /^<!doctype/i.test(html) ? html : wrap(html) })
   }).catch(() => null);
   return { ok: !!(r && r.ok) };
 }

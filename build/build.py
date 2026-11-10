@@ -164,9 +164,14 @@ json.dump(idx, open(os.path.join(DIST, 'data/search.json'), 'w', encoding='utf-8
 
 # Catalog pentru funcția de comenzi (prețurile reale, verificate pe server)
 os.makedirs(os.path.join(ROOT, 'functions/api'), exist_ok=True)
-json.dump({v['sku']: dict(name=v['name'], price=p['price'], inStock=v['inStock']) for p in products for v in variants(p)},
+def vimg(p, v):
+    c = v.get('color')
+    if c and p.get('imgColor') and c in p['imgColor']: return '/img/p/' + p['images'][p['imgColor'].index(c)]
+    return '/img/p/' + p['images'][0] if p['images'] else ''
+def vopt(p, v): return v['name'][len(p['name']):].lstrip(' –') if v['name'].startswith(p['name']) else ''
+json.dump({v['sku']: dict(name=v['name'], model=p['name'], opt=vopt(p, v), img=vimg(p, v), url='/produs/' + p['slug'] + '/', price=p['price'], inStock=v['inStock']) for p in products for v in variants(p)},
           open(os.path.join(ROOT, 'functions/api/_catalog.json'), 'w', encoding='utf-8'), ensure_ascii=False)
-json.dump(dict(freeOver=site['shipping']['freeOver'], cost=site['shipping']['cost'], email=site['contact']['email'], name=site['name'], carrier=site['shipping']['carrier'], trackingUrl=site['shipping'].get('trackingUrl') or 'https://sameday.ro/status-colet/?awb={awb}'),
+json.dump(dict(freeOver=site['shipping']['freeOver'], cost=site['shipping']['cost'], email=site['contact']['email'], name=site['name'], carrier=site['shipping']['carrier'], phone=site['contact'].get('phone',''), whatsapp=site['contact'].get('whatsapp',''), company=site['company'], trackingUrl=site['shipping'].get('trackingUrl') or 'https://sameday.ro/status-colet/?awb={awb}'),
           open(os.path.join(ROOT, 'functions/api/_shop.json'), 'w', encoding='utf-8'), ensure_ascii=False)
 
 # Redirecționări 301 de la adresele Magento

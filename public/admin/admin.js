@@ -21,7 +21,7 @@ function showLogin() { $('#app').hidden = true; $('#login').hidden = false; $('#
 $('#loginForm').addEventListener('submit', async e => {
   e.preventDefault(); const f = e.target, msg = $('#loginMsg'); msg.classList.remove('show');
   try { await api('login', { method: 'POST', json: { password: f.password.value, code: f.code.value } }); f.reset(); start(); }
-  catch (err) { msg.textContent = err.message; msg.classList.add('show'); }
+  catch (err) { msg.innerHTML = esc(err.message) + (/nu este configurat/.test(err.message) ? ' <a href="/admin/configurare.html">Configurează accesul</a>' : ''); msg.classList.add('show'); }
 });
 $('#logout').addEventListener('click', async () => { if (dirty() && !confirm('Ai modificări nesalvate. Ieși oricum?')) return; await api('logout', { method: 'POST' }).catch(() => {}); location.reload(); });
 
@@ -64,15 +64,23 @@ $$('[data-tab]').forEach(t => t.addEventListener('click', () => {
 /* ---------- comenzi ---------- */
 const trackUrl = awb => ((D && D.site.shipping && D.site.shipping.trackingUrl) || 'https://sameday.ro/status-colet/?awb={awb}').replace('{awb}', encodeURIComponent(awb));
 const ST = { noua: 'Nouă', expediata: 'Expediată', livrata: 'Livrată', anulata: 'Anulată' };
-let ordFilter = 'noua';
+let ordFilter = 'noua', ordList = [];
+const norm = s => String(s || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+function renderOrders() {
+  const q = norm($('#ordSearch').value).trim(), qd = q.replace(/\D/g, '');
+  const list = q ? ordList.filter(o => norm([o.number, o.name, o.email, o.city, o.county, o.awb].join(' ')).includes(q) || (qd.length >= 4 && String(o.phone).replace(/\D/g, '').includes(qd))) : ordList;
+  $('#orders').innerHTML = list.length ? list.map(orderHtml).join('') : `<div class="empty">${q ? 'Nicio comandă găsită.' : 'Nicio comandă aici.'}</div>`;
+}
+const addrText = o => [o.name, o.phone, o.delivery === 'easybox' ? 'Easybox: ' + o.easybox : o.address, o.city + ', jud. ' + o.county + (o.zip ? ', ' + o.zip : ''), 'Ramburs: ' + lei(o.total).replace(' lei', '') + ' lei'].join('\n');
 async function loadOrders() {
   try {
     const j = await api('orders' + (ordFilter ? '?status=' + ordFilter : ''));
     const cnt = Object.fromEntries(j.counts.map(c => [c.status, c.n])); const all = j.counts.reduce((a, c) => a + c.n, 0);
     $('#newCount').hidden = !cnt.noua; $('#newCount').textContent = cnt.noua || '';
     $('#orderFilters').innerHTML = [['noua', 'Noi'], ['expediata', 'Expediate'], ['livrata', 'Livrate'], ['anulata', 'Anulate'], ['', 'Toate']]
-      .map(([k, l]) => `<button class="chip" data-of="${k}" style="${k === ordFilter ? 'background:var(--green);color:var(--cream);border-color:var(--green)' : ''}">${l} (${k ? cnt[k] || 0 : all})</button>`).join('');
-    $('#orders').innerHTML = j.orders.length ? j.orders.map(orderHtml).join('') : '<div class="empty">Nicio comandă aici.</div>';
+      .map(([k, l]) => `<button class="chip" data-of="${k}" style="${k === ordFilter ? 'background:var(--berry);color:#fff;border-color:var(--berry)' : ''}">${l} (${k ? cnt[k] || 0 : all})</button>`).join('');
+    $('#mailOff').hidden = j.mailConfigured !== false;
+    ordList = j.orders; renderOrders();
   } catch (e) { $('#orders').innerHTML = `<div class="empty">${esc(e.message)}</div>`; }
 }
 function orderHtml(o) {
@@ -87,19 +95,28 @@ function orderHtml(o) {
       <div><b>Plată</b>${o.payment === 'cod' ? 'Ramburs, la livrare' : 'Transfer bancar'}<br>Transport: ${o.shipping ? lei(o.shipping) : 'gratuit'}${o.newsletter ? '<br>Acceptă oferte pe email' : ''}</div>
     </div>
     ${o.notes ? `<div class="hint">Observații client: ${esc(o.notes)}</div>` : ''}
-    <div class="ord-items">${o.items.map(i => `<div><span>${i.qty} × ${esc(i.name)} <small class="hint">(${esc(i.sku)})</small></span><span>${lei(i.total)}</span></div>`).join('')}</div>
+    <div class="ord-items">${o.items.map(i => `<div>${i.img ? `<img src="${esc(i.img)}" alt="" loading="lazy">` : ''}<span class="nm">${i.qty} × ${esc(i.model || i.name)}${i.opt ? `<br><small>${esc(i.opt)}</small>` : ''} <small class="hint">${esc(i.sku)}</small></span><span>${lei(i.total)}</span></div>`).join('')}</div>
     <div class="ord-act">
       <input class="field" placeholder="Număr AWB" value="${esc(o.awb || '')}" data-awb>
       ${o.status !== 'expediata' ? '<button class="btn" data-set="expediata">Expediată</button>' : ''}
       ${o.status !== 'livrata' ? '<button class="btn btn-ghost" data-set="livrata">Livrată</button>' : ''}
       ${o.status !== 'anulata' ? '<button class="btn btn-ghost" data-set="anulata">Anulează</button>' : ''}
       ${o.status !== 'noua' ? '<button class="link" data-set="noua">Înapoi la „Nouă”</button>' : ''}
+      <span class="ord-more"><button class="link" data-copy>Copiază datele pentru AWB</button> · <button class="link" data-confirm>Retrimite confirmarea</button></span>
     </div>
     ${o.awb ? `<div class="hint">AWB ${esc(o.awb)} · <a href="${esc(trackUrl(o.awb))}" target="_blank" rel="noopener">Urmărește coletul</a>${o.awb_notified_at ? ` · email de urmărire trimis clientului (${new Date(o.awb_notified_at).toLocaleString('ro-RO', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' })}) <button class="link" data-resend>Retrimite</button>` : o.status === 'expediata' ? ' · emailul de urmărire nu a fost trimis' : ''}</div>` : `<div class="hint">Pune AWB-ul și apasă „Expediată”: clientul primește automat emailul cu linkul de urmărire.</div>`}
   </article>`;
 }
 $('#orderFilters').addEventListener('click', e => { const b = e.target.closest('[data-of]'); if (b) { ordFilter = b.dataset.of; loadOrders(); } });
 $('#reloadOrders').addEventListener('click', loadOrders);
+$('#ordSearch').addEventListener('input', renderOrders);
+$('#orders').addEventListener('click', async e => {
+  const c = e.target.closest('[data-copy]'), f = e.target.closest('[data-confirm]'); if (!c && !f) return;
+  const card = e.target.closest('.ord'), o = ordList.find(x => String(x.id) === card.dataset.id);
+  if (c) { try { await navigator.clipboard.writeText(addrText(o)); toast('Copiat. Lipește în formularul Sameday.'); } catch { prompt('Copiază:', addrText(o).replace(/\n/g, ' | ')); } return; }
+  if (!confirm('Retrimiți emailul de confirmare către ' + o.email + '?')) return;
+  try { const r = await api('orders/' + o.id, { method: 'PATCH', json: { resendConfirmation: true } }); toast(r.mailed ? 'Confirmarea a fost retrimisă.' : r.mailConfigured === false ? 'Emailurile automate nu sunt încă activate.' : 'Emailul nu a putut fi trimis.'); } catch (err) { toast(err.message); }
+});
 $('#orders').addEventListener('click', async e => {
   const b = e.target.closest('[data-set]'); if (!b) return; const card = b.closest('.ord');
   if (b.dataset.set === 'anulata' && !confirm('Anulezi comanda?')) return;

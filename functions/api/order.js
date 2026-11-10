@@ -2,12 +2,12 @@
 // Prețurile și transportul se recalculează aici, din catalogul de pe server, nu din browser.
 import CATALOG from './_catalog.json';
 import SHOP from './_shop.json';
-import { sendMail, esc } from '../_lib/mail.js';
+import { sendMail } from '../_lib/mail.js';
+import { confirmation, notification } from '../_lib/emails.js';
 import { reserve, restore, syncCatalogStock } from '../_lib/stock.js';
 
 const json = (o, s = 200) => new Response(JSON.stringify(o), { status: s, headers: { 'content-type': 'application/json; charset=utf-8' } });
 const str = (v, max = 200) => (typeof v === 'string' ? v.trim().slice(0, max) : '');
-const lei = n => n.toFixed(2).replace('.', ',') + ' lei';
 
 export async function onRequestPost({ request, env, waitUntil }) {
   let b;
@@ -17,7 +17,8 @@ export async function onRequestPost({ request, env, waitUntil }) {
   const o = {
     name: str(b.name, 120), phone: str(b.phone, 30), email: str(b.email, 160), county: str(b.county, 40), city: str(b.city, 80),
     zip: str(b.zip, 10), address: str(b.address, 250), delivery: b.delivery === 'easybox' ? 'easybox' : 'address', easybox: str(b.easybox, 200),
-    payment: 'cod', // deocamdată doar ramburs company: !!b.company, companyName: str(b.companyName, 160), companyCui: str(b.companyCui, 20),
+    payment: 'cod', // deocamdată doar ramburs
+    company: !!b.company, companyName: str(b.companyName, 160), companyCui: str(b.companyCui, 20),
     notes: str(b.notes, 1000), newsletter: !!b.newsletter
   };
   const errs = [];
@@ -35,7 +36,7 @@ export async function onRequestPost({ request, env, waitUntil }) {
   for (const it of Array.isArray(b.items) ? b.items.slice(0, 50) : []) {
     const p = CATALOG[it && it.sku]; const q = Math.max(1, Math.min(99, parseInt(it && it.qty, 10) || 0));
     if (!p || !p.inStock || !q) continue;
-    items.push({ sku: it.sku, name: p.name, price: p.price, qty: q, total: Math.round(p.price * q * 100) / 100 });
+    items.push({ sku: it.sku, name: p.name, model: p.model, opt: p.opt, img: p.img, url: p.url, price: p.price, qty: q, total: Math.round(p.price * q * 100) / 100 });
   }
   if (!items.length) return json({ ok: false, error: 'Coșul este gol sau produsele nu mai sunt disponibile.' }, 400);
   const subtotal = Math.round(items.reduce((a, x) => a + x.total, 0) * 100) / 100;
@@ -58,17 +59,14 @@ export async function onRequestPost({ request, env, waitUntil }) {
   } catch (e) { await restore(env, items); throw e; }
   if (rs.zeroed.length) waitUntil(syncCatalogStock(env, rs.zeroed));
 
-  const rows = items.map(x => `<tr><td>${esc(x.name)}</td><td align="center">${x.qty}</td><td align="right">${lei(x.total)}</td></tr>`).join('');
-  const where = o.delivery === 'easybox' ? `Easybox: ${esc(o.easybox)}` : `${esc(o.address)}, ${esc(o.city)}, jud. ${esc(o.county)}`;
-  const body = `<p>Comanda <b>${number}</b></p><table cellpadding="6" style="border-collapse:collapse;width:100%">${rows}
-    <tr><td colspan="2">Transport</td><td align="right">${shipping ? lei(shipping) : 'Gratuit'}</td></tr>
-    <tr><td colspan="2"><b>Total</b></td><td align="right"><b>${lei(total)}</b></td></tr></table>
-    <p>Livrare: ${where}<br>Plată: ${o.payment === 'cod' ? 'ramburs, la livrare' : 'transfer bancar'}</p>`;
-  const bank = o.payment === 'transfer' && env.BANK_DETAILS ? `<p>Date pentru plată: ${esc(env.BANK_DETAILS)}<br>Mențiune: ${number}</p>` : '';
-  await Promise.all([
-    sendMail(env, { to: o.email, replyTo: SHOP.email, subject: `Comanda ${number} a fost înregistrată`, html: `<p>Bună, ${esc(o.name)}!</p><p>Am primit comanda ta. Când o predăm curierului primești un email cu numărul AWB și linkul de urmărire. Plata se face curierului, la livrare.</p>${body}${bank}<p>Mulțumim!</p>` }),
-    sendMail(env, { to: env.NOTIFY_EMAIL || SHOP.email, replyTo: o.email, subject: `Comandă nouă ${number} – ${lei(total)}`, html: `${body}<p>${esc(o.name)} · ${esc(o.phone)} · ${esc(o.email)}${o.company ? `<br>Firmă: ${esc(o.companyName)} (${esc(o.companyCui)})` : ''}${o.notes ? `<br>Observații: ${esc(o.notes)}` : ''}</p>` })
-  ]);
+  const ord = { ...o, number, created_at: d.toISOString(), items, subtotal, shipping, total };
+  const ctx = { base: new URL(request.url).origin, shop: SHOP };
+  const c = confirmation(ord, ctx), n = notification(ord, ctx);
+  // Emailurile pleacă după răspuns, ca să nu încetinească pagina de comandă.
+  waitUntil(Promise.all([
+    sendMail(env, { to: o.email, replyTo: SHOP.email, subject: c.subject, html: c.html }),
+    sendMail(env, { to: env.NOTIFY_EMAIL || SHOP.email, replyTo: o.email, subject: n.subject, html: n.html })
+  ]));
   return json({ ok: true, number, total });
 }
 
