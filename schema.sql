@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS orders (
   subtotal REAL NOT NULL, shipping REAL NOT NULL, total REAL NOT NULL,
   awb TEXT,
   admin_note TEXT,
-  awb_notified_at TEXT
+  awb_notified_at TEXT, locker_json TEXT, awb_status TEXT, awb_checked_at TEXT
 );
 CREATE INDEX IF NOT EXISTS orders_created ON orders(created_at);
 
@@ -23,3 +23,4 @@ CREATE TABLE IF NOT EXISTS login_attempts (ip TEXT NOT NULL, ts TEXT NOT NULL);
 CREATE INDEX IF NOT EXISTS login_attempts_ip ON login_attempts(ip, ts);
 
 CREATE TABLE IF NOT EXISTS stock (sku TEXT PRIMARY KEY, qty INTEGER NOT NULL);
+CREATE TABLE IF NOT EXISTS kv (k TEXT PRIMARY KEY, v TEXT NOT NULL, exp TEXT);

@@ -1,6 +1,7 @@
 import { json } from '../../../_lib/auth.js';
 import { sendMail, mailReady } from '../../../_lib/mail.js';
-import { shipped, confirmation } from '../../../_lib/emails.js';
+import { confirmation } from '../../../_lib/emails.js';
+import { sendShipped } from '../../../_lib/notify.js';
 import SHOP from '../../_shop.json';
 import { reserve, restore, getStock, syncCatalogStock } from '../../../_lib/stock.js';
 const STATUS = ['noua', 'expediata', 'livrata', 'anulata'];
@@ -31,11 +32,7 @@ export async function onRequestPatch({ request, env, params, waitUntil }) {
   // Email automat de urmărire: o singură dată, când comanda e „Expediată” și are AWB (sau la retrimitere manuală).
   const status = b.status ?? o.status, code = awb ?? o.awb;
   let mailed = false;
-  if (status === 'expediata' && code && (!o.awb_notified_at || o.awb !== code || b.resend) && mailReady(env)) {
-    const m = shipped({ ...o, items: JSON.parse(o.items_json || '[]') }, code, { base: new URL(request.url).origin, shop: SHOP });
-    const r = await sendMail(env, { to: o.email, replyTo: SHOP.email, subject: m.subject, html: m.html });
-    if (r.ok) { mailed = true; await env.DB.prepare('UPDATE orders SET awb_notified_at = ?1 WHERE id = ?2').bind(new Date().toISOString(), id).run(); }
-  }
+  if (status === 'expediata' && code && (!o.awb_notified_at || o.awb !== code || b.resend)) mailed = await sendShipped(env, { ...o, id }, code, new URL(request.url).origin);
   if (b.resendConfirmation && mailReady(env)) {
     const ord = { ...o, items: JSON.parse(o.items_json || '[]'), companyName: o.company_name, companyCui: o.company_cui };
     const m = confirmation(ord, { base: new URL(request.url).origin, shop: SHOP });

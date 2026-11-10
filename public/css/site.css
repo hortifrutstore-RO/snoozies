@@ -372,3 +372,11 @@ h1,h2,.serif{font-family:var(--serif);font-weight:700;color:var(--ink);letter-sp
 .wa span{position:absolute;right:68px;white-space:nowrap;background:var(--ink);color:#fff;font-size:13px;font-weight:700;padding:8px 12px;border-radius:999px;opacity:0;pointer-events:none;transition:opacity .2s}
 .wa:hover span,.wa:focus-visible span{opacity:1}
 @media (max-width:760px){.wa{width:52px;height:52px;right:14px;bottom:14px}}
+
+/* easybox */
+.eb{margin:4px 0 12px}
+.eb-map{display:flex;flex-direction:column;gap:10px;align-items:flex-start}
+.eb-chosen{display:flex;gap:12px;align-items:flex-start;background:var(--pink-2);border:1.5px solid var(--pink);border-radius:16px;padding:12px 16px;width:100%;color:var(--berry)}
+.eb-chosen strong{display:block;color:var(--ink);font-size:15px}.eb-chosen small{display:block;color:var(--muted);font-size:13px;line-height:1.4}
+.eb-btn{min-height:44px}
+.eb-err{color:#B42318;font-size:13px;font-weight:600}

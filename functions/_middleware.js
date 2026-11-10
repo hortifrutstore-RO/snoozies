@@ -4,12 +4,17 @@ const SCHEMA = [
  "CREATE INDEX IF NOT EXISTS orders_created ON orders(created_at)",
  "CREATE TABLE IF NOT EXISTS login_attempts (ip TEXT NOT NULL, ts TEXT NOT NULL)",
  "CREATE INDEX IF NOT EXISTS login_attempts_ip ON login_attempts(ip, ts)",
- "CREATE TABLE IF NOT EXISTS stock (sku TEXT PRIMARY KEY, qty INTEGER NOT NULL)"
+ "CREATE TABLE IF NOT EXISTS stock (sku TEXT PRIMARY KEY, qty INTEGER NOT NULL)",
+ "CREATE TABLE IF NOT EXISTS kv (k TEXT PRIMARY KEY, v TEXT NOT NULL, exp TEXT)"
 ];
+// Coloane adăugate ulterior (pe o bază existentă ALTER dă eroare dacă există deja: o ignorăm).
+const COLUMNS = ['locker_json TEXT', 'awb_status TEXT', 'awb_checked_at TEXT'];
 let ready = null;
 export async function onRequest(ctx) {
   if (ctx.env.DB && /^\/api\//.test(new URL(ctx.request.url).pathname)) {
-    if (!ready) ready = ctx.env.DB.batch(SCHEMA.map(s => ctx.env.DB.prepare(s))).catch(e => { ready = null; throw e; });
+    if (!ready) ready = ctx.env.DB.batch(SCHEMA.map(s => ctx.env.DB.prepare(s)))
+      .then(() => Promise.all(COLUMNS.map(c => ctx.env.DB.prepare('ALTER TABLE orders ADD COLUMN ' + c).run().catch(() => null))))
+      .catch(e => { ready = null; throw e; });
     await ready;
   }
   return ctx.next();

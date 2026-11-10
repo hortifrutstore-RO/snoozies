@@ -39,3 +39,10 @@ Configurare acces: deschide `/admin/configurare.html` (generează în browser pa
 npx wrangler d1 execute snoozies-comenzi --local --file schema.sql
 npx wrangler pages dev dist
 ```
+
+## Sameday (AWB și easybox)
+- Secrete în Cloudflare: `SAMEDAY_USER`, `SAMEDAY_PASS` (userul de API primit de la Sameday). Opțional `SAMEDAY_API=https://sameday-api.demo.zitec.com` pentru serverul lor de test (cu userul de test) și `SAMEDAY_LOCKER_CLIENT_ID` dacă Sameday îți dă un clientId propriu pentru hartă.
+- Fără ele, site-ul merge ca înainte: easybox scris de mână, AWB introdus manual.
+- Cu ele: la comandă apare harta oficială de easybox; în panou, butonul „Emite AWB Sameday” (serviciul 24H la adresă, Locker NextDay la easybox, PUDO la punctele Sameday), eticheta PDF A6/A4, anularea AWB-ului și verificarea automată a livrării la deschiderea panoului.
+- Serviciile și punctul de ridicare se citesc din contul Sameday (păstrate 24 h). Greutatea implicită: `shipping.weightPerItem` × bucăți, modificabilă la emitere.
+- Codul e în `functions/_lib/sameday.js`, `functions/api/admin/orders/[id]/awb.js`, `label.js`, `functions/api/admin/sameday/`, `functions/api/easybox.js` — același pe magazin-horticol.ro.

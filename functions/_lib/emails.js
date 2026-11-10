@@ -58,8 +58,8 @@ export function confirmation(o, { base, shop }) {
       <div style="font:12px ${SANS};color:${C.muted};margin-top:8px">${fmtDate(o.created_at)}</div>`) +
     card(h2('Ce urmează') + `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
       ${step(1, 'Pregătim coletul', 'Verificăm produsele și le împachetăm cu grijă.')}
-      ${step(2, 'Îl predăm curierului ' + esc(shop.carrier || 'Sameday'), 'Primești un email cu numărul AWB și linkul de urmărire.')}
-      ${step(3, 'Plătești la livrare', `Suma de <b>${lei(o.total)}</b> se achită curierului, la primirea coletului.`)}</table>`) +
+      ${step(2, 'Îl predăm curierului ' + esc(shop.carrier || 'Sameday'), o.delivery === 'easybox' ? 'Primești un email cu numărul AWB, iar când coletul ajunge în easybox, Sameday îți trimite prin SMS codul de deschidere.' : 'Primești un email cu numărul AWB și linkul de urmărire.')}
+      ${step(3, 'Plătești la livrare', o.delivery === 'easybox' ? `Suma de <b>${lei(o.total)}</b> se achită la ridicarea coletului din easybox.` : `Suma de <b>${lei(o.total)}</b> se achită curierului, la primirea coletului.`)}</table>`) +
     card(h2('Produsele comandate') + itemsTable(o.items, base) + totals({ ...o, carrier: shop.carrier })) +
     card(`<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
       <td valign="top" width="50%" style="padding-right:12px;font:14px/1.6 ${SANS};color:${C.text}"><div style="font:bold 12px ${SANS};letter-spacing:1px;text-transform:uppercase;color:${C.muted};margin-bottom:6px">Livrare</div><b style="color:${C.ink}">${esc(o.name)}</b><br>${where(o)}</td>
@@ -93,10 +93,12 @@ export function shipped(o, code, { base, shop }) {
   const body =
     card(`<div style="font:bold 12px ${SANS};letter-spacing:1.5px;text-transform:uppercase;color:${C.berry};margin:0 0 8px">Comanda ${esc(o.number)}</div>
       <div style="font:bold 28px/1.2 ${SERIF};color:${C.ink};margin:0 0 12px">Papucii tăi sunt pe drum, ${first(o.name)}!</div>
-      <div style="font:15px/1.6 ${SANS};color:${C.text};margin:0 0 18px">Am predat coletul curierului ${esc(shop.carrier || 'Sameday')}. De obicei ajunge în 1–2 zile lucrătoare.</div>
+      <div style="font:15px/1.6 ${SANS};color:${C.text};margin:0 0 18px">${o.delivery === 'easybox'
+        ? `Coletul pleacă spre easybox-ul ales: <b>${esc(o.easybox)}</b>. Când ajunge, Sameday îți trimite prin SMS codul de deschidere.`
+        : `Am predat coletul curierului ${esc(shop.carrier || 'Sameday')}. De obicei ajunge în 1–2 zile lucrătoare.`}</div>
       <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:18px"><tr><td style="background:${C.pink2};border-radius:12px;padding:10px 16px;font:14px ${SANS};color:${C.ink}">AWB: <b style="letter-spacing:.5px">${esc(code)}</b></td></tr></table>
       ${btn(link, 'Urmărește coletul')}
-      ${o.payment === 'cod' ? `<div style="font:14px/1.6 ${SANS};color:${C.text};margin-top:18px">De plătit curierului la livrare: <b>${lei(o.total)}</b></div>` : ''}`) +
+      ${o.payment === 'cod' ? `<div style="font:14px/1.6 ${SANS};color:${C.text};margin-top:18px">${o.delivery === 'easybox' ? 'De plătit la ridicarea din easybox' : 'De plătit curierului la livrare'}: <b>${lei(o.total)}</b></div>` : ''}`) +
     card(h2('În colet') + itemsTable(o.items, base)) +
     card(`<div style="font:14px/1.6 ${SANS};color:${C.text}">Întrebări despre livrare? Răspunde la acest email sau sună la <b>${esc(shop.phone || '0746 242 877')}</b>.</div>`);
   return { subject: `Comanda ${o.number} a fost expediată – AWB ${code}`, html: layout({ base, shop, preheader: `AWB ${code} · urmărește coletul`, body }) };

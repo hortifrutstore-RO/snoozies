@@ -86,3 +86,13 @@
 @media (max-width:640px){.adm-top-in{gap:6px 12px}.adm-logo img{height:32px}.tabs{order:3;flex-basis:100%}.tabs button{padding:10px 8px;font-size:12px;letter-spacing:.03em}#logout{margin-left:auto}.prow{flex-wrap:wrap}.prow .pn{flex-basis:calc(100% - 80px)}.catrow{grid-template-columns:1fr}.adm-head h1{font-size:28px}}
 .sizes-ed{display:flex;flex-direction:column;gap:6px;margin:6px 0}.sizes-ed .srow{display:grid;grid-template-columns:90px 1fr 110px 36px;gap:6px;align-items:center}.sizes-ed .srow .field{height:38px}
 .sizes-ed .srow{grid-template-columns:110px 70px 1fr 1fr 80px 36px}.sizes-ed .crow{display:grid;grid-template-columns:1fr 1fr 36px;gap:6px}
+
+.ord-sd{display:flex;gap:10px;align-items:center;flex-wrap:wrap;background:var(--pink-2);border-radius:10px;padding:10px 12px}
+.ord-sd .btn{min-height:40px;padding:0 18px;font-size:13px}
+.link.danger{color:#B42318}
+.eb-tag{display:inline-block;background:var(--pine-2);color:var(--pine);font-size:11px;font-weight:700;border-radius:999px;padding:1px 8px;margin-right:4px}
+.awb-dlg{width:min(560px,100vw - 16px)}
+.awb-body{padding:16px 20px;display:flex;flex-direction:column;gap:10px}
+.awb-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+@media(max-width:520px){.awb-grid{grid-template-columns:1fr}}
+.awb-foot{display:flex;justify-content:flex-end;gap:10px;padding:14px 20px;border-top:1px solid var(--line)}

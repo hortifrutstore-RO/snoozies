@@ -22,7 +22,8 @@
   "returnCost": 16.99,
   "carrier": "Sameday",
   "days": "1–2 zile lucrătoare",
-  "trackingUrl": "https://sameday.ro/status-colet/?awb={awb}"
+  "trackingUrl": "https://sameday.ro/status-colet/?awb={awb}",
+  "weightPerItem": 0.35
  },
  "announcement": "Livrare gratuită peste 200 lei · Retur în 14 zile · Plata la livrare",
  "hero": {

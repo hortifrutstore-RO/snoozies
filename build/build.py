@@ -189,7 +189,7 @@ open(os.path.join(DIST, '_headers'), 'w').write("""/*
   Referrer-Policy: strict-origin-when-cross-origin
   X-Frame-Options: SAMEORIGIN
   Permissions-Policy: camera=(), microphone=(), geolocation=()
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; connect-src 'self' https://*.google-analytics.com https://*.googletagmanager.com https://*.google.com; img-src 'self' data: blob: https://*.google-analytics.com https://*.googletagmanager.com https://*.google.com https://*.doubleclick.net; style-src 'self' 'unsafe-inline'; font-src 'self'; frame-src https://*.doubleclick.net https://*.google.com; base-uri 'self'; form-action 'self'
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://*.sameday.ro; connect-src 'self' https://*.google-analytics.com https://*.googletagmanager.com https://*.google.com https://*.sameday.ro; img-src 'self' data: blob: https://*.google-analytics.com https://*.googletagmanager.com https://*.google.com https://*.doubleclick.net https://*.sameday.ro; style-src 'self' 'unsafe-inline' https://*.sameday.ro; font-src 'self' https://*.sameday.ro; frame-src https://*.doubleclick.net https://*.google.com https://*.sameday.ro; base-uri 'self'; form-action 'self'
 /admin/*
   Cache-Control: no-store
   X-Robots-Tag: noindex, nofollow

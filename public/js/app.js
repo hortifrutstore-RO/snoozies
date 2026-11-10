@@ -296,7 +296,35 @@ if (co) (async () => {
     render(); });
   lines.addEventListener('change', e => { if (e.target.matches('[data-qi]')) { cart.setQty(e.target.closest('.line').dataset.sku, parseInt(e.target.value, 10) || 1); render(); } });
   const tglCo = () => { const on = $('[data-company-toggle]').checked; $('[data-company]').hidden = !on; $$('[data-company] input').forEach(i => i.required = on); };
-  const tglEb = () => { const eb = co.delivery.value === 'easybox'; $('[data-easybox]').hidden = !eb; co.easybox.required = eb; $('[data-address]').hidden = eb; co.address.required = !eb; };
+  // Easybox: harta oficială Sameday când integrarea e activă, altfel câmp text.
+  let ebMap = null; const EBK = 'snz-easybox';
+  const ebSet = l => {
+    const f = { lockerId: l.lockerId, oohType: l.oohType ?? 0, lockerName: l.name || '', lockerAddress: l.address || '', lockerCity: l.city || '', lockerCounty: l.county || '', lockerZip: l.postalCode || '' };
+    Object.entries(f).forEach(([k, v]) => co[k].value = v ?? '');
+    co.easybox.value = `${f.lockerName} – ${f.lockerAddress}, ${f.lockerCity}`;
+    $('[data-eb-name]').textContent = f.lockerName; $('[data-eb-addr]').textContent = `${f.lockerAddress}, ${f.lockerCity}, jud. ${f.lockerCounty}`;
+    $('[data-eb-chosen]').hidden = false; $('[data-eb-open]').textContent = 'Schimbă easybox-ul'; $('[data-eb-err]').hidden = true;
+    try { localStorage.setItem(EBK, JSON.stringify(l)); } catch {}
+  };
+  const loadSdk = () => new Promise((ok, no) => { if (window.LockerPlugin) return ok(); const s = document.createElement('script'); s.src = 'https://cdn.sameday.ro/locker-plugin/lockerpluginsdk.js'; s.onload = ok; s.onerror = no; document.head.appendChild(s); });
+  fetch('/api/easybox').then(r => r.json()).then(c => {
+    if (!c.enabled) return; ebMap = c;
+    $('[data-eb-map]').hidden = false; $('[data-eb-text]').hidden = true; tglEb();
+    try { const l = JSON.parse(localStorage.getItem(EBK) || 'null'); if (l && l.lockerId) ebSet(l); } catch {}
+  }).catch(() => {});
+  $('[data-eb-open]').addEventListener('click', async () => {
+    const b = $('[data-eb-open]'); const t = b.textContent; b.disabled = true; b.textContent = 'Se deschide harta…';
+    try {
+      await loadSdk();
+      const opt = { clientId: ebMap.clientId, apiUsername: ebMap.apiUsername, countryCode: 'RO', langCode: 'ro', city: co.city.value.trim() };
+      window.LockerPlugin.init(opt);
+      if (window.LockerPlugin.options && window.LockerPlugin.options.city !== opt.city) window.LockerPlugin.reinitializePlugin(opt);
+      const p = window.LockerPlugin.getInstance(); p.open();
+      p.subscribe(l => { ebSet(l); p.close(); });
+    } catch { b.textContent = 'Harta nu s-a putut încărca. Încearcă din nou.'; b.disabled = false; return; }
+    b.disabled = false; b.textContent = t;
+  });
+  const tglEb = () => { const eb = co.delivery.value === 'easybox'; $('[data-easybox]').hidden = !eb; co.easybox.required = eb && !ebMap; $('[data-address]').hidden = eb; co.address.required = !eb; };
   $('[data-company-toggle]').addEventListener('change', tglCo); $$('input[name=delivery]').forEach(r => r.addEventListener('change', tglEb));
   render(); tglCo(); tglEb();
   co.addEventListener('submit', async e => {
@@ -305,6 +333,7 @@ if (co) (async () => {
     let bad = null;
     $$('.fl', co).forEach(fl => { const f = $('input,select,textarea', fl); if (!f) return; const inv = !f.closest('[hidden]') && !f.checkValidity(); fl.classList.toggle('invalid', inv); if (inv && !bad) bad = f; });
     if (bad) { bad.focus(); msg.textContent = 'Verifică câmpurile marcate cu roșu.'; msg.classList.add('show'); return; }
+    if (ebMap && co.delivery.value === 'easybox' && !co.lockerId.value) { $('[data-eb-err]').hidden = false; $('[data-eb-open]').focus(); msg.textContent = 'Alege easybox-ul de pe hartă.'; msg.classList.add('show'); return; }
     if (!co.terms.checked) { msg.textContent = 'Trebuie să accepți Termenii și condițiile.'; msg.classList.add('show'); return; }
     const fd = Object.fromEntries(new FormData(co).entries());
     fd.items = cart.items(); fd.company = !!co.company.checked; fd.newsletter = !!co.newsletter.checked; fd.terms = true;
