@@ -9,7 +9,7 @@ export async function onRequestPost({ request, env }) {
   let b = {}; try { b = await request.json(); } catch {}
   const email = normEmail(b.email);
   if (!validEmail(email)) return json({ ok: false, error: 'Adresa de email nu pare corectă.' }, 400);
-  if (!mailReady(env) || !env.SESSION_SECRET) return json({ ok: false, error: 'Conectarea nu este disponibilă momentan. Încearcă mai târziu.' }, 503);
+  if (!mailReady(env) || !env.SESSION_SECRET) return json({ ok: false, error: 'Conectarea nu este disponibilă momentan. Încearcă mai târziu.' }, 422);
   const ip = request.headers.get('cf-connecting-ip') || '';
   const since = new Date(Date.now() - 15 * 60e3).toISOString();
   const r = await env.DB.prepare('SELECT SUM(email = ?1) AS e, SUM(ip = ?2) AS i FROM login_tokens WHERE created_at > ?3').bind(email, ip, since).first();
@@ -21,6 +21,6 @@ export async function onRequestPost({ request, env }) {
   const base = new URL(request.url).origin;
   const m = loginLink({ link: `${base}/api/account/verify?t=${t}`, minutes: LINK_MIN }, { base, shop: SHOP });
   const s = await sendMail(env, { to: email, replyTo: SHOP.email, subject: m.subject, html: m.html });
-  if (!s.ok) return json({ ok: false, error: 'Emailul nu a putut fi trimis. Încearcă din nou.' }, 502);
+  if (!s.ok) return json({ ok: false, error: 'Emailul nu a putut fi trimis. Încearcă din nou.' }, 422);
   return json({ ok: true });
 }

@@ -9,5 +9,5 @@ export async function onRequestGet({ env, params, request }) {
   try {
     const r = await awbPdf(env, o.awb, size);
     return new Response(r.body, { headers: { 'content-type': 'application/pdf', 'content-disposition': `inline; filename="AWB-${o.awb}-${o.number}.pdf"`, 'cache-control': 'no-store' } });
-  } catch (e) { return json({ ok: false, error: e.message }, 502); }
+  } catch (e) { return json({ ok: false, error: e.message }, 422); }
 }
