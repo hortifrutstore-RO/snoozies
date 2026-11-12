@@ -34,7 +34,8 @@ async function token(env, fresh = false) {
   const txt = await r.text(); let j = {}; try { j = JSON.parse(txt); } catch {}
   if (!r.ok || !j.token) {
     console.log('Sameday auth', r.status, txt.slice(0, 300));
-    const why = j.message || j.error || (j.errors && JSON.stringify(j.errors).slice(0, 160)) || (/<html/i.test(txt) ? 'răspuns HTML (posibil blocat de firewall-ul Sameday)' : txt.slice(0, 120));
+    const sv = v => typeof v === 'string' ? v : v ? JSON.stringify(v).slice(0, 200) : '';
+    const why = sv(j.message) || sv(j.error) || sv(j.errors) || (/<html/i.test(txt) ? 'răspuns HTML (posibil blocat de firewall-ul Sameday)' : txt.slice(0, 120));
     throw new Error(`Sameday: autentificare eșuată (cod ${r.status}${why ? ': ' + why : ''}). Verifică SAMEDAY_USER / SAMEDAY_PASS.`);
   }
   await kvSet(env, key, j.token, 12 * 3600); // tokenul e valabil mai mult; îl reînnoim de două ori pe zi
