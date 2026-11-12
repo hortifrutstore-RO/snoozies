@@ -9,3 +9,9 @@ database_id = "d983512b-bb29-4d74-ba70-30113393cbc7"
 
 # Secrete (se setează din panoul Cloudflare sau cu `wrangler pages secret put`):
 # RESEND_API_KEY, MAIL_FROM (ex. "Snoozies <comenzi@snoozies.ro>"), NOTIFY_EMAIL, ADMIN_PASSWORD_HASH, ADMIN_TOTP_SECRET, SESSION_SECRET, GITHUB_TOKEN, GITHUB_REPO, GITHUB_BRANCH
+
+[vars]
+MAIL_FROM = "Snoozies <comenzi@snoozies.ro>"
+NOTIFY_EMAIL = "hortifrutstore@gmail.com"
+GITHUB_REPO = "hortifrutstore-RO/snoozies"
+GITHUB_BRANCH = "main"
