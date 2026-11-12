@@ -301,6 +301,7 @@ if (co) (async () => {
     $$('[data-ship-label]').forEach(e => e.textContent = free ? 'Gratuit' : lei(e.dataset.shipLabel === 'easybox' ? (S.shipEb ?? S.ship) : S.ship));
     $('[data-sum-total]').textContent = lei(sub + ship);
   };
+  $('[data-cart-clear]').addEventListener('click', () => { if (confirm('Golești coșul? Toate produsele vor fi scoase.')) { cart.clear(); render(); } });
   lines.addEventListener('click', e => { const l = e.target.closest('.line'); if (!l) return; const sku = l.dataset.sku;
     if (e.target.closest('[data-rm]')) cart.remove(sku);
     const q = e.target.closest('[data-q]'); if (q) { const x = cart.items().find(i => i.sku === sku); cart.setQty(sku, x.qty + parseInt(q.dataset.q, 10)); }
@@ -330,9 +331,10 @@ if (co) (async () => {
       const opt = { clientId: ebMap.clientId, apiUsername: ebMap.apiUsername, countryCode: 'RO', langCode: 'ro' };
       // Harta se blochează dacă primește un oraș gol: îl trimitem doar când e completat (altfel județul sau Bucureștiul).
       // Centrul hărții: orașul scris > județul ales > orașul aproximat după conexiune (fără cerere de locație) > București.
+      // Harta Sameday înțelege doar orașul (fără oraș se deschide pe București): fără oraș scris, folosim reședința județului ales.
+      const SEAT = {"Alba": "Alba Iulia", "Arad": "Arad", "Argeș": "Pitești", "Bacău": "Bacău", "Bihor": "Oradea", "Bistrița-Năsăud": "Bistrița", "Botoșani": "Botoșani", "Brașov": "Brașov", "Brăila": "Brăila", "București": "București", "Buzău": "Buzău", "Caraș-Severin": "Reșița", "Călărași": "Călărași", "Cluj": "Cluj-Napoca", "Constanța": "Constanța", "Covasna": "Sfântu Gheorghe", "Dâmbovița": "Târgoviște", "Dolj": "Craiova", "Galați": "Galați", "Giurgiu": "Giurgiu", "Gorj": "Târgu Jiu", "Harghita": "Miercurea Ciuc", "Hunedoara": "Deva", "Ialomița": "Slobozia", "Iași": "Iași", "Ilfov": "Voluntari", "Maramureș": "Baia Mare", "Mehedinți": "Drobeta-Turnu Severin", "Mureș": "Târgu Mureș", "Neamț": "Piatra Neamț", "Olt": "Slatina", "Prahova": "Ploiești", "Satu Mare": "Satu Mare", "Sălaj": "Zalău", "Sibiu": "Sibiu", "Suceava": "Suceava", "Teleorman": "Alexandria", "Timiș": "Timișoara", "Tulcea": "Tulcea", "Vaslui": "Vaslui", "Vâlcea": "Râmnicu Vâlcea", "Vrancea": "Focșani"};
       const typed = co.city.value.trim(), county = co.county.value;
-      if (typed) opt.city = typed; else if (county) { if (county === 'București') opt.city = 'București'; else opt.county = county; }
-      else opt.city = ebMap.city || 'București';
+      opt.city = typed || (county ? SEAT[county] : '') || ebMap.city || 'București';
       window.LockerPlugin.init(opt);
       if (window.LockerPlugin.options && (window.LockerPlugin.options.city !== opt.city || window.LockerPlugin.options.county !== opt.county)) window.LockerPlugin.reinitializePlugin(opt);
       const p = window.LockerPlugin.getInstance(); p.open();

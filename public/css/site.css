@@ -388,3 +388,7 @@ h1,h2,.serif{font-family:var(--serif);font-weight:700;color:var(--ink);letter-sp
 .size-msg:not([hidden]){display:flex;align-items:center;gap:8px;background:var(--pink-2);border:1.5px solid var(--berry);border-radius:12px;padding:8px 12px;margin:2px 0 0;width:fit-content}
 .size-msg:not([hidden])::before{content:"!";display:grid;place-items:center;width:20px;height:20px;border-radius:50%;background:var(--berry);color:#fff;font-size:13px;font-weight:800;flex:none}
 @media (prefers-reduced-motion:reduce){.size-pick.nudge,.color-pick.nudge,.btn.nudge{animation:none}}
+
+.cart-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.link-btn{background:none;border:0;padding:4px 0;font:inherit;font-size:14px;font-weight:600;color:var(--muted);text-decoration:underline;cursor:pointer}
+.link-btn:hover{color:var(--berry)}
