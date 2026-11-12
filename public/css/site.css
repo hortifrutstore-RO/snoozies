@@ -432,3 +432,4 @@ h1,h2,.serif{font-family:var(--serif);font-weight:700;color:var(--ink);letter-sp
 .acc-google{display:flex;flex-direction:column;gap:12px;align-items:flex-start;margin-top:6px}
 .acc-or{display:flex;align-items:center;gap:10px;width:100%;color:var(--muted);font-size:13px}
 .acc-or::before,.acc-or::after{content:"";flex:1;height:1px;background:var(--line)}
+@media (max-width:1000px){.acc-link{width:48px;padding:0;justify-content:center}.acc-link span{display:none}}
