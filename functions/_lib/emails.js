@@ -66,7 +66,7 @@ export function confirmation(o, { base, shop }) {
       <td valign="top" width="50%" style="font:14px/1.6 ${SANS};color:${C.text}"><div style="font:bold 12px ${SANS};letter-spacing:1px;text-transform:uppercase;color:${C.muted};margin-bottom:6px">Contact și plată</div>${esc(o.phone)}<br>${esc(o.email)}<br>Ramburs, la livrare${company(o)}</td>
     </tr></table>${o.notes ? `<div style="margin-top:14px;padding-top:12px;border-top:1px solid ${C.line};font:14px/1.5 ${SANS};color:${C.text}"><b>Observațiile tale:</b> ${esc(o.notes)}</div>` : ''}
     <div style="margin-top:14px;font:13px/1.5 ${SANS};color:${C.muted}">Ceva nu e corect în adresă sau telefon? Răspunde la acest email și corectăm înainte de expediere.</div>`) +
-    card(`${h2('Ai o întrebare?')}<div style="font:14px/1.6 ${SANS};color:${C.text};margin:0 0 16px">Răspunde direct la acest email, sună la <a href="tel:+${esc(shop.whatsapp || '40746242877')}" style="color:${C.berry};font-weight:bold;text-decoration:none">${esc(shop.phone || '0746 242 877')}</a>${wa ? ' sau scrie-ne pe WhatsApp' : ''}. Ai 14 zile să returnezi produsele, dacă nu se potrivesc.</div>
+    card(`${h2('Ai o întrebare?')}<div style="font:14px/1.6 ${SANS};color:${C.text};margin:0 0 16px">Răspunde direct la acest email, sună la <a href="tel:+${esc(shop.whatsapp || '40746242877')}" style="color:${C.berry};font-weight:bold;text-decoration:none">${esc(shop.phone || '0746 242 877')}</a>${wa ? ' sau scrie-ne pe WhatsApp' : ''}. Ai 14 zile să returnezi produsele, dacă nu se potrivesc. Comenzile tale le vezi oricând în <a href="${base}/cont/" style="color:${C.berry};font-weight:bold">contul tău</a>.</div>
       ${wa ? btn(wa, 'Scrie-ne pe WhatsApp') : ''}`);
   return { subject: `Comanda ${o.number} a fost înregistrată`, html: layout({ base, shop, preheader: `Mulțumim! Total ${lei(o.total)}, plata la livrare. Coletul pleacă în 1–2 zile lucrătoare.`, body }) };
 }
@@ -102,4 +102,14 @@ export function shipped(o, code, { base, shop }) {
     card(h2('În colet') + itemsTable(o.items, base)) +
     card(`<div style="font:14px/1.6 ${SANS};color:${C.text}">Întrebări despre livrare? Răspunde la acest email sau sună la <b>${esc(shop.phone || '0746 242 877')}</b>.</div>`);
   return { subject: `Comanda ${o.number} a fost expediată – AWB ${code}`, html: layout({ base, shop, preheader: `AWB ${code} · urmărește coletul`, body }) };
+}
+
+// 4. Clientul: linkul de conectare în cont
+export function loginLink({ link, minutes }, { base, shop }) {
+  const body = card(`<div style="font:bold 12px ${SANS};letter-spacing:1.5px;text-transform:uppercase;color:${C.berry};margin:0 0 8px">Contul tău</div>
+      <div style="font:bold 26px/1.2 ${SERIF};color:${C.ink};margin:0 0 12px">Intră în contul tău</div>
+      <div style="font:15px/1.6 ${SANS};color:${C.text};margin:0 0 20px">Apasă butonul de mai jos ca să vezi comenzile tale. Linkul e valabil ${minutes} de minute și merge o singură dată.</div>
+      ${btn(link, 'Intră în cont')}
+      <div style="font:13px/1.6 ${SANS};color:${C.muted};margin-top:20px">Nu ai cerut tu acest email? Îl poți ignora liniștit: nimeni nu poate intra în cont fără acest link.</div>`);
+  return { subject: `Linkul tău de conectare la ${shop.name || 'snoozies.ro'}`, html: layout({ base, shop, preheader: `Linkul e valabil ${minutes} de minute.`, body }) };
 }

@@ -5,7 +5,10 @@ const SCHEMA = [
  "CREATE TABLE IF NOT EXISTS login_attempts (ip TEXT NOT NULL, ts TEXT NOT NULL)",
  "CREATE INDEX IF NOT EXISTS login_attempts_ip ON login_attempts(ip, ts)",
  "CREATE TABLE IF NOT EXISTS stock (sku TEXT PRIMARY KEY, qty INTEGER NOT NULL)",
- "CREATE TABLE IF NOT EXISTS kv (k TEXT PRIMARY KEY, v TEXT NOT NULL, exp TEXT)"
+ "CREATE TABLE IF NOT EXISTS kv (k TEXT PRIMARY KEY, v TEXT NOT NULL, exp TEXT)",
+ "CREATE TABLE IF NOT EXISTS login_tokens (hash TEXT PRIMARY KEY, email TEXT NOT NULL, ip TEXT, created_at TEXT NOT NULL, expires_at TEXT NOT NULL, used_at TEXT)",
+ "CREATE INDEX IF NOT EXISTS login_tokens_created ON login_tokens(created_at)",
+ "CREATE INDEX IF NOT EXISTS orders_email ON orders(email COLLATE NOCASE)"
 ];
 // Coloane adăugate ulterior (pe o bază existentă ALTER dă eroare dacă există deja: o ignorăm).
 const COLUMNS = ['locker_json TEXT', 'awb_status TEXT', 'awb_checked_at TEXT'];

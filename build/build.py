@@ -142,6 +142,7 @@ for p in products:
 
 render('search.html', '/cautare/')
 render('cart.html', '/cos/', judete=JUDETE)
+render('account.html', '/cont/')
 
 # Pagini de text
 for fn in sorted(os.listdir(os.path.join(ROOT, 'content'))):
