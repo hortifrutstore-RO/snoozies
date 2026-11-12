@@ -316,9 +316,12 @@ if (co) (async () => {
     const b = $('[data-eb-open]'); const t = b.textContent; b.disabled = true; b.textContent = 'Se deschide harta…';
     try {
       await loadSdk();
-      const opt = { clientId: ebMap.clientId, apiUsername: ebMap.apiUsername, countryCode: 'RO', langCode: 'ro', city: co.city.value.trim() };
+      const opt = { clientId: ebMap.clientId, apiUsername: ebMap.apiUsername, countryCode: 'RO', langCode: 'ro' };
+      // Harta se blochează dacă primește un oraș gol: îl trimitem doar când e completat (altfel județul sau Bucureștiul).
+      const city = co.city.value.trim() || (co.county.value && co.county.value !== 'București' ? '' : 'București');
+      if (city) opt.city = city; else if (co.county.value) opt.county = co.county.value; else opt.city = 'București';
       window.LockerPlugin.init(opt);
-      if (window.LockerPlugin.options && window.LockerPlugin.options.city !== opt.city) window.LockerPlugin.reinitializePlugin(opt);
+      if (window.LockerPlugin.options && (window.LockerPlugin.options.city !== opt.city || window.LockerPlugin.options.county !== opt.county)) window.LockerPlugin.reinitializePlugin(opt);
       const p = window.LockerPlugin.getInstance(); p.open();
       p.subscribe(l => { ebSet(l); p.close(); });
     } catch { b.textContent = 'Harta nu s-a putut încărca. Încearcă din nou.'; b.disabled = false; return; }
