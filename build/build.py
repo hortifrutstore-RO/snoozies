@@ -171,7 +171,7 @@ def vimg(p, v):
 def vopt(p, v): return v['name'][len(p['name']):].lstrip(' –') if v['name'].startswith(p['name']) else ''
 json.dump({v['sku']: dict(name=v['name'], model=p['name'], opt=vopt(p, v), img=vimg(p, v), url='/produs/' + p['slug'] + '/', price=p['price'], inStock=v['inStock']) for p in products for v in variants(p)},
           open(os.path.join(ROOT, 'functions/api/_catalog.json'), 'w', encoding='utf-8'), ensure_ascii=False)
-json.dump(dict(freeOver=site['shipping']['freeOver'], cost=site['shipping']['cost'], email=site['contact']['email'], name=site['name'], carrier=site['shipping']['carrier'], phone=site['contact'].get('phone',''), whatsapp=site['contact'].get('whatsapp',''), company=site['company'], trackingUrl=site['shipping'].get('trackingUrl') or 'https://sameday.ro/status-colet/?awb={awb}'),
+json.dump(dict(freeOver=site['shipping']['freeOver'], cost=site['shipping']['cost'], easyboxCost=site['shipping'].get('easyboxCost', site['shipping']['cost']), email=site['contact']['email'], name=site['name'], carrier=site['shipping']['carrier'], phone=site['contact'].get('phone',''), whatsapp=site['contact'].get('whatsapp',''), company=site['company'], trackingUrl=site['shipping'].get('trackingUrl') or 'https://sameday.ro/status-colet/?awb={awb}'),
           open(os.path.join(ROOT, 'functions/api/_shop.json'), 'w', encoding='utf-8'), ensure_ascii=False)
 
 # Redirecționări 301 de la adresele Magento

@@ -380,3 +380,11 @@ h1,h2,.serif{font-family:var(--serif);font-weight:700;color:var(--ink);letter-sp
 .eb-chosen strong{display:block;color:var(--ink);font-size:15px}.eb-chosen small{display:block;color:var(--muted);font-size:13px;line-height:1.4}
 .eb-btn{min-height:44px}
 .eb-err{color:#B42318;font-size:13px;font-weight:600}
+
+/* mărime neselectată: tremur + evidențiere */
+@keyframes nudge{0%,100%{transform:translateX(0)}15%{transform:translateX(-10px)}30%{transform:translateX(9px)}45%{transform:translateX(-7px)}60%{transform:translateX(5px)}75%{transform:translateX(-3px)}}
+.size-pick.nudge,.color-pick.nudge,.btn.nudge{animation:nudge .55s cubic-bezier(.36,.07,.19,.97) both}
+.size-pick.nudge .size span{border-color:var(--berry)!important;box-shadow:0 0 0 3px rgba(158,42,91,.18);transition:box-shadow .2s}
+.size-msg:not([hidden]){display:flex;align-items:center;gap:8px;background:var(--pink-2);border:1.5px solid var(--berry);border-radius:12px;padding:8px 12px;margin:2px 0 0;width:fit-content}
+.size-msg:not([hidden])::before{content:"!";display:grid;place-items:center;width:20px;height:20px;border-radius:50%;background:var(--berry);color:#fff;font-size:13px;font-weight:800;flex:none}
+@media (prefers-reduced-motion:reduce){.size-pick.nudge,.color-pick.nudge,.btn.nudge{animation:none}}

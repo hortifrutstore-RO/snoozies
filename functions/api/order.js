@@ -45,7 +45,7 @@ export async function onRequestPost({ request, env, waitUntil }) {
   }
   if (!items.length) return json({ ok: false, error: 'Coșul este gol sau produsele nu mai sunt disponibile.' }, 400);
   const subtotal = Math.round(items.reduce((a, x) => a + x.total, 0) * 100) / 100;
-  const shipping = subtotal >= SHOP.freeOver ? 0 : SHOP.cost;
+  const shipping = subtotal >= SHOP.freeOver ? 0 : (o.delivery === 'easybox' ? (SHOP.easyboxCost ?? SHOP.cost) : SHOP.cost);
   const total = Math.round((subtotal + shipping) * 100) / 100;
 
   const d = new Date();

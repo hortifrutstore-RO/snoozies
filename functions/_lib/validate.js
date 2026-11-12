@@ -94,7 +94,7 @@ export function cleanSite(s) {
   o.popularSearches = (Array.isArray(s.popularSearches) ? s.popularSearches : []).map(x => t(x, 40)).filter(Boolean).slice(0, 12);
   o.synonyms = (Array.isArray(s.synonyms) ? s.synonyms : []).map(g => (Array.isArray(g) ? g : []).map(x => t(x, 40)).filter(Boolean)).filter(g => g.length > 1).slice(0, 200);
   o.categories = (Array.isArray(s.categories) ? s.categories : []).map(c => ({ slug: t(c.slug, 60), name: t(c.name, 80), intro: t(c.intro, 500), image: img(c.image) }));
-  o.shipping = { ...o.shipping, trackingUrl: /^https:\/\/[^\s<>"]+\{awb\}[^\s<>"]*$/.test(s.shipping?.trackingUrl || '') ? s.shipping.trackingUrl : 'https://sameday.ro/status-colet/?awb={awb}', freeOver: num(s.shipping?.freeOver) ?? 200, cost: num(s.shipping?.cost) ?? 16.99, returnCost: num(s.shipping?.returnCost) ?? 16.99, weightPerItem: Math.min(5, Math.max(0.05, num(s.shipping?.weightPerItem) ?? 0.35)) };
+  o.shipping = { ...o.shipping, trackingUrl: /^https:\/\/[^\s<>"]+\{awb\}[^\s<>"]*$/.test(s.shipping?.trackingUrl || '') ? s.shipping.trackingUrl : 'https://sameday.ro/status-colet/?awb={awb}', freeOver: num(s.shipping?.freeOver) ?? 200, cost: num(s.shipping?.cost) ?? 16.99, easyboxCost: num(s.shipping?.easyboxCost) ?? 10.99, returnCost: num(s.shipping?.returnCost) ?? 16.99, weightPerItem: Math.min(5, Math.max(0.05, num(s.shipping?.weightPerItem) ?? 0.35)) };
   o.analytics = { ga4: /^G-[A-Z0-9]+$/.test(s.analytics?.ga4 || '') ? s.analytics.ga4 : '', googleAds: /^AW-[0-9]+$/.test(s.analytics?.googleAds || '') ? s.analytics.googleAds : '' };
   return { site: o };
 }

@@ -49,7 +49,7 @@
       {% endif %}
       {% if site.emagUrl %}<a class="emag-link" href="{{ site.emagUrl }}" rel="noopener" target="_blank"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6"/><path d="M20 4l-9 9"/><path d="M18 14v6H4V6h6"/></svg>Preferi eMAG? Ne găsești și acolo</a>{% endif %}
       <div class="facts">
-        <div class="fact"><strong>{% if p.price >= site.shipping.freeOver %}Livrare gratuită{% else %}Livrare {{ site.shipping.cost|lei }}{% endif %}</strong><span>Gratuit peste {{ site.shipping.freeOver }} lei</span></div>
+        <div class="fact"><strong>{% if p.price >= site.shipping.freeOver %}Livrare gratuită{% else %}Livrare de la {{ [site.shipping.cost, site.shipping.easyboxCost or site.shipping.cost]|min|lei }}{% endif %}</strong><span>Gratuit peste {{ site.shipping.freeOver }} lei</span></div>
         <div class="fact"><strong>Plata la livrare</strong><span>Plătești curierului, la primire</span></div>
         <div class="fact"><strong>Retur în 14 zile</strong><span>Transportul de retur: {{ site.shipping.returnCost|lei }}</span></div>
         <div class="fact"><strong>{{ site.shipping.carrier }}</strong><span>Livrare în {{ site.shipping.days }}</span></div>

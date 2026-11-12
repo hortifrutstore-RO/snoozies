@@ -49,6 +49,16 @@ function toast(html) {
   const t = $('[data-toast]'); if (!t) return;
   t.innerHTML = html; t.classList.add('show'); clearTimeout(t._h); t._h = setTimeout(() => t.classList.remove('show'), 3200);
 }
+// Atenționare vizibilă când lipsește mărimea: mărimile tremură și se colorează, mesajul apare lângă ele.
+function nudge(box, msg, btn) {
+  if (!box) return;
+  if (msg) msg.hidden = false;
+  const r = box.getBoundingClientRect();
+  if (r.top < 90 || r.bottom > innerHeight) box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  [box, btn].forEach(el => { if (!el) return; el.classList.remove('nudge'); void el.offsetWidth; el.classList.add('nudge'); });
+  setTimeout(() => [box, btn].forEach(el => el && el.classList.remove('nudge')), 1400);
+  try { navigator.vibrate && navigator.vibrate([60, 40, 60]); } catch {}
+}
 document.addEventListener('click', e => {
   const b = e.target.closest('[data-add]'); if (!b) return;
   e.preventDefault();
@@ -56,7 +66,7 @@ document.addEventListener('click', e => {
   let sku = b.dataset.add;
   if (b.hasAttribute('data-needs-size')) {
     const r = $('[data-sizes] input:checked'), m = $('[data-size-msg]');
-    if (!r) { if (m) m.hidden = false; const f = $('[data-sizes] input:not(:disabled)'); if (f) f.focus(); return; }
+    if (!r) { nudge($('[data-sizes]'), m, b); return; }
     if (m) m.hidden = true; sku = r.value;
   }
   cart.add(sku, q);
@@ -282,12 +292,13 @@ if (co) (async () => {
     let sub = 0, n = 0;
     lines.innerHTML = it.map(x => { const p = idx.by[x.sku]; const t = p.price * x.qty; sub += t; n += x.qty;
       return `<div class="line" data-sku="${p.sku}"><img src="/img/p/${p.img}" alt=""><div class="info"><a href="/produs/${p.slug}/">${esc(p.name)}</a><small>${lei(p.price)} / pereche</small><button type="button" class="rm" data-rm>Elimină</button></div><div class="qty"><button type="button" aria-label="Scade cantitatea" data-q="-1">−</button><input type="number" min="1" max="${p.left ?? 99}" value="${x.qty}" aria-label="Cantitate" data-qi><button type="button" aria-label="Crește cantitatea" data-q="1">+</button></div><span class="tot">${lei(t)}</span></div>`; }).join('');
-    const ship = sub >= S.freeOver ? 0 : S.ship;
+    const free = sub >= S.freeOver, eb = co.delivery.value === 'easybox';
+    const ship = free ? 0 : (eb ? (S.shipEb ?? S.ship) : S.ship);
     $('[data-cart-title]').textContent = `Coșul tău · ${n} ${n === 1 ? 'produs' : 'produse'}`;
     $('[data-sum-label]').textContent = `Produse (${n})`;
     $('[data-sum-sub]').textContent = lei(sub);
     $('[data-sum-ship]').textContent = ship ? lei(ship) : 'Gratuit';
-    $$('[data-ship-label]').forEach(e => e.textContent = ship ? lei(ship) : 'Gratuit');
+    $$('[data-ship-label]').forEach(e => e.textContent = free ? 'Gratuit' : lei(e.dataset.shipLabel === 'easybox' ? (S.shipEb ?? S.ship) : S.ship));
     $('[data-sum-total]').textContent = lei(sub + ship);
   };
   lines.addEventListener('click', e => { const l = e.target.closest('.line'); if (!l) return; const sku = l.dataset.sku;
@@ -318,8 +329,10 @@ if (co) (async () => {
       await loadSdk();
       const opt = { clientId: ebMap.clientId, apiUsername: ebMap.apiUsername, countryCode: 'RO', langCode: 'ro' };
       // Harta se blochează dacă primește un oraș gol: îl trimitem doar când e completat (altfel județul sau Bucureștiul).
-      const city = co.city.value.trim() || (co.county.value && co.county.value !== 'București' ? '' : 'București');
-      if (city) opt.city = city; else if (co.county.value) opt.county = co.county.value; else opt.city = 'București';
+      // Centrul hărții: orașul scris > județul ales > orașul aproximat după conexiune (fără cerere de locație) > București.
+      const typed = co.city.value.trim(), county = co.county.value;
+      if (typed) opt.city = typed; else if (county) { if (county === 'București') opt.city = 'București'; else opt.county = county; }
+      else opt.city = ebMap.city || 'București';
       window.LockerPlugin.init(opt);
       if (window.LockerPlugin.options && (window.LockerPlugin.options.city !== opt.city || window.LockerPlugin.options.county !== opt.county)) window.LockerPlugin.reinitializePlugin(opt);
       const p = window.LockerPlugin.getInstance(); p.open();
@@ -328,7 +341,7 @@ if (co) (async () => {
     b.disabled = false; b.textContent = t;
   });
   const tglEb = () => { const eb = co.delivery.value === 'easybox'; $('[data-easybox]').hidden = !eb; co.easybox.required = eb && !ebMap; $('[data-address]').hidden = eb; co.address.required = !eb; };
-  $('[data-company-toggle]').addEventListener('change', tglCo); $$('input[name=delivery]').forEach(r => r.addEventListener('change', tglEb));
+  $('[data-company-toggle]').addEventListener('change', tglCo); $$('input[name=delivery]').forEach(r => r.addEventListener('change', () => { tglEb(); render(); }));
   render(); tglCo(); tglEb();
   co.addEventListener('submit', async e => {
     e.preventDefault();
