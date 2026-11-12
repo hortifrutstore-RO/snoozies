@@ -29,10 +29,14 @@ async function token(env, fresh = false) {
   if (!fresh) { const t = await kvGet(env, key); if (t) return t; }
   const r = await fetch(host(env) + '/api/authenticate', {
     method: 'POST', body: form({ remember_me: 1 }),
-    headers: { 'X-AUTH-USERNAME': env.SAMEDAY_USER, 'X-AUTH-PASSWORD': env.SAMEDAY_PASS }
+    headers: { 'X-AUTH-USERNAME': String(env.SAMEDAY_USER).trim(), 'X-AUTH-PASSWORD': String(env.SAMEDAY_PASS).trim() }
   });
-  const j = await r.json().catch(() => ({}));
-  if (!r.ok || !j.token) throw new Error('Sameday: autentificare eșuată (verifică SAMEDAY_USER / SAMEDAY_PASS).');
+  const txt = await r.text(); let j = {}; try { j = JSON.parse(txt); } catch {}
+  if (!r.ok || !j.token) {
+    console.log('Sameday auth', r.status, txt.slice(0, 300));
+    const why = j.message || j.error || (j.errors && JSON.stringify(j.errors).slice(0, 160)) || (/<html/i.test(txt) ? 'răspuns HTML (posibil blocat de firewall-ul Sameday)' : txt.slice(0, 120));
+    throw new Error(`Sameday: autentificare eșuată (cod ${r.status}${why ? ': ' + why : ''}). Verifică SAMEDAY_USER / SAMEDAY_PASS.`);
+  }
   await kvSet(env, key, j.token, 12 * 3600); // tokenul e valabil mai mult; îl reînnoim de două ori pe zi
   return j.token;
 }
