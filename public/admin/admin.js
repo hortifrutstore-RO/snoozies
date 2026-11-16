@@ -130,7 +130,7 @@ $('#orders').addEventListener('click', async e => {
     try { await api(`orders/${o.id}/awb`, { method: 'DELETE' }); toast('AWB anulat.'); loadOrders(); } catch (err) { toast(err.message); } return;
   }
   awbFor = o; const f = $('#awbForm'); const n = o.items.reduce((a, i) => a + i.qty, 0);
-  f.weight.value = Math.max(0.5, Math.round((n * perItem() + 0.1) * 10) / 10); f.parcels.value = 1; f.cod.value = o.payment === 'cod' ? o.total.toFixed(2) : 0; f.observation.value = '';
+  f.weight.value = 0.1; f.parcels.value = 1; f.cod.value = o.payment === 'cod' ? o.total.toFixed(2) : 0; f.observation.value = '';
   const lk = o.locker_json ? JSON.parse(o.locker_json) : null;
   $('#awbWho').innerHTML = `<b>${esc(o.number)}</b> · ${esc(o.name)} · ${n} buc. · ${o.delivery === 'easybox' ? (lk ? 'easybox ' + esc(lk.name) : '<span style="color:#B42318">easybox fără locker ales de pe hartă</span>') : esc(o.city)}`;
   const code = o.delivery === 'easybox' ? (lk && lk.oohType == 1 ? 'PP' : 'LN') : '24'; const s = (SD.services || []).find(x => x.code === code); const pt = (SD.points || []).find(x => x.isDefault) || (SD.points || [])[0];
@@ -368,7 +368,7 @@ function readSearch() {
 
 /* ---------- pornire ---------- */
 fetch('/api/admin/data', { headers: { 'x-admin': '1' } }).then(r => r.status === 401 ? showLogin() : start()).catch(showLogin);
-const defW = o => Math.max(0.5, Math.round((o.items.reduce((a, i) => a + i.qty, 0) * perItem() + 0.1) * 10) / 10);
+const defW = () => 0.1; // greutate implicită pe AWB (se poate schimba la emitere)
 /* ---------- AWB pentru mai multe comenzi deodată ---------- */
 const selIds = new Set();
 const eligible = o => SD.ready && !o.awb && o.status === 'noua';
