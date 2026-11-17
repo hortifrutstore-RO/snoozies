@@ -73,7 +73,7 @@ export async function onRequestPost({ request, env, waitUntil }) {
     sendMail(env, { to: o.email, replyTo: SHOP.email, subject: c.subject, html: c.html }),
     sendMail(env, { to: env.NOTIFY_EMAIL || SHOP.email, replyTo: o.email, subject: n.subject, html: n.html })
   ]));
-  return json({ ok: true, number, total });
+  return json({ ok: true, number, total, subtotal });
 }
 
 export const onRequest = () => json({ ok: false, error: 'Metodă nepermisă.' }, 405);
