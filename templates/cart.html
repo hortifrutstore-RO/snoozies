@@ -44,7 +44,7 @@
           </div>
           <label class="fl" data-eb-text>Easybox ales (adresa sau denumirea lockerului)<input class="field" name="easybox" placeholder="ex. easybox Lidl Florești, Str. Avram Iancu"><span class="err">Spune-ne ce easybox preferi.</span></label>
         </div>
-        <small style="color:var(--muted-2)">Peste {{ site.shipping.freeOver }} lei transportul e gratuit. Sub {{ site.shipping.freeOver }} lei: {{ site.shipping.cost|lei }} la adresă, {{ (site.shipping.easyboxCost or site.shipping.cost)|lei }} în easybox.</small>
+        <small style="color:var(--muted-2)">{% if site.shipping.freeQty %}De la {{ site.shipping.freeQty }} perechi (orice modele) transportul e gratuit. Sub {{ site.shipping.freeQty }} perechi{% else %}Peste {{ site.shipping.freeOver }} lei transportul e gratuit. Sub {{ site.shipping.freeOver }} lei{% endif %}: {{ site.shipping.cost|lei }} la adresă, {{ (site.shipping.easyboxCost or site.shipping.cost)|lei }} în easybox.</small>
       </div>
 
       <div class="panel">
@@ -58,6 +58,7 @@
       <h2>Sumar comandă</h2>
       <div class="row"><span data-sum-label>Produse</span><span data-sum-sub>0,00 lei</span></div>
       <div class="row"><span>Transport {{ site.shipping.carrier }}</span><span data-sum-ship>—</span></div>
+      <p class="hint" data-free-hint hidden style="margin:4px 0 0;font-size:.9em;color:var(--accent,#b0413e)"></p>
       <div class="row total"><strong>Total de plată</strong><strong data-sum-total>0,00 lei</strong></div>
       <small>Firma nu este plătitoare de TVA. Nu există alte costuri.</small>
       <label><input type="checkbox" name="terms" required> <span>Am citit și accept <a href="/termeni-si-conditii/" target="_blank">Termenii și condițiile</a> și <a href="/confidentialitate/" target="_blank">Politica de confidențialitate</a>. *</span></label>

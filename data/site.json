@@ -18,6 +18,7 @@
  },
  "shipping": {
   "freeOver": 200,
+  "freeQty": 3,
   "cost": 16.99,
   "returnCost": 16.99,
   "carrier": "Sameday",
@@ -26,7 +27,7 @@
   "weightPerItem": 0.35,
   "easyboxCost": 10.99
  },
- "announcement": "Livrare gratuită peste 200 lei · Retur în 14 zile · Plata la livrare",
+ "announcement": "Livrare gratuită de la 3 perechi · Retur în 14 zile · Plata la livrare",
  "hero": {
   "eyebrow": "Colecția de Crăciun",
   "title": "Picioarele tale merită o îmbrățișare pufoasă.",

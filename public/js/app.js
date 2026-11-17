@@ -292,12 +292,13 @@ if (co) (async () => {
     let sub = 0, n = 0;
     lines.innerHTML = it.map(x => { const p = idx.by[x.sku]; const t = p.price * x.qty; sub += t; n += x.qty;
       return `<div class="line" data-sku="${p.sku}"><img src="/img/p/${p.img}" alt=""><div class="info"><a href="/produs/${p.slug}/">${esc(p.name)}</a><small>${lei(p.price)} / pereche</small><button type="button" class="rm" data-rm>Elimină</button></div><div class="qty"><button type="button" aria-label="Scade cantitatea" data-q="-1">−</button><input type="number" min="1" max="${p.left ?? 99}" value="${x.qty}" aria-label="Cantitate" data-qi><button type="button" aria-label="Crește cantitatea" data-q="1">+</button></div><span class="tot">${lei(t)}</span></div>`; }).join('');
-    const free = sub >= S.freeOver, eb = co.delivery.value === 'easybox';
+    const free = sub >= S.freeOver || (S.freeQty > 0 && n >= S.freeQty), eb = co.delivery.value === 'easybox';
     const ship = free ? 0 : (eb ? (S.shipEb ?? S.ship) : S.ship);
     $('[data-cart-title]').textContent = `Coșul tău · ${n} ${n === 1 ? 'produs' : 'produse'}`;
     $('[data-sum-label]').textContent = `Produse (${n})`;
     $('[data-sum-sub]').textContent = lei(sub);
     $('[data-sum-ship]').textContent = ship ? lei(ship) : 'Gratuit';
+    const fh = $('[data-free-hint]'); if (fh) { const lip = S.freeQty > 0 && !free ? S.freeQty - n : 0; fh.hidden = lip <= 0; if (lip > 0) fh.textContent = `Mai adaugă ${lip === 1 ? 'o pereche' : lip + ' perechi'} și transportul e gratuit.`; }
     $$('[data-ship-label]').forEach(e => e.textContent = free ? 'Gratuit' : lei(e.dataset.shipLabel === 'easybox' ? (S.shipEb ?? S.ship) : S.ship));
     $('[data-sum-total]').textContent = lei(sub + ship);
   };
