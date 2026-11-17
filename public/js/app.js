@@ -117,6 +117,9 @@ if (listing) {
   };
   listing.addEventListener('click', e => { const b = e.target.closest('[data-f-col]'); if (!b) return; col = b.dataset.fCol; $$('[data-f-col]', listing).forEach(x => x.setAttribute('aria-pressed', x === b ? 'true' : 'false')); apply(); });
   listing.addEventListener('change', apply);
+  // ?colectie=craciun preselectează colecția (linkuri din reclame)
+  const want = norm(new URLSearchParams(location.search).get('colectie') || '');
+  if (want) { const b = $$('[data-f-col]', listing).find(x => norm(x.dataset.fCol).includes(want)); if (b) { col = b.dataset.fCol; $$('[data-f-col]', listing).forEach(x => x.setAttribute('aria-pressed', x === b ? 'true' : 'false')); } }
   apply();
 }
 
