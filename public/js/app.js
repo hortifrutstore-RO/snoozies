@@ -367,7 +367,7 @@ if (co) (async () => {
       if (r.status === 409 && j.stock) { j.stock.forEach(x => { if (idx.by[x.sku]) { idx.by[x.sku].left = x.left; idx.by[x.sku].inStock = x.left > 0; } }); render(); }
       if (!r.ok || !j.ok) throw new Error(j.error || 'Comanda nu a putut fi trimisă.');
       // conversia se trimite pe pagina de mulțumire (redirectul imediat ar pierde hitul)
-      try { sessionStorage.setItem('buy', JSON.stringify({ id: j.number, value: +j.total || 0, items: fd.items.map(x => ({ item_id: x.sku, item_name: (idx.by[x.sku] || {}).name || x.sku, price: (idx.by[x.sku] || {}).price || 0, quantity: x.qty })) })); } catch {}
+      try { sessionStorage.setItem('buy', JSON.stringify({ id: j.number, value: +(j.subtotal ?? j.total) || 0, items: fd.items.map(x => ({ item_id: x.sku, item_name: (idx.by[x.sku] || {}).name || x.sku, price: (idx.by[x.sku] || {}).price || 0, quantity: x.qty })) })); } catch {}
       cart.clear(); location.href = '/comanda-plasata/?nr=' + encodeURIComponent(j.number);
     } catch (err) { msg.textContent = err.message + ' Încearcă din nou sau sună-ne.'; msg.classList.add('show'); btn.disabled = false; btn.textContent = 'Plasează comanda'; }
   });
