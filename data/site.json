@@ -157,7 +157,9 @@
  "analytics": {
   "ga4": "",
   "googleAds": "AW-11096397405",
-  "googleAdsPurchase": "h-B9CNTok7odEN2slqsp"
+  "googleAdsPurchase": "h-B9CNTok7odEN2slqsp",
+  "googleAdsCart": "baXTCL_cqbodEN2slqsp",
+  "googleAdsCheckout": "uw6VCMLcqbodEN2slqsp"
  },
  "story": {
   "eyebrow": "De ce Snoozies",

@@ -387,7 +387,14 @@ function consent(all) {
   gtag('consent', 'update', { ad_storage: all ? 'granted' : 'denied', ad_user_data: all ? 'granted' : 'denied', ad_personalization: all ? 'granted' : 'denied', analytics_storage: all ? 'granted' : 'denied' });
   if (all) gtag('set', 'ads_data_redaction', false);
 }
-function track(ev, p) { if (window.gtag && gLoaded) gtag('event', ev, p); }
+function track(ev, p) {
+  if (!(window.gtag && gLoaded)) return;
+  gtag('event', ev, p);
+  const lbl = { add_to_cart: S.adsCart, begin_checkout: S.adsCo }[ev];
+  if (S.ads && lbl) gtag('event', 'conversion', { send_to: S.ads + '/' + lbl });
+}
+const coStart = $('[data-checkout]');
+if (coStart) coStart.addEventListener('focusin', () => { if (coStart.dataset.started) return; coStart.dataset.started = '1'; track('begin_checkout', { currency: 'RON' }); });
 const ck = $('[data-cookie]'); const c0 = store.get('consent', null);
 if (c0) consent(c0.all); else if (ck) ck.classList.add('show');
 loadGoogle();
