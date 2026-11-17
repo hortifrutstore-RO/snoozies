@@ -34,6 +34,7 @@ function cleanSizes(list, colors) {
     const stock = s.stock === null || s.stock === undefined || s.stock === '' ? null : Math.max(0, Math.min(100000, parseInt(s.stock, 10) || 0));
     const o = { size, range: str(s.range, 30), color, stock, inStock: stock !== null ? stock > 0 : s.inStock !== false };
     if (VSKU.test(s.sku || '')) o.sku = s.sku;
+    if (/^\d{8,14}$/.test(String(s.ean || ''))) o.ean = String(s.ean);
     out.push(o);
   }
   return out;
@@ -53,6 +54,7 @@ export function cleanProducts(list, catNames = {}) {
       colors: [],
       sizes: []
     };
+    if (/^\d{8,14}$/.test(String(p.ean || ''))) o.ean = String(p.ean);
     o.colors = cleanColors(p.colors, o.images);
     o.sizes = cleanSizes(p.sizes, o.colors);
     if (o.sizes.length) { o.stock = null; o.inStock = o.sizes.some(s => s.inStock); }

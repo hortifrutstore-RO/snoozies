@@ -71,7 +71,8 @@
 
     <!-- PRODUSE -->
     <section data-view="products" hidden>
-      <div class="adm-head"><h1>Produse</h1><button class="btn" id="newProduct">+ Produs nou</button></div>
+      <div class="adm-head"><h1>Produse</h1><span style="display:flex;gap:8px"><button class="btn ghost" id="emagStockBtn" title="Încarcă exporturile de oferte din eMAG (Ofertele mele → Export)">Stoc din eMAG</button><button class="btn" id="newProduct">+ Produs nou</button></span><input type="file" id="emagStockFile" accept=".xlsx,.xls" multiple hidden></div>
+      <div id="emagStockRes" class="card" hidden style="margin:10px 0;padding:12px"></div>
       <div class="adm-filters">
         <input class="field" id="pSearch" type="search" placeholder="Caută după nume sau cod">
         <select class="field" id="pCat"><option value="">Toate categoriile</option></select>
@@ -252,6 +253,7 @@
   </form>
 </dialog>
 <div class="toast" data-toast role="status" aria-live="polite"></div>
+<script src="/admin/xlsx.mini.min.js"></script>
 <script src="/admin/admin.js"></script>
 </body>
 </html>

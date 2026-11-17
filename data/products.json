@@ -66,7 +66,8 @@
     "color": "Alb",
     "sku": "Snz-ChevronAlbS",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "810000449262"
    },
    {
     "size": "M",
@@ -74,7 +75,8 @@
     "color": "Alb",
     "sku": "Snz-ChevronAlbM",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "810000449309"
    },
    {
     "size": "L",
@@ -82,7 +84,8 @@
     "color": "Alb",
     "sku": "Snz-ChevronAlbL",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "810000449347"
    },
    {
     "size": "XL",
@@ -90,7 +93,8 @@
     "color": "Alb",
     "sku": "Snz-ChevronAlbXL",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "810000449385"
    },
    {
     "size": "S",
@@ -98,7 +102,8 @@
     "color": "Albastru",
     "sku": "Snz-ChevronAlbastruS",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "810000449286"
    },
    {
     "size": "M",
@@ -106,7 +111,8 @@
     "color": "Albastru",
     "sku": "Snz-ChevronAlbastruM",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "810000449323"
    },
    {
     "size": "L",
@@ -114,7 +120,8 @@
     "color": "Albastru",
     "sku": "Snz-ChevronAlbastruL",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "810000449361"
    },
    {
     "size": "XL",
@@ -122,7 +129,8 @@
     "color": "Albastru",
     "sku": "Snz-ChevronAlbastruXL",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "810000449408"
    },
    {
     "size": "S",
@@ -130,7 +138,8 @@
     "color": "Negru",
     "sku": "Snz-ChevronNegruS",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "810000449255"
    },
    {
     "size": "M",
@@ -138,7 +147,8 @@
     "color": "Negru",
     "sku": "Snz-ChevronNegruM",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "810000449293"
    },
    {
     "size": "L",
@@ -146,7 +156,8 @@
     "color": "Negru",
     "sku": "Snz-ChevronNegruL",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "810000449330"
    },
    {
     "size": "XL",
@@ -154,7 +165,8 @@
     "color": "Negru",
     "sku": "Snz-ChevronNegruXL",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "810000449378"
    },
    {
     "size": "S",
@@ -162,7 +174,8 @@
     "color": "Vișiniu",
     "sku": "Snz-ChevronVisiniuS",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "840120439805"
    },
    {
     "size": "M",
@@ -170,7 +183,8 @@
     "color": "Vișiniu",
     "sku": "Snz-ChevronVisiniuM",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "810000449316"
    },
    {
     "size": "L",
@@ -178,7 +192,8 @@
     "color": "Vișiniu",
     "sku": "Snz-ChevronVisiniuL",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "810000449354"
    },
    {
     "size": "XL",
@@ -218,7 +233,8 @@
     "color": "",
     "sku": "Snz-ReindS",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "840120445943"
    },
    {
     "size": "M",
@@ -226,7 +242,8 @@
     "color": "",
     "sku": "Snz-ReindM",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "840120445950"
    },
    {
     "size": "L",
@@ -234,7 +251,8 @@
     "color": "",
     "sku": "Snz-ReindL",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "840120445967"
    }
   ]
  },
@@ -266,7 +284,8 @@
     "color": "",
     "sku": "Snz-MerryxS",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "840120446056"
    },
    {
     "size": "M",
@@ -274,7 +293,8 @@
     "color": "",
     "sku": "Snz-MerryxM",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "840120446063"
    },
    {
     "size": "L",
@@ -314,7 +334,8 @@
     "color": "",
     "sku": "Snz-EsquadS",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "840120445820"
    },
    {
     "size": "M",
@@ -330,7 +351,8 @@
     "color": "",
     "sku": "Snz-EsquadL",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "840120445844"
    }
   ]
  },
@@ -362,7 +384,8 @@
     "color": "",
     "sku": "Snz-FrostyS",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "840120445851"
    },
    {
     "size": "M",
@@ -370,7 +393,8 @@
     "color": "",
     "sku": "Snz-FrostyM",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "840120445868"
    },
    {
     "size": "L",
@@ -378,7 +402,8 @@
     "color": "",
     "sku": "Snz-FrostyL",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "840120445875"
    }
   ]
  },
@@ -410,7 +435,8 @@
     "color": "",
     "sku": "Snz-SnowWineS",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "840120445912"
    },
    {
     "size": "M",
@@ -426,7 +452,8 @@
     "color": "",
     "sku": "Snz-SnowWineL",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "840120445936"
    }
   ]
  },
@@ -458,7 +485,8 @@
     "color": "",
     "sku": "Snz-SnowGoodS",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "810000449569"
    },
    {
     "size": "M",
@@ -466,7 +494,8 @@
     "color": "",
     "sku": "Snz-SnowGoodM",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "810000449576"
    },
    {
     "size": "L",
@@ -474,7 +503,8 @@
     "color": "",
     "sku": "Snz-SnowGoodL",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "810000449583"
    }
   ]
  },
@@ -514,7 +544,8 @@
     "color": "",
     "sku": "Snz-BeMerryM",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "810000449545"
    },
    {
     "size": "L",
@@ -522,7 +553,8 @@
     "color": "",
     "sku": "Snz-BeMerryL",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "810000449552"
    }
   ]
  },
@@ -554,7 +586,8 @@
     "color": "",
     "sku": "Snz-WineELFS",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "810000449507"
    },
    {
     "size": "M",
@@ -562,7 +595,8 @@
     "color": "",
     "sku": "Snz-WineELFM",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "810000449514"
    },
    {
     "size": "L",
@@ -570,7 +604,8 @@
     "color": "",
     "sku": "Snz-WineELFL",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "810000449521"
    }
   ]
  },
@@ -602,7 +637,8 @@
     "color": "",
     "sku": "Snz-WhiteChristmasS",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "810000449477"
    },
    {
     "size": "M",
@@ -610,7 +646,8 @@
     "color": "",
     "sku": "Snz-WhiteChristmasM",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "810000449484"
    },
    {
     "size": "L",
@@ -666,7 +703,8 @@
     "color": "",
     "sku": "SnzMewowyChristmasL",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "810000440276"
    }
   ]
  },
@@ -702,7 +740,8 @@
     "color": "",
     "sku": "Snz-07SnowmiesS",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "840120403899"
    },
    {
     "size": "M",
@@ -710,7 +749,8 @@
     "color": "",
     "sku": "Snz-07SnowmiesM",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "840120403905"
    },
    {
     "size": "L",
@@ -750,7 +790,8 @@
     "color": "",
     "sku": "Snz-JustChillingS",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "810000449637"
    },
    {
     "size": "M",
@@ -758,7 +799,8 @@
     "color": "",
     "sku": "Snz-JustChillingM",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "810000449644"
    },
    {
     "size": "L",
@@ -766,7 +808,8 @@
     "color": "",
     "sku": "Snz-JustChillingL",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "810000449651"
    }
   ]
  },
@@ -802,7 +845,8 @@
     "color": "",
     "sku": "Snz-ChocoS",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "9323258055969"
    },
    {
     "size": "M",
@@ -810,7 +854,8 @@
     "color": "",
     "sku": "Snz-ChocoM",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "9323258055976"
    },
    {
     "size": "L",
@@ -818,7 +863,8 @@
     "color": "",
     "sku": "Snz-ChocoL",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "9323258055983"
    }
   ]
  },
@@ -858,7 +904,8 @@
     "color": "",
     "sku": "Snz-WinetimeM",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "9323258057468"
    },
    {
     "size": "L",
@@ -911,7 +958,8 @@
     "color": "",
     "sku": "Snz-01AMPMM",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "840120409471"
    },
    {
     "size": "L",
@@ -919,7 +967,8 @@
     "color": "",
     "sku": "Snz-01AMPML",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "840120409488"
    }
   ]
  },
@@ -951,7 +1000,8 @@
     "color": "",
     "sku": "Snz-CatitudeS",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "9323258055921"
    },
    {
     "size": "M",
@@ -959,7 +1009,8 @@
     "color": "",
     "sku": "Snz-CatitudeM",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "9323258055938"
    },
    {
     "size": "L",
@@ -967,7 +1018,8 @@
     "color": "",
     "sku": "Snz-CatitudeL",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "9323258055945"
    }
   ]
  },
@@ -999,7 +1051,8 @@
     "color": "",
     "sku": "SnzCatladyS",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "9323258057499"
    },
    {
     "size": "M",
@@ -1007,7 +1060,8 @@
     "color": "",
     "sku": "SnzCatladyM",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "9323258057505"
    },
    {
     "size": "L",
@@ -1015,7 +1069,8 @@
     "color": "",
     "sku": "SnzCatLdyL",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "9323258057512"
    }
   ]
  },
@@ -1047,7 +1102,8 @@
     "color": "",
     "sku": "Snz-CaineS",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "9323258057611"
    },
    {
     "size": "M",
@@ -1055,7 +1111,8 @@
     "color": "",
     "sku": "Snz-CaineM",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "9323258057628"
    },
    {
     "size": "L",
@@ -1063,7 +1120,8 @@
     "color": "",
     "sku": "Snz-CaineL",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "9323258057635"
    }
   ]
  },
@@ -1111,7 +1169,8 @@
     "color": "",
     "sku": "Snz-BuburuzaL",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "9323258057277"
    }
   ]
  },
@@ -1144,7 +1203,8 @@
     "color": "",
     "sku": "Snz-06ElfS",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "840120409907"
    },
    {
     "size": "M",
@@ -1152,7 +1212,8 @@
     "color": "",
     "sku": "Snz-06ElfM",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "840120409914"
    },
    {
     "size": "L",
@@ -1160,7 +1221,8 @@
     "color": "",
     "sku": "Snz-06ElfL",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "840120409921"
    }
   ]
  },
@@ -1196,7 +1258,8 @@
     "color": "",
     "sku": "Snz-03BufS",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "840120409587"
    },
    {
     "size": "M",
@@ -1204,7 +1267,8 @@
     "color": "",
     "sku": "Snz-03BufM",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "840120409594"
    },
    {
     "size": "L",
@@ -1212,7 +1276,8 @@
     "color": "",
     "sku": "Snz-03BufL",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "840120409600"
    }
   ]
  },
@@ -1248,7 +1313,8 @@
     "color": "",
     "sku": "Snz-05AlbS",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "840120409624"
    },
    {
     "size": "M",
@@ -1256,7 +1322,8 @@
     "color": "",
     "sku": "Snz-05AlbM",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "840120409631"
    },
    {
     "size": "L",
@@ -1264,7 +1331,8 @@
     "color": "",
     "sku": "Snz-05AlbL",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "840120409648"
    }
   ]
  },
@@ -1344,7 +1412,8 @@
     "color": "Maro",
     "sku": "Snz-SassyMaroL",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "810000440115"
    },
    {
     "size": "S",
@@ -1352,7 +1421,8 @@
     "color": "Negru",
     "sku": "Snz-SassyNegruS",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "810000440061"
    },
    {
     "size": "M",
@@ -1360,7 +1430,8 @@
     "color": "Negru",
     "sku": "Snz-SassyNegruM",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "810000440078"
    },
    {
     "size": "L",
@@ -1368,7 +1439,8 @@
     "color": "Negru",
     "sku": "Snz-SassyNegruL",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "810000440085"
    },
    {
     "size": "S",
@@ -1376,7 +1448,8 @@
     "color": "Portocaliu",
     "sku": "Snz-SassyOrangeS",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "810000440030"
    },
    {
     "size": "M",
@@ -1384,7 +1457,8 @@
     "color": "Portocaliu",
     "sku": "Snz-SassyOrangeM",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "810000440047"
    },
    {
     "size": "L",
@@ -1400,7 +1474,8 @@
     "color": "Roz",
     "sku": "Snz-SassyRozS",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "810000440009"
    },
    {
     "size": "M",
@@ -1408,7 +1483,8 @@
     "color": "Roz",
     "sku": "Snz-SassyRozM",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "810000440016"
    },
    {
     "size": "L",
@@ -1416,7 +1492,8 @@
     "color": "Roz",
     "sku": "Snz-SassyRozL",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "810000440023"
    }
   ]
  },
@@ -1460,7 +1537,8 @@
     "color": "Auriu",
     "sku": "GoldBlingS",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "810000440153"
    },
    {
     "size": "M",
@@ -1468,7 +1546,8 @@
     "color": "Auriu",
     "sku": "GoldBlingM",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "810000440160"
    },
    {
     "size": "L",
@@ -1476,7 +1555,8 @@
     "color": "Auriu",
     "sku": "GoldBlingL",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "810000440177"
    },
    {
     "size": "S",
@@ -1484,7 +1564,8 @@
     "color": "Roșu",
     "sku": "RedBlingS",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "810000440122"
    },
    {
     "size": "M",
@@ -1500,7 +1581,8 @@
     "color": "Roșu",
     "sku": "RedBlingL",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "810000440146"
    }
   ]
  },
@@ -1562,7 +1644,8 @@
     "color": "Albastru",
     "sku": "Snz-CrosetatiAlbastruS",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "840120422449"
    },
    {
     "size": "M",
@@ -1570,7 +1653,8 @@
     "color": "Albastru",
     "sku": "Snz-CrosetatiAlbastruM",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "840120422456"
    },
    {
     "size": "L",
@@ -1586,7 +1670,8 @@
     "color": "Mov",
     "sku": "Snz-CrosetatiMovS",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "840120422524"
    },
    {
     "size": "M",
@@ -1594,7 +1679,8 @@
     "color": "Mov",
     "sku": "Snz-CrosetatiMovM",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "840120422531"
    },
    {
     "size": "L",
@@ -1610,7 +1696,8 @@
     "color": "Roz",
     "sku": "Snz-CrosetatiRozS",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "840120422487"
    },
    {
     "size": "M",
@@ -1626,7 +1713,8 @@
     "color": "Roz",
     "sku": "Snz-CrosetatiRozL",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "840120422500"
    }
   ]
  },
@@ -1701,7 +1789,8 @@
     "color": "Albastru",
     "sku": "Snz-08LotsaBlueS",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "846847080498"
    },
    {
     "size": "M",
@@ -1717,7 +1806,8 @@
     "color": "Albastru",
     "sku": "Snz-08LotsaBlueL",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "846847080511"
    },
    {
     "size": "S",
@@ -1725,7 +1815,8 @@
     "color": "Gri",
     "sku": "Snz-08LotsaGriS",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "846847080375"
    },
    {
     "size": "M",
@@ -1741,7 +1832,8 @@
     "color": "Gri",
     "sku": "Snz-08LotsaGriL",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "846847080399"
    },
    {
     "size": "S",
@@ -1749,7 +1841,8 @@
     "color": "Mov",
     "sku": "Snz-08LotsaMovS",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "846847080412"
    },
    {
     "size": "M",
@@ -1757,7 +1850,8 @@
     "color": "Mov",
     "sku": "Snz-08LotsaMovM",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "846847080429"
    },
    {
     "size": "L",
@@ -1773,7 +1867,8 @@
     "color": "Roz",
     "sku": "Snz-08LotsaPinkS",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "846847080450"
    },
    {
     "size": "M",
@@ -1789,7 +1884,8 @@
     "color": "Roz",
     "sku": "Snz-08LotsaPinkL",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "846847080474"
    }
   ]
  },
@@ -1821,7 +1917,8 @@
     "color": "",
     "sku": "SnzChristmasTreeS",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "840120437269"
    },
    {
     "size": "M",
@@ -1829,7 +1926,8 @@
     "color": "",
     "sku": "SnzChristmasTreeM",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "840120437276"
    },
    {
     "size": "L",
@@ -1869,7 +1967,8 @@
     "color": "",
     "sku": "SnzFemeiSnowflakeS",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "810000440375"
    },
    {
     "size": "M",
@@ -1877,7 +1976,8 @@
     "color": "",
     "sku": "SnzFemeiSnowflakeM",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "810000440382"
    },
    {
     "size": "L",
@@ -1925,7 +2025,8 @@
     "color": "",
     "sku": "SnzGnomeFemeiM",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "810000440443"
    },
    {
     "size": "L",
@@ -1933,7 +2034,8 @@
     "color": "",
     "sku": "SnzGnomeFemeiL",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "810000440450"
    }
   ]
  },
@@ -1965,7 +2067,8 @@
     "color": "",
     "sku": "SnzFemeiHoHoS",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "810000440405"
    },
    {
     "size": "M",
@@ -1973,7 +2076,8 @@
     "color": "",
     "sku": "SnzFemeiHoHoM",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "810000440412"
    },
    {
     "size": "L",
@@ -1981,7 +2085,8 @@
     "color": "",
     "sku": "SnzFemeiHoHoL",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "810000440429"
    }
   ]
  },
@@ -2021,7 +2126,8 @@
     "color": "",
     "sku": "SnzFulgBarbM",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "810000440504"
    },
    {
     "size": "L",
@@ -2029,7 +2135,8 @@
     "color": "",
     "sku": "SnzFulgBarbL",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "810000440511"
    }
   ]
  },
@@ -2064,7 +2171,8 @@
     "color": "",
     "sku": "SnzGnomeBarbS",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "810000440559"
    },
    {
     "size": "M",
@@ -2080,7 +2188,8 @@
     "color": "",
     "sku": "SnzGnomeBarbL",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "810000440573"
    }
   ]
  },
@@ -2115,7 +2224,8 @@
     "color": "",
     "sku": "SnzBarbatiHoHoS",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "810000440528"
    },
    {
     "size": "M",
@@ -2123,7 +2233,8 @@
     "color": "",
     "sku": "SnzBarbatiHoHoM",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "810000440535"
    },
    {
     "size": "L",
@@ -2131,7 +2242,8 @@
     "color": "",
     "sku": "SnzBarbatiHoHoL",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "810000440542"
    }
   ]
  },
@@ -2163,7 +2275,8 @@
     "color": "",
     "sku": "Snz-LuminiteBarbS",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "840120445509"
    },
    {
     "size": "M",
@@ -2171,7 +2284,8 @@
     "color": "",
     "sku": "Snz-LuminiteBarbM",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "840120445516"
    },
    {
     "size": "L",
@@ -2179,7 +2293,8 @@
     "color": "",
     "sku": "Snz-LuminiteBarbL",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "840120445523"
    },
    {
     "size": "XL",
@@ -2187,7 +2302,8 @@
     "color": "",
     "sku": "Snz-LuminiteBarbXL",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "840120445530"
    }
   ]
  },
@@ -2227,7 +2343,8 @@
     "color": "",
     "sku": "Snz-CraciunFericitBarbM",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "840120445554"
    },
    {
     "size": "L",
@@ -2243,7 +2360,8 @@
     "color": "",
     "sku": "Snz-CraciunFericitBarbXL",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "840120445578"
    }
   ]
  },
@@ -2275,7 +2393,8 @@
     "color": "",
     "sku": "Snz-UrsPolarS",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "840120445462"
    },
    {
     "size": "M",
@@ -2283,7 +2402,8 @@
     "color": "",
     "sku": "Snz-UrsPolarM",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "840120445479"
    },
    {
     "size": "L",
@@ -2291,7 +2411,8 @@
     "color": "",
     "sku": "Snz-UrsPolarL",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "840120445486"
    },
    {
     "size": "XL",
@@ -2299,7 +2420,8 @@
     "color": "",
     "sku": "Snz-UrsPolarXL",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "840120445493"
    }
   ]
  },
@@ -2378,7 +2500,8 @@
     "color": "",
     "sku": "Snz-SuperdadS",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "9323258057741"
    },
    {
     "size": "M",
@@ -2386,7 +2509,8 @@
     "color": "",
     "sku": "Snz-SuperdadM",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "9323258057758"
    },
    {
     "size": "L",
@@ -2394,7 +2518,8 @@
     "color": "",
     "sku": "Snz-SuperdadL",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "9323258057765"
    }
   ]
  },
@@ -2429,7 +2554,8 @@
     "color": "",
     "sku": "Snz-04FishS",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "810000443390"
    },
    {
     "size": "M",
@@ -2437,7 +2563,8 @@
     "color": "",
     "sku": "Snz-04FishM",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "810000443406"
    },
    {
     "size": "L",
@@ -2445,7 +2572,8 @@
     "color": "",
     "sku": "Snz-04FishL",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "810000443413"
    }
   ]
  },
@@ -2480,7 +2608,8 @@
     "color": "",
     "sku": "Snz-02pigS",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "810000442911"
    },
    {
     "size": "M",
@@ -2488,7 +2617,8 @@
     "color": "",
     "sku": "Snz-02pigM",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "810000442928"
    },
    {
     "size": "L",
@@ -2496,7 +2626,8 @@
     "color": "",
     "sku": "Snz-02pigL",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "810000442935"
    }
   ]
  },
@@ -2533,7 +2664,8 @@
     "color": "",
     "sku": "Snz-06ElfLmen",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "840120442065"
    },
    {
     "size": "XL",
@@ -2541,7 +2673,8 @@
     "color": "",
     "sku": "Snz-06ElfXL",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "840120409938"
    }
   ]
  },
@@ -2576,7 +2709,8 @@
     "color": "",
     "sku": "Snz-BebepandaS",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "840120408771"
    },
    {
     "size": "M",
@@ -2584,7 +2718,8 @@
     "color": "",
     "sku": "Snz-BebepandaM",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "840120408788"
    },
    {
     "size": "L",
@@ -2592,7 +2727,8 @@
     "color": "",
     "sku": "Snz-BebepandaL",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "840120408795"
    }
   ]
  },
@@ -2627,7 +2763,8 @@
     "color": "",
     "sku": "Snz-BebeCaineS",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "9323258057772"
    },
    {
     "size": "M",
@@ -2635,7 +2772,8 @@
     "color": "",
     "sku": "Snz-BebeCaineM",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "9323258057789"
    },
    {
     "size": "L",
@@ -2678,7 +2816,8 @@
     "color": "",
     "sku": "Snz-BebeOitaS",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "846847082652"
    },
    {
     "size": "M",
@@ -2694,7 +2833,8 @@
     "color": "",
     "sku": "Snz-BebeOitaL",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "846847082676"
    }
   ]
  },
@@ -2729,7 +2869,8 @@
     "color": "",
     "sku": "Snz-BebeMaimS",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "846847082690"
    },
    {
     "size": "M",
@@ -2737,7 +2878,8 @@
     "color": "",
     "sku": "Snz-BebeMaimM",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "846847082706"
    },
    {
     "size": "L",
@@ -2745,7 +2887,8 @@
     "color": "",
     "sku": "Snz-BebeMaimL",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "846847082713"
    }
   ]
  },
@@ -2788,7 +2931,8 @@
     "color": "",
     "sku": "Snz-BebeUrsuletM",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "846847082782"
    },
    {
     "size": "L",
@@ -2831,7 +2975,8 @@
     "color": "",
     "sku": "Snz-BebePudelS",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "846847082737"
    },
    {
     "size": "M",
@@ -2847,7 +2992,8 @@
     "color": "",
     "sku": "Snz-BebePudelL",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "846847082751"
    }
   ]
  },
@@ -2882,7 +3028,8 @@
     "color": "",
     "sku": "Snz-CopiiCupcakeL",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "9323258058755"
    }
   ]
  },
@@ -2941,7 +3088,8 @@
     "color": "Albastru",
     "sku": "SnzSoseteSheaAlbastru",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "0846847013625"
    },
    {
     "size": "U",
@@ -2949,7 +3097,8 @@
     "color": "Roz",
     "sku": "SnzSoseteSheaRoz",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "0846847027578"
    },
    {
     "size": "U",
@@ -2957,7 +3106,8 @@
     "color": "Verde",
     "sku": "SnzSoseteSheaVerde",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "ean": "0846847027547"
    }
   ]
  }

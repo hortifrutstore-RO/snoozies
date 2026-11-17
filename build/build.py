@@ -219,7 +219,7 @@ for p in products:
     gender, age = GEN.get(p['category'], ('unisex', 'adult'))
     gcat = '209' if p['category'] == 'sosete' else '187'
     cimg = {c['name']: c.get('image') for c in (p.get('colors') or [])}
-    vs = p.get('sizes') or [dict(sku=p['sku'], size=None, color=None, inStock=p['inStock'])]
+    vs = p.get('sizes') or [dict(sku=p['sku'], size=None, color=None, inStock=p['inStock'], ean=p.get('ean'))]
     for v in vs:
         title = p['name'] + (f" {v['color']}" if v.get('color') and v['color'].lower() not in p['name'].lower() else '') + (f", mărimea {v['size']}" + (f" ({v['range']})" if v.get('range') else '') if v.get('size') and v['size'] != 'U' else '')
         main = cimg.get(v.get('color')) or p['images'][0]
@@ -227,7 +227,7 @@ for p in products:
         f = [('g:id', v['sku']), ('g:item_group_id', p['sku']), ('g:title', title[:150]), ('g:description', desc[:5000]), ('g:link', url),
              ('g:image_link', site['url'] + '/img/p/' + main)] + [('g:additional_image_link', site['url'] + '/img/p/' + i) for i in extra] + [
              ('g:availability', 'in_stock' if (v.get('inStock', p['inStock']) and p['inStock']) else 'out_of_stock'),
-             ('g:price', f"{p['price']:.2f} RON"), ('g:condition', 'new'), ('g:brand', 'Snoozies'), ('g:identifier_exists', 'no'),
+             ('g:price', f"{p['price']:.2f} RON"), ('g:condition', 'new'), ('g:brand', 'Snoozies')] + ([('g:gtin', v['ean'])] if v.get('ean') else [('g:identifier_exists', 'no')]) + [
              ('g:google_product_category', gcat), ('g:product_type', f"{p.get('categoryName', '')} > {p.get('sub') or ''}".strip(' >')),
              ('g:gender', gender), ('g:age_group', age)]
         if p.get('oldPrice') and p['oldPrice'] > p['price']:

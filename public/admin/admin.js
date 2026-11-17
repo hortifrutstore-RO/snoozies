@@ -287,7 +287,7 @@ pf.addEventListener('submit', e => {
     description: $('#pdesc').innerHTML, images: editImgs.slice(), weight: pf.weightG.value ? Math.round(parseFloat(pf.weightG.value)) / 1000 : null });
   p.inStock = p.stock === null || p.stock > 0;
   p.colors = cols.map(c => ({ name: c.name, hex: c.hex || '', image: editImgs.includes(c.image) ? c.image : '' }));
-  p.sizes = szs.map(z => { const o = { size: z.size, range: z.range || '', color: z.color || '', stock: z.stock ?? null, inStock: z.stock === null || z.stock === undefined ? z.inStock !== false : z.stock > 0 }; if (z.sku) o.sku = z.sku; return o; });
+  p.sizes = szs.map(z => { const o = { size: z.size, range: z.range || '', color: z.color || '', stock: z.stock ?? null, inStock: z.stock === null || z.stock === undefined ? z.inStock !== false : z.stock > 0 }; if (z.sku) o.sku = z.sku; if (z.ean) o.ean = z.ean; return o; });
   if (p.sizes.length) { p.stock = null; p.inStock = p.sizes.some(z => z.inStock); }
   if (pf.featured.checked && !p.featured) p.featuredOrder = Math.max(0, ...D.products.map(x => x.featuredOrder || 0)) + 1;
   p.featured = pf.featured.checked;
@@ -425,5 +425,51 @@ $('#awbEst').addEventListener('click', async () => {
     const r = await api('sameday/estimate', { method: 'POST', json: { weight: f.weight.value, parcels: f.parcels.value || 1, cod: f.cod.value, service: o.delivery === 'easybox' ? 'easybox' : 'home', county: lk ? lk.county : o.county, city: lk ? lk.city : o.city } });
     out.innerHTML = r.amount != null ? `<b>${lei(r.amount)}</b> · ${esc(r.service)}` : 'Sameday a răspuns fără preț.';
   } catch (err) { out.textContent = err.message; }
+});
+
+/* ---------- stoc din eMAG (export „Ofertele mele”) ---------- */
+$('#emagStockBtn').addEventListener('click', () => { if (!D) return toast('Datele nu s-au încărcat încă.'); $('#emagStockFile').value = ''; $('#emagStockFile').click(); });
+$('#emagStockFile').addEventListener('change', async e => {
+  const files = Array.from(e.target.files || []); if (!files.length) return;
+  const box = $('#emagStockRes'); box.hidden = false; box.textContent = 'Citesc fișierele…';
+  try {
+    if (!window.XLSX) throw new Error('Cititorul de Excel nu s-a încărcat. Reîncarcă pagina.');
+    const off = {}; let rowsRead = 0;
+    for (const f of files) {
+      const wb = XLSX.read(await f.arrayBuffer(), { type: 'array' });
+      const ws = wb.Sheets['Oferte'] || wb.Sheets[wb.SheetNames.find(n => !/instruc|defini|error/i.test(n))];
+      const rows = XLSX.utils.sheet_to_json(ws, { header: 1, raw: false, defval: '' });
+      const h = rows.findIndex(r => r.includes('part_number') && r.includes('stock'));
+      if (h < 0) throw new Error(`„${f.name}” nu pare exportul de oferte din eMAG (lipsesc coloanele part_number / stock).`);
+      const H = rows[h], ci = k => H.indexOf(k), iPn = ci('part_number'), iSt = ci('stock'), iEan = ci('ean'), iBr = ci('brand_name'), iNm = ci('name');
+      for (const r of rows.slice(h + 1)) {
+        const pn = String(r[iPn] || '').trim(); if (!pn || pn === 'Cod produs (PN)') continue;
+        const st = parseInt(String(r[iSt]).replace(/\D/g, ''), 10); rowsRead++;
+        off[pn.toLowerCase()] = { pn, stock: Number.isFinite(st) ? st : null, ean: String(r[iEan] || '').trim(), brand: String(r[iBr] || ''), name: String(r[iNm] || '') };
+      }
+    }
+    const used = new Set(), changes = [], missing = [];
+    for (const p of D.products) {
+      const vs = Array.isArray(p.sizes) && p.sizes.length ? p.sizes.map(z => ({ ref: z, sku: z.sku || `${p.sku}-${z.color ? z.color + '-' : ''}${z.size}`, label: `${p.name} ${[z.color, z.size].filter(Boolean).join(' ')}` })) : [{ ref: p, sku: p.sku, label: p.name }];
+      let touched = false;
+      for (const v of vs) {
+        const o = off[String(v.sku).toLowerCase()];
+        if (!o || o.stock === null) { missing.push(v); continue; }
+        used.add(String(v.sku).toLowerCase());
+        const ean = /^\d{8,14}$/.test(o.ean) ? o.ean : null;
+        if (v.ref.stock !== o.stock || (ean && v.ref.ean !== ean)) { changes.push({ label: v.label, from: v.ref.stock, to: o.stock }); v.ref.stock = o.stock; v.ref.inStock = o.stock > 0; if (ean) v.ref.ean = ean; touched = true; }
+      }
+      if (touched && Array.isArray(p.sizes) && p.sizes.length) p.inStock = p.sizes.some(z => z.inStock);
+    }
+    const brand = (D.site.name || '').toLowerCase().includes('snoozies') ? 'snoozies' : '';
+    const extra = Object.entries(off).filter(([k, o]) => !used.has(k) && (!brand || o.brand.toLowerCase().includes(brand)) && o.stock > 0);
+    if (changes.length) { markDirty('p'); renderProducts(); }
+    const out = changes.filter(c => c.to === 0).length;
+    box.innerHTML = `<b>${rowsRead} oferte citite din ${files.length} fișier${files.length > 1 ? 'e' : ''}.</b> ` +
+      (changes.length ? `Am actualizat <b>${changes.length}</b> variante${out ? ` (${out} trec pe stoc epuizat)` : ''}. Apasă <b>Salvează pe site</b> ca să se aplice.` : 'Stocul de pe site e deja la zi.') +
+      (missing.length ? `<details style="margin-top:8px"><summary>${missing.length} variante de pe site nu apar în export (au rămas neschimbate)</summary><small>${missing.map(v => esc(v.sku)).join(', ')}</small></details>` : '') +
+      (extra.length ? `<details style="margin-top:6px"><summary>${extra.length} oferte eMAG cu stoc care nu sunt pe site</summary><small>${extra.map(([, o]) => `${esc(o.pn)} (${o.stock} buc) – ${esc(o.name.slice(0, 70))}`).join('<br>')}</small></details>` : '') +
+      (changes.length ? `<details style="margin-top:6px"><summary>Vezi modificările</summary><small>${changes.map(c => `${esc(c.label)}: ${c.from ?? 'fără număr'} → ${c.to}`).join('<br>')}</small></details>` : '');
+  } catch (err) { box.textContent = err.message; }
 });
 })();
