@@ -11,7 +11,7 @@
   "inStock": true,
   "stock": null,
   "short": "",
-  "description": "<p>Rasfatati-va picioarele cu papucii de casa pufosi Snoozies, model Chevron – combinatia perfecta intre confort si stil!</p> <p>✔ Confort absolut – interior moale, captusit cu plus, ofera o senzatie calduroasa si placuta, ideala pentru zilele racoroase.<br /> ✔ Design elegant si practic – modelul chevron adauga un plus de stil, potrivit pentru femei care apreciaza detaliile rafinate.<br /> ✔ Perfect pentru relaxare – fie ca te odihnesti dupa o zi obositoare sau savurezi un weekend linistit, acesti papuci sunt alegerea ideala.<br /> ✔ Materiale premium – rezistenti si confortabili, pastreaza forma si textura timp indelungat.<br /> ✔ Intretinere usoara – se spala la masina, fara a-si pierde calitatea sau moliciunea.</p> <p>Transforma fiecare pas intr-o experienta placuta! Alege papucii Snoozies Chevron pentru confort, caldura si eleganta.</p>",
+  "description": "<p>Rasfatati-va picioarele cu papucii de casa pufosi Snoozies, model Chevron – combinatia perfecta intre confort si stil!</p> <p>✔ Confort absolut – interior moale, captusit cu plus, ofera o senzatie calduroasa si placuta, ideala pentru zilele racoroase.<br> ✔ Design elegant si practic – modelul chevron adauga un plus de stil, potrivit pentru femei care apreciaza detaliile rafinate.<br> ✔ Perfect pentru relaxare – fie ca te odihnesti dupa o zi obositoare sau savurezi un weekend linistit, acesti papuci sunt alegerea ideala.<br> ✔ Materiale premium – rezistenti si confortabili, pastreaza forma si textura timp indelungat.<br> ✔ Intretinere usoara – se spala la masina, fara a-si pierde calitatea sau moliciunea.</p> <p>Transforma fiecare pas intr-o experienta placuta! Alege papucii Snoozies Chevron pentru confort, caldura si eleganta.</p>",
   "images": [
    "papuci-de-casa-femei-snoozies-chevron-alb-1.jpg",
    "papuci-de-casa-femei-snoozies-chevron-alb-2.jpg",
@@ -64,144 +64,144 @@
     "size": "S",
     "range": "36–37",
     "color": "Alb",
-    "sku": "Snz-ChevronAlbS",
-    "stock": null,
+    "stock": 15,
     "inStock": true,
+    "sku": "Snz-ChevronAlbS",
     "ean": "810000449262"
    },
    {
     "size": "M",
     "range": "37–38",
     "color": "Alb",
-    "sku": "Snz-ChevronAlbM",
-    "stock": null,
+    "stock": 15,
     "inStock": true,
+    "sku": "Snz-ChevronAlbM",
     "ean": "810000449309"
    },
    {
     "size": "L",
     "range": "38–40",
     "color": "Alb",
-    "sku": "Snz-ChevronAlbL",
-    "stock": null,
+    "stock": 14,
     "inStock": true,
+    "sku": "Snz-ChevronAlbL",
     "ean": "810000449347"
    },
    {
     "size": "XL",
     "range": "40–42",
     "color": "Alb",
-    "sku": "Snz-ChevronAlbXL",
-    "stock": null,
+    "stock": 15,
     "inStock": true,
+    "sku": "Snz-ChevronAlbXL",
     "ean": "810000449385"
    },
    {
     "size": "S",
     "range": "36–37",
     "color": "Albastru",
-    "sku": "Snz-ChevronAlbastruS",
-    "stock": null,
+    "stock": 15,
     "inStock": true,
+    "sku": "Snz-ChevronAlbastruS",
     "ean": "810000449286"
    },
    {
     "size": "M",
     "range": "37–38",
     "color": "Albastru",
-    "sku": "Snz-ChevronAlbastruM",
-    "stock": null,
+    "stock": 15,
     "inStock": true,
+    "sku": "Snz-ChevronAlbastruM",
     "ean": "810000449323"
    },
    {
     "size": "L",
     "range": "38–40",
     "color": "Albastru",
-    "sku": "Snz-ChevronAlbastruL",
-    "stock": null,
+    "stock": 15,
     "inStock": true,
+    "sku": "Snz-ChevronAlbastruL",
     "ean": "810000449361"
    },
    {
     "size": "XL",
     "range": "40–42",
     "color": "Albastru",
-    "sku": "Snz-ChevronAlbastruXL",
-    "stock": null,
+    "stock": 15,
     "inStock": true,
+    "sku": "Snz-ChevronAlbastruXL",
     "ean": "810000449408"
    },
    {
     "size": "S",
     "range": "36–37",
     "color": "Negru",
-    "sku": "Snz-ChevronNegruS",
-    "stock": null,
+    "stock": 15,
     "inStock": true,
+    "sku": "Snz-ChevronNegruS",
     "ean": "810000449255"
    },
    {
     "size": "M",
     "range": "37–38",
     "color": "Negru",
-    "sku": "Snz-ChevronNegruM",
-    "stock": null,
+    "stock": 15,
     "inStock": true,
+    "sku": "Snz-ChevronNegruM",
     "ean": "810000449293"
    },
    {
     "size": "L",
     "range": "38–40",
     "color": "Negru",
-    "sku": "Snz-ChevronNegruL",
-    "stock": null,
+    "stock": 15,
     "inStock": true,
+    "sku": "Snz-ChevronNegruL",
     "ean": "810000449330"
    },
    {
     "size": "XL",
     "range": "40–42",
     "color": "Negru",
-    "sku": "Snz-ChevronNegruXL",
-    "stock": null,
+    "stock": 13,
     "inStock": true,
+    "sku": "Snz-ChevronNegruXL",
     "ean": "810000449378"
    },
    {
     "size": "S",
     "range": "36–37",
     "color": "Vișiniu",
-    "sku": "Snz-ChevronVisiniuS",
-    "stock": null,
+    "stock": 14,
     "inStock": true,
+    "sku": "Snz-ChevronVisiniuS",
     "ean": "840120439805"
    },
    {
     "size": "M",
     "range": "37–38",
     "color": "Vișiniu",
-    "sku": "Snz-ChevronVisiniuM",
-    "stock": null,
+    "stock": 14,
     "inStock": true,
+    "sku": "Snz-ChevronVisiniuM",
     "ean": "810000449316"
    },
    {
     "size": "L",
     "range": "38–40",
     "color": "Vișiniu",
-    "sku": "Snz-ChevronVisiniuL",
-    "stock": null,
+    "stock": 14,
     "inStock": true,
+    "sku": "Snz-ChevronVisiniuL",
     "ean": "810000449354"
    },
    {
     "size": "XL",
     "range": "40–42",
     "color": "Vișiniu",
-    "sku": "Snz-ChevronVisiniuXL",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "sku": "Snz-ChevronVisiniuXL"
    }
   ]
  },
@@ -217,7 +217,7 @@
   "inStock": true,
   "stock": null,
   "short": "",
-  "description": "<p>Bucura-te de confortul suprem chiar si in cele mai reci zile cu <strong>papucii de casa pufosi Snoozies</strong>!</p> <p>Fiecare pereche este conceputa cu atentie la detalii, pentru ca tu sa te bucuri de <strong>papuci de casa comozi, caldurosi si eleganti</strong>. Interiorul moale si cald ofera o senzatie placuta picioarelor in zilele de iarna, iar blanita pufoasa adauga un plus de confort si rafinament.</p> <p>Indiferent daca te relaxezi acasa dupa o zi lunga sau petreci un weekend linistit, acesti <strong>papuci de casa pufosi Snoozies</strong> iti ofera confort si rasfat in fiecare moment. Designul lor modern si feminin adauga farmec fiecarei tinute de relaxare, facandu-te sa te simti confortabil si increzatoare.</p> <p><strong>Materiale de calitate superioara pentru mai multe sezoane de utilizare:</strong></p> <ul> <li><strong>Exterior:</strong> material textil rezistent si fin, cu insertii decorative</li> <li><strong>Interior:</strong> blanita tip plus, moale si calduroasa</li> <li><strong>Talpa:</strong> material textil cu margelute siliconate antiderapante, pentru siguranta si stabilitate</li> <li><strong>Intretinere usoara:</strong> se pot spala la masina fara ca materialul sa se deterioreze</li> </ul> <p>Acesti <strong>papuci de casa pufosi Snoozies</strong> ies in evidenta prin modelele unice si detaliile lucrate manual, oferind combinatia perfecta intre confort si stil.</p> <p>In cautarea unui cadou special? Papucii de casa Snoozies sunt ideali pentru cei dragi – o alegere sigura pentru confort, caldura si eleganta in fiecare zi.</p> <p> </p>",
+  "description": "<p>Bucura-te de confortul suprem chiar si in cele mai reci zile cu <strong>papucii de casa pufosi Snoozies</strong>!</p> <p>Fiecare pereche este conceputa cu atentie la detalii, pentru ca tu sa te bucuri de <strong>papuci de casa comozi, caldurosi si eleganti</strong>. Interiorul moale si cald ofera o senzatie placuta picioarelor in zilele de iarna, iar blanita pufoasa adauga un plus de confort si rafinament.</p> <p>Indiferent daca te relaxezi acasa dupa o zi lunga sau petreci un weekend linistit, acesti <strong>papuci de casa pufosi Snoozies</strong> iti ofera confort si rasfat in fiecare moment. Designul lor modern si feminin adauga farmec fiecarei tinute de relaxare, facandu-te sa te simti confortabil si increzatoare.</p> <p><strong>Materiale de calitate superioara pentru mai multe sezoane de utilizare:</strong></p> <ul> <li><strong>Exterior:</strong> material textil rezistent si fin, cu insertii decorative</li> <li><strong>Interior:</strong> blanita tip plus, moale si calduroasa</li> <li><strong>Talpa:</strong> material textil cu margelute siliconate antiderapante, pentru siguranta si stabilitate</li> <li><strong>Intretinere usoara:</strong> se pot spala la masina fara ca materialul sa se deterioreze</li> </ul> <p>Acesti <strong>papuci de casa pufosi Snoozies</strong> ies in evidenta prin modelele unice si detaliile lucrate manual, oferind combinatia perfecta intre confort si stil.</p> <p>In cautarea unui cadou special? Papucii de casa Snoozies sunt ideali pentru cei dragi – o alegere sigura pentru confort, caldura si eleganta in fiecare zi.</p>",
   "images": [
    "papuci-de-casa-snoozies-ren-1.jpg"
   ],
@@ -231,27 +231,27 @@
     "size": "S",
     "range": "36–37",
     "color": "",
-    "sku": "Snz-ReindS",
-    "stock": null,
+    "stock": 4,
     "inStock": true,
+    "sku": "Snz-ReindS",
     "ean": "840120445943"
    },
    {
     "size": "M",
     "range": "37–38",
     "color": "",
-    "sku": "Snz-ReindM",
-    "stock": null,
+    "stock": 5,
     "inStock": true,
+    "sku": "Snz-ReindM",
     "ean": "840120445950"
    },
    {
     "size": "L",
     "range": "38–40",
     "color": "",
-    "sku": "Snz-ReindL",
-    "stock": null,
+    "stock": 3,
     "inStock": true,
+    "sku": "Snz-ReindL",
     "ean": "840120445967"
    }
   ]
@@ -282,27 +282,27 @@
     "size": "S",
     "range": "36–37",
     "color": "",
-    "sku": "Snz-MerryxS",
-    "stock": null,
+    "stock": 15,
     "inStock": true,
+    "sku": "Snz-MerryxS",
     "ean": "840120446056"
    },
    {
     "size": "M",
     "range": "37–38",
     "color": "",
-    "sku": "Snz-MerryxM",
-    "stock": null,
+    "stock": 15,
     "inStock": true,
+    "sku": "Snz-MerryxM",
     "ean": "840120446063"
    },
    {
     "size": "L",
     "range": "38–40",
     "color": "",
-    "sku": "Snz-MerryxL",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "sku": "Snz-MerryxL"
    }
   ]
  },
@@ -318,7 +318,7 @@
   "inStock": true,
   "stock": null,
   "short": "",
-  "description": "<p>Bucura-te de confortul suprem chiar si in cele mai reci zile cu <strong>papucii de casa pufosi Snoozies</strong>!</p> <p>Fiecare pereche este conceputa cu atentie la detalii, pentru ca tu sa te bucuri de <strong>papuci de casa comozi, caldurosi si eleganti</strong>. Interiorul moale si cald ofera o senzatie placuta picioarelor in zilele de iarna, iar blanita pufoasa adauga un plus de confort si rafinament.</p> <p>Indiferent daca te relaxezi acasa dupa o zi lunga sau petreci un weekend linistit, acesti <strong>papuci de casa pufosi Snoozies</strong> iti ofera confort si rasfat in fiecare moment. Designul lor modern si feminin adauga farmec fiecarei tinute de relaxare, facandu-te sa te simti confortabil si increzatoare.</p> <p><strong>Materiale de calitate superioara pentru mai multe sezoane de utilizare:</strong></p> <ul> <li><strong>Exterior:</strong> material textil rezistent si fin, cu insertii decorative</li> <li><strong>Interior:</strong> blanita tip plus, moale si calduroasa</li> <li><strong>Talpa:</strong> material textil cu margelute siliconate antiderapante, pentru siguranta si stabilitate</li> <li><strong>Intretinere usoara:</strong> se pot spala la masina fara ca materialul sa se deterioreze</li> </ul> <p>Acesti <strong>papuci de casa pufosi Snoozies</strong> ies in evidenta prin modelele unice si detaliile lucrate manual, oferind combinatia perfecta intre confort si stil.</p> <p>In cautarea unui cadou special? Papucii de casa Snoozies sunt ideali pentru cei dragi – o alegere sigura pentru confort, caldura si eleganta in fiecare zi.</p> <p> </p>",
+  "description": "<p>Bucura-te de confortul suprem chiar si in cele mai reci zile cu <strong>papucii de casa pufosi Snoozies</strong>!</p> <p>Fiecare pereche este conceputa cu atentie la detalii, pentru ca tu sa te bucuri de <strong>papuci de casa comozi, caldurosi si eleganti</strong>. Interiorul moale si cald ofera o senzatie placuta picioarelor in zilele de iarna, iar blanita pufoasa adauga un plus de confort si rafinament.</p> <p>Indiferent daca te relaxezi acasa dupa o zi lunga sau petreci un weekend linistit, acesti <strong>papuci de casa pufosi Snoozies</strong> iti ofera confort si rasfat in fiecare moment. Designul lor modern si feminin adauga farmec fiecarei tinute de relaxare, facandu-te sa te simti confortabil si increzatoare.</p> <p><strong>Materiale de calitate superioara pentru mai multe sezoane de utilizare:</strong></p> <ul> <li><strong>Exterior:</strong> material textil rezistent si fin, cu insertii decorative</li> <li><strong>Interior:</strong> blanita tip plus, moale si calduroasa</li> <li><strong>Talpa:</strong> material textil cu margelute siliconate antiderapante, pentru siguranta si stabilitate</li> <li><strong>Intretinere usoara:</strong> se pot spala la masina fara ca materialul sa se deterioreze</li> </ul> <p>Acesti <strong>papuci de casa pufosi Snoozies</strong> ies in evidenta prin modelele unice si detaliile lucrate manual, oferind combinatia perfecta intre confort si stil.</p> <p>In cautarea unui cadou special? Papucii de casa Snoozies sunt ideali pentru cei dragi – o alegere sigura pentru confort, caldura si eleganta in fiecare zi.</p>",
   "images": [
    "papuci-de-casa-snoozies-echipa-elf-1.jpg"
   ],
@@ -332,26 +332,26 @@
     "size": "S",
     "range": "36–37",
     "color": "",
-    "sku": "Snz-EsquadS",
-    "stock": null,
+    "stock": 5,
     "inStock": true,
+    "sku": "Snz-EsquadS",
     "ean": "840120445820"
    },
    {
     "size": "M",
     "range": "37–38",
     "color": "",
-    "sku": "Snz-EsquadM",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "sku": "Snz-EsquadM"
    },
    {
     "size": "L",
     "range": "38–40",
     "color": "",
-    "sku": "Snz-EsquadL",
-    "stock": null,
+    "stock": 5,
     "inStock": true,
+    "sku": "Snz-EsquadL",
     "ean": "840120445844"
    }
   ]
@@ -368,7 +368,7 @@
   "inStock": true,
   "stock": null,
   "short": "",
-  "description": "<strong>Papuceii Snoozies pufosi si confortabili, ideali pentru:</strong> <p></p> <p> </p> <p><strong>Papuci de casa pufosi Snoozies</strong></p> <p>Bucura-te chiar si de cele mai reci zile cu ajutorul papucilor de casa Snoozies!</p> <p>Fiecare model este realizat cu atentie, pentru ca tu sa ai parte de un confort deplin.</p> <p>Rasfatati-va picioarele cu aceasta pereche de papuci de casa pufosi Snoozies</p> <p>Ganditi atat pentru confort cat si pentru un plus de eleganta. Creati dintr-un interior moale si calduros care ofera o senzatie placuta picioarelor in zilele de iarna.</p> <p>Indiferent daca va relaxati acasa dupa o zi lunga sau pur si simplu va bucurati de un weekend relaxant, acesti papuci ofera compania perfecta. Designul lor adauga o nota de farmec si feminitate, facandu-te sa te simti mai confortabil si increzatoare.</p> <p>Materialele de calitate asigura o un confort garantat pentru mai multe sezoane.</p> <p>Se spala la masina cu usurinta, fara ca materialul sa fie afectat.</p> <p>Papucii de casa Snoozies ies in evidenta prin modele inedite, blanita pufoasa si materialele de inalta calitate!</p> <p>Papucii de casa sunt realizati din materiale de calitate superioara:</p> <p>• Exterior- material textil rezistent, fin, cu insertii adaugate.</p> <p>• Interior- material tip blanita, calduros, de lana.</p> <p>• Talpa- material textil cu insertii de margelute siliconate antiderapante</p> <p>• Se spala la masina – nu intra la apa iar materialul ramane intact!</p> <p>Esti in pana de idei de cadouri? Papucii de casa Snoozies sunt o idee perfecta- cine nu iubeste o pereche confortabila, calduroasa si pufoasa de papuci de casa? Cu atat mai mult cu cat acestia au modele deosebite inserate manual.</p>",
+  "description": "<strong>Papuceii Snoozies pufosi si confortabili, ideali pentru:</strong>   <p><strong>Papuci de casa pufosi Snoozies</strong></p> <p>Bucura-te chiar si de cele mai reci zile cu ajutorul papucilor de casa Snoozies!</p> <p>Fiecare model este realizat cu atentie, pentru ca tu sa ai parte de un confort deplin.</p> <p>Rasfatati-va picioarele cu aceasta pereche de papuci de casa pufosi Snoozies</p> <p>Ganditi atat pentru confort cat si pentru un plus de eleganta. Creati dintr-un interior moale si calduros care ofera o senzatie placuta picioarelor in zilele de iarna.</p> <p>Indiferent daca va relaxati acasa dupa o zi lunga sau pur si simplu va bucurati de un weekend relaxant, acesti papuci ofera compania perfecta. Designul lor adauga o nota de farmec si feminitate, facandu-te sa te simti mai confortabil si increzatoare.</p> <p>Materialele de calitate asigura o un confort garantat pentru mai multe sezoane.</p> <p>Se spala la masina cu usurinta, fara ca materialul sa fie afectat.</p> <p>Papucii de casa Snoozies ies in evidenta prin modele inedite, blanita pufoasa si materialele de inalta calitate!</p> <p>Papucii de casa sunt realizati din materiale de calitate superioara:</p> <p>• Exterior- material textil rezistent, fin, cu insertii adaugate.</p> <p>• Interior- material tip blanita, calduros, de lana.</p> <p>• Talpa- material textil cu insertii de margelute siliconate antiderapante</p> <p>• Se spala la masina – nu intra la apa iar materialul ramane intact!</p> <p>Esti in pana de idei de cadouri? Papucii de casa Snoozies sunt o idee perfecta- cine nu iubeste o pereche confortabila, calduroasa si pufoasa de papuci de casa? Cu atat mai mult cu cat acestia au modele deosebite inserate manual.</p>",
   "images": [
    "papuci-de-casa-snoozies-feeling-frosty-1.jpg"
   ],
@@ -382,27 +382,27 @@
     "size": "S",
     "range": "36–37",
     "color": "",
-    "sku": "Snz-FrostyS",
-    "stock": null,
+    "stock": 14,
     "inStock": true,
+    "sku": "Snz-FrostyS",
     "ean": "840120445851"
    },
    {
     "size": "M",
     "range": "37–38",
     "color": "",
-    "sku": "Snz-FrostyM",
-    "stock": null,
+    "stock": 14,
     "inStock": true,
+    "sku": "Snz-FrostyM",
     "ean": "840120445868"
    },
    {
     "size": "L",
     "range": "38–40",
     "color": "",
-    "sku": "Snz-FrostyL",
-    "stock": null,
+    "stock": 13,
     "inStock": true,
+    "sku": "Snz-FrostyL",
     "ean": "840120445875"
    }
   ]
@@ -419,7 +419,7 @@
   "inStock": true,
   "stock": null,
   "short": "",
-  "description": "<strong>Papuceii Snoozies pufosi si confortabili, ideali pentru:</strong> <p></p> <p> </p> <p><strong>Papuci de casa pufosi Snoozies</strong></p> <p>Bucura-te chiar si de cele mai reci zile cu ajutorul papucilor de casa Snoozies!</p> <p>Fiecare model este realizat cu atentie, pentru ca tu sa ai parte de un confort deplin.</p> <p>Rasfatati-va picioarele cu aceasta pereche de papuci de casa pufosi Snoozies</p> <p>Ganditi atat pentru confort cat si pentru un plus de eleganta. Creati dintr-un interior moale si calduros care ofera o senzatie placuta picioarelor in zilele de iarna.</p> <p>Indiferent daca va relaxati acasa dupa o zi lunga sau pur si simplu va bucurati de un weekend relaxant, acesti papuci ofera compania perfecta. Designul lor adauga o nota de farmec si feminitate, facandu-te sa te simti mai confortabil si increzatoare.</p> <p>Materialele de calitate asigura o un confort garantat pentru mai multe sezoane.</p> <p>Se spala la masina cu usurinta, fara ca materialul sa fie afectat.</p> <p>Papucii de casa Snoozies ies in evidenta prin modele inedite, blanita pufoasa si materialele de inalta calitate!</p> <p>Papucii de casa sunt realizati din materiale de calitate superioara:</p> <p>• Exterior- material textil rezistent, fin, cu insertii adaugate.</p> <p>• Interior- material tip blanita, calduros, de lana.</p> <p>• Talpa- material textil cu insertii de margelute siliconate antiderapante</p> <p>• Se spala la masina – nu intra la apa iar materialul ramane intact!</p> <p>Esti in pana de idei de cadouri? Papucii de casa Snoozies sunt o idee perfecta- cine nu iubeste o pereche confortabila, calduroasa si pufoasa de papuci de casa? Cu atat mai mult cu cat acestia au modele deosebite inserate manual.</p>",
+  "description": "<strong>Papuceii Snoozies pufosi si confortabili, ideali pentru:</strong>   <p><strong>Papuci de casa pufosi Snoozies</strong></p> <p>Bucura-te chiar si de cele mai reci zile cu ajutorul papucilor de casa Snoozies!</p> <p>Fiecare model este realizat cu atentie, pentru ca tu sa ai parte de un confort deplin.</p> <p>Rasfatati-va picioarele cu aceasta pereche de papuci de casa pufosi Snoozies</p> <p>Ganditi atat pentru confort cat si pentru un plus de eleganta. Creati dintr-un interior moale si calduros care ofera o senzatie placuta picioarelor in zilele de iarna.</p> <p>Indiferent daca va relaxati acasa dupa o zi lunga sau pur si simplu va bucurati de un weekend relaxant, acesti papuci ofera compania perfecta. Designul lor adauga o nota de farmec si feminitate, facandu-te sa te simti mai confortabil si increzatoare.</p> <p>Materialele de calitate asigura o un confort garantat pentru mai multe sezoane.</p> <p>Se spala la masina cu usurinta, fara ca materialul sa fie afectat.</p> <p>Papucii de casa Snoozies ies in evidenta prin modele inedite, blanita pufoasa si materialele de inalta calitate!</p> <p>Papucii de casa sunt realizati din materiale de calitate superioara:</p> <p>• Exterior- material textil rezistent, fin, cu insertii adaugate.</p> <p>• Interior- material tip blanita, calduros, de lana.</p> <p>• Talpa- material textil cu insertii de margelute siliconate antiderapante</p> <p>• Se spala la masina – nu intra la apa iar materialul ramane intact!</p> <p>Esti in pana de idei de cadouri? Papucii de casa Snoozies sunt o idee perfecta- cine nu iubeste o pereche confortabila, calduroasa si pufoasa de papuci de casa? Cu atat mai mult cu cat acestia au modele deosebite inserate manual.</p>",
   "images": [
    "papuci-de-casa-snoozies-snow-wine-1.jpg"
   ],
@@ -433,26 +433,26 @@
     "size": "S",
     "range": "36–37",
     "color": "",
-    "sku": "Snz-SnowWineS",
-    "stock": null,
+    "stock": 5,
     "inStock": true,
+    "sku": "Snz-SnowWineS",
     "ean": "840120445912"
    },
    {
     "size": "M",
     "range": "37–38",
     "color": "",
-    "sku": "Snz-SnowWineM",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "sku": "Snz-SnowWineM"
    },
    {
     "size": "L",
     "range": "38–40",
     "color": "",
-    "sku": "Snz-SnowWineL",
-    "stock": null,
+    "stock": 23,
     "inStock": true,
+    "sku": "Snz-SnowWineL",
     "ean": "840120445936"
    }
   ]
@@ -469,7 +469,7 @@
   "inStock": true,
   "stock": null,
   "short": "",
-  "description": "<strong>Papuceii Snoozies pufosi si confortabili, ideali pentru:</strong> <p></p> <p>Bucura-te de confortul suprem chiar si in cele mai reci zile cu papucii de casa pufosi Snoozies!</p> <p>Fiecare pereche este conceputa cu atentie la detalii, pentru ca tu sa te bucuri de papuci de casa comozi, caldurosi si eleganti. Interiorul moale si cald ofera o senzatie placuta picioarelor in zilele de iarna, iar blanita pufoasa adauga un plus de confort si rafinament.</p> <p>Indiferent daca te relaxezi acasa dupa o zi lunga sau petreci un weekend linistit, acesti papuci de casa pufosi Snoozies iti ofera confort si rasfat in fiecare moment. Designul lor modern si feminin adauga farmec fiecarei tinute de relaxare, facandu-te sa te simti confortabil si increzatoare.</p> <p>Materiale de calitate superioara pentru mai multe sezoane de utilizare:</p> <p>Exterior: material textil rezistent si fin, cu insertii decorative</p> <p>Interior: blanita tip plus, moale si calduroasa</p> <p>Talpa: material textil cu margelute siliconate antiderapante, pentru siguranta si stabilitate</p> <p>Intretinere usoara: se pot spala la masina fara ca materialul sa se deterioreze</p> <p>Acesti papuci de casa pufosi Snoozies ies in evidenta prin modelele unice si detaliile lucrate manual, oferind combinatia perfecta intre confort si stil.</p> <p>In cautarea unui cadou special? Papucii de casa Snoozies sunt ideali pentru cei dragi – o alegere sigura pentru confort, caldura si eleganta in fiecare zi.</p>",
+  "description": "<strong>Papuceii Snoozies pufosi si confortabili, ideali pentru:</strong>  <p>Bucura-te de confortul suprem chiar si in cele mai reci zile cu papucii de casa pufosi Snoozies!</p> <p>Fiecare pereche este conceputa cu atentie la detalii, pentru ca tu sa te bucuri de papuci de casa comozi, caldurosi si eleganti. Interiorul moale si cald ofera o senzatie placuta picioarelor in zilele de iarna, iar blanita pufoasa adauga un plus de confort si rafinament.</p> <p>Indiferent daca te relaxezi acasa dupa o zi lunga sau petreci un weekend linistit, acesti papuci de casa pufosi Snoozies iti ofera confort si rasfat in fiecare moment. Designul lor modern si feminin adauga farmec fiecarei tinute de relaxare, facandu-te sa te simti confortabil si increzatoare.</p> <p>Materiale de calitate superioara pentru mai multe sezoane de utilizare:</p> <p>Exterior: material textil rezistent si fin, cu insertii decorative</p> <p>Interior: blanita tip plus, moale si calduroasa</p> <p>Talpa: material textil cu margelute siliconate antiderapante, pentru siguranta si stabilitate</p> <p>Intretinere usoara: se pot spala la masina fara ca materialul sa se deterioreze</p> <p>Acesti papuci de casa pufosi Snoozies ies in evidenta prin modelele unice si detaliile lucrate manual, oferind combinatia perfecta intre confort si stil.</p> <p>In cautarea unui cadou special? Papucii de casa Snoozies sunt ideali pentru cei dragi – o alegere sigura pentru confort, caldura si eleganta in fiecare zi.</p>",
   "images": [
    "papuci-de-casa-femei-snoozies-snow-good-1.jpg"
   ],
@@ -483,27 +483,27 @@
     "size": "S",
     "range": "36–37",
     "color": "",
-    "sku": "Snz-SnowGoodS",
-    "stock": null,
+    "stock": 25,
     "inStock": true,
+    "sku": "Snz-SnowGoodS",
     "ean": "810000449569"
    },
    {
     "size": "M",
     "range": "37–38",
     "color": "",
-    "sku": "Snz-SnowGoodM",
-    "stock": null,
+    "stock": 37,
     "inStock": true,
+    "sku": "Snz-SnowGoodM",
     "ean": "810000449576"
    },
    {
     "size": "L",
     "range": "38–40",
     "color": "",
-    "sku": "Snz-SnowGoodL",
-    "stock": null,
+    "stock": 36,
     "inStock": true,
+    "sku": "Snz-SnowGoodL",
     "ean": "810000449583"
    }
   ]
@@ -520,7 +520,7 @@
   "inStock": true,
   "stock": null,
   "short": "",
-  "description": "<strong>Papuceii Snoozies pufosi si confortabili, ideali pentru:</strong> <p></p> <p>Bucura-te de confortul suprem chiar si in cele mai reci zile cu <strong>papucii de casa pufosi Snoozies</strong>!</p> <p>Fiecare pereche este conceputa cu atentie la detalii, pentru ca tu sa te bucuri de <strong>papuci de casa comozi, caldurosi si eleganti</strong>. Interiorul moale si cald ofera o senzatie placuta picioarelor in zilele de iarna, iar blanita pufoasa adauga un plus de confort si rafinament.</p> <p>Indiferent daca te relaxezi acasa dupa o zi lunga sau petreci un weekend linistit, acesti <strong>papuci de casa pufosi Snoozies</strong> iti ofera confort si rasfat in fiecare moment. Designul lor modern si feminin adauga farmec fiecarei tinute de relaxare, facandu-te sa te simti confortabil si increzatoare.</p> <p><strong>Materiale de calitate superioara pentru mai multe sezoane de utilizare:</strong></p> <ul> <li><strong>Exterior:</strong> material textil rezistent si fin, cu insertii decorative</li> <li><strong>Interior:</strong> blanita tip plus, moale si calduroasa</li> <li><strong>Talpa:</strong> material textil cu margelute siliconate antiderapante, pentru siguranta si stabilitate</li> <li><strong>Intretinere usoara:</strong> se pot spala la masina fara ca materialul sa se deterioreze</li> </ul> <p>Acesti <strong>papuci de casa pufosi Snoozies</strong> ies in evidenta prin modelele unice si detaliile lucrate manual, oferind combinatia perfecta intre confort si stil.</p> <p>In cautarea unui cadou special? Papucii de casa Snoozies sunt ideali pentru cei dragi – o alegere sigura pentru confort, caldura si eleganta in fiecare zi.</p> <p> </p>",
+  "description": "<strong>Papuceii Snoozies pufosi si confortabili, ideali pentru:</strong>  <p>Bucura-te de confortul suprem chiar si in cele mai reci zile cu <strong>papucii de casa pufosi Snoozies</strong>!</p> <p>Fiecare pereche este conceputa cu atentie la detalii, pentru ca tu sa te bucuri de <strong>papuci de casa comozi, caldurosi si eleganti</strong>. Interiorul moale si cald ofera o senzatie placuta picioarelor in zilele de iarna, iar blanita pufoasa adauga un plus de confort si rafinament.</p> <p>Indiferent daca te relaxezi acasa dupa o zi lunga sau petreci un weekend linistit, acesti <strong>papuci de casa pufosi Snoozies</strong> iti ofera confort si rasfat in fiecare moment. Designul lor modern si feminin adauga farmec fiecarei tinute de relaxare, facandu-te sa te simti confortabil si increzatoare.</p> <p><strong>Materiale de calitate superioara pentru mai multe sezoane de utilizare:</strong></p> <ul> <li><strong>Exterior:</strong> material textil rezistent si fin, cu insertii decorative</li> <li><strong>Interior:</strong> blanita tip plus, moale si calduroasa</li> <li><strong>Talpa:</strong> material textil cu margelute siliconate antiderapante, pentru siguranta si stabilitate</li> <li><strong>Intretinere usoara:</strong> se pot spala la masina fara ca materialul sa se deterioreze</li> </ul> <p>Acesti <strong>papuci de casa pufosi Snoozies</strong> ies in evidenta prin modelele unice si detaliile lucrate manual, oferind combinatia perfecta intre confort si stil.</p> <p>In cautarea unui cadou special? Papucii de casa Snoozies sunt ideali pentru cei dragi – o alegere sigura pentru confort, caldura si eleganta in fiecare zi.</p>",
   "images": [
    "papuci-de-casa-femei-snoozies-be-merry-1.jpg"
   ],
@@ -534,26 +534,26 @@
     "size": "S",
     "range": "36–37",
     "color": "",
-    "sku": "Snz-BeMerryS",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "sku": "Snz-BeMerryS"
    },
    {
     "size": "M",
     "range": "37–38",
     "color": "",
+    "stock": 0,
+    "inStock": false,
     "sku": "Snz-BeMerryM",
-    "stock": null,
-    "inStock": true,
     "ean": "810000449545"
    },
    {
     "size": "L",
     "range": "38–40",
     "color": "",
-    "sku": "Snz-BeMerryL",
-    "stock": null,
+    "stock": 40,
     "inStock": true,
+    "sku": "Snz-BeMerryL",
     "ean": "810000449552"
    }
   ]
@@ -570,7 +570,7 @@
   "inStock": true,
   "stock": null,
   "short": "",
-  "description": "<strong>Papuceii Snoozies pufosi si confortabili, ideali pentru:</strong> <p></p> <p>Bucura-te de confortul suprem chiar si in cele mai reci zile cu <strong>papucii de casa pufosi Snoozies</strong>!</p> <p>Fiecare pereche este conceputa cu atentie la detalii, pentru ca tu sa te bucuri de <strong>papuci de casa comozi, caldurosi si eleganti</strong>. Interiorul moale si cald ofera o senzatie placuta picioarelor in zilele de iarna, iar blanita pufoasa adauga un plus de confort si rafinament.</p> <p>Indiferent daca te relaxezi acasa dupa o zi lunga sau petreci un weekend linistit, acesti <strong>papuci de casa pufosi Snoozies</strong> iti ofera confort si rasfat in fiecare moment. Designul lor modern si feminin adauga farmec fiecarei tinute de relaxare, facandu-te sa te simti confortabil si increzatoare.</p> <p><strong>Materiale de calitate superioara pentru mai multe sezoane de utilizare:</strong></p> <ul> <li><strong>Exterior:</strong> material textil rezistent si fin, cu insertii decorative</li> <li><strong>Interior:</strong> blanita tip plus, moale si calduroasa</li> <li><strong>Talpa:</strong> material textil cu margelute siliconate antiderapante, pentru siguranta si stabilitate</li> <li><strong>Intretinere usoara:</strong> se pot spala la masina fara ca materialul sa se deterioreze</li> </ul> <p>Acesti <strong>papuci de casa pufosi Snoozies</strong> ies in evidenta prin modelele unice si detaliile lucrate manual, oferind combinatia perfecta intre confort si stil.</p> <p>In cautarea unui cadou special? Papucii de casa Snoozies sunt ideali pentru cei dragi – o alegere sigura pentru confort, caldura si eleganta in fiecare zi.</p> <p> </p>",
+  "description": "<strong>Papuceii Snoozies pufosi si confortabili, ideali pentru:</strong>  <p>Bucura-te de confortul suprem chiar si in cele mai reci zile cu <strong>papucii de casa pufosi Snoozies</strong>!</p> <p>Fiecare pereche este conceputa cu atentie la detalii, pentru ca tu sa te bucuri de <strong>papuci de casa comozi, caldurosi si eleganti</strong>. Interiorul moale si cald ofera o senzatie placuta picioarelor in zilele de iarna, iar blanita pufoasa adauga un plus de confort si rafinament.</p> <p>Indiferent daca te relaxezi acasa dupa o zi lunga sau petreci un weekend linistit, acesti <strong>papuci de casa pufosi Snoozies</strong> iti ofera confort si rasfat in fiecare moment. Designul lor modern si feminin adauga farmec fiecarei tinute de relaxare, facandu-te sa te simti confortabil si increzatoare.</p> <p><strong>Materiale de calitate superioara pentru mai multe sezoane de utilizare:</strong></p> <ul> <li><strong>Exterior:</strong> material textil rezistent si fin, cu insertii decorative</li> <li><strong>Interior:</strong> blanita tip plus, moale si calduroasa</li> <li><strong>Talpa:</strong> material textil cu margelute siliconate antiderapante, pentru siguranta si stabilitate</li> <li><strong>Intretinere usoara:</strong> se pot spala la masina fara ca materialul sa se deterioreze</li> </ul> <p>Acesti <strong>papuci de casa pufosi Snoozies</strong> ies in evidenta prin modelele unice si detaliile lucrate manual, oferind combinatia perfecta intre confort si stil.</p> <p>In cautarea unui cadou special? Papucii de casa Snoozies sunt ideali pentru cei dragi – o alegere sigura pentru confort, caldura si eleganta in fiecare zi.</p>",
   "images": [
    "papuci-de-casa-femei-snoozies-christmas-elf-1.jpg"
   ],
@@ -584,27 +584,27 @@
     "size": "S",
     "range": "36–37",
     "color": "",
-    "sku": "Snz-WineELFS",
-    "stock": null,
+    "stock": 40,
     "inStock": true,
+    "sku": "Snz-WineELFS",
     "ean": "810000449507"
    },
    {
     "size": "M",
     "range": "37–38",
     "color": "",
-    "sku": "Snz-WineELFM",
-    "stock": null,
+    "stock": 29,
     "inStock": true,
+    "sku": "Snz-WineELFM",
     "ean": "810000449514"
    },
    {
     "size": "L",
     "range": "38–40",
     "color": "",
-    "sku": "Snz-WineELFL",
-    "stock": null,
+    "stock": 50,
     "inStock": true,
+    "sku": "Snz-WineELFL",
     "ean": "810000449521"
    }
   ]
@@ -621,7 +621,7 @@
   "inStock": true,
   "stock": null,
   "short": "",
-  "description": "<strong>Papuceii Snoozies pufosi si confortabili, ideali pentru:</strong> <p></p> <p> </p> <p><strong>Papuci de casa pufosi Snoozies</strong></p> <p>Bucura-te chiar si de cele mai reci zile cu ajutorul papucilor de casa Snoozies!</p> <p>Fiecare model este realizat cu atentie, pentru ca tu sa ai parte de un confort deplin.</p> <p>Rasfatati-va picioarele cu aceasta pereche de papuci de casa pufosi Snoozies</p> <p>Ganditi atat pentru confort cat si pentru un plus de eleganta. Creati dintr-un interior moale si calduros care ofera o senzatie placuta picioarelor in zilele de iarna.</p> <p>Indiferent daca va relaxati acasa dupa o zi lunga sau pur si simplu va bucurati de un weekend relaxant, acesti papuci ofera compania perfecta. Designul lor adauga o nota de farmec si feminitate, facandu-te sa te simti mai confortabil si increzatoare.</p> <p>Materialele de calitate asigura o un confort garantat pentru mai multe sezoane.</p> <p>Se spala la masina cu usurinta, fara ca materialul sa fie afectat.</p> <p>Papucii de casa Snoozies ies in evidenta prin modele inedite, blanita pufoasa si materialele de inalta calitate!</p> <p>Papucii de casa sunt realizati din materiale de calitate superioara:</p> <p>• Exterior- material textil rezistent, fin, cu insertii adaugate.</p> <p>• Interior- material tip blanita, calduros, de lana.</p> <p>• Talpa- material textil cu insertii de margelute siliconate antiderapante</p> <p>• Se spala la masina – nu intra la apa iar materialul ramane intact!</p> <p>Esti in pana de idei de cadouri? Papucii de casa Snoozies sunt o idee perfecta- cine nu iubeste o pereche confortabila, calduroasa si pufoasa de papuci de casa? Cu atat mai mult cu cat acestia au modele deosebite inserate manual.</p>",
+  "description": "<strong>Papuceii Snoozies pufosi si confortabili, ideali pentru:</strong>   <p><strong>Papuci de casa pufosi Snoozies</strong></p> <p>Bucura-te chiar si de cele mai reci zile cu ajutorul papucilor de casa Snoozies!</p> <p>Fiecare model este realizat cu atentie, pentru ca tu sa ai parte de un confort deplin.</p> <p>Rasfatati-va picioarele cu aceasta pereche de papuci de casa pufosi Snoozies</p> <p>Ganditi atat pentru confort cat si pentru un plus de eleganta. Creati dintr-un interior moale si calduros care ofera o senzatie placuta picioarelor in zilele de iarna.</p> <p>Indiferent daca va relaxati acasa dupa o zi lunga sau pur si simplu va bucurati de un weekend relaxant, acesti papuci ofera compania perfecta. Designul lor adauga o nota de farmec si feminitate, facandu-te sa te simti mai confortabil si increzatoare.</p> <p>Materialele de calitate asigura o un confort garantat pentru mai multe sezoane.</p> <p>Se spala la masina cu usurinta, fara ca materialul sa fie afectat.</p> <p>Papucii de casa Snoozies ies in evidenta prin modele inedite, blanita pufoasa si materialele de inalta calitate!</p> <p>Papucii de casa sunt realizati din materiale de calitate superioara:</p> <p>• Exterior- material textil rezistent, fin, cu insertii adaugate.</p> <p>• Interior- material tip blanita, calduros, de lana.</p> <p>• Talpa- material textil cu insertii de margelute siliconate antiderapante</p> <p>• Se spala la masina – nu intra la apa iar materialul ramane intact!</p> <p>Esti in pana de idei de cadouri? Papucii de casa Snoozies sunt o idee perfecta- cine nu iubeste o pereche confortabila, calduroasa si pufoasa de papuci de casa? Cu atat mai mult cu cat acestia au modele deosebite inserate manual.</p>",
   "images": [
    "papuci-de-casa-femei-snoozies-white-christmas-1.jpg"
   ],
@@ -635,27 +635,27 @@
     "size": "S",
     "range": "36–37",
     "color": "",
-    "sku": "Snz-WhiteChristmasS",
-    "stock": null,
+    "stock": 25,
     "inStock": true,
+    "sku": "Snz-WhiteChristmasS",
     "ean": "810000449477"
    },
    {
     "size": "M",
     "range": "37–38",
     "color": "",
-    "sku": "Snz-WhiteChristmasM",
-    "stock": null,
+    "stock": 25,
     "inStock": true,
+    "sku": "Snz-WhiteChristmasM",
     "ean": "810000449484"
    },
    {
     "size": "L",
     "range": "38–40",
     "color": "",
-    "sku": "Snz-WhiteChristmasL",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "sku": "Snz-WhiteChristmasL"
    }
   ]
  },
@@ -671,7 +671,7 @@
   "inStock": true,
   "stock": null,
   "short": "",
-  "description": "<strong>Papuceii Snoozies pufosi si confortabili, ideali pentru:</strong> <p></p> <p><strong>Bucura-te de confortul suprem chiar si in cele mai reci zile cu papucii de casa pufosi Snoozies!</strong></p> <p>Fiecare pereche este conceputa cu atentie la detalii, pentru ca tu sa te bucuri de papuci de casa comozi, caldurosi si eleganti. Interiorul moale si cald ofera o senzatie placuta picioarelor in zilele de iarna, iar blanita pufoasa adauga un plus de confort si rafinament.</p> <p>Indiferent daca te relaxezi acasa dupa o zi lunga sau petreci un weekend linistit, acesti papuci de casa pufosi Snoozies iti ofera confort si rasfat in fiecare moment. Designul lor modern si feminin adauga farmec fiecarei tinute de relaxare, facandu-te sa te simti confortabil si increzatoare.</p> <ul> <li>Materiale de calitate superioara pentru mai multe sezoane de utilizare:</li> <li>Exterior: material textil rezistent si fin, cu insertii decorative</li> <li>Interior: blanita tip plus, moale si calduroasa</li> <li>Talpa: material textil cu margelute siliconate antiderapante, pentru siguranta si stabilitate</li> <li>Intretinere usoara: se pot spala la masina fara ca materialul sa se deterioreze</li> </ul> <p>Acesti papuci de casa pufosi Snoozies ies in evidenta prin modelele unice si detaliile lucrate manual, oferind combinatia perfecta intre confort si stil.</p> <p>In cautarea unui cadou special? Papucii de casa Snoozies sunt ideali pentru cei dragi – o alegere sigura pentru confort, caldura si eleganta in fiecare zi.</p>",
+  "description": "<strong>Papuceii Snoozies pufosi si confortabili, ideali pentru:</strong>  <p><strong>Bucura-te de confortul suprem chiar si in cele mai reci zile cu papucii de casa pufosi Snoozies!</strong></p> <p>Fiecare pereche este conceputa cu atentie la detalii, pentru ca tu sa te bucuri de papuci de casa comozi, caldurosi si eleganti. Interiorul moale si cald ofera o senzatie placuta picioarelor in zilele de iarna, iar blanita pufoasa adauga un plus de confort si rafinament.</p> <p>Indiferent daca te relaxezi acasa dupa o zi lunga sau petreci un weekend linistit, acesti papuci de casa pufosi Snoozies iti ofera confort si rasfat in fiecare moment. Designul lor modern si feminin adauga farmec fiecarei tinute de relaxare, facandu-te sa te simti confortabil si increzatoare.</p> <ul> <li>Materiale de calitate superioara pentru mai multe sezoane de utilizare:</li> <li>Exterior: material textil rezistent si fin, cu insertii decorative</li> <li>Interior: blanita tip plus, moale si calduroasa</li> <li>Talpa: material textil cu margelute siliconate antiderapante, pentru siguranta si stabilitate</li> <li>Intretinere usoara: se pot spala la masina fara ca materialul sa se deterioreze</li> </ul> <p>Acesti papuci de casa pufosi Snoozies ies in evidenta prin modelele unice si detaliile lucrate manual, oferind combinatia perfecta intre confort si stil.</p> <p>In cautarea unui cadou special? Papucii de casa Snoozies sunt ideali pentru cei dragi – o alegere sigura pentru confort, caldura si eleganta in fiecare zi.</p>",
   "images": [
    "papuci-de-casa-snoozies-meowy-christmas-1.jpg"
   ],
@@ -685,25 +685,25 @@
     "size": "S",
     "range": "36–37",
     "color": "",
-    "sku": "SnzMewowyChristmasS",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "sku": "SnzMewowyChristmasS"
    },
    {
     "size": "M",
     "range": "37–38",
     "color": "",
-    "sku": "SnzMewowyChristmasM",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "sku": "SnzMewowyChristmasM"
    },
    {
     "size": "L",
     "range": "38–40",
     "color": "",
-    "sku": "SnzMewowyChristmasL",
-    "stock": null,
+    "stock": 14,
     "inStock": true,
+    "sku": "SnzMewowyChristmasL",
     "ean": "810000440276"
    }
   ]
@@ -720,7 +720,7 @@
   "inStock": true,
   "stock": null,
   "short": "",
-  "description": "<strong>Papuceii Snoozies pufosi si confortabili, ideali pentru:</strong> <p></p> <p>Rasfata-ti picioarele cu papucii de casa pufosi Snoozies, creati pentru confort si caldura in orice zi friguroasa!<br /> Acesti papuci dama imbina perfect confortul cu eleganta, fiind alegerea ideala pentru momentele de relaxare acasa. Realizati din materiale de calitate superioara, ofera o senzatie placuta la fiecare pas si mentin picioarele calde chiar si in cele mai reci zile.</p> <p>✔ Interior moale si calduros – blanita pufoasa tip lana pentru o senzatie de rasfat.<br /> ✔ Exterior rezistent – material textil fin, placut la atingere.<br /> ✔ Talpa antiderapanta – cu insertii din silicon pentru siguranta pe orice suprafata.<br /> ✔ Intretinere usoara – se spala la masina, fara deformare sau pierderea texturii.</p> <p>De ce sa alegi papucii de casa Snoozies?</p> <ul> <li>Confort maxim in fiecare zi</li> <li>Design feminin si atractiv</li> <li>Materiale durabile pentru utilizare indelungata</li> <li>Ideal pentru cadou – cine nu iubeste o pereche de papuci pufosi si comozi?</li> </ul> <p>Transforma-ti momentele de relaxare in adevarate clipe de rasfat cu papucii de casa Snoozies!</p>",
+  "description": "<strong>Papuceii Snoozies pufosi si confortabili, ideali pentru:</strong>  <p>Rasfata-ti picioarele cu papucii de casa pufosi Snoozies, creati pentru confort si caldura in orice zi friguroasa!<br> Acesti papuci dama imbina perfect confortul cu eleganta, fiind alegerea ideala pentru momentele de relaxare acasa. Realizati din materiale de calitate superioara, ofera o senzatie placuta la fiecare pas si mentin picioarele calde chiar si in cele mai reci zile.</p> <p>✔ Interior moale si calduros – blanita pufoasa tip lana pentru o senzatie de rasfat.<br> ✔ Exterior rezistent – material textil fin, placut la atingere.<br> ✔ Talpa antiderapanta – cu insertii din silicon pentru siguranta pe orice suprafata.<br> ✔ Intretinere usoara – se spala la masina, fara deformare sau pierderea texturii.</p> <p>De ce sa alegi papucii de casa Snoozies?</p> <ul> <li>Confort maxim in fiecare zi</li> <li>Design feminin si atractiv</li> <li>Materiale durabile pentru utilizare indelungata</li> <li>Ideal pentru cadou – cine nu iubeste o pereche de papuci pufosi si comozi?</li> </ul> <p>Transforma-ti momentele de relaxare in adevarate clipe de rasfat cu papucii de casa Snoozies!</p>",
   "images": [
    "papuci-de-casa-snoozies-chilling-with-my-snowmies-1.jpg",
    "papuci-de-casa-snoozies-chilling-with-my-snowmies-2.jpg",
@@ -738,27 +738,28 @@
     "size": "S",
     "range": "36–37",
     "color": "",
+    "stock": 0,
+    "inStock": false,
     "sku": "Snz-07SnowmiesS",
-    "stock": null,
-    "inStock": true,
     "ean": "840120403899"
    },
    {
     "size": "M",
     "range": "37–38",
     "color": "",
+    "stock": 0,
+    "inStock": false,
     "sku": "Snz-07SnowmiesM",
-    "stock": null,
-    "inStock": true,
     "ean": "840120403905"
    },
    {
     "size": "L",
     "range": "38–40",
     "color": "",
+    "stock": 17,
+    "inStock": true,
     "sku": "Snz-07SnowmiesL",
-    "stock": null,
-    "inStock": true
+    "ean": "840120403912"
    }
   ]
  },
@@ -774,7 +775,7 @@
   "inStock": true,
   "stock": null,
   "short": "",
-  "description": "<strong>Papuceii Snoozies pufosi si confortabili, ideali pentru:</strong> <p></p> <p> </p> <p><strong>Papuci de casa pufosi Snoozies</strong></p> <p>Bucura-te chiar si de cele mai reci zile cu ajutorul papucilor de casa Snoozies!</p> <p>Fiecare model este realizat cu atentie, pentru ca tu sa ai parte de un confort deplin.</p> <p>Rasfatati-va picioarele cu aceasta pereche de papuci de casa pufosi Snoozies</p> <p>Ganditi atat pentru confort cat si pentru un plus de eleganta. Creati dintr-un interior moale si calduros care ofera o senzatie placuta picioarelor in zilele de iarna.</p> <p>Indiferent daca va relaxati acasa dupa o zi lunga sau pur si simplu va bucurati de un weekend relaxant, acesti papuci ofera compania perfecta. Designul lor adauga o nota de farmec si feminitate, facandu-te sa te simti mai confortabil si increzatoare.</p> <p>Materialele de calitate asigura o un confort garantat pentru mai multe sezoane.</p> <p>Se spala la masina cu usurinta, fara ca materialul sa fie afectat.</p> <p>Papucii de casa Snoozies ies in evidenta prin modele inedite, blanita pufoasa si materialele de inalta calitate!</p> <p>Papucii de casa sunt realizati din materiale de calitate superioara:</p> <p>• Exterior- material textil rezistent, fin, cu insertii adaugate.</p> <p>• Interior- material tip blanita, calduros, de lana.</p> <p>• Talpa- material textil cu insertii de margelute siliconate antiderapante</p> <p>• Se spala la masina – nu intra la apa iar materialul ramane intact!</p> <p>Esti in pana de idei de cadouri? Papucii de casa Snoozies sunt o idee perfecta- cine nu iubeste o pereche confortabila, calduroasa si pufoasa de papuci de casa? Cu atat mai mult cu cat acestia au modele deosebite inserate manual.</p>",
+  "description": "<strong>Papuceii Snoozies pufosi si confortabili, ideali pentru:</strong>   <p><strong>Papuci de casa pufosi Snoozies</strong></p> <p>Bucura-te chiar si de cele mai reci zile cu ajutorul papucilor de casa Snoozies!</p> <p>Fiecare model este realizat cu atentie, pentru ca tu sa ai parte de un confort deplin.</p> <p>Rasfatati-va picioarele cu aceasta pereche de papuci de casa pufosi Snoozies</p> <p>Ganditi atat pentru confort cat si pentru un plus de eleganta. Creati dintr-un interior moale si calduros care ofera o senzatie placuta picioarelor in zilele de iarna.</p> <p>Indiferent daca va relaxati acasa dupa o zi lunga sau pur si simplu va bucurati de un weekend relaxant, acesti papuci ofera compania perfecta. Designul lor adauga o nota de farmec si feminitate, facandu-te sa te simti mai confortabil si increzatoare.</p> <p>Materialele de calitate asigura o un confort garantat pentru mai multe sezoane.</p> <p>Se spala la masina cu usurinta, fara ca materialul sa fie afectat.</p> <p>Papucii de casa Snoozies ies in evidenta prin modele inedite, blanita pufoasa si materialele de inalta calitate!</p> <p>Papucii de casa sunt realizati din materiale de calitate superioara:</p> <p>• Exterior- material textil rezistent, fin, cu insertii adaugate.</p> <p>• Interior- material tip blanita, calduros, de lana.</p> <p>• Talpa- material textil cu insertii de margelute siliconate antiderapante</p> <p>• Se spala la masina – nu intra la apa iar materialul ramane intact!</p> <p>Esti in pana de idei de cadouri? Papucii de casa Snoozies sunt o idee perfecta- cine nu iubeste o pereche confortabila, calduroasa si pufoasa de papuci de casa? Cu atat mai mult cu cat acestia au modele deosebite inserate manual.</p>",
   "images": [
    "papuci-de-casa-femei-snoozies-just-chilling-1.jpg"
   ],
@@ -788,27 +789,27 @@
     "size": "S",
     "range": "36–37",
     "color": "",
-    "sku": "Snz-JustChillingS",
-    "stock": null,
+    "stock": 15,
     "inStock": true,
+    "sku": "Snz-JustChillingS",
     "ean": "810000449637"
    },
    {
     "size": "M",
     "range": "37–38",
     "color": "",
-    "sku": "Snz-JustChillingM",
-    "stock": null,
+    "stock": 29,
     "inStock": true,
+    "sku": "Snz-JustChillingM",
     "ean": "810000449644"
    },
    {
     "size": "L",
     "range": "38–40",
     "color": "",
-    "sku": "Snz-JustChillingL",
-    "stock": null,
+    "stock": 13,
     "inStock": true,
+    "sku": "Snz-JustChillingL",
     "ean": "810000449651"
    }
   ]
@@ -825,7 +826,7 @@
   "inStock": true,
   "stock": null,
   "short": "",
-  "description": "<strong>Papuceii Snoozies pufosi si confortabili, ideali pentru:</strong> <p></p> <p><strong>Rasfata-ti picioarele cu papucii de casa pufosi Snoozies, creati pentru confort si caldura in orice zi friguroasa!</strong><br />Acesti papuci de dama imbina perfect confortul cu eleganta, fiind alegerea ideala pentru momentele de relaxare acasa. Realizati din materiale de calitate superioara, ofera o senzatie placuta la fiecare pas si mentin picioarele calde chiar si in cele mai reci zile.</p> <p>✔ Interior moale si calduros – blanita pufoasa tip lana pentru o senzatie de rasfat.<br /> ✔ Exterior rezistent – material textil fin, placut la atingere.<br /> ✔ Talpa antiderapanta – cu insertii din silicon pentru siguranta pe orice suprafata.<br /> ✔ Intretinere usoara – se spala la masina, fara deformare sau pierderea texturii.</p> <p>De ce sa alegi papucii de casa Snoozies?</p> <ul> <li>Confort maxim in fiecare zi</li> <li>Design feminin si atractiv</li> <li>Materiale durabile pentru utilizare indelungata</li> <li>Ideal pentru cadou – cine nu iubeste o pereche de papuci pufosi si comozi?</li> </ul> <p>Transforma-ti momentele de relaxare in adevarate clipe de rasfat cu papucii de casa Snoozies!</p>",
+  "description": "<strong>Papuceii Snoozies pufosi si confortabili, ideali pentru:</strong>  <p><strong>Rasfata-ti picioarele cu papucii de casa pufosi Snoozies, creati pentru confort si caldura in orice zi friguroasa!</strong><br>Acesti papuci de dama imbina perfect confortul cu eleganta, fiind alegerea ideala pentru momentele de relaxare acasa. Realizati din materiale de calitate superioara, ofera o senzatie placuta la fiecare pas si mentin picioarele calde chiar si in cele mai reci zile.</p> <p>✔ Interior moale si calduros – blanita pufoasa tip lana pentru o senzatie de rasfat.<br> ✔ Exterior rezistent – material textil fin, placut la atingere.<br> ✔ Talpa antiderapanta – cu insertii din silicon pentru siguranta pe orice suprafata.<br> ✔ Intretinere usoara – se spala la masina, fara deformare sau pierderea texturii.</p> <p>De ce sa alegi papucii de casa Snoozies?</p> <ul> <li>Confort maxim in fiecare zi</li> <li>Design feminin si atractiv</li> <li>Materiale durabile pentru utilizare indelungata</li> <li>Ideal pentru cadou – cine nu iubeste o pereche de papuci pufosi si comozi?</li> </ul> <p>Transforma-ti momentele de relaxare in adevarate clipe de rasfat cu papucii de casa Snoozies!</p>",
   "images": [
    "papuci-de-casa-snoozies-ciocolata-1.jpg",
    "papuci-de-casa-snoozies-ciocolata-2.jpg",
@@ -843,27 +844,27 @@
     "size": "S",
     "range": "36–37",
     "color": "",
-    "sku": "Snz-ChocoS",
-    "stock": null,
+    "stock": 14,
     "inStock": true,
+    "sku": "Snz-ChocoS",
     "ean": "9323258055969"
    },
    {
     "size": "M",
     "range": "37–38",
     "color": "",
-    "sku": "Snz-ChocoM",
-    "stock": null,
+    "stock": 40,
     "inStock": true,
+    "sku": "Snz-ChocoM",
     "ean": "9323258055976"
    },
    {
     "size": "L",
     "range": "38–40",
     "color": "",
-    "sku": "Snz-ChocoL",
-    "stock": null,
+    "stock": 50,
     "inStock": true,
+    "sku": "Snz-ChocoL",
     "ean": "9323258055983"
    }
   ]
@@ -880,7 +881,7 @@
   "inStock": true,
   "stock": null,
   "short": "",
-  "description": "<strong>Papuceii Snoozies pufosi si confortabili, ideali pentru:</strong> <p></p> <p><strong>Rasfata-ti picioarele cu papucii de casa pufosi Snoozies, creati pentru confort si caldura in orice zi friguroasa!</strong><br /> Acesti papuci dama imbina perfect confortul cu eleganta, fiind alegerea ideala pentru momentele de relaxare acasa. Realizati din materiale de calitate superioara, ofera o senzatie placuta la fiecare pas si mentin picioarele calde chiar si in cele mai reci zile.</p> <p>✔ Interior moale si calduros – blanita pufoasa tip lana pentru o senzatie de rasfat.<br /> ✔ Exterior rezistent – material textil fin, placut la atingere.<br /> ✔ Talpa antiderapanta – cu insertii din silicon pentru siguranta pe orice suprafata.<br /> ✔ Intretinere usoara – se spala la masina, fara deformare sau pierderea texturii.</p> <p>De ce sa alegi papucii de casa Snoozies?</p> <ul> <li>Confort maxim in fiecare zi</li> <li>Design feminin si atractiv</li> <li>Materiale durabile pentru utilizare indelungata</li> <li>Ideal pentru cadou – cine nu iubeste o pereche de papuci pufosi si comozi?</li> </ul> <p>Transforma-ti momentele de relaxare in adevarate clipe de rasfat cu papucii de casa Snoozies!</p>",
+  "description": "<strong>Papuceii Snoozies pufosi si confortabili, ideali pentru:</strong>  <p><strong>Rasfata-ti picioarele cu papucii de casa pufosi Snoozies, creati pentru confort si caldura in orice zi friguroasa!</strong><br> Acesti papuci dama imbina perfect confortul cu eleganta, fiind alegerea ideala pentru momentele de relaxare acasa. Realizati din materiale de calitate superioara, ofera o senzatie placuta la fiecare pas si mentin picioarele calde chiar si in cele mai reci zile.</p> <p>✔ Interior moale si calduros – blanita pufoasa tip lana pentru o senzatie de rasfat.<br> ✔ Exterior rezistent – material textil fin, placut la atingere.<br> ✔ Talpa antiderapanta – cu insertii din silicon pentru siguranta pe orice suprafata.<br> ✔ Intretinere usoara – se spala la masina, fara deformare sau pierderea texturii.</p> <p>De ce sa alegi papucii de casa Snoozies?</p> <ul> <li>Confort maxim in fiecare zi</li> <li>Design feminin si atractiv</li> <li>Materiale durabile pentru utilizare indelungata</li> <li>Ideal pentru cadou – cine nu iubeste o pereche de papuci pufosi si comozi?</li> </ul> <p>Transforma-ti momentele de relaxare in adevarate clipe de rasfat cu papucii de casa Snoozies!</p>",
   "images": [
    "papuci-de-casa-snoozies-any-time-is-wine-time-1.jpg"
   ],
@@ -894,26 +895,26 @@
     "size": "S",
     "range": "36–37",
     "color": "",
-    "sku": "Snz-WineTimeS",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "sku": "Snz-WineTimeS"
    },
    {
     "size": "M",
     "range": "37–38",
     "color": "",
+    "stock": 0,
+    "inStock": false,
     "sku": "Snz-WinetimeM",
-    "stock": null,
-    "inStock": true,
     "ean": "9323258057468"
    },
    {
     "size": "L",
     "range": "38–40",
     "color": "",
-    "sku": "Snz-WineTimeL",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "sku": "Snz-WineTimeL"
    }
   ]
  },
@@ -929,7 +930,7 @@
   "inStock": true,
   "stock": null,
   "short": "",
-  "description": "<strong>Papuceii Snoozies pufosi si confortabili, ideali pentru:</strong> <p></p> <p><strong>Rasfata-ti picioarele cu papucii de casa pufosi Snoozies, creati pentru confort si caldura in orice zi friguroasa!</strong><br /> Acesti papuci dama imbina perfect confortul cu eleganta, fiind alegerea ideala pentru momentele de relaxare acasa. Realizati din materiale de calitate superioara, ofera o senzatie placuta la fiecare pas si mentin picioarele calde chiar si in cele mai reci zile.</p> <p>✔ Interior moale si calduros – blanita pufoasa tip lana pentru o senzatie de rasfat.<br /> ✔ Exterior rezistent – material textil fin, placut la atingere.<br /> ✔ Talpa antiderapanta – cu insertii din silicon pentru siguranta pe orice suprafata.<br /> ✔ Intretinere usoara – se spala la masina, fara deformare sau pierderea texturii.</p> <p>De ce sa alegi papucii de casa Snoozies?</p> <ul> <li>Confort maxim in fiecare zi</li> <li>Design feminin si atractiv</li> <li>Materiale durabile pentru utilizare indelungata</li> <li>Ideal pentru cadou – cine nu iubeste o pereche de papuci pufosi si comozi?</li> </ul> <p>Transforma-ti momentele de relaxare in adevarate clipe de rasfat cu papucii de casa Snoozies!</p>",
+  "description": "<strong>Papuceii Snoozies pufosi si confortabili, ideali pentru:</strong>  <p><strong>Rasfata-ti picioarele cu papucii de casa pufosi Snoozies, creati pentru confort si caldura in orice zi friguroasa!</strong><br> Acesti papuci dama imbina perfect confortul cu eleganta, fiind alegerea ideala pentru momentele de relaxare acasa. Realizati din materiale de calitate superioara, ofera o senzatie placuta la fiecare pas si mentin picioarele calde chiar si in cele mai reci zile.</p> <p>✔ Interior moale si calduros – blanita pufoasa tip lana pentru o senzatie de rasfat.<br> ✔ Exterior rezistent – material textil fin, placut la atingere.<br> ✔ Talpa antiderapanta – cu insertii din silicon pentru siguranta pe orice suprafata.<br> ✔ Intretinere usoara – se spala la masina, fara deformare sau pierderea texturii.</p> <p>De ce sa alegi papucii de casa Snoozies?</p> <ul> <li>Confort maxim in fiecare zi</li> <li>Design feminin si atractiv</li> <li>Materiale durabile pentru utilizare indelungata</li> <li>Ideal pentru cadou – cine nu iubeste o pereche de papuci pufosi si comozi?</li> </ul> <p>Transforma-ti momentele de relaxare in adevarate clipe de rasfat cu papucii de casa Snoozies!</p>",
   "images": [
    "papuci-de-casa-snoozies-am-pm-1.jpg",
    "papuci-de-casa-snoozies-am-pm-2.jpg",
@@ -948,26 +949,27 @@
     "size": "S",
     "range": "36–37",
     "color": "",
+    "stock": 3,
+    "inStock": true,
     "sku": "Snz-01AMPMS",
-    "stock": null,
-    "inStock": true
+    "ean": "840120409464"
    },
    {
     "size": "M",
     "range": "37–38",
     "color": "",
-    "sku": "Snz-01AMPMM",
-    "stock": null,
+    "stock": 40,
     "inStock": true,
+    "sku": "Snz-01AMPMM",
     "ean": "840120409471"
    },
    {
     "size": "L",
     "range": "38–40",
     "color": "",
+    "stock": 0,
+    "inStock": false,
     "sku": "Snz-01AMPML",
-    "stock": null,
-    "inStock": true,
     "ean": "840120409488"
    }
   ]
@@ -984,7 +986,7 @@
   "inStock": true,
   "stock": null,
   "short": "",
-  "description": "<strong>Papuceii Snoozies pufosi si confortabili, ideali pentru:</strong> <p></p> <p> </p> <p><strong>Papuci de casa pufosi Snoozies</strong></p> <p>Bucura-te chiar si de cele mai reci zile cu ajutorul papucilor de casa Snoozies!</p> <p>Fiecare model este realizat cu atentie, pentru ca tu sa ai parte de un confort deplin.</p> <p>Rasfatati-va picioarele cu aceasta pereche de papuci de casa pufosi Snoozies</p> <p>Ganditi atat pentru confort cat si pentru un plus de eleganta. Creati dintr-un interior moale si calduros care ofera o senzatie placuta picioarelor in zilele de iarna.</p> <p>Indiferent daca va relaxati acasa dupa o zi lunga sau pur si simplu va bucurati de un weekend relaxant, acesti papuci ofera compania perfecta. Designul lor adauga o nota de farmec si feminitate, facandu-te sa te simti mai confortabil si increzatoare.</p> <p>Materialele de calitate asigura o un confort garantat pentru mai multe sezoane.</p> <p>Se spala la masina cu usurinta, fara ca materialul sa fie afectat.</p> <p>Papucii de casa Snoozies ies in evidenta prin modele inedite, blanita pufoasa si materialele de inalta calitate!</p> <p>Papucii de casa sunt realizati din materiale de calitate superioara:</p> <p>• Exterior- material textil rezistent, fin, cu insertii adaugate.</p> <p>• Interior- material tip blanita, calduros, de lana.</p> <p>• Talpa- material textil cu insertii de margelute siliconate antiderapante</p> <p>• Se spala la masina – nu intra la apa iar materialul ramane intact!</p> <p>Esti in pana de idei de cadouri? Papucii de casa Snoozies sunt o idee perfecta- cine nu iubeste o pereche confortabila, calduroasa si pufoasa de papuci de casa? Cu atat mai mult cu cat acestia au modele deosebite inserate manual.</p>",
+  "description": "<strong>Papuceii Snoozies pufosi si confortabili, ideali pentru:</strong>   <p><strong>Papuci de casa pufosi Snoozies</strong></p> <p>Bucura-te chiar si de cele mai reci zile cu ajutorul papucilor de casa Snoozies!</p> <p>Fiecare model este realizat cu atentie, pentru ca tu sa ai parte de un confort deplin.</p> <p>Rasfatati-va picioarele cu aceasta pereche de papuci de casa pufosi Snoozies</p> <p>Ganditi atat pentru confort cat si pentru un plus de eleganta. Creati dintr-un interior moale si calduros care ofera o senzatie placuta picioarelor in zilele de iarna.</p> <p>Indiferent daca va relaxati acasa dupa o zi lunga sau pur si simplu va bucurati de un weekend relaxant, acesti papuci ofera compania perfecta. Designul lor adauga o nota de farmec si feminitate, facandu-te sa te simti mai confortabil si increzatoare.</p> <p>Materialele de calitate asigura o un confort garantat pentru mai multe sezoane.</p> <p>Se spala la masina cu usurinta, fara ca materialul sa fie afectat.</p> <p>Papucii de casa Snoozies ies in evidenta prin modele inedite, blanita pufoasa si materialele de inalta calitate!</p> <p>Papucii de casa sunt realizati din materiale de calitate superioara:</p> <p>• Exterior- material textil rezistent, fin, cu insertii adaugate.</p> <p>• Interior- material tip blanita, calduros, de lana.</p> <p>• Talpa- material textil cu insertii de margelute siliconate antiderapante</p> <p>• Se spala la masina – nu intra la apa iar materialul ramane intact!</p> <p>Esti in pana de idei de cadouri? Papucii de casa Snoozies sunt o idee perfecta- cine nu iubeste o pereche confortabila, calduroasa si pufoasa de papuci de casa? Cu atat mai mult cu cat acestia au modele deosebite inserate manual.</p>",
   "images": [
    "papuci-de-casa-snoozies-catitude-1.jpg"
   ],
@@ -998,27 +1000,27 @@
     "size": "S",
     "range": "36–37",
     "color": "",
-    "sku": "Snz-CatitudeS",
-    "stock": null,
+    "stock": 17,
     "inStock": true,
+    "sku": "Snz-CatitudeS",
     "ean": "9323258055921"
    },
    {
     "size": "M",
     "range": "37–38",
     "color": "",
-    "sku": "Snz-CatitudeM",
-    "stock": null,
+    "stock": 26,
     "inStock": true,
+    "sku": "Snz-CatitudeM",
     "ean": "9323258055938"
    },
    {
     "size": "L",
     "range": "38–40",
     "color": "",
-    "sku": "Snz-CatitudeL",
-    "stock": null,
+    "stock": 20,
     "inStock": true,
+    "sku": "Snz-CatitudeL",
     "ean": "9323258055945"
    }
   ]
@@ -1035,7 +1037,7 @@
   "inStock": true,
   "stock": null,
   "short": "",
-  "description": "<strong>Papuceii Snoozies pufosi si confortabili, ideali pentru:</strong> <p></p> <p> </p> <p><strong>Papuci de casa pufosi Snoozies</strong></p> <p>Bucura-te chiar si de cele mai reci zile cu ajutorul papucilor de casa Snoozies!</p> <p>Fiecare model este realizat cu atentie, pentru ca tu sa ai parte de un confort deplin.</p> <p>Rasfatati-va picioarele cu aceasta pereche de papuci de casa pufosi Snoozies</p> <p>Ganditi atat pentru confort cat si pentru un plus de eleganta. Creati dintr-un interior moale si calduros care ofera o senzatie placuta picioarelor in zilele de iarna.</p> <p>Indiferent daca va relaxati acasa dupa o zi lunga sau pur si simplu va bucurati de un weekend relaxant, acesti papuci ofera compania perfecta. Designul lor adauga o nota de farmec si feminitate, facandu-te sa te simti mai confortabil si increzatoare.</p> <p>Materialele de calitate asigura o un confort garantat pentru mai multe sezoane.</p> <p>Se spala la masina cu usurinta, fara ca materialul sa fie afectat.</p> <p>Papucii de casa Snoozies ies in evidenta prin modele inedite, blanita pufoasa si materialele de inalta calitate!</p> <p>Papucii de casa sunt realizati din materiale de calitate superioara:</p> <p>• Exterior- material textil rezistent, fin, cu insertii adaugate.</p> <p>• Interior- material tip blanita, calduros, de lana.</p> <p>• Talpa- material textil cu insertii de margelute siliconate antiderapante</p> <p>• Se spala la masina – nu intra la apa iar materialul ramane intact!</p> <p>Esti in pana de idei de cadouri? Papucii de casa Snoozies sunt o idee perfecta- cine nu iubeste o pereche confortabila, calduroasa si pufoasa de papuci de casa? Cu atat mai mult cu cat acestia au modele deosebite inserate manual.</p>",
+  "description": "<strong>Papuceii Snoozies pufosi si confortabili, ideali pentru:</strong>   <p><strong>Papuci de casa pufosi Snoozies</strong></p> <p>Bucura-te chiar si de cele mai reci zile cu ajutorul papucilor de casa Snoozies!</p> <p>Fiecare model este realizat cu atentie, pentru ca tu sa ai parte de un confort deplin.</p> <p>Rasfatati-va picioarele cu aceasta pereche de papuci de casa pufosi Snoozies</p> <p>Ganditi atat pentru confort cat si pentru un plus de eleganta. Creati dintr-un interior moale si calduros care ofera o senzatie placuta picioarelor in zilele de iarna.</p> <p>Indiferent daca va relaxati acasa dupa o zi lunga sau pur si simplu va bucurati de un weekend relaxant, acesti papuci ofera compania perfecta. Designul lor adauga o nota de farmec si feminitate, facandu-te sa te simti mai confortabil si increzatoare.</p> <p>Materialele de calitate asigura o un confort garantat pentru mai multe sezoane.</p> <p>Se spala la masina cu usurinta, fara ca materialul sa fie afectat.</p> <p>Papucii de casa Snoozies ies in evidenta prin modele inedite, blanita pufoasa si materialele de inalta calitate!</p> <p>Papucii de casa sunt realizati din materiale de calitate superioara:</p> <p>• Exterior- material textil rezistent, fin, cu insertii adaugate.</p> <p>• Interior- material tip blanita, calduros, de lana.</p> <p>• Talpa- material textil cu insertii de margelute siliconate antiderapante</p> <p>• Se spala la masina – nu intra la apa iar materialul ramane intact!</p> <p>Esti in pana de idei de cadouri? Papucii de casa Snoozies sunt o idee perfecta- cine nu iubeste o pereche confortabila, calduroasa si pufoasa de papuci de casa? Cu atat mai mult cu cat acestia au modele deosebite inserate manual.</p>",
   "images": [
    "papuci-de-casa-snoozies-cat-lady-36-37-1.jpg"
   ],
@@ -1049,27 +1051,27 @@
     "size": "S",
     "range": "36–37",
     "color": "",
-    "sku": "SnzCatladyS",
-    "stock": null,
+    "stock": 20,
     "inStock": true,
+    "sku": "SnzCatladyS",
     "ean": "9323258057499"
    },
    {
     "size": "M",
     "range": "37–38",
     "color": "",
-    "sku": "SnzCatladyM",
-    "stock": null,
+    "stock": 15,
     "inStock": true,
+    "sku": "SnzCatladyM",
     "ean": "9323258057505"
    },
    {
     "size": "L",
     "range": "38–40",
     "color": "",
-    "sku": "SnzCatLdyL",
-    "stock": null,
+    "stock": 12,
     "inStock": true,
+    "sku": "SnzCatLdyL",
     "ean": "9323258057512"
    }
   ]
@@ -1086,7 +1088,7 @@
   "inStock": true,
   "stock": null,
   "short": "",
-  "description": "<strong>Papuceii Snoozies pufosi si confortabili, ideali pentru:</strong> <p></p> <p> </p> <p><strong>Papuci de casa pufosi Snoozies</strong></p> <p>Bucura-te chiar si de cele mai reci zile cu ajutorul papucilor de casa Snoozies!</p> <p>Fiecare model este realizat cu atentie, pentru ca tu sa ai parte de un confort deplin.</p> <p>Rasfatati-va picioarele cu aceasta pereche de papuci de casa pufosi Snoozies</p> <p>Ganditi atat pentru confort cat si pentru un plus de eleganta. Creati dintr-un interior moale si calduros care ofera o senzatie placuta picioarelor in zilele de iarna.</p> <p>Indiferent daca va relaxati acasa dupa o zi lunga sau pur si simplu va bucurati de un weekend relaxant, acesti papuci ofera compania perfecta. Designul lor adauga o nota de farmec si feminitate, facandu-te sa te simti mai confortabil si increzatoare.</p> <p>Materialele de calitate asigura o un confort garantat pentru mai multe sezoane.</p> <p>Se spala la masina cu usurinta, fara ca materialul sa fie afectat.</p> <p>Papucii de casa Snoozies ies in evidenta prin modele inedite, blanita pufoasa si materialele de inalta calitate!</p> <p>Papucii de casa sunt realizati din materiale de calitate superioara:</p> <p>• Exterior- material textil rezistent, fin, cu insertii adaugate.</p> <p>• Interior- material tip blanita, calduros, de lana.</p> <p>• Talpa- material textil cu insertii de margelute siliconate antiderapante</p> <p>• Se spala la masina – nu intra la apa iar materialul ramane intact!</p> <p>Esti in pana de idei de cadouri? Papucii de casa Snoozies sunt o idee perfecta- cine nu iubeste o pereche confortabila, calduroasa si pufoasa de papuci de casa? Cu atat mai mult cu cat acestia au modele deosebite inserate manual.</p>",
+  "description": "<strong>Papuceii Snoozies pufosi si confortabili, ideali pentru:</strong>   <p><strong>Papuci de casa pufosi Snoozies</strong></p> <p>Bucura-te chiar si de cele mai reci zile cu ajutorul papucilor de casa Snoozies!</p> <p>Fiecare model este realizat cu atentie, pentru ca tu sa ai parte de un confort deplin.</p> <p>Rasfatati-va picioarele cu aceasta pereche de papuci de casa pufosi Snoozies</p> <p>Ganditi atat pentru confort cat si pentru un plus de eleganta. Creati dintr-un interior moale si calduros care ofera o senzatie placuta picioarelor in zilele de iarna.</p> <p>Indiferent daca va relaxati acasa dupa o zi lunga sau pur si simplu va bucurati de un weekend relaxant, acesti papuci ofera compania perfecta. Designul lor adauga o nota de farmec si feminitate, facandu-te sa te simti mai confortabil si increzatoare.</p> <p>Materialele de calitate asigura o un confort garantat pentru mai multe sezoane.</p> <p>Se spala la masina cu usurinta, fara ca materialul sa fie afectat.</p> <p>Papucii de casa Snoozies ies in evidenta prin modele inedite, blanita pufoasa si materialele de inalta calitate!</p> <p>Papucii de casa sunt realizati din materiale de calitate superioara:</p> <p>• Exterior- material textil rezistent, fin, cu insertii adaugate.</p> <p>• Interior- material tip blanita, calduros, de lana.</p> <p>• Talpa- material textil cu insertii de margelute siliconate antiderapante</p> <p>• Se spala la masina – nu intra la apa iar materialul ramane intact!</p> <p>Esti in pana de idei de cadouri? Papucii de casa Snoozies sunt o idee perfecta- cine nu iubeste o pereche confortabila, calduroasa si pufoasa de papuci de casa? Cu atat mai mult cu cat acestia au modele deosebite inserate manual.</p>",
   "images": [
    "papuci-de-casa-snoozies-home-is-where-my-dog-is-1.jpg"
   ],
@@ -1100,27 +1102,27 @@
     "size": "S",
     "range": "36–37",
     "color": "",
-    "sku": "Snz-CaineS",
-    "stock": null,
+    "stock": 6,
     "inStock": true,
+    "sku": "Snz-CaineS",
     "ean": "9323258057611"
    },
    {
     "size": "M",
     "range": "37–38",
     "color": "",
-    "sku": "Snz-CaineM",
-    "stock": null,
+    "stock": 10,
     "inStock": true,
+    "sku": "Snz-CaineM",
     "ean": "9323258057628"
    },
    {
     "size": "L",
     "range": "38–40",
     "color": "",
+    "stock": 0,
+    "inStock": false,
     "sku": "Snz-CaineL",
-    "stock": null,
-    "inStock": true,
     "ean": "9323258057635"
    }
   ]
@@ -1137,7 +1139,7 @@
   "inStock": true,
   "stock": null,
   "short": "",
-  "description": "<strong>Papuceii Snoozies pufosi si confortabili, ideali pentru:</strong> <p></p> <p> </p> <p><strong>Papuci de casa pufosi Snoozies</strong></p> <p>Bucura-te chiar si de cele mai reci zile cu ajutorul papucilor de casa Snoozies!</p> <p>Fiecare model este realizat cu atentie, pentru ca tu sa ai parte de un confort deplin.</p> <p>Rasfatati-va picioarele cu aceasta pereche de papuci de casa pufosi Snoozies</p> <p>Ganditi atat pentru confort cat si pentru un plus de eleganta. Creati dintr-un interior moale si calduros care ofera o senzatie placuta picioarelor in zilele de iarna.</p> <p>Indiferent daca va relaxati acasa dupa o zi lunga sau pur si simplu va bucurati de un weekend relaxant, acesti papuci ofera compania perfecta. Designul lor adauga o nota de farmec si feminitate, facandu-te sa te simti mai confortabil si increzatoare.</p> <p>Materialele de calitate asigura o un confort garantat pentru mai multe sezoane.</p> <p>Se spala la masina cu usurinta, fara ca materialul sa fie afectat.</p> <p>Papucii de casa Snoozies ies in evidenta prin modele inedite, blanita pufoasa si materialele de inalta calitate!</p> <p>Papucii de casa sunt realizati din materiale de calitate superioara:</p> <p>• Exterior- material textil rezistent, fin, cu insertii adaugate.</p> <p>• Interior- material tip blanita, calduros, de lana.</p> <p>• Talpa- material textil cu insertii de margelute siliconate antiderapante</p> <p>• Se spala la masina – nu intra la apa iar materialul ramane intact!</p> <p>Esti in pana de idei de cadouri? Papucii de casa Snoozies sunt o idee perfecta- cine nu iubeste o pereche confortabila, calduroasa si pufoasa de papuci de casa? Cu atat mai mult cu cat acestia au modele deosebite inserate manual.</p>",
+  "description": "<strong>Papuceii Snoozies pufosi si confortabili, ideali pentru:</strong>   <p><strong>Papuci de casa pufosi Snoozies</strong></p> <p>Bucura-te chiar si de cele mai reci zile cu ajutorul papucilor de casa Snoozies!</p> <p>Fiecare model este realizat cu atentie, pentru ca tu sa ai parte de un confort deplin.</p> <p>Rasfatati-va picioarele cu aceasta pereche de papuci de casa pufosi Snoozies</p> <p>Ganditi atat pentru confort cat si pentru un plus de eleganta. Creati dintr-un interior moale si calduros care ofera o senzatie placuta picioarelor in zilele de iarna.</p> <p>Indiferent daca va relaxati acasa dupa o zi lunga sau pur si simplu va bucurati de un weekend relaxant, acesti papuci ofera compania perfecta. Designul lor adauga o nota de farmec si feminitate, facandu-te sa te simti mai confortabil si increzatoare.</p> <p>Materialele de calitate asigura o un confort garantat pentru mai multe sezoane.</p> <p>Se spala la masina cu usurinta, fara ca materialul sa fie afectat.</p> <p>Papucii de casa Snoozies ies in evidenta prin modele inedite, blanita pufoasa si materialele de inalta calitate!</p> <p>Papucii de casa sunt realizati din materiale de calitate superioara:</p> <p>• Exterior- material textil rezistent, fin, cu insertii adaugate.</p> <p>• Interior- material tip blanita, calduros, de lana.</p> <p>• Talpa- material textil cu insertii de margelute siliconate antiderapante</p> <p>• Se spala la masina – nu intra la apa iar materialul ramane intact!</p> <p>Esti in pana de idei de cadouri? Papucii de casa Snoozies sunt o idee perfecta- cine nu iubeste o pereche confortabila, calduroasa si pufoasa de papuci de casa? Cu atat mai mult cu cat acestia au modele deosebite inserate manual.</p>",
   "images": [
    "papuci-de-casa-snoozies-buburuza-1.jpg"
   ],
@@ -1151,25 +1153,25 @@
     "size": "S",
     "range": "36–37",
     "color": "",
-    "sku": "Snz-BuburuzaS",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "sku": "Snz-BuburuzaS"
    },
    {
     "size": "M",
     "range": "37–38",
     "color": "",
-    "sku": "Snz-BuburuzaM",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "sku": "Snz-BuburuzaM"
    },
    {
     "size": "L",
     "range": "38–40",
     "color": "",
-    "sku": "Snz-BuburuzaL",
-    "stock": null,
+    "stock": 5,
     "inStock": true,
+    "sku": "Snz-BuburuzaL",
     "ean": "9323258057277"
    }
   ]
@@ -1186,7 +1188,7 @@
   "inStock": true,
   "stock": null,
   "short": "",
-  "description": "<strong>Papuceii Snoozies pufosi si confortabili, ideali pentru:</strong> <p></p> <p> </p> <p><strong>Papuci de casa pufosi Snoozies</strong></p> <p>Bucura-te chiar si de cele mai reci zile cu ajutorul papucilor de casa Snoozies!</p> <p>Fiecare model este realizat cu atentie, pentru ca tu sa ai parte de un confort deplin.</p> <p>Rasfatati-va picioarele cu aceasta pereche de papuci de casa pufosi Snoozies</p> <p>Ganditi atat pentru confort cat si pentru un plus de eleganta. Creati dintr-un interior moale si calduros care ofera o senzatie placuta picioarelor in zilele de iarna.</p> <p>Indiferent daca va relaxati acasa dupa o zi lunga sau pur si simplu va bucurati de un weekend relaxant, acesti papuci ofera compania perfecta. Designul lor adauga o nota de farmec si feminitate, facandu-te sa te simti mai confortabil si increzatoare.</p> <p>Materialele de calitate asigura o un confort garantat pentru mai multe sezoane.</p> <p>Se spala la masina cu usurinta, fara ca materialul sa fie afectat.</p> <p>Papucii de casa Snoozies ies in evidenta prin modele inedite, blanita pufoasa si materialele de inalta calitate!</p> <p>Papucii de casa sunt realizati din materiale de calitate superioara:</p> <p>• Exterior- material textil rezistent, fin, cu insertii adaugate.</p> <p>• Interior- material tip blanita, calduros, de lana.</p> <p>• Talpa- material textil cu insertii de margelute siliconate antiderapante</p> <p>• Se spala la masina – nu intra la apa iar materialul ramane intact!</p> <p>Esti in pana de idei de cadouri? Papucii de casa Snoozies sunt o idee perfecta- cine nu iubeste o pereche confortabila, calduroasa si pufoasa de papuci de casa? Cu atat mai mult cu cat acestia au modele deosebite inserate manual.</p>",
+  "description": "<strong>Papuceii Snoozies pufosi si confortabili, ideali pentru:</strong>   <p><strong>Papuci de casa pufosi Snoozies</strong></p> <p>Bucura-te chiar si de cele mai reci zile cu ajutorul papucilor de casa Snoozies!</p> <p>Fiecare model este realizat cu atentie, pentru ca tu sa ai parte de un confort deplin.</p> <p>Rasfatati-va picioarele cu aceasta pereche de papuci de casa pufosi Snoozies</p> <p>Ganditi atat pentru confort cat si pentru un plus de eleganta. Creati dintr-un interior moale si calduros care ofera o senzatie placuta picioarelor in zilele de iarna.</p> <p>Indiferent daca va relaxati acasa dupa o zi lunga sau pur si simplu va bucurati de un weekend relaxant, acesti papuci ofera compania perfecta. Designul lor adauga o nota de farmec si feminitate, facandu-te sa te simti mai confortabil si increzatoare.</p> <p>Materialele de calitate asigura o un confort garantat pentru mai multe sezoane.</p> <p>Se spala la masina cu usurinta, fara ca materialul sa fie afectat.</p> <p>Papucii de casa Snoozies ies in evidenta prin modele inedite, blanita pufoasa si materialele de inalta calitate!</p> <p>Papucii de casa sunt realizati din materiale de calitate superioara:</p> <p>• Exterior- material textil rezistent, fin, cu insertii adaugate.</p> <p>• Interior- material tip blanita, calduros, de lana.</p> <p>• Talpa- material textil cu insertii de margelute siliconate antiderapante</p> <p>• Se spala la masina – nu intra la apa iar materialul ramane intact!</p> <p>Esti in pana de idei de cadouri? Papucii de casa Snoozies sunt o idee perfecta- cine nu iubeste o pereche confortabila, calduroasa si pufoasa de papuci de casa? Cu atat mai mult cu cat acestia au modele deosebite inserate manual.</p>",
   "images": [
    "papuci-de-casa-snoozies-elefant-1.jpg",
    "papuci-de-casa-snoozies-elefant-2.jpg"
@@ -1201,27 +1203,27 @@
     "size": "S",
     "range": "36–37",
     "color": "",
-    "sku": "Snz-06ElfS",
-    "stock": null,
+    "stock": 12,
     "inStock": true,
+    "sku": "Snz-06ElfS",
     "ean": "840120409907"
    },
    {
     "size": "M",
     "range": "37–38",
     "color": "",
-    "sku": "Snz-06ElfM",
-    "stock": null,
+    "stock": 35,
     "inStock": true,
+    "sku": "Snz-06ElfM",
     "ean": "840120409914"
    },
    {
     "size": "L",
     "range": "38–40",
     "color": "",
-    "sku": "Snz-06ElfL",
-    "stock": null,
+    "stock": 23,
     "inStock": true,
+    "sku": "Snz-06ElfL",
     "ean": "840120409921"
    }
   ]
@@ -1238,7 +1240,7 @@
   "inStock": true,
   "stock": null,
   "short": "",
-  "description": "<strong>Papuceii Snoozies pufosi si confortabili, ideali pentru:</strong> <p></p> <p> </p> <p><strong>Papuci de casa pufosi Snoozies</strong></p> <p>Bucura-te chiar si de cele mai reci zile cu ajutorul papucilor de casa Snoozies!</p> <p>Fiecare model este realizat cu atentie, pentru ca tu sa ai parte de un confort deplin.</p> <p>Rasfatati-va picioarele cu aceasta pereche de papuci de casa pufosi Snoozies</p> <p>Ganditi atat pentru confort cat si pentru un plus de eleganta. Creati dintr-un interior moale si calduros care ofera o senzatie placuta picioarelor in zilele de iarna.</p> <p>Indiferent daca va relaxati acasa dupa o zi lunga sau pur si simplu va bucurati de un weekend relaxant, acesti papuci ofera compania perfecta. Designul lor adauga o nota de farmec si feminitate, facandu-te sa te simti mai confortabil si increzatoare.</p> <p>Materialele de calitate asigura o un confort garantat pentru mai multe sezoane.</p> <p>Se spala la masina cu usurinta, fara ca materialul sa fie afectat.</p> <p>Papucii de casa Snoozies ies in evidenta prin modele inedite, blanita pufoasa si materialele de inalta calitate!</p> <p>Papucii de casa sunt realizati din materiale de calitate superioara:</p> <p>• Exterior- material textil rezistent, fin, cu insertii adaugate.</p> <p>• Interior- material tip blanita, calduros, de lana.</p> <p>• Talpa- material textil cu insertii de margelute siliconate antiderapante</p> <p>• Se spala la masina – nu intra la apa iar materialul ramane intact!</p> <p>Esti in pana de idei de cadouri? Papucii de casa Snoozies sunt o idee perfecta- cine nu iubeste o pereche confortabila, calduroasa si pufoasa de papuci de casa? Cu atat mai mult cu cat acestia au modele deosebite inserate manual.</p>",
+  "description": "<strong>Papuceii Snoozies pufosi si confortabili, ideali pentru:</strong>   <p><strong>Papuci de casa pufosi Snoozies</strong></p> <p>Bucura-te chiar si de cele mai reci zile cu ajutorul papucilor de casa Snoozies!</p> <p>Fiecare model este realizat cu atentie, pentru ca tu sa ai parte de un confort deplin.</p> <p>Rasfatati-va picioarele cu aceasta pereche de papuci de casa pufosi Snoozies</p> <p>Ganditi atat pentru confort cat si pentru un plus de eleganta. Creati dintr-un interior moale si calduros care ofera o senzatie placuta picioarelor in zilele de iarna.</p> <p>Indiferent daca va relaxati acasa dupa o zi lunga sau pur si simplu va bucurati de un weekend relaxant, acesti papuci ofera compania perfecta. Designul lor adauga o nota de farmec si feminitate, facandu-te sa te simti mai confortabil si increzatoare.</p> <p>Materialele de calitate asigura o un confort garantat pentru mai multe sezoane.</p> <p>Se spala la masina cu usurinta, fara ca materialul sa fie afectat.</p> <p>Papucii de casa Snoozies ies in evidenta prin modele inedite, blanita pufoasa si materialele de inalta calitate!</p> <p>Papucii de casa sunt realizati din materiale de calitate superioara:</p> <p>• Exterior- material textil rezistent, fin, cu insertii adaugate.</p> <p>• Interior- material tip blanita, calduros, de lana.</p> <p>• Talpa- material textil cu insertii de margelute siliconate antiderapante</p> <p>• Se spala la masina – nu intra la apa iar materialul ramane intact!</p> <p>Esti in pana de idei de cadouri? Papucii de casa Snoozies sunt o idee perfecta- cine nu iubeste o pereche confortabila, calduroasa si pufoasa de papuci de casa? Cu atat mai mult cu cat acestia au modele deosebite inserate manual.</p>",
   "images": [
    "papuci-de-casa-snoozies-bufnita-1.jpg",
    "papuci-de-casa-snoozies-bufnita-2.jpg",
@@ -1256,27 +1258,27 @@
     "size": "S",
     "range": "36–37",
     "color": "",
-    "sku": "Snz-03BufS",
-    "stock": null,
+    "stock": 14,
     "inStock": true,
+    "sku": "Snz-03BufS",
     "ean": "840120409587"
    },
    {
     "size": "M",
     "range": "37–38",
     "color": "",
-    "sku": "Snz-03BufM",
-    "stock": null,
+    "stock": 47,
     "inStock": true,
+    "sku": "Snz-03BufM",
     "ean": "840120409594"
    },
    {
     "size": "L",
     "range": "38–40",
     "color": "",
+    "stock": 0,
+    "inStock": false,
     "sku": "Snz-03BufL",
-    "stock": null,
-    "inStock": true,
     "ean": "840120409600"
    }
   ]
@@ -1293,7 +1295,7 @@
   "inStock": true,
   "stock": null,
   "short": "",
-  "description": "<strong>Papuceii Snoozies pufosi si confortabili, ideali pentru:</strong> <p></p> <p> </p> <p><strong>Papuci de casa pufosi Snoozies</strong></p> <p>Bucura-te chiar si de cele mai reci zile cu ajutorul papucilor de casa Snoozies!</p> <p>Fiecare model este realizat cu atentie, pentru ca tu sa ai parte de un confort deplin.</p> <p>Rasfatati-va picioarele cu aceasta pereche de papuci de casa pufosi Snoozies</p> <p>Ganditi atat pentru confort cat si pentru un plus de eleganta. Creati dintr-un interior moale si calduros care ofera o senzatie placuta picioarelor in zilele de iarna.</p> <p>Indiferent daca va relaxati acasa dupa o zi lunga sau pur si simplu va bucurati de un weekend relaxant, acesti papuci ofera compania perfecta. Designul lor adauga o nota de farmec si feminitate, facandu-te sa te simti mai confortabil si increzatoare.</p> <p>Materialele de calitate asigura o un confort garantat pentru mai multe sezoane.</p> <p>Se spala la masina cu usurinta, fara ca materialul sa fie afectat.</p> <p>Papucii de casa Snoozies ies in evidenta prin modele inedite, blanita pufoasa si materialele de inalta calitate!</p> <p>Papucii de casa sunt realizati din materiale de calitate superioara:</p> <p>• Exterior- material textil rezistent, fin, cu insertii adaugate.</p> <p>• Interior- material tip blanita, calduros, de lana.</p> <p>• Talpa- material textil cu insertii de margelute siliconate antiderapante</p> <p>• Se spala la masina – nu intra la apa iar materialul ramane intact!</p> <p>Esti in pana de idei de cadouri? Papucii de casa Snoozies sunt o idee perfecta- cine nu iubeste o pereche confortabila, calduroasa si pufoasa de papuci de casa? Cu atat mai mult cu cat acestia au modele deosebite inserate manual.</p>",
+  "description": "<strong>Papuceii Snoozies pufosi si confortabili, ideali pentru:</strong>   <p><strong>Papuci de casa pufosi Snoozies</strong></p> <p>Bucura-te chiar si de cele mai reci zile cu ajutorul papucilor de casa Snoozies!</p> <p>Fiecare model este realizat cu atentie, pentru ca tu sa ai parte de un confort deplin.</p> <p>Rasfatati-va picioarele cu aceasta pereche de papuci de casa pufosi Snoozies</p> <p>Ganditi atat pentru confort cat si pentru un plus de eleganta. Creati dintr-un interior moale si calduros care ofera o senzatie placuta picioarelor in zilele de iarna.</p> <p>Indiferent daca va relaxati acasa dupa o zi lunga sau pur si simplu va bucurati de un weekend relaxant, acesti papuci ofera compania perfecta. Designul lor adauga o nota de farmec si feminitate, facandu-te sa te simti mai confortabil si increzatoare.</p> <p>Materialele de calitate asigura o un confort garantat pentru mai multe sezoane.</p> <p>Se spala la masina cu usurinta, fara ca materialul sa fie afectat.</p> <p>Papucii de casa Snoozies ies in evidenta prin modele inedite, blanita pufoasa si materialele de inalta calitate!</p> <p>Papucii de casa sunt realizati din materiale de calitate superioara:</p> <p>• Exterior- material textil rezistent, fin, cu insertii adaugate.</p> <p>• Interior- material tip blanita, calduros, de lana.</p> <p>• Talpa- material textil cu insertii de margelute siliconate antiderapante</p> <p>• Se spala la masina – nu intra la apa iar materialul ramane intact!</p> <p>Esti in pana de idei de cadouri? Papucii de casa Snoozies sunt o idee perfecta- cine nu iubeste o pereche confortabila, calduroasa si pufoasa de papuci de casa? Cu atat mai mult cu cat acestia au modele deosebite inserate manual.</p>",
   "images": [
    "papuci-de-casa-snoozies-albinuta-1.jpg",
    "papuci-de-casa-snoozies-albinuta-2.jpg",
@@ -1311,27 +1313,27 @@
     "size": "S",
     "range": "36–37",
     "color": "",
-    "sku": "Snz-05AlbS",
-    "stock": null,
+    "stock": 6,
     "inStock": true,
+    "sku": "Snz-05AlbS",
     "ean": "840120409624"
    },
    {
     "size": "M",
     "range": "38–39",
     "color": "",
-    "sku": "Snz-05AlbM",
-    "stock": null,
+    "stock": 3,
     "inStock": true,
+    "sku": "Snz-05AlbM",
     "ean": "840120409631"
    },
    {
     "size": "L",
     "range": "38–40",
     "color": "",
+    "stock": 0,
+    "inStock": false,
     "sku": "Snz-05AlbL",
-    "stock": null,
-    "inStock": true,
     "ean": "840120409648"
    }
   ]
@@ -1348,7 +1350,7 @@
   "inStock": true,
   "stock": null,
   "short": "",
-  "description": "<strong>Papuceii Snoozies pufosi si confortabili, ideali pentru:</strong> <p></p> <p><strong>Papuci de casa Snoozies Sassy Slide – pufosi, caldurosi si comozi, ideali pentru iarna.</strong></p> <p>Transforma fiecare moment de relaxare intr-o experienta placuta cu papucii de casa Snoozies Sassy Slide, creati special pentru confortul si stilul tau.</p> <p>✔ Interior moale si pufos, cu blanita artificiala – perfect pentru a mentine picioarele calde in zilele reci.<br /> ✔ Exterior textil placut la atingere – design modern si elegant, care adauga un plus de rafinament.<br /> ✔ Talpa antiderapanta cu insertii din silicon – stabilitate si siguranta pe orice tip de podea.<br /> ✔ Intretinere usoara – se spala la masina, fara sa se deformeze.</p> <p><strong>Beneficii cheie:</strong></p> <p>Confort maxim datorita materialului moale si formei ergonomice.</p> <p>Caldurosi si pufosi, ideali pentru iarna sau serile reci.</p> <p>Materiale de calitate care rezista in timp.</p> <p><strong>Detalii produs:</strong></p> <p>Exterior: material textil rezistent, placut la atingere.</p> <p>Interior: blanita artificiala, pufoasa, foarte confortabila.</p> <p>Talpa: textila cu bilute siliconate pentru efect antiderapant.</p> <p>🎁 Cadoul ideal – Cine nu iubeste o pereche de papuci de casa confortabili si caldurosi? Snoozies sunt alegerea perfecta pentru tine sau pentru cei dragi!</p>",
+  "description": "<strong>Papuceii Snoozies pufosi si confortabili, ideali pentru:</strong>  <p><strong>Papuci de casa Snoozies Sassy Slide – pufosi, caldurosi si comozi, ideali pentru iarna.</strong></p> <p>Transforma fiecare moment de relaxare intr-o experienta placuta cu papucii de casa Snoozies Sassy Slide, creati special pentru confortul si stilul tau.</p> <p>✔ Interior moale si pufos, cu blanita artificiala – perfect pentru a mentine picioarele calde in zilele reci.<br> ✔ Exterior textil placut la atingere – design modern si elegant, care adauga un plus de rafinament.<br> ✔ Talpa antiderapanta cu insertii din silicon – stabilitate si siguranta pe orice tip de podea.<br> ✔ Intretinere usoara – se spala la masina, fara sa se deformeze.</p> <p><strong>Beneficii cheie:</strong></p> <p>Confort maxim datorita materialului moale si formei ergonomice.</p> <p>Caldurosi si pufosi, ideali pentru iarna sau serile reci.</p> <p>Materiale de calitate care rezista in timp.</p> <p><strong>Detalii produs:</strong></p> <p>Exterior: material textil rezistent, placut la atingere.</p> <p>Interior: blanita artificiala, pufoasa, foarte confortabila.</p> <p>Talpa: textila cu bilute siliconate pentru efect antiderapant.</p> <p>🎁 Cadoul ideal – Cine nu iubeste o pereche de papuci de casa confortabili si caldurosi? Snoozies sunt alegerea perfecta pentru tine sau pentru cei dragi!</p>",
   "images": [
    "papuci-de-casa-snoozies-sassy-slide-maro-1.jpg",
    "papuci-de-casa-snoozies-sassy-slide-maro-2.jpg",
@@ -1394,105 +1396,105 @@
     "size": "S",
     "range": "36–37",
     "color": "Maro",
-    "sku": "Snz-SassyMaroS",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "sku": "Snz-SassyMaroS"
    },
    {
     "size": "M",
     "range": "37–38",
     "color": "Maro",
-    "sku": "Snz-SassyMaroM",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "sku": "Snz-SassyMaroM"
    },
    {
     "size": "L",
     "range": "38–40",
     "color": "Maro",
-    "sku": "Snz-SassyMaroL",
-    "stock": null,
+    "stock": 20,
     "inStock": true,
+    "sku": "Snz-SassyMaroL",
     "ean": "810000440115"
    },
    {
     "size": "S",
     "range": "36–37",
     "color": "Negru",
-    "sku": "Snz-SassyNegruS",
-    "stock": null,
+    "stock": 20,
     "inStock": true,
+    "sku": "Snz-SassyNegruS",
     "ean": "810000440061"
    },
    {
     "size": "M",
     "range": "37–38",
     "color": "Negru",
-    "sku": "Snz-SassyNegruM",
-    "stock": null,
+    "stock": 20,
     "inStock": true,
+    "sku": "Snz-SassyNegruM",
     "ean": "810000440078"
    },
    {
     "size": "L",
     "range": "38–40",
     "color": "Negru",
-    "sku": "Snz-SassyNegruL",
-    "stock": null,
+    "stock": 20,
     "inStock": true,
+    "sku": "Snz-SassyNegruL",
     "ean": "810000440085"
    },
    {
     "size": "S",
     "range": "36–37",
     "color": "Portocaliu",
-    "sku": "Snz-SassyOrangeS",
-    "stock": null,
+    "stock": 20,
     "inStock": true,
+    "sku": "Snz-SassyOrangeS",
     "ean": "810000440030"
    },
    {
     "size": "M",
     "range": "37–38",
     "color": "Portocaliu",
-    "sku": "Snz-SassyOrangeM",
-    "stock": null,
+    "stock": 20,
     "inStock": true,
+    "sku": "Snz-SassyOrangeM",
     "ean": "810000440047"
    },
    {
     "size": "L",
     "range": "38–40",
     "color": "Portocaliu",
-    "sku": "Snz-SassyOrangeL",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "sku": "Snz-SassyOrangeL"
    },
    {
     "size": "S",
     "range": "36–37",
     "color": "Roz",
-    "sku": "Snz-SassyRozS",
-    "stock": null,
+    "stock": 19,
     "inStock": true,
+    "sku": "Snz-SassyRozS",
     "ean": "810000440009"
    },
    {
     "size": "M",
     "range": "37–38",
     "color": "Roz",
-    "sku": "Snz-SassyRozM",
-    "stock": null,
+    "stock": 20,
     "inStock": true,
+    "sku": "Snz-SassyRozM",
     "ean": "810000440016"
    },
    {
     "size": "L",
     "range": "38–40",
     "color": "Roz",
-    "sku": "Snz-SassyRozL",
-    "stock": null,
+    "stock": 20,
     "inStock": true,
+    "sku": "Snz-SassyRozL",
     "ean": "810000440023"
    }
   ]
@@ -1509,7 +1511,7 @@
   "inStock": true,
   "stock": null,
   "short": "",
-  "description": "<strong>Papuceii Snoozies pufosi si confortabili, ideali pentru:</strong> <p></p> <p><strong>Bucura-te de confortul suprem chiar si in cele mai reci zile cu papucii de casa pufosi Snoozies!</strong></p> <p>Fiecare pereche este conceputa cu atentie la detalii, pentru ca tu sa te bucuri de papuci de casa comozi, caldurosi si eleganti. Interiorul moale si cald ofera o senzatie placuta picioarelor in zilele de iarna, iar blanita pufoasa adauga un plus de confort si rafinament.</p> <p>Indiferent daca te relaxezi acasa dupa o zi lunga sau petreci un weekend linistit, acesti papuci de casa pufosi Snoozies iti ofera confort si rasfat in fiecare moment. Designul lor modern si feminin adauga farmec fiecarei tinute de relaxare, facandu-te sa te simti confortabil si increzatoare.</p> <p>Materiale de calitate superioara pentru mai multe sezoane de utilizare:</p> <ul> <li>Exterior: material textil rezistent si fin, cu insertii decorative</li> <li>Interior: blanita tip plus, moale si calduroasa</li> <li>Talpa: material textil cu margelute siliconate antiderapante, pentru siguranta si stabilitate</li> <li>Intretinere usoara: se pot spala la masina fara ca materialul sa se deterioreze</li> </ul> <p>Acesti papuci de casa pufosi Snoozies ies in evidenta prin modelele unice si detaliile lucrate manual, oferind combinatia perfecta intre confort si stil.</p> <p>In cautarea unui cadou special? Papucii de casa Snoozies sunt ideali pentru cei dragi – o alegere sigura pentru confort, caldura si eleganta in fiecare zi.</p>",
+  "description": "<strong>Papuceii Snoozies pufosi si confortabili, ideali pentru:</strong>  <p><strong>Bucura-te de confortul suprem chiar si in cele mai reci zile cu papucii de casa pufosi Snoozies!</strong></p> <p>Fiecare pereche este conceputa cu atentie la detalii, pentru ca tu sa te bucuri de papuci de casa comozi, caldurosi si eleganti. Interiorul moale si cald ofera o senzatie placuta picioarelor in zilele de iarna, iar blanita pufoasa adauga un plus de confort si rafinament.</p> <p>Indiferent daca te relaxezi acasa dupa o zi lunga sau petreci un weekend linistit, acesti papuci de casa pufosi Snoozies iti ofera confort si rasfat in fiecare moment. Designul lor modern si feminin adauga farmec fiecarei tinute de relaxare, facandu-te sa te simti confortabil si increzatoare.</p> <p>Materiale de calitate superioara pentru mai multe sezoane de utilizare:</p> <ul> <li>Exterior: material textil rezistent si fin, cu insertii decorative</li> <li>Interior: blanita tip plus, moale si calduroasa</li> <li>Talpa: material textil cu margelute siliconate antiderapante, pentru siguranta si stabilitate</li> <li>Intretinere usoara: se pot spala la masina fara ca materialul sa se deterioreze</li> </ul> <p>Acesti papuci de casa pufosi Snoozies ies in evidenta prin modelele unice si detaliile lucrate manual, oferind combinatia perfecta intre confort si stil.</p> <p>In cautarea unui cadou special? Papucii de casa Snoozies sunt ideali pentru cei dragi – o alegere sigura pentru confort, caldura si eleganta in fiecare zi.</p>",
   "images": [
    "papuci-de-casa-snoozies-bling-auriu-1.jpg",
    "papuci-de-casa-snoozies-bling-rosu-1.jpg"
@@ -1535,53 +1537,53 @@
     "size": "S",
     "range": "36–37",
     "color": "Auriu",
-    "sku": "GoldBlingS",
-    "stock": null,
+    "stock": 20,
     "inStock": true,
+    "sku": "GoldBlingS",
     "ean": "810000440153"
    },
    {
     "size": "M",
     "range": "37–38",
     "color": "Auriu",
-    "sku": "GoldBlingM",
-    "stock": null,
+    "stock": 20,
     "inStock": true,
+    "sku": "GoldBlingM",
     "ean": "810000440160"
    },
    {
     "size": "L",
     "range": "38–40",
     "color": "Auriu",
-    "sku": "GoldBlingL",
-    "stock": null,
+    "stock": 20,
     "inStock": true,
+    "sku": "GoldBlingL",
     "ean": "810000440177"
    },
    {
     "size": "S",
     "range": "36–37",
     "color": "Roșu",
-    "sku": "RedBlingS",
-    "stock": null,
+    "stock": 19,
     "inStock": true,
+    "sku": "RedBlingS",
     "ean": "810000440122"
    },
    {
     "size": "M",
     "range": "37–38",
     "color": "Roșu",
-    "sku": "RedBlingM",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "sku": "RedBlingM"
    },
    {
     "size": "L",
     "range": "38–40",
     "color": "Roșu",
-    "sku": "RedBlingL",
-    "stock": null,
+    "stock": 20,
     "inStock": true,
+    "sku": "RedBlingL",
     "ean": "810000440146"
    }
   ]
@@ -1598,7 +1600,7 @@
   "inStock": true,
   "stock": null,
   "short": "",
-  "description": "<strong>Papuceii Snoozies pufosi si confortabili, ideali pentru:</strong> <p></p> <p> </p> <p><strong>Papuci de casa pufosi Snoozies</strong></p> <p>Bucura-te de confort maxim chiar si in cele mai reci zile cu <strong>papucii de casa Snoozies</strong>, creati special pentru femei care apreciaza caldura si eleganta in acelasi timp.</p> <p>✔ Design crosetat cu interior pufos si imblanit – materialul moale ofera o senzatie placuta la fiecare pas, mentinand picioarele calde pe toata durata iernii.<br /> ✔ Talpa antiderapanta cu insertii de silicon – pentru siguranta pe orice tip de podea.<br /> ✔ Confort si stil – papucii Snoozies adauga o nota de feminitate si rafinament, fiind ideali pentru relaxarea acasa.<br /> ✔ Intretinere usoara – se spala la masina, nu se deterioreaza si nu intra la apa.</p> <p><strong>Caracteristici principale:</strong></p> <p>Exterior: material textil crosetat, rezistent si elegant.</p> <p>Interior: blanita artificiala pufoasa si calduroasa, extrem de confortabila.</p> <p>Talpa: textila cu bilute din silicon antiderapante pentru stabilitate.</p> <p><strong>Avantaje:</strong></p> <p>Caldurosi, moi si comozi pentru zilele friguroase.</p> <p>Usor de intretinut si rezistenti in timp.</p> <p>Disponibili in modele atractive si culori vibrante.</p> <p>🎁 Idee de cadou perfecta – Cine nu iubeste o pereche de papuci de casa pufosi si caldurosi? Snoozies sunt alegerea ideala pentru cei dragi.</p>",
+  "description": "<strong>Papuceii Snoozies pufosi si confortabili, ideali pentru:</strong>   <p><strong>Papuci de casa pufosi Snoozies</strong></p> <p>Bucura-te de confort maxim chiar si in cele mai reci zile cu <strong>papucii de casa Snoozies</strong>, creati special pentru femei care apreciaza caldura si eleganta in acelasi timp.</p> <p>✔ Design crosetat cu interior pufos si imblanit – materialul moale ofera o senzatie placuta la fiecare pas, mentinand picioarele calde pe toata durata iernii.<br> ✔ Talpa antiderapanta cu insertii de silicon – pentru siguranta pe orice tip de podea.<br> ✔ Confort si stil – papucii Snoozies adauga o nota de feminitate si rafinament, fiind ideali pentru relaxarea acasa.<br> ✔ Intretinere usoara – se spala la masina, nu se deterioreaza si nu intra la apa.</p> <p><strong>Caracteristici principale:</strong></p> <p>Exterior: material textil crosetat, rezistent si elegant.</p> <p>Interior: blanita artificiala pufoasa si calduroasa, extrem de confortabila.</p> <p>Talpa: textila cu bilute din silicon antiderapante pentru stabilitate.</p> <p><strong>Avantaje:</strong></p> <p>Caldurosi, moi si comozi pentru zilele friguroase.</p> <p>Usor de intretinut si rezistenti in timp.</p> <p>Disponibili in modele atractive si culori vibrante.</p> <p>🎁 Idee de cadou perfecta – Cine nu iubeste o pereche de papuci de casa pufosi si caldurosi? Snoozies sunt alegerea ideala pentru cei dragi.</p>",
   "images": [
    "papuci-de-casa-snoozies-crosetati-albastru-1.jpg",
    "papuci-de-casa-snoozies-crosetati-albastru-2.jpg",
@@ -1642,78 +1644,78 @@
     "size": "S",
     "range": "36–37",
     "color": "Albastru",
+    "stock": 0,
+    "inStock": false,
     "sku": "Snz-CrosetatiAlbastruS",
-    "stock": null,
-    "inStock": true,
     "ean": "840120422449"
    },
    {
     "size": "M",
     "range": "37–38",
     "color": "Albastru",
-    "sku": "Snz-CrosetatiAlbastruM",
-    "stock": null,
+    "stock": 10,
     "inStock": true,
+    "sku": "Snz-CrosetatiAlbastruM",
     "ean": "840120422456"
    },
    {
     "size": "L",
     "range": "38–40",
     "color": "Albastru",
-    "sku": "Snz-CrosetatiAlbastruL",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "sku": "Snz-CrosetatiAlbastruL"
    },
    {
     "size": "S",
     "range": "36–37",
     "color": "Mov",
+    "stock": 0,
+    "inStock": false,
     "sku": "Snz-CrosetatiMovS",
-    "stock": null,
-    "inStock": true,
     "ean": "840120422524"
    },
    {
     "size": "M",
     "range": "37–38",
     "color": "Mov",
-    "sku": "Snz-CrosetatiMovM",
-    "stock": null,
+    "stock": 5,
     "inStock": true,
+    "sku": "Snz-CrosetatiMovM",
     "ean": "840120422531"
    },
    {
     "size": "L",
     "range": "38–40",
     "color": "Mov",
-    "sku": "Snz-CrosetatiMovL",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "sku": "Snz-CrosetatiMovL"
    },
    {
     "size": "S",
     "range": "36–37",
     "color": "Roz",
+    "stock": 0,
+    "inStock": false,
     "sku": "Snz-CrosetatiRozS",
-    "stock": null,
-    "inStock": true,
     "ean": "840120422487"
    },
    {
     "size": "M",
     "range": "37–38",
     "color": "Roz",
-    "sku": "Snz-CrosetatiRozM",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "sku": "Snz-CrosetatiRozM"
    },
    {
     "size": "L",
     "range": "38–40",
     "color": "Roz",
+    "stock": 0,
+    "inStock": false,
     "sku": "Snz-CrosetatiRozL",
-    "stock": null,
-    "inStock": true,
     "ean": "840120422500"
    }
   ]
@@ -1730,7 +1732,7 @@
   "inStock": true,
   "stock": null,
   "short": "",
-  "description": "<strong>Papuceii Snoozies pufosi si confortabili, ideali pentru:</strong> <p></p> <p> </p> <p><strong>Papuci de casa pufosi Snoozies – confort, caldura si un design vesel pentru fiecare pas!</strong></p> <p>Bucura-te chiar si de cele mai reci zile cu papucii de casa Snoozies, creati special pentru a oferi caldura, confort si stil. Realizati din materiale premium, acesti papuci pufosi sunt perfecti pentru relaxare acasa dupa o zi lunga sau pentru un weekend linistit.</p> <p>✔ Interior moale si calduros – blanita pufoasa care mentine picioarele calde si ofera senzatia placuta de rasfat.<br /> ✔ Exterior rezistent si placut la atingere – material textil fin, lucrat cu atentie la detalii pentru un aspect elegant.<br /> ✔ Talpa antiderapanta – cu insertii din silicon pentru siguranta pe orice tip de pardoseala.<br /> ✔ Modele inedite si amuzante – fiecare pereche are un design jucaus si original, perfect pentru a adauga un strop de veselie in casa.<br /> ✔ Intretinere usoara – papucii se spala la masina (pe dos), la temperatura scazuta, si raman la fel de pufosi si comozi.</p> <p><strong>De ce sa ii alegi?</strong></p> <ul> <li><strong>Papuci de casa pufosi si confortabili pentru toate anotimpurile</strong></li> <li><strong>Design unic si atractiv – modele cu personalitate, inserate manual</strong></li> <li><strong>Ideal pentru cadouri – potriviti pentru oricine iubeste confortul</strong></li> <li><strong>Practici si durabili, pentru mai multe sezoane</strong></li> </ul> <p>Papucii Snoozies ies in evidenta prin combinatia dintre calitate, confort si design original. Sunt perfecti pentru utilizare zilnica, pentru recuperare, perioade de odihna sau ca idee de cadou pentru cei dragi.</p>",
+  "description": "<strong>Papuceii Snoozies pufosi si confortabili, ideali pentru:</strong>   <p><strong>Papuci de casa pufosi Snoozies – confort, caldura si un design vesel pentru fiecare pas!</strong></p> <p>Bucura-te chiar si de cele mai reci zile cu papucii de casa Snoozies, creati special pentru a oferi caldura, confort si stil. Realizati din materiale premium, acesti papuci pufosi sunt perfecti pentru relaxare acasa dupa o zi lunga sau pentru un weekend linistit.</p> <p>✔ Interior moale si calduros – blanita pufoasa care mentine picioarele calde si ofera senzatia placuta de rasfat.<br> ✔ Exterior rezistent si placut la atingere – material textil fin, lucrat cu atentie la detalii pentru un aspect elegant.<br> ✔ Talpa antiderapanta – cu insertii din silicon pentru siguranta pe orice tip de pardoseala.<br> ✔ Modele inedite si amuzante – fiecare pereche are un design jucaus si original, perfect pentru a adauga un strop de veselie in casa.<br> ✔ Intretinere usoara – papucii se spala la masina (pe dos), la temperatura scazuta, si raman la fel de pufosi si comozi.</p> <p><strong>De ce sa ii alegi?</strong></p> <ul> <li><strong>Papuci de casa pufosi si confortabili pentru toate anotimpurile</strong></li> <li><strong>Design unic si atractiv – modele cu personalitate, inserate manual</strong></li> <li><strong>Ideal pentru cadouri – potriviti pentru oricine iubeste confortul</strong></li> <li><strong>Practici si durabili, pentru mai multe sezoane</strong></li> </ul> <p>Papucii Snoozies ies in evidenta prin combinatia dintre calitate, confort si design original. Sunt perfecti pentru utilizare zilnica, pentru recuperare, perioade de odihna sau ca idee de cadou pentru cei dragi.</p>",
   "images": [
    "papuci-de-casa-snoozies-buline-albastru-1.jpg",
    "papuci-de-casa-snoozies-buline-albastru-2.jpg",
@@ -1751,10 +1753,7 @@
    "papuci-de-casa-snoozies-buline-mov-5.jpg",
    "papuci-de-casa-snoozies-buline-mov-6.jpg",
    "papuci-de-casa-snoozies-buline-roz-1.jpg",
-   "papuci-de-casa-snoozies-buline-roz-2.jpg",
-   "papuci-de-casa-snoozies-buline-roz-3.jpg",
-   "papuci-de-casa-snoozies-buline-roz-4.jpg",
-   "papuci-de-casa-snoozies-buline-roz-5.jpg"
+   "papuci-de-casa-snoozies-buline-roz-2.jpg"
   ],
   "weight": 0.3,
   "featured": true,
@@ -1787,104 +1786,104 @@
     "size": "S",
     "range": "36–37",
     "color": "Albastru",
-    "sku": "Snz-08LotsaBlueS",
-    "stock": null,
+    "stock": 25,
     "inStock": true,
+    "sku": "Snz-08LotsaBlueS",
     "ean": "846847080498"
    },
    {
     "size": "M",
     "range": "37–38",
     "color": "Albastru",
-    "sku": "Snz-08LotsaBlueM",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "sku": "Snz-08LotsaBlueM"
    },
    {
     "size": "L",
     "range": "38–40",
     "color": "Albastru",
-    "sku": "Snz-08LotsaBlueL",
-    "stock": null,
+    "stock": 9,
     "inStock": true,
+    "sku": "Snz-08LotsaBlueL",
     "ean": "846847080511"
    },
    {
     "size": "S",
     "range": "36–37",
     "color": "Gri",
-    "sku": "Snz-08LotsaGriS",
-    "stock": null,
+    "stock": 23,
     "inStock": true,
+    "sku": "Snz-08LotsaGriS",
     "ean": "846847080375"
    },
    {
     "size": "M",
     "range": "37–38",
     "color": "Gri",
-    "sku": "Snz-08LotsaGriM",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "sku": "Snz-08LotsaGriM"
    },
    {
     "size": "L",
     "range": "38–40",
     "color": "Gri",
-    "sku": "Snz-08LotsaGriL",
-    "stock": null,
+    "stock": 6,
     "inStock": true,
+    "sku": "Snz-08LotsaGriL",
     "ean": "846847080399"
    },
    {
     "size": "S",
     "range": "36–37",
     "color": "Mov",
-    "sku": "Snz-08LotsaMovS",
-    "stock": null,
+    "stock": 3,
     "inStock": true,
+    "sku": "Snz-08LotsaMovS",
     "ean": "846847080412"
    },
    {
     "size": "M",
     "range": "37–38",
     "color": "Mov",
-    "sku": "Snz-08LotsaMovM",
-    "stock": null,
+    "stock": 24,
     "inStock": true,
+    "sku": "Snz-08LotsaMovM",
     "ean": "846847080429"
    },
    {
     "size": "L",
     "range": "38–40",
     "color": "Mov",
-    "sku": "Snz-08LotsaMovL",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "sku": "Snz-08LotsaMovL"
    },
    {
     "size": "S",
     "range": "36–37",
     "color": "Roz",
-    "sku": "Snz-08LotsaPinkS",
-    "stock": null,
+    "stock": 15,
     "inStock": true,
+    "sku": "Snz-08LotsaPinkS",
     "ean": "846847080450"
    },
    {
     "size": "M",
     "range": "37–38",
     "color": "Roz",
-    "sku": "Snz-08LotsaPinkM",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "sku": "Snz-08LotsaPinkM"
    },
    {
     "size": "L",
     "range": "38–40",
     "color": "Roz",
-    "sku": "Snz-08LotsaPinkL",
-    "stock": null,
+    "stock": 24,
     "inStock": true,
+    "sku": "Snz-08LotsaPinkL",
     "ean": "846847080474"
    }
   ]
@@ -1901,7 +1900,7 @@
   "inStock": true,
   "stock": null,
   "short": "",
-  "description": "<strong>Papuceii Snoozies pufosi si confortabili, ideali pentru:</strong> <p></p> <p> </p> <p><strong>Papuci de casa pufosi Snoozies</strong></p> <p>Bucura-te chiar si de cele mai reci zile cu ajutorul papucilor de casa Snoozies!</p> <p>Fiecare model este realizat cu atentie, pentru ca tu sa ai parte de un confort deplin.</p> <p>Rasfatati-va picioarele cu aceasta pereche de papuci de casa pufosi Snoozies</p> <p>Ganditi atat pentru confort cat si pentru un plus de eleganta. Creati dintr-un interior moale si calduros care ofera o senzatie placuta picioarelor in zilele de iarna.</p> <p>Indiferent daca va relaxati acasa dupa o zi lunga sau pur si simplu va bucurati de un weekend relaxant, acesti papuci ofera compania perfecta. Designul lor adauga o nota de farmec si feminitate, facandu-te sa te simti mai confortabil si increzatoare.</p> <p>Materialele de calitate asigura o un confort garantat pentru mai multe sezoane.</p> <p>Se spala la masina cu usurinta, fara ca materialul sa fie afectat.</p> <p>Papucii de casa Snoozies ies in evidenta prin modele inedite, blanita pufoasa si materialele de inalta calitate!</p> <p>Papucii de casa sunt realizati din materiale de calitate superioara:</p> <p>• Exterior- material textil rezistent, fin, cu insertii adaugate.</p> <p>• Interior- material tip blanita, calduros, de lana.</p> <p>• Talpa- material textil cu insertii de margelute siliconate antiderapante</p> <p>• Se spala la masina – nu intra la apa iar materialul ramane intact!</p> <p>Esti in pana de idei de cadouri? Papucii de casa Snoozies sunt o idee perfecta- cine nu iubeste o pereche confortabila, calduroasa si pufoasa de papuci de casa? Cu atat mai mult cu cat acestia au modele deosebite inserate manual.</p>",
+  "description": "<strong>Papuceii Snoozies pufosi si confortabili, ideali pentru:</strong>   <p><strong>Papuci de casa pufosi Snoozies</strong></p> <p>Bucura-te chiar si de cele mai reci zile cu ajutorul papucilor de casa Snoozies!</p> <p>Fiecare model este realizat cu atentie, pentru ca tu sa ai parte de un confort deplin.</p> <p>Rasfatati-va picioarele cu aceasta pereche de papuci de casa pufosi Snoozies</p> <p>Ganditi atat pentru confort cat si pentru un plus de eleganta. Creati dintr-un interior moale si calduros care ofera o senzatie placuta picioarelor in zilele de iarna.</p> <p>Indiferent daca va relaxati acasa dupa o zi lunga sau pur si simplu va bucurati de un weekend relaxant, acesti papuci ofera compania perfecta. Designul lor adauga o nota de farmec si feminitate, facandu-te sa te simti mai confortabil si increzatoare.</p> <p>Materialele de calitate asigura o un confort garantat pentru mai multe sezoane.</p> <p>Se spala la masina cu usurinta, fara ca materialul sa fie afectat.</p> <p>Papucii de casa Snoozies ies in evidenta prin modele inedite, blanita pufoasa si materialele de inalta calitate!</p> <p>Papucii de casa sunt realizati din materiale de calitate superioara:</p> <p>• Exterior- material textil rezistent, fin, cu insertii adaugate.</p> <p>• Interior- material tip blanita, calduros, de lana.</p> <p>• Talpa- material textil cu insertii de margelute siliconate antiderapante</p> <p>• Se spala la masina – nu intra la apa iar materialul ramane intact!</p> <p>Esti in pana de idei de cadouri? Papucii de casa Snoozies sunt o idee perfecta- cine nu iubeste o pereche confortabila, calduroasa si pufoasa de papuci de casa? Cu atat mai mult cu cat acestia au modele deosebite inserate manual.</p>",
   "images": [
    "papuci-de-casa-femei-snoozies-christmas-tree-1.jpg"
   ],
@@ -1915,27 +1914,27 @@
     "size": "S",
     "range": "36–37",
     "color": "",
-    "sku": "SnzChristmasTreeS",
-    "stock": null,
+    "stock": 15,
     "inStock": true,
+    "sku": "SnzChristmasTreeS",
     "ean": "840120437269"
    },
    {
     "size": "M",
     "range": "37–38",
     "color": "",
-    "sku": "SnzChristmasTreeM",
-    "stock": null,
+    "stock": 14,
     "inStock": true,
+    "sku": "SnzChristmasTreeM",
     "ean": "840120437276"
    },
    {
     "size": "L",
     "range": "38–40",
     "color": "",
-    "sku": "SnzChristmasTreeL",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "sku": "SnzChristmasTreeL"
    }
   ]
  },
@@ -1951,7 +1950,7 @@
   "inStock": true,
   "stock": null,
   "short": "",
-  "description": "<strong>Papuceii Snoozies pufosi si confortabili, ideali pentru:</strong> <p></p> <p> </p> <p><strong>Papuci de casa pufosi Snoozies</strong></p> <p>Bucura-te chiar si de cele mai reci zile cu ajutorul papucilor de casa Snoozies!</p> <p>Fiecare model este realizat cu atentie, pentru ca tu sa ai parte de un confort deplin.</p> <p>Rasfatati-va picioarele cu aceasta pereche de papuci de casa pufosi Snoozies</p> <p>Ganditi atat pentru confort cat si pentru un plus de eleganta. Creati dintr-un interior moale si calduros care ofera o senzatie placuta picioarelor in zilele de iarna.</p> <p>Indiferent daca va relaxati acasa dupa o zi lunga sau pur si simplu va bucurati de un weekend relaxant, acesti papuci ofera compania perfecta. Designul lor adauga o nota de farmec si feminitate, facandu-te sa te simti mai confortabil si increzatoare.</p> <p>Materialele de calitate asigura o un confort garantat pentru mai multe sezoane.</p> <p>Se spala la masina cu usurinta, fara ca materialul sa fie afectat.</p> <p>Papucii de casa Snoozies ies in evidenta prin modele inedite, blanita pufoasa si materialele de inalta calitate!</p> <p>Papucii de casa sunt realizati din materiale de calitate superioara:</p> <p>• Exterior- material textil rezistent, fin, cu insertii adaugate.</p> <p>• Interior- material tip blanita, calduros, de lana.</p> <p>• Talpa- material textil cu insertii de margelute siliconate antiderapante</p> <p>• Se spala la masina – nu intra la apa iar materialul ramane intact!</p> <p>Esti in pana de idei de cadouri? Papucii de casa Snoozies sunt o idee perfecta- cine nu iubeste o pereche confortabila, calduroasa si pufoasa de papuci de casa? Cu atat mai mult cu cat acestia au modele deosebite inserate manual.</p>",
+  "description": "<strong>Papuceii Snoozies pufosi si confortabili, ideali pentru:</strong>   <p><strong>Papuci de casa pufosi Snoozies</strong></p> <p>Bucura-te chiar si de cele mai reci zile cu ajutorul papucilor de casa Snoozies!</p> <p>Fiecare model este realizat cu atentie, pentru ca tu sa ai parte de un confort deplin.</p> <p>Rasfatati-va picioarele cu aceasta pereche de papuci de casa pufosi Snoozies</p> <p>Ganditi atat pentru confort cat si pentru un plus de eleganta. Creati dintr-un interior moale si calduros care ofera o senzatie placuta picioarelor in zilele de iarna.</p> <p>Indiferent daca va relaxati acasa dupa o zi lunga sau pur si simplu va bucurati de un weekend relaxant, acesti papuci ofera compania perfecta. Designul lor adauga o nota de farmec si feminitate, facandu-te sa te simti mai confortabil si increzatoare.</p> <p>Materialele de calitate asigura o un confort garantat pentru mai multe sezoane.</p> <p>Se spala la masina cu usurinta, fara ca materialul sa fie afectat.</p> <p>Papucii de casa Snoozies ies in evidenta prin modele inedite, blanita pufoasa si materialele de inalta calitate!</p> <p>Papucii de casa sunt realizati din materiale de calitate superioara:</p> <p>• Exterior- material textil rezistent, fin, cu insertii adaugate.</p> <p>• Interior- material tip blanita, calduros, de lana.</p> <p>• Talpa- material textil cu insertii de margelute siliconate antiderapante</p> <p>• Se spala la masina – nu intra la apa iar materialul ramane intact!</p> <p>Esti in pana de idei de cadouri? Papucii de casa Snoozies sunt o idee perfecta- cine nu iubeste o pereche confortabila, calduroasa si pufoasa de papuci de casa? Cu atat mai mult cu cat acestia au modele deosebite inserate manual.</p>",
   "images": [
    "papuci-de-casa-femei-snoozies-snowflake-1.jpg"
   ],
@@ -1965,27 +1964,27 @@
     "size": "S",
     "range": "36–37",
     "color": "",
+    "stock": 0,
+    "inStock": false,
     "sku": "SnzFemeiSnowflakeS",
-    "stock": null,
-    "inStock": true,
     "ean": "810000440375"
    },
    {
     "size": "M",
     "range": "37–38",
     "color": "",
+    "stock": 0,
+    "inStock": false,
     "sku": "SnzFemeiSnowflakeM",
-    "stock": null,
-    "inStock": true,
     "ean": "810000440382"
    },
    {
     "size": "L",
     "range": "38–40",
     "color": "",
-    "sku": "SnzFemeiSnowflakeL",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "sku": "SnzFemeiSnowflakeL"
    }
   ]
  },
@@ -2001,7 +2000,7 @@
   "inStock": true,
   "stock": null,
   "short": "",
-  "description": "<strong>Papuceii Snoozies pufosi si confortabili, ideali pentru:</strong> <p></p> <p> </p> <p><strong>Papuci de casa pufosi Snoozies</strong></p> <p>Bucura-te chiar si de cele mai reci zile cu ajutorul papucilor de casa Snoozies!</p> <p>Fiecare model este realizat cu atentie, pentru ca tu sa ai parte de un confort deplin.</p> <p>Rasfatati-va picioarele cu aceasta pereche de papuci de casa pufosi Snoozies</p> <p>Ganditi atat pentru confort cat si pentru un plus de eleganta. Creati dintr-un interior moale si calduros care ofera o senzatie placuta picioarelor in zilele de iarna.</p> <p>Indiferent daca va relaxati acasa dupa o zi lunga sau pur si simplu va bucurati de un weekend relaxant, acesti papuci ofera compania perfecta. Designul lor adauga o nota de farmec si feminitate, facandu-te sa te simti mai confortabil si increzatoare.</p> <p>Materialele de calitate asigura o un confort garantat pentru mai multe sezoane.</p> <p>Se spala la masina cu usurinta, fara ca materialul sa fie afectat.</p> <p>Papucii de casa Snoozies ies in evidenta prin modele inedite, blanita pufoasa si materialele de inalta calitate!</p> <p>Papucii de casa sunt realizati din materiale de calitate superioara:</p> <p>• Exterior- material textil rezistent, fin, cu insertii adaugate.</p> <p>• Interior- material tip blanita, calduros, de lana.</p> <p>• Talpa- material textil cu insertii de margelute siliconate antiderapante</p> <p>• Se spala la masina – nu intra la apa iar materialul ramane intact!</p> <p>Esti in pana de idei de cadouri? Papucii de casa Snoozies sunt o idee perfecta- cine nu iubeste o pereche confortabila, calduroasa si pufoasa de papuci de casa? Cu atat mai mult cu cat acestia au modele deosebite inserate manual.</p>",
+  "description": "<strong>Papuceii Snoozies pufosi si confortabili, ideali pentru:</strong>   <p><strong>Papuci de casa pufosi Snoozies</strong></p> <p>Bucura-te chiar si de cele mai reci zile cu ajutorul papucilor de casa Snoozies!</p> <p>Fiecare model este realizat cu atentie, pentru ca tu sa ai parte de un confort deplin.</p> <p>Rasfatati-va picioarele cu aceasta pereche de papuci de casa pufosi Snoozies</p> <p>Ganditi atat pentru confort cat si pentru un plus de eleganta. Creati dintr-un interior moale si calduros care ofera o senzatie placuta picioarelor in zilele de iarna.</p> <p>Indiferent daca va relaxati acasa dupa o zi lunga sau pur si simplu va bucurati de un weekend relaxant, acesti papuci ofera compania perfecta. Designul lor adauga o nota de farmec si feminitate, facandu-te sa te simti mai confortabil si increzatoare.</p> <p>Materialele de calitate asigura o un confort garantat pentru mai multe sezoane.</p> <p>Se spala la masina cu usurinta, fara ca materialul sa fie afectat.</p> <p>Papucii de casa Snoozies ies in evidenta prin modele inedite, blanita pufoasa si materialele de inalta calitate!</p> <p>Papucii de casa sunt realizati din materiale de calitate superioara:</p> <p>• Exterior- material textil rezistent, fin, cu insertii adaugate.</p> <p>• Interior- material tip blanita, calduros, de lana.</p> <p>• Talpa- material textil cu insertii de margelute siliconate antiderapante</p> <p>• Se spala la masina – nu intra la apa iar materialul ramane intact!</p> <p>Esti in pana de idei de cadouri? Papucii de casa Snoozies sunt o idee perfecta- cine nu iubeste o pereche confortabila, calduroasa si pufoasa de papuci de casa? Cu atat mai mult cu cat acestia au modele deosebite inserate manual.</p>",
   "images": [
    "papuci-de-casa-femei-snoozies-christmas-gnomes-1.jpg"
   ],
@@ -2015,26 +2014,26 @@
     "size": "S",
     "range": "36–37",
     "color": "",
-    "sku": "SnzGnomeFemeiS",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "sku": "SnzGnomeFemeiS"
    },
    {
     "size": "M",
     "range": "37–38",
     "color": "",
+    "stock": 0,
+    "inStock": false,
     "sku": "SnzGnomeFemeiM",
-    "stock": null,
-    "inStock": true,
     "ean": "810000440443"
    },
    {
     "size": "L",
     "range": "38–40",
     "color": "",
+    "stock": 0,
+    "inStock": false,
     "sku": "SnzGnomeFemeiL",
-    "stock": null,
-    "inStock": true,
     "ean": "810000440450"
    }
   ]
@@ -2051,7 +2050,7 @@
   "inStock": true,
   "stock": null,
   "short": "",
-  "description": "<strong>Papuceii Snoozies pufosi si confortabili, ideali pentru:</strong> <p></p> <p> </p> <p><strong>Papuci de casa pufosi Snoozies</strong></p> <p>Bucura-te chiar si de cele mai reci zile cu ajutorul papucilor de casa Snoozies!</p> <p>Fiecare model este realizat cu atentie, pentru ca tu sa ai parte de un confort deplin.</p> <p>Rasfatati-va picioarele cu aceasta pereche de papuci de casa pufosi Snoozies</p> <p>Ganditi atat pentru confort cat si pentru un plus de eleganta. Creati dintr-un interior moale si calduros care ofera o senzatie placuta picioarelor in zilele de iarna.</p> <p>Indiferent daca va relaxati acasa dupa o zi lunga sau pur si simplu va bucurati de un weekend relaxant, acesti papuci ofera compania perfecta. Designul lor adauga o nota de farmec si feminitate, facandu-te sa te simti mai confortabil si increzatoare.</p> <p>Materialele de calitate asigura o un confort garantat pentru mai multe sezoane.</p> <p>Se spala la masina cu usurinta, fara ca materialul sa fie afectat.</p> <p>Papucii de casa Snoozies ies in evidenta prin modele inedite, blanita pufoasa si materialele de inalta calitate!</p> <p>Papucii de casa sunt realizati din materiale de calitate superioara:</p> <p>• Exterior- material textil rezistent, fin, cu insertii adaugate.</p> <p>• Interior- material tip blanita, calduros, de lana.</p> <p>• Talpa- material textil cu insertii de margelute siliconate antiderapante</p> <p>• Se spala la masina – nu intra la apa iar materialul ramane intact!</p> <p>Esti in pana de idei de cadouri? Papucii de casa Snoozies sunt o idee perfecta- cine nu iubeste o pereche confortabila, calduroasa si pufoasa de papuci de casa? Cu atat mai mult cu cat acestia au modele deosebite inserate manual.</p>",
+  "description": "<strong>Papuceii Snoozies pufosi si confortabili, ideali pentru:</strong>   <p><strong>Papuci de casa pufosi Snoozies</strong></p> <p>Bucura-te chiar si de cele mai reci zile cu ajutorul papucilor de casa Snoozies!</p> <p>Fiecare model este realizat cu atentie, pentru ca tu sa ai parte de un confort deplin.</p> <p>Rasfatati-va picioarele cu aceasta pereche de papuci de casa pufosi Snoozies</p> <p>Ganditi atat pentru confort cat si pentru un plus de eleganta. Creati dintr-un interior moale si calduros care ofera o senzatie placuta picioarelor in zilele de iarna.</p> <p>Indiferent daca va relaxati acasa dupa o zi lunga sau pur si simplu va bucurati de un weekend relaxant, acesti papuci ofera compania perfecta. Designul lor adauga o nota de farmec si feminitate, facandu-te sa te simti mai confortabil si increzatoare.</p> <p>Materialele de calitate asigura o un confort garantat pentru mai multe sezoane.</p> <p>Se spala la masina cu usurinta, fara ca materialul sa fie afectat.</p> <p>Papucii de casa Snoozies ies in evidenta prin modele inedite, blanita pufoasa si materialele de inalta calitate!</p> <p>Papucii de casa sunt realizati din materiale de calitate superioara:</p> <p>• Exterior- material textil rezistent, fin, cu insertii adaugate.</p> <p>• Interior- material tip blanita, calduros, de lana.</p> <p>• Talpa- material textil cu insertii de margelute siliconate antiderapante</p> <p>• Se spala la masina – nu intra la apa iar materialul ramane intact!</p> <p>Esti in pana de idei de cadouri? Papucii de casa Snoozies sunt o idee perfecta- cine nu iubeste o pereche confortabila, calduroasa si pufoasa de papuci de casa? Cu atat mai mult cu cat acestia au modele deosebite inserate manual.</p>",
   "images": [
    "papuci-de-casa-femei-snoozies-ho-ho-ho-1.jpg"
   ],
@@ -2065,27 +2064,27 @@
     "size": "S",
     "range": "36–37",
     "color": "",
-    "sku": "SnzFemeiHoHoS",
-    "stock": null,
+    "stock": 13,
     "inStock": true,
+    "sku": "SnzFemeiHoHoS",
     "ean": "810000440405"
    },
    {
     "size": "M",
     "range": "37–38",
     "color": "",
-    "sku": "SnzFemeiHoHoM",
-    "stock": null,
+    "stock": 20,
     "inStock": true,
+    "sku": "SnzFemeiHoHoM",
     "ean": "810000440412"
    },
    {
     "size": "L",
     "range": "38–40",
     "color": "",
-    "sku": "SnzFemeiHoHoL",
-    "stock": null,
+    "stock": 27,
     "inStock": true,
+    "sku": "SnzFemeiHoHoL",
     "ean": "810000440429"
    }
   ]
@@ -2102,7 +2101,7 @@
   "inStock": true,
   "stock": null,
   "short": "",
-  "description": "<strong>Papuceii Snoozies pufosi si confortabili, ideali pentru:</strong> <p></p> <p><strong>Papuci de casa Snoozies pentru barbati – confort, caldura si design unic</strong></p> <p>Bucura-te de confort maxim in zilele reci cu papucii de casa Snoozies, ideali pentru relaxare si caldura in orice moment al zilei.</p> <p>Acesti papuci sunt realizati din materiale de calitate superioara, avand:</p> <p>Exterior din material textil rezistent, fin la atingere;</p> <p>Interior tip blanita calduroasa, moale si placut pentru picioare;</p> <p>Talpa textila cu insertii siliconate antiderapante pentru siguranta pe orice suprafata.</p> <p><strong>✔ Confort si stil – Design modern si atractiv, perfect pentru un plus de eleganta chiar si acasa.<br /> ✔ Intretinere usoara – Se spala la masina fara a se deforma sau deteriora materialul.<br /> ✔ Durabilitate – Materialele rezistente asigura utilizare indelungata.</strong></p> <p>Fie ca te relaxezi dupa o zi obositoare sau vrei un weekend cozy, papucii Snoozies sunt alegerea perfecta pentru tine. Sunt si o idee excelenta de cadou pentru cei dragi, datorita confortului, caldurii si modelelor deosebite.</p>",
+  "description": "<strong>Papuceii Snoozies pufosi si confortabili, ideali pentru:</strong>  <p><strong>Papuci de casa Snoozies pentru barbati – confort, caldura si design unic</strong></p> <p>Bucura-te de confort maxim in zilele reci cu papucii de casa Snoozies, ideali pentru relaxare si caldura in orice moment al zilei.</p> <p>Acesti papuci sunt realizati din materiale de calitate superioara, avand:</p> <p>Exterior din material textil rezistent, fin la atingere;</p> <p>Interior tip blanita calduroasa, moale si placut pentru picioare;</p> <p>Talpa textila cu insertii siliconate antiderapante pentru siguranta pe orice suprafata.</p> <p><strong>✔ Confort si stil – Design modern si atractiv, perfect pentru un plus de eleganta chiar si acasa.<br> ✔ Intretinere usoara – Se spala la masina fara a se deforma sau deteriora materialul.<br> ✔ Durabilitate – Materialele rezistente asigura utilizare indelungata.</strong></p> <p>Fie ca te relaxezi dupa o zi obositoare sau vrei un weekend cozy, papucii Snoozies sunt alegerea perfecta pentru tine. Sunt si o idee excelenta de cadou pentru cei dragi, datorita confortului, caldurii si modelelor deosebite.</p>",
   "images": [
    "papuci-de-casa-barbati-snoozies-snowflake-1.jpg"
   ],
@@ -2116,26 +2115,26 @@
     "size": "S",
     "range": "38–40",
     "color": "",
-    "sku": "SnzFulgBarbS",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "sku": "SnzFulgBarbS"
    },
    {
     "size": "M",
     "range": "40–41.5",
     "color": "",
+    "stock": 0,
+    "inStock": false,
     "sku": "SnzFulgBarbM",
-    "stock": null,
-    "inStock": true,
     "ean": "810000440504"
    },
    {
     "size": "L",
     "range": "41.5–43",
     "color": "",
+    "stock": 0,
+    "inStock": false,
     "sku": "SnzFulgBarbL",
-    "stock": null,
-    "inStock": true,
     "ean": "810000440511"
    }
   ]
@@ -2152,7 +2151,7 @@
   "inStock": true,
   "stock": null,
   "short": "",
-  "description": "<strong>Papuceii Snoozies pufosi si confortabili, ideali pentru:</strong> <p></p> <p> </p> <p><strong>Papuci de casa pufosi Snoozies</strong></p> <p>Bucura-te chiar si de cele mai reci zile cu ajutorul papucilor de casa Snoozies!</p> <p>Fiecare model este realizat cu atentie, pentru ca tu sa ai parte de un confort deplin.</p> <p>Rasfatati-va picioarele cu aceasta pereche de papuci de casa pufosi Snoozies</p> <p>Ganditi atat pentru confort cat si pentru un plus de eleganta. Creati dintr-un interior moale si calduros care ofera o senzatie placuta picioarelor in zilele de iarna.</p> <p>Indiferent daca va relaxati acasa dupa o zi lunga sau pur si simplu va bucurati de un weekend relaxant, acesti papuci ofera compania perfecta. Designul lor adauga o nota de farmec si feminitate, facandu-te sa te simti mai confortabil si increzatoare.</p> <p>Materialele de calitate asigura o un confort garantat pentru mai multe sezoane.</p> <p>Se spala la masina cu usurinta, fara ca materialul sa fie afectat.</p> <p>Papucii de casa Snoozies ies in evidenta prin modele inedite, blanita pufoasa si materialele de inalta calitate!</p> <p>Papucii de casa sunt realizati din materiale de calitate superioara:</p> <p>• Exterior- material textil rezistent, fin, cu insertii adaugate.</p> <p>• Interior- material tip blanita, calduros, de lana.</p> <p>• Talpa- material textil cu insertii de margelute siliconate antiderapante</p> <p>• Se spala la masina – nu intra la apa iar materialul ramane intact!</p> <p>Esti in pana de idei de cadouri? Papucii de casa Snoozies sunt o idee perfecta- cine nu iubeste o pereche confortabila, calduroasa si pufoasa de papuci de casa? Cu atat mai mult cu cat acestia au modele deosebite inserate manual.</p>",
+  "description": "<strong>Papuceii Snoozies pufosi si confortabili, ideali pentru:</strong>   <p><strong>Papuci de casa pufosi Snoozies</strong></p> <p>Bucura-te chiar si de cele mai reci zile cu ajutorul papucilor de casa Snoozies!</p> <p>Fiecare model este realizat cu atentie, pentru ca tu sa ai parte de un confort deplin.</p> <p>Rasfatati-va picioarele cu aceasta pereche de papuci de casa pufosi Snoozies</p> <p>Ganditi atat pentru confort cat si pentru un plus de eleganta. Creati dintr-un interior moale si calduros care ofera o senzatie placuta picioarelor in zilele de iarna.</p> <p>Indiferent daca va relaxati acasa dupa o zi lunga sau pur si simplu va bucurati de un weekend relaxant, acesti papuci ofera compania perfecta. Designul lor adauga o nota de farmec si feminitate, facandu-te sa te simti mai confortabil si increzatoare.</p> <p>Materialele de calitate asigura o un confort garantat pentru mai multe sezoane.</p> <p>Se spala la masina cu usurinta, fara ca materialul sa fie afectat.</p> <p>Papucii de casa Snoozies ies in evidenta prin modele inedite, blanita pufoasa si materialele de inalta calitate!</p> <p>Papucii de casa sunt realizati din materiale de calitate superioara:</p> <p>• Exterior- material textil rezistent, fin, cu insertii adaugate.</p> <p>• Interior- material tip blanita, calduros, de lana.</p> <p>• Talpa- material textil cu insertii de margelute siliconate antiderapante</p> <p>• Se spala la masina – nu intra la apa iar materialul ramane intact!</p> <p>Esti in pana de idei de cadouri? Papucii de casa Snoozies sunt o idee perfecta- cine nu iubeste o pereche confortabila, calduroasa si pufoasa de papuci de casa? Cu atat mai mult cu cat acestia au modele deosebite inserate manual.</p>",
   "images": [
    "papuci-de-casa-barbati-snoozies-christmas-gnomes-1.jpg",
    "papuci-de-casa-barbati-snoozies-christmas-gnomes-2.jpg",
@@ -2169,26 +2168,26 @@
     "size": "S",
     "range": "38–40",
     "color": "",
+    "stock": 0,
+    "inStock": false,
     "sku": "SnzGnomeBarbS",
-    "stock": null,
-    "inStock": true,
     "ean": "810000440559"
    },
    {
     "size": "M",
     "range": "40–41.5",
     "color": "",
-    "sku": "SnzGnomeBarbM",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "sku": "SnzGnomeBarbM"
    },
    {
     "size": "L",
     "range": "41.5–43",
     "color": "",
+    "stock": 0,
+    "inStock": false,
     "sku": "SnzGnomeBarbL",
-    "stock": null,
-    "inStock": true,
     "ean": "810000440573"
    }
   ]
@@ -2205,7 +2204,7 @@
   "inStock": true,
   "stock": null,
   "short": "",
-  "description": "<strong>Papuceii Snoozies pufosi si confortabili, ideali pentru:</strong> <p></p> <p> </p> <p><strong>Papuci de casa pufosi Snoozies</strong></p> <p>Bucura-te chiar si de cele mai reci zile cu ajutorul papucilor de casa Snoozies!</p> <p>Fiecare model este realizat cu atentie, pentru ca tu sa ai parte de un confort deplin.</p> <p>Rasfatati-va picioarele cu aceasta pereche de papuci de casa pufosi Snoozies</p> <p>Ganditi atat pentru confort cat si pentru un plus de eleganta. Creati dintr-un interior moale si calduros care ofera o senzatie placuta picioarelor in zilele de iarna.</p> <p>Indiferent daca va relaxati acasa dupa o zi lunga sau pur si simplu va bucurati de un weekend relaxant, acesti papuci ofera compania perfecta. Designul lor adauga o nota de farmec si feminitate, facandu-te sa te simti mai confortabil si increzatoare.</p> <p>Materialele de calitate asigura o un confort garantat pentru mai multe sezoane.</p> <p>Se spala la masina cu usurinta, fara ca materialul sa fie afectat.</p> <p>Papucii de casa Snoozies ies in evidenta prin modele inedite, blanita pufoasa si materialele de inalta calitate!</p> <p>Papucii de casa sunt realizati din materiale de calitate superioara:</p> <p>• Exterior- material textil rezistent, fin, cu insertii adaugate.</p> <p>• Interior- material tip blanita, calduros, de lana.</p> <p>• Talpa- material textil cu insertii de margelute siliconate antiderapante</p> <p>• Se spala la masina – nu intra la apa iar materialul ramane intact!</p> <p>Esti in pana de idei de cadouri? Papucii de casa Snoozies sunt o idee perfecta- cine nu iubeste o pereche confortabila, calduroasa si pufoasa de papuci de casa? Cu atat mai mult cu cat acestia au modele deosebite inserate manual.</p>",
+  "description": "<strong>Papuceii Snoozies pufosi si confortabili, ideali pentru:</strong>   <p><strong>Papuci de casa pufosi Snoozies</strong></p> <p>Bucura-te chiar si de cele mai reci zile cu ajutorul papucilor de casa Snoozies!</p> <p>Fiecare model este realizat cu atentie, pentru ca tu sa ai parte de un confort deplin.</p> <p>Rasfatati-va picioarele cu aceasta pereche de papuci de casa pufosi Snoozies</p> <p>Ganditi atat pentru confort cat si pentru un plus de eleganta. Creati dintr-un interior moale si calduros care ofera o senzatie placuta picioarelor in zilele de iarna.</p> <p>Indiferent daca va relaxati acasa dupa o zi lunga sau pur si simplu va bucurati de un weekend relaxant, acesti papuci ofera compania perfecta. Designul lor adauga o nota de farmec si feminitate, facandu-te sa te simti mai confortabil si increzatoare.</p> <p>Materialele de calitate asigura o un confort garantat pentru mai multe sezoane.</p> <p>Se spala la masina cu usurinta, fara ca materialul sa fie afectat.</p> <p>Papucii de casa Snoozies ies in evidenta prin modele inedite, blanita pufoasa si materialele de inalta calitate!</p> <p>Papucii de casa sunt realizati din materiale de calitate superioara:</p> <p>• Exterior- material textil rezistent, fin, cu insertii adaugate.</p> <p>• Interior- material tip blanita, calduros, de lana.</p> <p>• Talpa- material textil cu insertii de margelute siliconate antiderapante</p> <p>• Se spala la masina – nu intra la apa iar materialul ramane intact!</p> <p>Esti in pana de idei de cadouri? Papucii de casa Snoozies sunt o idee perfecta- cine nu iubeste o pereche confortabila, calduroasa si pufoasa de papuci de casa? Cu atat mai mult cu cat acestia au modele deosebite inserate manual.</p>",
   "images": [
    "papuci-de-casa-barbati-snoozies-ho-ho-ho-1.jpg",
    "papuci-de-casa-barbati-snoozies-ho-ho-ho-2.jpg",
@@ -2222,27 +2221,27 @@
     "size": "S",
     "range": "38–40",
     "color": "",
-    "sku": "SnzBarbatiHoHoS",
-    "stock": null,
+    "stock": 1,
     "inStock": true,
+    "sku": "SnzBarbatiHoHoS",
     "ean": "810000440528"
    },
    {
     "size": "M",
     "range": "40–41",
     "color": "",
-    "sku": "SnzBarbatiHoHoM",
-    "stock": null,
+    "stock": 1,
     "inStock": true,
+    "sku": "SnzBarbatiHoHoM",
     "ean": "810000440535"
    },
    {
     "size": "L",
     "range": "41.5–43",
     "color": "",
+    "stock": 0,
+    "inStock": false,
     "sku": "SnzBarbatiHoHoL",
-    "stock": null,
-    "inStock": true,
     "ean": "810000440542"
    }
   ]
@@ -2259,7 +2258,7 @@
   "inStock": true,
   "stock": null,
   "short": "",
-  "description": "<strong>Papuceii Snoozies pufosi si confortabili, ideali pentru:</strong> <p></p> <p> </p> <p><strong>Papuci de casa pufosi Snoozies</strong></p> <p>Bucura-te chiar si de cele mai reci zile cu ajutorul papucilor de casa Snoozies!</p> <p>Fiecare model este realizat cu atentie, pentru ca tu sa ai parte de un confort deplin.</p> <p>Rasfatati-va picioarele cu aceasta pereche de papuci de casa pufosi Snoozies</p> <p>Ganditi atat pentru confort cat si pentru un plus de eleganta. Creati dintr-un interior moale si calduros care ofera o senzatie placuta picioarelor in zilele de iarna.</p> <p>Indiferent daca va relaxati acasa dupa o zi lunga sau pur si simplu va bucurati de un weekend relaxant, acesti papuci ofera compania perfecta. Designul lor adauga o nota de farmec si feminitate, facandu-te sa te simti mai confortabil si increzatoare.</p> <p>Materialele de calitate asigura o un confort garantat pentru mai multe sezoane.</p> <p>Se spala la masina cu usurinta, fara ca materialul sa fie afectat.</p> <p>Papucii de casa Snoozies ies in evidenta prin modele inedite, blanita pufoasa si materialele de inalta calitate!</p> <p>Papucii de casa sunt realizati din materiale de calitate superioara:</p> <p>• Exterior- material textil rezistent, fin, cu insertii adaugate.</p> <p>• Interior- material tip blanita, calduros, de lana.</p> <p>• Talpa- material textil cu insertii de margelute siliconate antiderapante</p> <p>• Se spala la masina – nu intra la apa iar materialul ramane intact!</p> <p>Esti in pana de idei de cadouri? Papucii de casa Snoozies sunt o idee perfecta- cine nu iubeste o pereche confortabila, calduroasa si pufoasa de papuci de casa? Cu atat mai mult cu cat acestia au modele deosebite inserate manual.</p>",
+  "description": "<strong>Papuceii Snoozies pufosi si confortabili, ideali pentru:</strong>   <p><strong>Papuci de casa pufosi Snoozies</strong></p> <p>Bucura-te chiar si de cele mai reci zile cu ajutorul papucilor de casa Snoozies!</p> <p>Fiecare model este realizat cu atentie, pentru ca tu sa ai parte de un confort deplin.</p> <p>Rasfatati-va picioarele cu aceasta pereche de papuci de casa pufosi Snoozies</p> <p>Ganditi atat pentru confort cat si pentru un plus de eleganta. Creati dintr-un interior moale si calduros care ofera o senzatie placuta picioarelor in zilele de iarna.</p> <p>Indiferent daca va relaxati acasa dupa o zi lunga sau pur si simplu va bucurati de un weekend relaxant, acesti papuci ofera compania perfecta. Designul lor adauga o nota de farmec si feminitate, facandu-te sa te simti mai confortabil si increzatoare.</p> <p>Materialele de calitate asigura o un confort garantat pentru mai multe sezoane.</p> <p>Se spala la masina cu usurinta, fara ca materialul sa fie afectat.</p> <p>Papucii de casa Snoozies ies in evidenta prin modele inedite, blanita pufoasa si materialele de inalta calitate!</p> <p>Papucii de casa sunt realizati din materiale de calitate superioara:</p> <p>• Exterior- material textil rezistent, fin, cu insertii adaugate.</p> <p>• Interior- material tip blanita, calduros, de lana.</p> <p>• Talpa- material textil cu insertii de margelute siliconate antiderapante</p> <p>• Se spala la masina – nu intra la apa iar materialul ramane intact!</p> <p>Esti in pana de idei de cadouri? Papucii de casa Snoozies sunt o idee perfecta- cine nu iubeste o pereche confortabila, calduroasa si pufoasa de papuci de casa? Cu atat mai mult cu cat acestia au modele deosebite inserate manual.</p>",
   "images": [
    "papuci-de-casa-barbati-snoozies-luminite-1.jpg"
   ],
@@ -2273,36 +2272,36 @@
     "size": "S",
     "range": "38–40",
     "color": "",
-    "sku": "Snz-LuminiteBarbS",
-    "stock": null,
+    "stock": 10,
     "inStock": true,
+    "sku": "Snz-LuminiteBarbS",
     "ean": "840120445509"
    },
    {
     "size": "M",
     "range": "40–41",
     "color": "",
-    "sku": "Snz-LuminiteBarbM",
-    "stock": null,
+    "stock": 9,
     "inStock": true,
+    "sku": "Snz-LuminiteBarbM",
     "ean": "840120445516"
    },
    {
     "size": "L",
     "range": "41–43",
     "color": "",
-    "sku": "Snz-LuminiteBarbL",
-    "stock": null,
+    "stock": 10,
     "inStock": true,
+    "sku": "Snz-LuminiteBarbL",
     "ean": "840120445523"
    },
    {
     "size": "XL",
     "range": "43–45",
     "color": "",
-    "sku": "Snz-LuminiteBarbXL",
-    "stock": null,
+    "stock": 10,
     "inStock": true,
+    "sku": "Snz-LuminiteBarbXL",
     "ean": "840120445530"
    }
   ]
@@ -2319,7 +2318,7 @@
   "inStock": true,
   "stock": null,
   "short": "",
-  "description": "<strong>Papuceii Snoozies pufosi si confortabili, ideali pentru:</strong> <p></p> <p> </p> <p><strong>Papuci de casa pufosi Snoozies</strong></p> <p>Bucura-te chiar si de cele mai reci zile cu ajutorul papucilor de casa Snoozies!</p> <p>Fiecare model este realizat cu atentie, pentru ca tu sa ai parte de un confort deplin.</p> <p>Rasfatati-va picioarele cu aceasta pereche de papuci de casa pufosi Snoozies</p> <p>Ganditi atat pentru confort cat si pentru un plus de eleganta. Creati dintr-un interior moale si calduros care ofera o senzatie placuta picioarelor in zilele de iarna.</p> <p>Indiferent daca va relaxati acasa dupa o zi lunga sau pur si simplu va bucurati de un weekend relaxant, acesti papuci ofera compania perfecta. Designul lor adauga o nota de farmec si feminitate, facandu-te sa te simti mai confortabil si increzatoare.</p> <p>Materialele de calitate asigura o un confort garantat pentru mai multe sezoane.</p> <p>Se spala la masina cu usurinta, fara ca materialul sa fie afectat.</p> <p>Papucii de casa Snoozies ies in evidenta prin modele inedite, blanita pufoasa si materialele de inalta calitate!</p> <p>Papucii de casa sunt realizati din materiale de calitate superioara:</p> <p>• Exterior- material textil rezistent, fin, cu insertii adaugate.</p> <p>• Interior- material tip blanita, calduros, de lana.</p> <p>• Talpa- material textil cu insertii de margelute siliconate antiderapante</p> <p>• Se spala la masina – nu intra la apa iar materialul ramane intact!</p> <p>Esti in pana de idei de cadouri? Papucii de casa Snoozies sunt o idee perfecta- cine nu iubeste o pereche confortabila, calduroasa si pufoasa de papuci de casa? Cu atat mai mult cu cat acestia au modele deosebite inserate manual.</p>",
+  "description": "<strong>Papuceii Snoozies pufosi si confortabili, ideali pentru:</strong>   <p><strong>Papuci de casa pufosi Snoozies</strong></p> <p>Bucura-te chiar si de cele mai reci zile cu ajutorul papucilor de casa Snoozies!</p> <p>Fiecare model este realizat cu atentie, pentru ca tu sa ai parte de un confort deplin.</p> <p>Rasfatati-va picioarele cu aceasta pereche de papuci de casa pufosi Snoozies</p> <p>Ganditi atat pentru confort cat si pentru un plus de eleganta. Creati dintr-un interior moale si calduros care ofera o senzatie placuta picioarelor in zilele de iarna.</p> <p>Indiferent daca va relaxati acasa dupa o zi lunga sau pur si simplu va bucurati de un weekend relaxant, acesti papuci ofera compania perfecta. Designul lor adauga o nota de farmec si feminitate, facandu-te sa te simti mai confortabil si increzatoare.</p> <p>Materialele de calitate asigura o un confort garantat pentru mai multe sezoane.</p> <p>Se spala la masina cu usurinta, fara ca materialul sa fie afectat.</p> <p>Papucii de casa Snoozies ies in evidenta prin modele inedite, blanita pufoasa si materialele de inalta calitate!</p> <p>Papucii de casa sunt realizati din materiale de calitate superioara:</p> <p>• Exterior- material textil rezistent, fin, cu insertii adaugate.</p> <p>• Interior- material tip blanita, calduros, de lana.</p> <p>• Talpa- material textil cu insertii de margelute siliconate antiderapante</p> <p>• Se spala la masina – nu intra la apa iar materialul ramane intact!</p> <p>Esti in pana de idei de cadouri? Papucii de casa Snoozies sunt o idee perfecta- cine nu iubeste o pereche confortabila, calduroasa si pufoasa de papuci de casa? Cu atat mai mult cu cat acestia au modele deosebite inserate manual.</p>",
   "images": [
    "papuci-de-casa-barbati-snoozies-craciun-fericit-1.jpg"
   ],
@@ -2333,34 +2332,34 @@
     "size": "S",
     "range": "38–40",
     "color": "",
-    "sku": "Snz-CraciunFericitBarbS",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "sku": "Snz-CraciunFericitBarbS"
    },
    {
     "size": "M",
     "range": "40–41",
     "color": "",
-    "sku": "Snz-CraciunFericitBarbM",
-    "stock": null,
+    "stock": 14,
     "inStock": true,
+    "sku": "Snz-CraciunFericitBarbM",
     "ean": "840120445554"
    },
    {
     "size": "L",
     "range": "41–43",
     "color": "",
-    "sku": "Snz-CraciunFericitBarbL",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "sku": "Snz-CraciunFericitBarbL"
    },
    {
     "size": "XL",
     "range": "43–45",
     "color": "",
-    "sku": "Snz-CraciunFericitBarbXL",
-    "stock": null,
+    "stock": 15,
     "inStock": true,
+    "sku": "Snz-CraciunFericitBarbXL",
     "ean": "840120445578"
    }
   ]
@@ -2377,7 +2376,7 @@
   "inStock": true,
   "stock": null,
   "short": "",
-  "description": "<strong>Papuceii Snoozies pufosi si confortabili, ideali pentru:</strong> <p></p> <p> </p> <p><strong>Papuci de casa pufosi Snoozies</strong></p> <p>Bucura-te chiar si de cele mai reci zile cu ajutorul papucilor de casa Snoozies!</p> <p>Fiecare model este realizat cu atentie, pentru ca tu sa ai parte de un confort deplin.</p> <p>Rasfatati-va picioarele cu aceasta pereche de papuci de casa pufosi Snoozies</p> <p>Ganditi atat pentru confort cat si pentru un plus de eleganta. Creati dintr-un interior moale si calduros care ofera o senzatie placuta picioarelor in zilele de iarna.</p> <p>Indiferent daca va relaxati acasa dupa o zi lunga sau pur si simplu va bucurati de un weekend relaxant, acesti papuci ofera compania perfecta. Designul lor adauga o nota de farmec si feminitate, facandu-te sa te simti mai confortabil si increzatoare.</p> <p>Materialele de calitate asigura o un confort garantat pentru mai multe sezoane.</p> <p>Se spala la masina cu usurinta, fara ca materialul sa fie afectat.</p> <p>Papucii de casa Snoozies ies in evidenta prin modele inedite, blanita pufoasa si materialele de inalta calitate!</p> <p>Papucii de casa sunt realizati din materiale de calitate superioara:</p> <p>• Exterior- material textil rezistent, fin, cu insertii adaugate.</p> <p>• Interior- material tip blanita, calduros, de lana.</p> <p>• Talpa- material textil cu insertii de margelute siliconate antiderapante</p> <p>• Se spala la masina – nu intra la apa iar materialul ramane intact!</p> <p>Esti in pana de idei de cadouri? Papucii de casa Snoozies sunt o idee perfecta- cine nu iubeste o pereche confortabila, calduroasa si pufoasa de papuci de casa? Cu atat mai mult cu cat acestia au modele deosebite inserate manual.</p>",
+  "description": "<strong>Papuceii Snoozies pufosi si confortabili, ideali pentru:</strong>   <p><strong>Papuci de casa pufosi Snoozies</strong></p> <p>Bucura-te chiar si de cele mai reci zile cu ajutorul papucilor de casa Snoozies!</p> <p>Fiecare model este realizat cu atentie, pentru ca tu sa ai parte de un confort deplin.</p> <p>Rasfatati-va picioarele cu aceasta pereche de papuci de casa pufosi Snoozies</p> <p>Ganditi atat pentru confort cat si pentru un plus de eleganta. Creati dintr-un interior moale si calduros care ofera o senzatie placuta picioarelor in zilele de iarna.</p> <p>Indiferent daca va relaxati acasa dupa o zi lunga sau pur si simplu va bucurati de un weekend relaxant, acesti papuci ofera compania perfecta. Designul lor adauga o nota de farmec si feminitate, facandu-te sa te simti mai confortabil si increzatoare.</p> <p>Materialele de calitate asigura o un confort garantat pentru mai multe sezoane.</p> <p>Se spala la masina cu usurinta, fara ca materialul sa fie afectat.</p> <p>Papucii de casa Snoozies ies in evidenta prin modele inedite, blanita pufoasa si materialele de inalta calitate!</p> <p>Papucii de casa sunt realizati din materiale de calitate superioara:</p> <p>• Exterior- material textil rezistent, fin, cu insertii adaugate.</p> <p>• Interior- material tip blanita, calduros, de lana.</p> <p>• Talpa- material textil cu insertii de margelute siliconate antiderapante</p> <p>• Se spala la masina – nu intra la apa iar materialul ramane intact!</p> <p>Esti in pana de idei de cadouri? Papucii de casa Snoozies sunt o idee perfecta- cine nu iubeste o pereche confortabila, calduroasa si pufoasa de papuci de casa? Cu atat mai mult cu cat acestia au modele deosebite inserate manual.</p>",
   "images": [
    "papuci-de-casa-barbati-snoozies-urs-polar-1.jpg"
   ],
@@ -2391,36 +2390,36 @@
     "size": "S",
     "range": "38–40",
     "color": "",
-    "sku": "Snz-UrsPolarS",
-    "stock": null,
+    "stock": 10,
     "inStock": true,
+    "sku": "Snz-UrsPolarS",
     "ean": "840120445462"
    },
    {
     "size": "M",
     "range": "40–41",
     "color": "",
-    "sku": "Snz-UrsPolarM",
-    "stock": null,
+    "stock": 10,
     "inStock": true,
+    "sku": "Snz-UrsPolarM",
     "ean": "840120445479"
    },
    {
     "size": "L",
     "range": "41–43",
     "color": "",
-    "sku": "Snz-UrsPolarL",
-    "stock": null,
+    "stock": 9,
     "inStock": true,
+    "sku": "Snz-UrsPolarL",
     "ean": "840120445486"
    },
    {
     "size": "XL",
     "range": "43–45",
     "color": "",
-    "sku": "Snz-UrsPolarXL",
-    "stock": null,
+    "stock": 9,
     "inStock": true,
+    "sku": "Snz-UrsPolarXL",
     "ean": "840120445493"
    }
   ]
@@ -2437,7 +2436,7 @@
   "inStock": true,
   "stock": null,
   "short": "",
-  "description": "<strong>Papuceii Snoozies pufosi si confortabili, ideali pentru:</strong> <p></p> <p> </p> <p><strong>Papuci de casa pufosi Snoozies</strong></p> <p>Bucura-te chiar si de cele mai reci zile cu ajutorul papucilor de casa Snoozies!</p> <p>Fiecare model este realizat cu atentie, pentru ca tu sa ai parte de un confort deplin.</p> <p>Rasfatati-va picioarele cu aceasta pereche de papuci de casa pufosi Snoozies</p> <p>Ganditi atat pentru confort cat si pentru un plus de eleganta. Creati dintr-un interior moale si calduros care ofera o senzatie placuta picioarelor in zilele de iarna.</p> <p>Indiferent daca va relaxati acasa dupa o zi lunga sau pur si simplu va bucurati de un weekend relaxant, acesti papuci ofera compania perfecta. Designul lor adauga o nota de farmec si feminitate, facandu-te sa te simti mai confortabil si increzatoare.</p> <p>Materialele de calitate asigura o un confort garantat pentru mai multe sezoane.</p> <p>Se spala la masina cu usurinta, fara ca materialul sa fie afectat.</p> <p>Papucii de casa Snoozies ies in evidenta prin modele inedite, blanita pufoasa si materialele de inalta calitate!</p> <p>Papucii de casa sunt realizati din materiale de calitate superioara:</p> <p>• Exterior- material textil rezistent, fin, cu insertii adaugate.</p> <p>• Interior- material tip blanita, calduros, de lana.</p> <p>• Talpa- material textil cu insertii de margelute siliconate antiderapante</p> <p>• Se spala la masina – nu intra la apa iar materialul ramane intact!</p> <p>Esti in pana de idei de cadouri? Papucii de casa Snoozies sunt o idee perfecta- cine nu iubeste o pereche confortabila, calduroasa si pufoasa de papuci de casa? Cu atat mai mult cu cat acestia au modele deosebite inserate manual.</p>",
+  "description": "<strong>Papuceii Snoozies pufosi si confortabili, ideali pentru:</strong>   <p><strong>Papuci de casa pufosi Snoozies</strong></p> <p>Bucura-te chiar si de cele mai reci zile cu ajutorul papucilor de casa Snoozies!</p> <p>Fiecare model este realizat cu atentie, pentru ca tu sa ai parte de un confort deplin.</p> <p>Rasfatati-va picioarele cu aceasta pereche de papuci de casa pufosi Snoozies</p> <p>Ganditi atat pentru confort cat si pentru un plus de eleganta. Creati dintr-un interior moale si calduros care ofera o senzatie placuta picioarelor in zilele de iarna.</p> <p>Indiferent daca va relaxati acasa dupa o zi lunga sau pur si simplu va bucurati de un weekend relaxant, acesti papuci ofera compania perfecta. Designul lor adauga o nota de farmec si feminitate, facandu-te sa te simti mai confortabil si increzatoare.</p> <p>Materialele de calitate asigura o un confort garantat pentru mai multe sezoane.</p> <p>Se spala la masina cu usurinta, fara ca materialul sa fie afectat.</p> <p>Papucii de casa Snoozies ies in evidenta prin modele inedite, blanita pufoasa si materialele de inalta calitate!</p> <p>Papucii de casa sunt realizati din materiale de calitate superioara:</p> <p>• Exterior- material textil rezistent, fin, cu insertii adaugate.</p> <p>• Interior- material tip blanita, calduros, de lana.</p> <p>• Talpa- material textil cu insertii de margelute siliconate antiderapante</p> <p>• Se spala la masina – nu intra la apa iar materialul ramane intact!</p> <p>Esti in pana de idei de cadouri? Papucii de casa Snoozies sunt o idee perfecta- cine nu iubeste o pereche confortabila, calduroasa si pufoasa de papuci de casa? Cu atat mai mult cu cat acestia au modele deosebite inserate manual.</p>",
   "images": [
    "papuci-de-casa-barbati-snoozies-snowmies-1.jpg",
    "papuci-de-casa-barbati-snoozies-snowmies-2.jpg",
@@ -2455,17 +2454,18 @@
     "size": "L",
     "range": "38–40",
     "color": "",
+    "stock": 16,
+    "inStock": true,
     "sku": "Snz-07SnowLbarb",
-    "stock": null,
-    "inStock": true
+    "ean": "840120403912"
    },
    {
     "size": "XL",
     "range": "40–42",
     "color": "",
-    "sku": "Snz-07SnowXLBarb",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "sku": "Snz-07SnowXLBarb"
    }
   ]
  },
@@ -2481,7 +2481,7 @@
   "inStock": true,
   "stock": null,
   "short": "",
-  "description": "<strong>Papuceii Snoozies pufosi si confortabili, ideali pentru:</strong> <p></p> <p> </p> <p><strong>Papuci de casa pufosi Snoozies</strong></p> <p>Bucura-te chiar si de cele mai reci zile cu ajutorul papucilor de casa Snoozies!</p> <p>Fiecare model este realizat cu atentie, pentru ca tu sa ai parte de un confort deplin.</p> <p>Rasfatati-va picioarele cu aceasta pereche de papuci de casa pufosi Snoozies</p> <p>Ganditi atat pentru confort cat si pentru un plus de eleganta. Creati dintr-un interior moale si calduros care ofera o senzatie placuta picioarelor in zilele de iarna.</p> <p>Indiferent daca va relaxati acasa dupa o zi lunga sau pur si simplu va bucurati de un weekend relaxant, acesti papuci ofera compania perfecta. Designul lor adauga o nota de farmec si feminitate, facandu-te sa te simti mai confortabil si increzatoare.</p> <p>Materialele de calitate asigura o un confort garantat pentru mai multe sezoane.</p> <p>Se spala la masina cu usurinta, fara ca materialul sa fie afectat.</p> <p>Papucii de casa Snoozies ies in evidenta prin modele inedite, blanita pufoasa si materialele de inalta calitate!</p> <p>Papucii de casa sunt realizati din materiale de calitate superioara:</p> <p>• Exterior- material textil rezistent, fin, cu insertii adaugate.</p> <p>• Interior- material tip blanita, calduros, de lana.</p> <p>• Talpa- material textil cu insertii de margelute siliconate antiderapante</p> <p>• Se spala la masina – nu intra la apa iar materialul ramane intact!</p> <p>Esti in pana de idei de cadouri? Papucii de casa Snoozies sunt o idee perfecta- cine nu iubeste o pereche confortabila, calduroasa si pufoasa de papuci de casa? Cu atat mai mult cu cat acestia au modele deosebite inserate manual.</p>",
+  "description": "<strong>Papuceii Snoozies pufosi si confortabili, ideali pentru:</strong>   <p><strong>Papuci de casa pufosi Snoozies</strong></p> <p>Bucura-te chiar si de cele mai reci zile cu ajutorul papucilor de casa Snoozies!</p> <p>Fiecare model este realizat cu atentie, pentru ca tu sa ai parte de un confort deplin.</p> <p>Rasfatati-va picioarele cu aceasta pereche de papuci de casa pufosi Snoozies</p> <p>Ganditi atat pentru confort cat si pentru un plus de eleganta. Creati dintr-un interior moale si calduros care ofera o senzatie placuta picioarelor in zilele de iarna.</p> <p>Indiferent daca va relaxati acasa dupa o zi lunga sau pur si simplu va bucurati de un weekend relaxant, acesti papuci ofera compania perfecta. Designul lor adauga o nota de farmec si feminitate, facandu-te sa te simti mai confortabil si increzatoare.</p> <p>Materialele de calitate asigura o un confort garantat pentru mai multe sezoane.</p> <p>Se spala la masina cu usurinta, fara ca materialul sa fie afectat.</p> <p>Papucii de casa Snoozies ies in evidenta prin modele inedite, blanita pufoasa si materialele de inalta calitate!</p> <p>Papucii de casa sunt realizati din materiale de calitate superioara:</p> <p>• Exterior- material textil rezistent, fin, cu insertii adaugate.</p> <p>• Interior- material tip blanita, calduros, de lana.</p> <p>• Talpa- material textil cu insertii de margelute siliconate antiderapante</p> <p>• Se spala la masina – nu intra la apa iar materialul ramane intact!</p> <p>Esti in pana de idei de cadouri? Papucii de casa Snoozies sunt o idee perfecta- cine nu iubeste o pereche confortabila, calduroasa si pufoasa de papuci de casa? Cu atat mai mult cu cat acestia au modele deosebite inserate manual.</p>",
   "images": [
    "papuci-de-casa-snoozies-super-dad-1.jpg",
    "papuci-de-casa-snoozies-super-dad-2.jpg",
@@ -2498,27 +2498,27 @@
     "size": "S",
     "range": "38–39",
     "color": "",
-    "sku": "Snz-SuperdadS",
-    "stock": null,
+    "stock": 10,
     "inStock": true,
+    "sku": "Snz-SuperdadS",
     "ean": "9323258057741"
    },
    {
     "size": "M",
     "range": "40–41",
     "color": "",
-    "sku": "Snz-SuperdadM",
-    "stock": null,
+    "stock": 10,
     "inStock": true,
+    "sku": "Snz-SuperdadM",
     "ean": "9323258057758"
    },
    {
     "size": "L",
     "range": "41–43",
     "color": "",
-    "sku": "Snz-SuperdadL",
-    "stock": null,
+    "stock": 10,
     "inStock": true,
+    "sku": "Snz-SuperdadL",
     "ean": "9323258057765"
    }
   ]
@@ -2535,7 +2535,7 @@
   "inStock": true,
   "stock": null,
   "short": "",
-  "description": "<strong>Papuceii Snoozies pufosi si confortabili, ideali pentru:</strong> <p></p> <p><strong>Rasfata-ti picioarele cu papucii de casa Snoozies –</strong> combinatia perfecta intre confort, caldura si stil! Realizati din materiale premium, acesti papuci pufosi si caldurosi sunt ideali pentru a te bucura de momente relaxante in orice sezon.</p> <p>✔ Design modern si amuzant – modele unice, cu detalii deosebite, care adauga un strop de veselie si originalitate.<br /> ✔ Interior moale si calduros – blanita pufoasa tip plus, care mentine picioarele calde chiar si in cele mai reci zile.<br /> ✔ Exterior rezistent – material textil fin, placut la atingere, realizat pentru durabilitate.<br /> ✔ Talpa antiderapanta – prevazuta cu insertii din silicon, pentru aderenta pe orice suprafata.<br /> ✔ Usor de intretinut – se spala la masina, fara sa-si piarda forma sau moliciunea.</p> <p><strong>De ce sa ii alegi?</strong></p> <ul> <li><strong>Perfect pentru relaxare acasa, dupa o zi lunga</strong></li> <li><strong>Papuci de casa pufosi si confortabili pentru un rasfat zilnic</strong></li> <li><strong>Ideea ideala de cadou pentru oricine iubeste confortul si stilul</strong></li> </ul> <p>Papucii Snoozies ies in evidenta prin calitatea materialelor, interiorul moale si modelele originale, fiind alegerea perfecta pentru cei care cauta papuci de casa pufosi, caldurosi si practici.</p>",
+  "description": "<strong>Papuceii Snoozies pufosi si confortabili, ideali pentru:</strong>  <p><strong>Rasfata-ti picioarele cu papucii de casa Snoozies –</strong> combinatia perfecta intre confort, caldura si stil! Realizati din materiale premium, acesti papuci pufosi si caldurosi sunt ideali pentru a te bucura de momente relaxante in orice sezon.</p> <p>✔ Design modern si amuzant – modele unice, cu detalii deosebite, care adauga un strop de veselie si originalitate.<br> ✔ Interior moale si calduros – blanita pufoasa tip plus, care mentine picioarele calde chiar si in cele mai reci zile.<br> ✔ Exterior rezistent – material textil fin, placut la atingere, realizat pentru durabilitate.<br> ✔ Talpa antiderapanta – prevazuta cu insertii din silicon, pentru aderenta pe orice suprafata.<br> ✔ Usor de intretinut – se spala la masina, fara sa-si piarda forma sau moliciunea.</p> <p><strong>De ce sa ii alegi?</strong></p> <ul> <li><strong>Perfect pentru relaxare acasa, dupa o zi lunga</strong></li> <li><strong>Papuci de casa pufosi si confortabili pentru un rasfat zilnic</strong></li> <li><strong>Ideea ideala de cadou pentru oricine iubeste confortul si stilul</strong></li> </ul> <p>Papucii Snoozies ies in evidenta prin calitatea materialelor, interiorul moale si modelele originale, fiind alegerea perfecta pentru cei care cauta papuci de casa pufosi, caldurosi si practici.</p>",
   "images": [
    "papuci-de-casa-snoozies-mens-fisherman-2.jpg",
    "papuci-de-casa-snoozies-mens-fisherman-3.jpg",
@@ -2552,27 +2552,27 @@
     "size": "S",
     "range": "38–39",
     "color": "",
-    "sku": "Snz-04FishS",
-    "stock": null,
+    "stock": 25,
     "inStock": true,
+    "sku": "Snz-04FishS",
     "ean": "810000443390"
    },
    {
     "size": "M",
     "range": "40–41",
     "color": "",
-    "sku": "Snz-04FishM",
-    "stock": null,
+    "stock": 21,
     "inStock": true,
+    "sku": "Snz-04FishM",
     "ean": "810000443406"
    },
    {
     "size": "L",
     "range": "41.5–43",
     "color": "",
-    "sku": "Snz-04FishL",
-    "stock": null,
+    "stock": 21,
     "inStock": true,
+    "sku": "Snz-04FishL",
     "ean": "810000443413"
    }
   ]
@@ -2589,7 +2589,7 @@
   "inStock": true,
   "stock": null,
   "short": "",
-  "description": "<strong>Papuceii Snoozies pufosi si confortabili, ideali pentru:</strong> <p></p> <p><strong>Rasfata-ti picioarele cu papucii de casa Snoozies</strong> – combinatia perfecta intre confort, caldura si stil! Realizati din materiale premium, acesti papuci pufosi si caldurosi sunt ideali pentru a te bucura de momente relaxante in orice sezon.</p> <p>✔ Design modern si amuzant – modele unice, cu detalii deosebite, care adauga un strop de veselie si originalitate.<br /> ✔ Interior moale si calduros – blanita pufoasa tip plus, care mentine picioarele calde chiar si in cele mai reci zile.<br /> ✔ Exterior rezistent – material textil fin, placut la atingere, realizat pentru durabilitate.<br /> ✔ Talpa antiderapanta – prevazuta cu insertii din silicon, pentru aderenta pe orice suprafata.<br /> ✔ Usor de intretinut – se spala la masina, fara sa-si piarda forma sau moliciunea.</p> <p><strong>De ce sa ii alegi?</strong></p> <ul> <li><strong>Perfect pentru relaxare acasa, dupa o zi lunga</strong></li> <li><strong>Papuci de casa pufosi si confortabili pentru un rasfat zilnic</strong></li> <li><strong>Ideea ideala de cadou pentru oricine iubeste confortul si stilul</strong></li> </ul> <p>Papucii Snoozies ies in evidenta prin calitatea materialelor, interiorul moale si modelele originale, fiind alegerea perfecta pentru cei care cauta papuci de casa pufosi, caldurosi si practici.</p>",
+  "description": "<strong>Papuceii Snoozies pufosi si confortabili, ideali pentru:</strong>  <p><strong>Rasfata-ti picioarele cu papucii de casa Snoozies</strong> – combinatia perfecta intre confort, caldura si stil! Realizati din materiale premium, acesti papuci pufosi si caldurosi sunt ideali pentru a te bucura de momente relaxante in orice sezon.</p> <p>✔ Design modern si amuzant – modele unice, cu detalii deosebite, care adauga un strop de veselie si originalitate.<br> ✔ Interior moale si calduros – blanita pufoasa tip plus, care mentine picioarele calde chiar si in cele mai reci zile.<br> ✔ Exterior rezistent – material textil fin, placut la atingere, realizat pentru durabilitate.<br> ✔ Talpa antiderapanta – prevazuta cu insertii din silicon, pentru aderenta pe orice suprafata.<br> ✔ Usor de intretinut – se spala la masina, fara sa-si piarda forma sau moliciunea.</p> <p><strong>De ce sa ii alegi?</strong></p> <ul> <li><strong>Perfect pentru relaxare acasa, dupa o zi lunga</strong></li> <li><strong>Papuci de casa pufosi si confortabili pentru un rasfat zilnic</strong></li> <li><strong>Ideea ideala de cadou pentru oricine iubeste confortul si stilul</strong></li> </ul> <p>Papucii Snoozies ies in evidenta prin calitatea materialelor, interiorul moale si modelele originale, fiind alegerea perfecta pentru cei care cauta papuci de casa pufosi, caldurosi si practici.</p>",
   "images": [
    "papuci-de-casa-snoozies-chicken-and-pig-3.jpg",
    "papuci-de-casa-snoozies-chicken-and-pig-4.jpg",
@@ -2606,27 +2606,27 @@
     "size": "S",
     "range": "38–39",
     "color": "",
-    "sku": "Snz-02pigS",
-    "stock": null,
+    "stock": 15,
     "inStock": true,
+    "sku": "Snz-02pigS",
     "ean": "810000442911"
    },
    {
     "size": "M",
     "range": "40–41",
     "color": "",
-    "sku": "Snz-02pigM",
-    "stock": null,
+    "stock": 50,
     "inStock": true,
+    "sku": "Snz-02pigM",
     "ean": "810000442928"
    },
    {
     "size": "L",
     "range": "41.5–43",
     "color": "",
-    "sku": "Snz-02pigL",
-    "stock": null,
+    "stock": 15,
     "inStock": true,
+    "sku": "Snz-02pigL",
     "ean": "810000442935"
    }
   ]
@@ -2643,7 +2643,7 @@
   "inStock": true,
   "stock": null,
   "short": "",
-  "description": "<strong>Papuceii Snoozies pufosi si confortabili, ideali pentru:</strong> <p></p> <p><strong>Rasfata-ti picioarele cu papucii de casa Snoozies </strong>– combinatia perfecta intre confort, caldura si stil! Realizati din materiale premium, acesti papuci pufosi si caldurosi sunt ideali pentru a te bucura de momente relaxante in orice sezon.</p> <p>✔ Design modern si amuzant – modele unice, cu detalii deosebite, care adauga un strop de veselie si originalitate.<br /> ✔ Interior moale si calduros – blanita pufoasa tip plus, care mentine picioarele calde chiar si in cele mai reci zile.<br /> ✔ Exterior rezistent – material textil fin, placut la atingere, realizat pentru durabilitate.<br /> ✔ Talpa antiderapanta – prevazuta cu insertii din silicon, pentru aderenta pe orice suprafata.<br /> ✔ Usor de intretinut – se spala la masina, fara sa-si piarda forma sau moliciunea.</p> <p><strong>De ce sa ii alegi?</strong></p> <ul> <li><strong>Perfect pentru relaxare acasa, dupa o zi lunga</strong></li> <li><strong>Papuci de casa pufosi si confortabili pentru un rasfat zilnic</strong></li> <li><strong>Ideea ideala de cadou pentru oricine iubeste confortul si stilul</strong></li> </ul> <p>Papucii Snoozies ies in evidenta prin calitatea materialelor, interiorul moale si modelele originale, fiind alegerea perfecta pentru cei care cauta papuci de casa pufosi, caldurosi si practici.</p>",
+  "description": "<strong>Papuceii Snoozies pufosi si confortabili, ideali pentru:</strong>  <p><strong>Rasfata-ti picioarele cu papucii de casa Snoozies </strong>– combinatia perfecta intre confort, caldura si stil! Realizati din materiale premium, acesti papuci pufosi si caldurosi sunt ideali pentru a te bucura de momente relaxante in orice sezon.</p> <p>✔ Design modern si amuzant – modele unice, cu detalii deosebite, care adauga un strop de veselie si originalitate.<br> ✔ Interior moale si calduros – blanita pufoasa tip plus, care mentine picioarele calde chiar si in cele mai reci zile.<br> ✔ Exterior rezistent – material textil fin, placut la atingere, realizat pentru durabilitate.<br> ✔ Talpa antiderapanta – prevazuta cu insertii din silicon, pentru aderenta pe orice suprafata.<br> ✔ Usor de intretinut – se spala la masina, fara sa-si piarda forma sau moliciunea.</p> <p><strong>De ce sa ii alegi?</strong></p> <ul> <li><strong>Perfect pentru relaxare acasa, dupa o zi lunga</strong></li> <li><strong>Papuci de casa pufosi si confortabili pentru un rasfat zilnic</strong></li> <li><strong>Ideea ideala de cadou pentru oricine iubeste confortul si stilul</strong></li> </ul> <p>Papucii Snoozies ies in evidenta prin calitatea materialelor, interiorul moale si modelele originale, fiind alegerea perfecta pentru cei care cauta papuci de casa pufosi, caldurosi si practici.</p>",
   "images": [
    "papuci-de-casa-barbati-snoozies-elefant-1.jpg",
    "papuci-de-casa-barbati-snoozies-elefant-2.jpg",
@@ -2662,18 +2662,18 @@
     "size": "L",
     "range": "38–40",
     "color": "",
-    "sku": "Snz-06ElfLmen",
-    "stock": null,
+    "stock": 29,
     "inStock": true,
+    "sku": "Snz-06ElfLmen",
     "ean": "840120442065"
    },
    {
     "size": "XL",
     "range": "40–42",
     "color": "",
+    "stock": 0,
+    "inStock": false,
     "sku": "Snz-06ElfXL",
-    "stock": null,
-    "inStock": true,
     "ean": "840120409938"
    }
   ]
@@ -2685,7 +2685,7 @@
   "category": "copii-si-bebelusi",
   "categoryName": "Copii și bebeluși",
   "sub": "Iubitori de animăluțe",
-  "price": 43.0,
+  "price": 43,
   "oldPrice": null,
   "inStock": true,
   "stock": null,
@@ -2707,27 +2707,27 @@
     "size": "S",
     "range": "0–3 luni",
     "color": "",
-    "sku": "Snz-BebepandaS",
-    "stock": null,
+    "stock": 20,
     "inStock": true,
+    "sku": "Snz-BebepandaS",
     "ean": "840120408771"
    },
    {
     "size": "M",
     "range": "3–6 luni",
     "color": "",
-    "sku": "Snz-BebepandaM",
-    "stock": null,
+    "stock": 20,
     "inStock": true,
+    "sku": "Snz-BebepandaM",
     "ean": "840120408788"
    },
    {
     "size": "L",
     "range": "6–12 luni",
     "color": "",
-    "sku": "Snz-BebepandaL",
-    "stock": null,
+    "stock": 20,
     "inStock": true,
+    "sku": "Snz-BebepandaL",
     "ean": "840120408795"
    }
   ]
@@ -2739,7 +2739,7 @@
   "category": "copii-si-bebelusi",
   "categoryName": "Copii și bebeluși",
   "sub": "Iubitori de animăluțe",
-  "price": 43.0,
+  "price": 43,
   "oldPrice": null,
   "inStock": true,
   "stock": null,
@@ -2761,27 +2761,27 @@
     "size": "S",
     "range": "0–3 luni",
     "color": "",
-    "sku": "Snz-BebeCaineS",
-    "stock": null,
+    "stock": 20,
     "inStock": true,
+    "sku": "Snz-BebeCaineS",
     "ean": "9323258057772"
    },
    {
     "size": "M",
     "range": "3–6 luni",
     "color": "",
-    "sku": "Snz-BebeCaineM",
-    "stock": null,
+    "stock": 20,
     "inStock": true,
+    "sku": "Snz-BebeCaineM",
     "ean": "9323258057789"
    },
    {
     "size": "L",
     "range": "6–12 luni",
     "color": "",
-    "sku": "Snz-BebeCaineL",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "sku": "Snz-BebeCaineL"
    }
   ]
  },
@@ -2792,7 +2792,7 @@
   "category": "copii-si-bebelusi",
   "categoryName": "Copii și bebeluși",
   "sub": "Iubitori de animăluțe",
-  "price": 43.0,
+  "price": 43,
   "oldPrice": null,
   "inStock": true,
   "stock": null,
@@ -2814,26 +2814,26 @@
     "size": "S",
     "range": "0–3 luni",
     "color": "",
-    "sku": "Snz-BebeOitaS",
-    "stock": null,
+    "stock": 20,
     "inStock": true,
+    "sku": "Snz-BebeOitaS",
     "ean": "846847082652"
    },
    {
     "size": "M",
     "range": "3–6 luni",
     "color": "",
-    "sku": "Snz-BebeOitaM",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "sku": "Snz-BebeOitaM"
    },
    {
     "size": "L",
     "range": "6–12 luni",
     "color": "",
-    "sku": "Snz-BebeOitaL",
-    "stock": null,
+    "stock": 20,
     "inStock": true,
+    "sku": "Snz-BebeOitaL",
     "ean": "846847082676"
    }
   ]
@@ -2845,7 +2845,7 @@
   "category": "copii-si-bebelusi",
   "categoryName": "Copii și bebeluși",
   "sub": "Iubitori de animăluțe",
-  "price": 43.0,
+  "price": 43,
   "oldPrice": null,
   "inStock": true,
   "stock": null,
@@ -2867,27 +2867,27 @@
     "size": "S",
     "range": "0–3 luni",
     "color": "",
-    "sku": "Snz-BebeMaimS",
-    "stock": null,
+    "stock": 19,
     "inStock": true,
+    "sku": "Snz-BebeMaimS",
     "ean": "846847082690"
    },
    {
     "size": "M",
     "range": "3–6 luni",
     "color": "",
-    "sku": "Snz-BebeMaimM",
-    "stock": null,
+    "stock": 19,
     "inStock": true,
+    "sku": "Snz-BebeMaimM",
     "ean": "846847082706"
    },
    {
     "size": "L",
     "range": "6–12 luni",
     "color": "",
-    "sku": "Snz-BebeMaimL",
-    "stock": null,
+    "stock": 20,
     "inStock": true,
+    "sku": "Snz-BebeMaimL",
     "ean": "846847082713"
    }
   ]
@@ -2899,7 +2899,7 @@
   "category": "copii-si-bebelusi",
   "categoryName": "Copii și bebeluși",
   "sub": "Iubitori de animăluțe",
-  "price": 43.0,
+  "price": 43,
   "oldPrice": null,
   "inStock": true,
   "stock": null,
@@ -2921,26 +2921,26 @@
     "size": "S",
     "range": "0–3 luni",
     "color": "",
-    "sku": "Snz-BebeUrsuletS",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "sku": "Snz-BebeUrsuletS"
    },
    {
     "size": "M",
     "range": "3–6 luni",
     "color": "",
-    "sku": "Snz-BebeUrsuletM",
-    "stock": null,
+    "stock": 20,
     "inStock": true,
+    "sku": "Snz-BebeUrsuletM",
     "ean": "846847082782"
    },
    {
     "size": "L",
     "range": "6–12 luni",
     "color": "",
-    "sku": "Snz-BebeUrsuletL",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "sku": "Snz-BebeUrsuletL"
    }
   ]
  },
@@ -2951,7 +2951,7 @@
   "category": "copii-si-bebelusi",
   "categoryName": "Copii și bebeluși",
   "sub": "Iubitori de animăluțe",
-  "price": 43.0,
+  "price": 43,
   "oldPrice": null,
   "inStock": true,
   "stock": null,
@@ -2973,26 +2973,26 @@
     "size": "S",
     "range": "0–3 luni",
     "color": "",
-    "sku": "Snz-BebePudelS",
-    "stock": null,
+    "stock": 18,
     "inStock": true,
+    "sku": "Snz-BebePudelS",
     "ean": "846847082737"
    },
    {
     "size": "M",
     "range": "3–6 luni",
     "color": "",
-    "sku": "Snz-BebePudelM",
     "stock": null,
-    "inStock": true
+    "inStock": true,
+    "sku": "Snz-BebePudelM"
    },
    {
     "size": "L",
     "range": "6–12 luni",
     "color": "",
-    "sku": "Snz-BebePudelL",
-    "stock": null,
+    "stock": 20,
     "inStock": true,
+    "sku": "Snz-BebePudelL",
     "ean": "846847082751"
    }
   ]
@@ -3004,7 +3004,7 @@
   "category": "copii-si-bebelusi",
   "categoryName": "Copii și bebeluși",
   "sub": "Mici plăceri",
-  "price": 43.0,
+  "price": 43,
   "oldPrice": null,
   "inStock": true,
   "stock": null,
@@ -3026,9 +3026,9 @@
     "size": "L",
     "range": "25–27",
     "color": "",
-    "sku": "Snz-CopiiCupcakeL",
-    "stock": null,
+    "stock": 19,
     "inStock": true,
+    "sku": "Snz-CopiiCupcakeL",
     "ean": "9323258058755"
    }
   ]
@@ -3086,27 +3086,27 @@
     "size": "U",
     "range": "",
     "color": "Albastru",
-    "sku": "SnzSoseteSheaAlbastru",
-    "stock": null,
+    "stock": 15,
     "inStock": true,
+    "sku": "SnzSoseteSheaAlbastru",
     "ean": "0846847013625"
    },
    {
     "size": "U",
     "range": "",
     "color": "Roz",
-    "sku": "SnzSoseteSheaRoz",
-    "stock": null,
+    "stock": 17,
     "inStock": true,
+    "sku": "SnzSoseteSheaRoz",
     "ean": "0846847027578"
    },
    {
     "size": "U",
     "range": "",
     "color": "Verde",
-    "sku": "SnzSoseteSheaVerde",
-    "stock": null,
+    "stock": 15,
     "inStock": true,
+    "sku": "SnzSoseteSheaVerde",
     "ean": "0846847027547"
    }
   ]
