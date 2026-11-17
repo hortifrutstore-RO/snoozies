@@ -362,7 +362,8 @@ if (co) (async () => {
       const j = await r.json().catch(() => ({}));
       if (r.status === 409 && j.stock) { j.stock.forEach(x => { if (idx.by[x.sku]) { idx.by[x.sku].left = x.left; idx.by[x.sku].inStock = x.left > 0; } }); render(); }
       if (!r.ok || !j.ok) throw new Error(j.error || 'Comanda nu a putut fi trimisă.');
-      track('purchase', { transaction_id: j.number, value: j.total, currency: 'RON' });
+      // conversia se trimite pe pagina de mulțumire (redirectul imediat ar pierde hitul)
+      try { sessionStorage.setItem('buy', JSON.stringify({ id: j.number, value: +j.total || 0, items: fd.items.map(x => ({ item_id: x.sku, item_name: (idx.by[x.sku] || {}).name || x.sku, price: (idx.by[x.sku] || {}).price || 0, quantity: x.qty })) })); } catch {}
       cart.clear(); location.href = '/comanda-plasata/?nr=' + encodeURIComponent(j.number);
     } catch (err) { msg.textContent = err.message + ' Încearcă din nou sau sună-ne.'; msg.classList.add('show'); btn.disabled = false; btn.textContent = 'Plasează comanda'; }
   });
@@ -371,6 +372,7 @@ const ono = $('[data-order-no]'); if (ono) ono.textContent = new URLSearchParams
 
 /* ---------- cookies + Google ---------- */
 let gLoaded = false;
+// Consent mode avansat: tag-ul se încarcă mereu; fără acord trimite doar semnale fără cookie-uri (Google modelează conversiile).
 function loadGoogle() {
   if (gLoaded || !(S.ga4 || S.ads)) return; gLoaded = true;
   const id = S.ga4 || S.ads; const s = document.createElement('script'); s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=' + id; document.head.appendChild(s);
@@ -379,11 +381,18 @@ function loadGoogle() {
 function consent(all) {
   store.set('consent', { all, t: Date.now() });
   gtag('consent', 'update', { ad_storage: all ? 'granted' : 'denied', ad_user_data: all ? 'granted' : 'denied', ad_personalization: all ? 'granted' : 'denied', analytics_storage: all ? 'granted' : 'denied' });
-  if (all) loadGoogle();
+  if (all) gtag('set', 'ads_data_redaction', false);
 }
 function track(ev, p) { if (window.gtag && gLoaded) gtag('event', ev, p); }
 const ck = $('[data-cookie]'); const c0 = store.get('consent', null);
 if (c0) consent(c0.all); else if (ck) ck.classList.add('show');
+loadGoogle();
+(() => {
+  let b = null; try { b = JSON.parse(sessionStorage.getItem('buy') || 'null'); sessionStorage.removeItem('buy'); } catch {}
+  if (!b || !$('[data-order-no]')) return;
+  if (S.ads && S.adsBuy) gtag('event', 'conversion', { send_to: S.ads + '/' + S.adsBuy, value: b.value, currency: 'RON', transaction_id: b.id });
+  if (S.ga4) gtag('event', 'purchase', { transaction_id: b.id, value: b.value, currency: 'RON', items: b.items });
+})();
 if (ck) ck.addEventListener('click', e => { const b = e.target.closest('[data-ck]'); if (!b) return; consent(b.dataset.ck === 'all'); ck.classList.remove('show'); });
 $$('[data-cookie-settings]').forEach(a => a.addEventListener('click', e => { e.preventDefault(); ck.classList.add('show'); }));
 

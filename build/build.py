@@ -207,4 +207,36 @@ urls = ['/'] + [f"/categorie/{c['slug']}/" for c in site['categories']] + [f"/pr
 open(os.path.join(DIST, 'sitemap.xml'), 'w').write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
     ''.join(f'<url><loc>{site["url"]}{u}</loc></url>\n' for u in urls) + '</urlset>\n')
 open(os.path.join(DIST, 'robots.txt'), 'w').write(f"User-agent: *\nDisallow: /cos/\nDisallow: /cautare/\nDisallow: /comanda-plasata/\nDisallow: /api/\nDisallow: /admin/\nSitemap: {site['url']}/sitemap.xml\n")
+
+# Feed Google Merchant Center (o linie pe fiecare mărime/culoare)
+from xml.sax.saxutils import escape as xe
+GEN = {'femei': ('female', 'adult'), 'barbati': ('male', 'adult'), 'copii-si-bebelusi': ('unisex', 'kids'), 'sosete': ('unisex', 'adult')}
+def _txt(h): return re.sub(r'\s+', ' ', html.unescape(re.sub('<[^>]+>', ' ', h or ''))).strip()
+rows = []
+for p in products:
+    url = f"{site['url']}/produs/{p['slug']}/"
+    desc = _txt(p.get('short')) or _txt(p['description']) or p['name']
+    gender, age = GEN.get(p['category'], ('unisex', 'adult'))
+    gcat = '209' if p['category'] == 'sosete' else '187'
+    cimg = {c['name']: c.get('image') for c in (p.get('colors') or [])}
+    vs = p.get('sizes') or [dict(sku=p['sku'], size=None, color=None, inStock=p['inStock'])]
+    for v in vs:
+        title = p['name'] + (f" {v['color']}" if v.get('color') and v['color'].lower() not in p['name'].lower() else '') + (f", mărimea {v['size']}" + (f" ({v['range']})" if v.get('range') else '') if v.get('size') and v['size'] != 'U' else '')
+        main = cimg.get(v.get('color')) or p['images'][0]
+        extra = [i for i in p['images'] if i != main][:10]
+        f = [('g:id', v['sku']), ('g:item_group_id', p['sku']), ('g:title', title[:150]), ('g:description', desc[:5000]), ('g:link', url),
+             ('g:image_link', site['url'] + '/img/p/' + main)] + [('g:additional_image_link', site['url'] + '/img/p/' + i) for i in extra] + [
+             ('g:availability', 'in_stock' if (v.get('inStock', p['inStock']) and p['inStock']) else 'out_of_stock'),
+             ('g:price', f"{p['price']:.2f} RON"), ('g:condition', 'new'), ('g:brand', 'Snoozies'), ('g:identifier_exists', 'no'),
+             ('g:google_product_category', gcat), ('g:product_type', f"{p.get('categoryName', '')} > {p.get('sub') or ''}".strip(' >')),
+             ('g:gender', gender), ('g:age_group', age)]
+        if p.get('oldPrice') and p['oldPrice'] > p['price']:
+            f[f.index(('g:price', f"{p['price']:.2f} RON"))] = ('g:price', f"{p['oldPrice']:.2f} RON"); f.append(('g:sale_price', f"{p['price']:.2f} RON"))
+        if v.get('color'): f.append(('g:color', v['color']))
+        if v.get('size'): f += [('g:size', 'mărime unică' if v['size'] == 'U' else v['size'])] + ([] if v['size'] == 'U' else [('g:size_system', 'EU')])
+        if p.get('sub'): f.append(('g:custom_label_0', p['sub']))
+        rows.append('<item>' + ''.join(f'<{k}>{xe(str(x))}</{k}>' for k, x in f) + '</item>')
+open(os.path.join(DIST, 'feed.xml'), 'w').write('<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0" xmlns:g="http://base.google.com/ns/1.0"><channel>'
+    f"<title>{xe(site['name'])}</title><link>{site['url']}</link><description>Produse {xe(site['name'])}</description>\n" + '\n'.join(rows) + '\n</channel></rss>\n')
+print('feed:', len(rows), 'articole')
 print('OK', len(products), 'produse ->', DIST)
