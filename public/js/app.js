@@ -535,25 +535,49 @@ $$('[data-cf]').forEach(cf => {
     if (moved) { e.preventDefault(); e.stopPropagation(); moved = false; return; }
     if (it && !it.classList.contains('is-active')) { e.preventDefault(); e.stopPropagation(); go(items.indexOf(it)); }
   }, true);
-  stage.addEventListener('pointerdown', e => { if (e.button) return; dragX = e.clientX; dragDx = 0; moved = false; });
-  window.addEventListener('pointermove', e => {
-    if (dragX === null) return;
-    dragDx = e.clientX - dragX;
-    if (Math.abs(dragDx) > 6) { moved = true; cf.classList.add('dragging'); draw(); }
-  });
+  // tragere cu mouse-ul
   const end = () => {
     if (dragX === null) return;
     const steps = Math.round(-dragDx / gap) || (Math.abs(dragDx) > 40 ? (dragDx < 0 ? 1 : -1) : 0);
     dragX = null; dragDx = 0; cf.classList.remove('dragging'); go(cur + steps);
   };
-  window.addEventListener('pointerup', end); window.addEventListener('pointercancel', end);
+  stage.addEventListener('pointerdown', e => { if (e.pointerType === 'touch' || e.button) return; dragX = e.clientX; dragDx = 0; moved = false; });
+  window.addEventListener('pointermove', e => {
+    if (dragX === null || e.pointerType === 'touch') return;
+    dragDx = e.clientX - dragX;
+    if (Math.abs(dragDx) > 6) { moved = true; cf.classList.add('dragging'); draw(); }
+  });
+  window.addEventListener('pointerup', e => { if (e.pointerType !== 'touch') end(); });
   stage.addEventListener('dragstart', e => e.preventDefault());
-  // trackpad: derulare orizontală
-  let wl = 0, wt = 0;
+  // deget pe telefon: direcția se blochează după primii pixeli; orizontal = rotește (pagina stă pe loc), vertical = derulează pagina
+  let tx = 0, ty = 0, axis = null;
+  stage.addEventListener('touchstart', e => { if (e.touches.length !== 1) return; tx = e.touches[0].clientX; ty = e.touches[0].clientY; axis = null; dragDx = 0; moved = false; }, { passive: true });
+  stage.addEventListener('touchmove', e => {
+    if (e.touches.length !== 1) return;
+    const dx = e.touches[0].clientX - tx, dy = e.touches[0].clientY - ty;
+    if (!axis) { if (Math.abs(dx) < 8 && Math.abs(dy) < 8) return; axis = Math.abs(dx) > Math.abs(dy) ? 'x' : 'y'; if (axis === 'x') { dragX = tx; cf.classList.add('dragging'); } }
+    if (axis !== 'x') return;
+    if (e.cancelable) e.preventDefault();
+    dragDx = dx; moved = true; draw();
+  }, { passive: false });
+  const tend = () => { if (axis === 'x') end(); axis = null; };
+  stage.addEventListener('touchend', tend); stage.addEventListener('touchcancel', tend);
+  // trackpad: fiecare gest e ori orizontal (rotește un pas, pagina nu se mișcă), ori vertical (doar derulează pagina)
+  let wAxis = null, wLast = 0, wAx = 0, wAy = 0, wSum = 0, wDone = false;
   stage.addEventListener('wheel', e => {
-    if (Math.abs(e.deltaX) <= Math.abs(e.deltaY)) return;
-    e.preventDefault(); const now = Date.now(); if (now - wt < 350) return;
-    wl += e.deltaX; if (Math.abs(wl) > 30) { go(cur + (wl > 0 ? 1 : -1)); wl = 0; wt = now; }
+    const now = Date.now();
+    if (now - wLast > 220) { wAxis = null; wAx = wAy = wSum = 0; wDone = false; }
+    wLast = now;
+    if (!wAxis) {
+      wAx += Math.abs(e.deltaX); wAy += Math.abs(e.deltaY);
+      if (wAx + wAy >= 6) wAxis = wAx > wAy * .8 ? 'x' : 'y';
+      else { if (Math.abs(e.deltaX) >= Math.abs(e.deltaY)) e.preventDefault(); return; }
+    }
+    if (wAxis !== 'x') return;
+    e.preventDefault();
+    if (wDone) return;
+    wSum += e.deltaX;
+    if (Math.abs(wSum) > 35) { go(cur + (wSum > 0 ? 1 : -1)); wDone = true; }
   }, { passive: false });
   cf.addEventListener('keydown', e => { if (e.key === 'ArrowLeft') go(cur - 1); else if (e.key === 'ArrowRight') go(cur + 1); });
   let rt; window.addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => { size(); draw(); }, 120); });
