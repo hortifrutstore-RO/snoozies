@@ -498,14 +498,8 @@ $$('[data-cf]').forEach(cf => {
   let cur = 0, w = 300, gap = 230, dragX = null, dragDx = 0, moved = false;
   const off = i => { let d = i - cur; if (d > n / 2) d -= n; if (d < -n / 2) d += n; return d; };
   const size = () => {
-    const vw = cf.clientWidth;
-    w = vw < 520 ? Math.min(250, vw * .66) : vw < 900 ? 270 : 300;
-    gap = vw < 520 ? w * .62 : vw < 900 ? w * .7 : w * .78;
-    cf.style.setProperty('--cf-w', w + 'px');
-    items.forEach(it => it.style.height = '');
-    const h = Math.max(...items.map(it => it.offsetHeight));
-    items.forEach(it => it.style.height = h + 'px');
-    stage.style.height = h + 30 + 'px';
+    w = items[0].offsetWidth || 300;
+    gap = cf.clientWidth < 520 ? w * .62 : cf.clientWidth < 900 ? w * .7 : w * .78;
   };
   const max = () => (cf.clientWidth < 520 ? 1 : 2);
   const draw = () => {
@@ -582,7 +576,6 @@ $$('[data-cf]').forEach(cf => {
   cf.addEventListener('keydown', e => { if (e.key === 'ArrowLeft') go(cur - 1); else if (e.key === 'ArrowRight') go(cur + 1); });
   let rt; window.addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => { size(); draw(); }, 120); });
   size(); draw();
-  $$('img', cf).forEach(im => { if (!im.complete) im.addEventListener('load', () => { size(); draw(); }, { once: true }); });
 });
 
 // Meniul: dispare la derulare în jos, reapare la derulare în sus; banda roz rămâne mereu sus
