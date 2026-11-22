@@ -1,0 +1,15 @@
+{% from "_card.html" import card with context %}
+{% macro carousel(items, label) -%}
+<div class="cf" data-cf role="region" aria-roledescription="carusel" aria-label="{{ label }}">
+  <div class="cf-stage" data-cf-stage>
+    {% for p in items %}<div class="cf-item" data-cf-item role="group" aria-roledescription="produs" aria-label="{{ loop.index }} din {{ items|length }}">{{ card(p) }}</div>{% endfor %}
+  </div>
+  {% if items|length > 1 %}
+  <div class="cf-nav">
+    <button type="button" class="cf-btn" data-cf-prev aria-label="Produsul anterior"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button>
+    <div class="cf-dots" data-cf-dots>{% for p in items %}<button type="button" aria-label="Produsul {{ loop.index }}"></button>{% endfor %}</div>
+    <button type="button" class="cf-btn" data-cf-next aria-label="Produsul următor"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+  </div>
+  {% endif %}
+</div>
+{%- endmacro %}

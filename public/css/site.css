@@ -433,3 +433,31 @@ h1,h2,.serif{font-family:var(--serif);font-weight:700;color:var(--ink);letter-sp
 .acc-or{display:flex;align-items:center;gap:10px;width:100%;color:var(--muted);font-size:13px}
 .acc-or::before,.acc-or::after{content:"";flex:1;height:1px;background:var(--line)}
 @media (max-width:1000px){.acc-link{width:48px;padding:0;justify-content:center}.acc-link span{display:none}}
+
+/* Carusel produse (coverflow, rotire manuală) */
+.cf{position:relative}
+.cf-stage{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(240px,1fr);gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:8px 2px 20px}
+.cf-item{scroll-snap-align:start}
+.cf.cf-on .cf-stage{display:block;position:relative;overflow:visible;padding:0;perspective:1400px;touch-action:pan-y;user-select:none;-webkit-user-select:none}
+.cf.cf-on .cf-item{position:absolute;top:0;left:50%;width:var(--cf-w,300px);margin-left:calc(var(--cf-w,300px) / -2);transition:transform .55s cubic-bezier(.2,.8,.2,1),opacity .45s ease,filter .45s ease;will-change:transform}
+.cf.cf-on .cf-item .card{height:100%}
+.cf.cf-on .cf-item:not(.is-active){cursor:pointer}
+.cf.cf-on .cf-item:not(.is-active) .card{box-shadow:0 8px 22px rgba(46,36,32,.10)}
+.cf.cf-on .cf-item:not(.is-active) .card:hover{transform:none}
+.cf.cf-on .cf-item:not(.is-active) .card-body{opacity:.35;transition:opacity .4s}
+.cf.cf-on .cf-item.is-active .card{box-shadow:0 22px 50px rgba(46,36,32,.20)}
+.cf.cf-on .cf-item.is-active .card:hover{transform:none}
+.cf.cf-on.dragging .cf-item{transition:none}
+.cf-nav{display:none;align-items:center;justify-content:center;gap:18px;margin-top:26px}
+.cf.cf-on .cf-nav{display:flex}
+.cf-btn{width:48px;height:48px;border-radius:50%;border:2px solid var(--line);background:#fff;color:var(--ink);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:border-color .2s,background .2s,color .2s}
+.cf-btn:hover{border-color:var(--berry);background:var(--berry);color:#fff}
+.cf-dots{display:flex;gap:8px}
+.cf-dots button{width:10px;height:10px;padding:0;border:0;border-radius:999px;background:var(--sand);cursor:pointer;transition:width .3s,background .3s}
+.cf-dots button[aria-current="true"]{width:28px;background:var(--berry)}
+.related .cf,.section .cf{margin-top:8px}
+@media (max-width:760px){
+  .cf.cf-on .cf-item .card-foot{flex-direction:column;align-items:stretch}
+  .cf-nav{margin-top:18px}
+}
+@media (prefers-reduced-motion:reduce){.cf.cf-on .cf-item{transition:opacity .2s}}

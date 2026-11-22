@@ -1,4 +1,4 @@
-{% extends "base.html" %}{% from "_card.html" import card with context %}
+{% extends "base.html" %}{% from "_card.html" import card with context %}{% from "_carousel.html" import carousel with context %}
 {% block title %}Snoozies – papuci de casă pufoși pentru toată familia{% endblock %}
 {% block main %}
 <section class="wrap hero">
@@ -31,7 +31,7 @@
 {% if featured %}
 <section class="wrap section" style="padding-top:24px">
   <div class="section-head"><h2>{{ site.featuredTitle }}</h2><a class="more" href="/categorie/femei/">Vezi toate produsele</a></div>
-  <div class="grid">{% for p in featured %}{{ card(p) }}{% endfor %}</div>
+  {{ carousel(featured, site.featuredTitle) }}
 </section>
 {% endif %}
 

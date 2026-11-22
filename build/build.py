@@ -127,9 +127,19 @@ for c in site['categories']:
 
 # Produse
 for p in products:
-    rel = [r for r in products if r['category'] == p['category'] and r['sku'] != p['sku'] and r['inStock']]
-    rel.sort(key=lambda r: (r.get('sub') != p.get('sub'), abs(r['price'] - p['price'])))
-    if len(rel) < 4: rel += [r for r in products if r['category'] != p['category'] and r['inStock']][:4 - len(rel)]
+    # 2 modele din aceeași colecție + 4 din celelalte colecții (pe rând din fiecare), întâi din aceeași categorie
+    pool = [r for r in products if r['sku'] != p['sku'] and r['inStock']]
+    near = lambda r: (r['category'] != p['category'], abs(r['price'] - p['price']), r['name'])
+    same = sorted([r for r in pool if p.get('sub') and r.get('sub') == p.get('sub')], key=near)[:2]
+    by_sub = {}
+    for r in sorted([r for r in pool if r not in same and r.get('sub') != p.get('sub')], key=near):
+        by_sub.setdefault(r.get('sub') or '', []).append(r)
+    others, order = [], sorted(by_sub, key=lambda k: COLS.index(k) if k in COLS else 99)
+    while len(others) < 6 - len(same) and any(by_sub.values()):
+        for k in order:
+            if by_sub[k] and len(others) < 6 - len(same): others.append(by_sub[k].pop(0))
+    rel = same + others
+    if len(rel) < 6: rel += [r for r in sorted(pool, key=near) if r not in rel][:6 - len(rel)]
     ld = {"@context": "https://schema.org", "@type": "Product", "name": p['name'], "sku": p['sku'],
           "image": [site['url'] + '/img/p/' + i for i in p['images']],
           "description": re.sub(r'\s+', ' ', html.unescape(re.sub('<[^>]+>', ' ', p['description'])))[:500],
@@ -137,7 +147,7 @@ for p in products:
           "offers": {"@type": "Offer", "price": f"{p['price']:.2f}", "priceCurrency": "RON",
                      "availability": "https://schema.org/InStock" if p['inStock'] else "https://schema.org/OutOfStock",
                      "url": f"{site['url']}/produs/{p['slug']}/"}}
-    render('product.html', f"/produs/{p['slug']}/", p=p, related=rel[:4], active_cat=p['category'],
+    render('product.html', f"/produs/{p['slug']}/", p=p, related=rel, active_cat=p['category'],
            ld=json.dumps(ld, ensure_ascii=False).replace('</', '<\\/'))
 
 render('search.html', '/cautare/')

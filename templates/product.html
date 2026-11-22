@@ -1,4 +1,4 @@
-{% extends "base.html" %}{% from "_card.html" import card with context %}
+{% extends "base.html" %}{% from "_card.html" import card with context %}{% from "_carousel.html" import carousel with context %}
 {% block title %}{{ p.name }} | Snoozies{% endblock %}
 {% block desc %}{{ (p.short or (p.name ~ ' – papuci de casă moi și călduroși. Plata la livrare, livrare Sameday în 1–2 zile.'))[:155] }}{% endblock %}
 {% block og %}<meta property="og:image" content="{{ site.url }}/img/p/{{ p.images[0] }}"><meta property="og:type" content="product">{% endblock %}
@@ -86,7 +86,7 @@
 {% if related %}
 <section class="related"><div class="wrap">
   <div class="section-head"><h2>S-ar putea să-ți placă și</h2></div>
-  <div class="grid">{% for r in related %}{{ card(r) }}{% endfor %}</div>
+  {{ carousel(related, "S-ar putea să-ți placă și") }}
 </div></section>
 {% endif %}
 {% endblock %}

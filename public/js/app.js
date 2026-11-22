@@ -490,4 +490,75 @@ if (coF) accMe().then(me => {
   if (p.locker && p.locker.lockerId) { try { if (!store.get('snz-easybox', null)) store.set('snz-easybox', p.locker); } catch {} }
   const h = $('[data-ship-h]'); if (h && !$('.acc-hint')) h.insertAdjacentHTML('afterend', `<p class="acc-hint">Ești conectat cu ${esc(me.email)}. Am completat datele din ultima comandă.</p>`);
 });
+// Carusel produse (coverflow): produsul activ în față, celelalte pe laterale; rotire doar manuală
+$$('[data-cf]').forEach(cf => {
+  const stage = $('[data-cf-stage]', cf), items = $$('[data-cf-item]', cf), dots = $$('[data-cf-dots] button', cf), n = items.length;
+  if (n < 2) return;
+  cf.classList.add('cf-on');
+  let cur = 0, w = 300, gap = 230, dragX = null, dragDx = 0, moved = false;
+  const off = i => { let d = i - cur; if (d > n / 2) d -= n; if (d < -n / 2) d += n; return d; };
+  const size = () => {
+    const vw = cf.clientWidth;
+    w = vw < 520 ? Math.min(250, vw * .66) : vw < 900 ? 270 : 300;
+    gap = vw < 520 ? w * .62 : vw < 900 ? w * .7 : w * .78;
+    cf.style.setProperty('--cf-w', w + 'px');
+    items.forEach(it => it.style.height = '');
+    const h = Math.max(...items.map(it => it.offsetHeight));
+    items.forEach(it => it.style.height = h + 'px');
+    stage.style.height = h + 30 + 'px';
+  };
+  const max = () => (cf.clientWidth < 520 ? 1 : 2);
+  const draw = () => {
+    const vis = max();
+    items.forEach((it, i) => {
+      const d = off(i) + dragDx / gap, a = Math.abs(d);
+      const s = 1 - Math.min(a, 3) * .14, rot = Math.max(-1, Math.min(1, d)) * -32;
+      it.style.transform = `translateX(${d * gap}px) translateZ(${-a * 90}px) rotateY(${rot}deg) scale(${s})`;
+      it.style.zIndex = 100 - Math.round(a * 10);
+      it.style.opacity = a > vis + .4 ? 0 : a > vis - .6 ? Math.max(0, 1 - (a - vis + .6)) * .7 : 1 - a * .12;
+      it.style.filter = a > .5 ? `saturate(${1 - Math.min(a, 2) * .15})` : '';
+      it.style.pointerEvents = a > vis + .2 ? 'none' : '';
+      const act = off(i) === 0;
+      it.classList.toggle('is-active', act);
+      it.setAttribute('aria-hidden', act ? 'false' : 'true');
+      $$('a,button', it).forEach(x => act ? x.removeAttribute('tabindex') : x.setAttribute('tabindex', '-1'));
+    });
+    dots.forEach((b, i) => b.setAttribute('aria-current', i === cur ? 'true' : 'false'));
+  };
+  const go = i => { cur = (i % n + n) % n; draw(); };
+  $('[data-cf-prev]', cf).addEventListener('click', () => go(cur - 1));
+  $('[data-cf-next]', cf).addEventListener('click', () => go(cur + 1));
+  dots.forEach((b, i) => b.addEventListener('click', () => go(i)));
+  // click pe un produs lateral îl aduce în față (fără să deschidă pagina sau să adauge în coș)
+  stage.addEventListener('click', e => {
+    const it = e.target.closest('[data-cf-item]');
+    if (moved) { e.preventDefault(); e.stopPropagation(); moved = false; return; }
+    if (it && !it.classList.contains('is-active')) { e.preventDefault(); e.stopPropagation(); go(items.indexOf(it)); }
+  }, true);
+  stage.addEventListener('pointerdown', e => { if (e.button) return; dragX = e.clientX; dragDx = 0; moved = false; });
+  window.addEventListener('pointermove', e => {
+    if (dragX === null) return;
+    dragDx = e.clientX - dragX;
+    if (Math.abs(dragDx) > 6) { moved = true; cf.classList.add('dragging'); draw(); }
+  });
+  const end = () => {
+    if (dragX === null) return;
+    const steps = Math.round(-dragDx / gap) || (Math.abs(dragDx) > 40 ? (dragDx < 0 ? 1 : -1) : 0);
+    dragX = null; dragDx = 0; cf.classList.remove('dragging'); go(cur + steps);
+  };
+  window.addEventListener('pointerup', end); window.addEventListener('pointercancel', end);
+  stage.addEventListener('dragstart', e => e.preventDefault());
+  // trackpad: derulare orizontală
+  let wl = 0, wt = 0;
+  stage.addEventListener('wheel', e => {
+    if (Math.abs(e.deltaX) <= Math.abs(e.deltaY)) return;
+    e.preventDefault(); const now = Date.now(); if (now - wt < 350) return;
+    wl += e.deltaX; if (Math.abs(wl) > 30) { go(cur + (wl > 0 ? 1 : -1)); wl = 0; wt = now; }
+  }, { passive: false });
+  cf.addEventListener('keydown', e => { if (e.key === 'ArrowLeft') go(cur - 1); else if (e.key === 'ArrowRight') go(cur + 1); });
+  let rt; window.addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => { size(); draw(); }, 120); });
+  size(); draw();
+  $$('img', cf).forEach(im => { if (!im.complete) im.addEventListener('load', () => { size(); draw(); }, { once: true }); });
+});
+
 })();
