@@ -585,4 +585,23 @@ $$('[data-cf]').forEach(cf => {
   $$('img', cf).forEach(im => { if (!im.complete) im.addEventListener('load', () => { size(); draw(); }, { once: true }); });
 });
 
+// Meniul: dispare la derulare în jos, reapare la derulare în sus; banda roz rămâne mereu sus
+(() => {
+  const ann = $('.announce'), hdr = $('.site-header'); if (!hdr) return;
+  const setH = () => document.documentElement.style.setProperty('--ann-h', (ann ? ann.offsetHeight : 0) + 'px');
+  setH(); window.addEventListener('resize', setH);
+  let last = window.scrollY, ticking = false;
+  const upd = () => {
+    ticking = false;
+    const y = window.scrollY, dy = y - last;
+    const busy = hdr.contains(document.activeElement) && document.activeElement.matches('input');
+    if (y < hdr.offsetHeight + 40 || busy) hdr.classList.remove('is-hidden');
+    else if (dy > 6) hdr.classList.add('is-hidden');
+    else if (dy < -6) hdr.classList.remove('is-hidden');
+    if (Math.abs(dy) > 6 || y < 40) last = y;
+  };
+  window.addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(upd); } }, { passive: true });
+  hdr.addEventListener('focusin', () => hdr.classList.remove('is-hidden'));
+})();
+
 })();

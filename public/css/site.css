@@ -461,3 +461,13 @@ h1,h2,.serif{font-family:var(--serif);font-weight:700;color:var(--ink);letter-sp
   .cf-nav{margin-top:18px}
 }
 @media (prefers-reduced-motion:reduce){.cf.cf-on .cf-item{transition:opacity .2s}}
+
+/* Nimic nu lățește pagina pe orizontală (cardurile laterale din carusel ies din ecran) */
+main{overflow-x:clip}
+
+/* Banda de sus rămâne fixă; meniul se ascunde la derulare în jos și revine la derulare în sus */
+.announce{position:sticky;top:0;z-index:41}
+.site-header{top:var(--ann-h,0px);transition:transform .3s ease}
+.site-header.is-hidden{transform:translateY(-100%)}
+.site-header.is-hidden .suggest{display:none}
+@media (prefers-reduced-motion:reduce){.site-header{transition:none}}
