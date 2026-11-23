@@ -1,0 +1,1 @@
+{% if site.ratings %}<span class="rating-line">{% for r in site.ratings %}<span class="rt"><span class="stars" aria-hidden="true">★</span> <b>{{ '%.1f'|format(r.value)|replace('.', ',') }}</b> din {% if r.plus %}peste {% endif %}{{ '{:,}'.format(r.count)|replace(',', '.') }} {{ r.text }}</span>{% endfor %}</span>{% endif %}

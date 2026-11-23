@@ -23,6 +23,7 @@
     <div class="buy">
       <span class="label">Papuci de casă · {{ p.categoryName }}</span>
       <h1>{{ p.name|replace('Papuci de casă ', '')|replace('femei ', '')|replace('bărbați ', '')|replace('copii ', '')|replace('bebeluși ', '') }}</h1>
+      <div class="pdp-rating">{% include "_rating.html" %}</div>
       <div class="price"><span class="now">{{ p.price|lei }}</span>{% if p.oldPrice %}<s>{{ p.oldPrice|lei }}</s>{% endif %}</div>
       {% if p.short %}<p class="lead">{{ p.short }}</p>{% endif %}
       {% if p.inStock %}
@@ -35,7 +36,7 @@
       {% if p.sizes %}
       <fieldset class="size-pick" data-sizes>
         <legend>Alege mărimea</legend>
-        {% for z in p.sizes %}<label class="size" data-color="{{ z.color }}"><input type="radio" name="size" value="{{ z.sku }}" data-size="{{ z.size }}"{% if not z.inStock %} disabled{% endif %}><span><b>{{ z.size if z.size != 'U' else 'Unică' }}</b>{% if z.range %}<small>{{ z.range }}</small>{% endif %}</span></label>{% endfor %}
+        {% for z in p.sizes %}<label class="size" data-color="{{ z.color }}"><input type="radio" name="size" value="{{ z.sku }}" data-size="{{ z.size }}" data-range="{{ z.range or '' }}"{% if not z.inStock %} disabled{% endif %}><span><b>{{ z.size if z.size != 'U' else 'Unică' }}</b>{% if z.range %}<small>{{ z.range }}</small>{% endif %}</span></label>{% endfor %}
       </fieldset>
       <p class="size-msg" data-size-msg role="alert" hidden>Alege mai întâi mărimea.</p>
       {% endif %}

@@ -158,6 +158,20 @@ env.globals.update(srcset=srcset, imgset=imgset)
 if __name__ == '__main__': make_webp()
 base['webp'] = bool(VARIANTS)
 
+# Mărimi pentru carduri și filtru: intervalul numeric (36–37 -> 36..37) sau eticheta (0–3 luni)
+LOW_STOCK = 10  # „Ultimele perechi” când stocul total al modelului e la cel mult atâtea perechi
+def size_key(z):
+    m = re.fullmatch(r'(\d+(?:[.,]\d+)?)\s*[–-]\s*(\d+(?:[.,]\d+)?)', (z.get('range') or '').strip())
+    if m: return [float(m.group(1).replace(',', '.')), float(m.group(2).replace(',', '.'))]
+    return z.get('range') or z['size']
+for p in products:
+    zs = p.get('sizes') or []
+    total = sum((z.get('stock') or 0) for z in zs if z.get('inStock'))
+    p['lowStock'] = bool(p['inStock'] and zs and 0 < total <= LOW_STOCK)
+    p['oneColor'] = len(p.get('colors') or []) <= 1
+    p['sizeKeys'] = [size_key(z) for z in zs if z.get('inStock')]
+    p['cardSizes'] = [dict(label=z.get('range') or z['size'], sku=z['sku'], inStock=z.get('inStock'), key=size_key(z)) for z in zs] if p['oneColor'] and zs and zs[0]['size'] != 'U' else []
+
 # Prima pagină
 featured = sorted([p for p in products if p.get('featured') and p['inStock']], key=lambda p: p.get('featuredOrder') or 0)[:8] or [p for p in products if p['inStock']][:8]
 cats = []
@@ -175,7 +189,13 @@ for c in site['categories']:
     for p in items:
         if p.get('sub'): subs[p['sub']] = subs.get(p['sub'], 0) + 1
     prices = [p['price'] for p in items] or [0]
-    render('category.html', f"/categorie/{c['slug']}/", cat=c, products=items, active_cat=c['slug'],
+    nums, labels = set(), []
+    for p in items:
+        for k in p['sizeKeys']:
+            if isinstance(k, list): nums.update(range(int(k[0]), int(k[1]) + 1))
+            elif k not in labels and k != 'U': labels.append(k)
+    size_opts = labels + [str(n) for n in sorted(nums)]
+    render('category.html', f"/categorie/{c['slug']}/", cat=c, products=items, size_opts=size_opts, active_cat=c['slug'],
            subs=[dict(name=k, n=v) for k, v in sorted(subs.items(), key=lambda x: (COLS.index(x[0]) if x[0] in COLS else 99, -x[1]))],
            pmin=int(min(prices)), pmax=int(max(prices)) + 1)
 

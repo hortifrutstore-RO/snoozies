@@ -478,3 +478,45 @@ main{overflow-x:clip}
 .site-header.is-hidden{transform:translateY(-100%)}
 .site-header.is-hidden .suggest{display:none}
 @media (prefers-reduced-motion:reduce){.site-header{transition:none}}
+
+/* Bara de filtre: un singur rând care se derulează orizontal; mărimea prima */
+.toolbar{display:block}
+.tb-row{display:flex;gap:8px;align-items:center;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding:2px 2px 6px;margin:0 -2px;scroll-snap-type:x proximity}
+.tb-row::-webkit-scrollbar{display:none}
+.tb-row>*{flex:0 0 auto;scroll-snap-align:start}
+.tb-row .chip{white-space:nowrap}
+.tb-sep{width:2px;height:26px;background:var(--line);border-radius:2px;margin:0 2px}
+.chip-select{position:relative;display:inline-flex;align-items:center;padding:0;gap:0}
+.chip-select select{appearance:none;-webkit-appearance:none;border:0;background:transparent;font:inherit;font-weight:700;color:inherit;padding:8px 34px 8px 14px;cursor:pointer;border-radius:999px}
+.chip-select::after{content:"";position:absolute;right:14px;top:50%;width:7px;height:7px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:translateY(-70%) rotate(45deg);pointer-events:none}
+.chip-select:focus-within{border-color:var(--ink)}
+.chip-size{border-color:var(--berry);color:var(--berry)}
+.chip-size.is-set{background:var(--berry);border-color:var(--berry);color:#fff}
+.tb-meta{display:flex;align-items:center;gap:6px 18px;flex-wrap:wrap;margin-top:12px;color:var(--muted);font-size:15px}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* Rating magazin */
+.rating-line{display:inline-flex;flex-wrap:wrap;gap:4px 14px;font-size:14px;color:var(--muted)}
+.rating-line .stars{color:#e8a317}
+.rating-line b{color:var(--ink)}
+.pdp-rating{margin:-4px 0 10px}
+
+/* Etichete: reducere / ultimele perechi (alternează când sunt amândouă) */
+.badge.hot{background:var(--berry);color:#fff}
+.badge-alt{display:grid}
+.badge-alt>span{grid-area:1/1;animation:badgeSwap 6s infinite}
+.badge-alt>span+span{animation-delay:-3s}
+@keyframes badgeSwap{0%,42%{opacity:1}50%,92%{opacity:0}100%{opacity:1}}
+@media (prefers-reduced-motion:reduce){.badge-alt>span{animation:none}.badge-alt>span+span{display:none}}
+
+/* Mărimile pe card: atingi mărimea și intră direct în coș */
+.card-foot:has(.card-sizes){display:block}
+.card-sizes{display:flex;flex-direction:column;gap:6px}
+.cs-label{font-size:12px;font-weight:700;color:var(--muted-3);letter-spacing:.02em}
+.cs-row{display:flex;flex-wrap:wrap;gap:6px}
+.sz{min-width:44px;min-height:40px;padding:6px 10px;border:2px solid var(--line);border-radius:12px;background:#fff;color:var(--ink);font:inherit;font-size:14px;font-weight:800;cursor:pointer;transition:border-color .15s,background .15s,color .15s;touch-action:manipulation}
+.sz:hover{border-color:var(--berry);color:var(--berry)}
+.sz:disabled{color:var(--muted-3);background:transparent;border-style:dashed;text-decoration:line-through;cursor:not-allowed}
+.sz.is-match{border-color:var(--berry);background:var(--berry);color:#fff}
+.sz.added{border-color:var(--pine);background:var(--pine);color:#fff}
+@media (max-width:640px){.sz{min-width:0;flex:1 1 auto;padding:6px 6px;font-size:13px}.cs-label{font-size:11px}}

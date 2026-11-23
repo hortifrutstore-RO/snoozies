@@ -70,14 +70,21 @@ document.addEventListener('click', e => {
     if (m) m.hidden = true; sku = r.value;
   }
   cart.add(sku, q);
-  b.classList.add('added'); const old = b.textContent; b.textContent = 'Adăugat ✓';
-  setTimeout(() => { b.classList.remove('added'); b.textContent = old; }, 1600);
-  toast('Produsul a fost adăugat în coș <a href="/cos/">Vezi coșul</a>');
+  if (b.classList.contains('sz')) {
+    b.classList.add('added'); setTimeout(() => b.classList.remove('added'), 1400);
+    const c = b.closest('.card'), nm = c ? c.dataset.name.replace(/^Papuci de casă\s+(femei |bărbați |copii |bebeluși )?/i, '').replace(/^Snoozies\s+/i, '') : '';
+    toast(`<strong>${esc(nm)}</strong>, mărimea ${esc(b.dataset.label)}, a fost adăugat în coș <a href="/cos/">Vezi coșul</a>`);
+  } else {
+    b.classList.add('added'); const old = b.textContent; b.textContent = 'Adăugat ✓';
+    setTimeout(() => { b.classList.remove('added'); b.textContent = old; }, 1600);
+    toast('Produsul a fost adăugat în coș <a href="/cos/">Vezi coșul</a>');
+  }
   track('add_to_cart', { items: [{ item_id: sku, quantity: q }] });
 });
 
 /* ---------- stoc în timp real ---------- */
 liveStock().then(st => {
+  $$('.card .sz[data-add]').forEach(b => { const q = st[b.dataset.add]; if (q !== undefined && q <= 0 && !b.disabled) { b.disabled = true; b.classList.remove('is-match'); b.setAttribute('aria-label', 'Mărimea ' + b.dataset.label + ', stoc epuizat'); } });
   $$('.card[data-sku]:not([data-sized])').forEach(c => { const q = st[c.dataset.sku]; if (q === undefined) return;
     if (q <= 0 && c.dataset.stock === '1') { c.dataset.stock = '0'; c.classList.add('is-out'); const b = $('[data-add]', c); if (b) { b.outerHTML = '<span class="btn btn-ghost" aria-disabled="true">Epuizat</span>'; } const bd = $('.badge', c); if (bd) bd.remove(); c.insertAdjacentHTML('afterbegin', '<span class="badge out">Stoc epuizat</span>'); } });
   const buy = $('[data-with-qty]'); if (!buy) return;
@@ -101,15 +108,23 @@ $$('[data-qty]').forEach(b => b.addEventListener('click', () => { const i = $('[
 const gal = $('[data-gallery]');
 if (gal) gal.addEventListener('click', e => { const t = e.target.closest('[data-src]'); if (!t) return; const mi = $('[data-main]', gal); if (t.dataset.srcset) mi.srcset = t.dataset.srcset; else mi.removeAttribute('srcset'); mi.src = t.dataset.src; $$('[data-src]', gal).forEach(x => x.setAttribute('aria-current', x === t ? 'true' : 'false')); });
 
+// Mărimea aleasă se potrivește cu intervalul unui produs? (36–37 conține 36 și 37; „0–3 luni” se compară ca text)
+const sizeFits = (k, v) => Array.isArray(k) ? (+v >= k[0] && +v <= k[1]) : k === v;
+
 /* ---------- category filters ---------- */
 const listing = $('[data-listing]');
 if (listing) {
   const grid = $('[data-grid]', listing), cards = $$('.card', grid), count = $('[data-count]', listing), empty = $('[data-empty]', listing);
   let col = '';
+  const sizeSel = $('[data-f-size]', listing);
+  if (sizeSel) { let saved = ''; try { saved = localStorage.getItem('snz-size') || ''; } catch {} if (saved && [...sizeSel.options].some(o => o.value === saved)) sizeSel.value = saved; }
   cards.forEach((c, i) => c.dataset.i = i);
   const apply = () => {
     const sort = $('[data-sort]', listing).value;
-    let vis = cards.filter(c => !col || c.dataset.sub === col);
+    const sz = sizeSel ? sizeSel.value : '';
+    if (sizeSel) { sizeSel.closest('.chip-size').classList.toggle('is-set', !!sz); try { sz ? localStorage.setItem('snz-size', sz) : localStorage.removeItem('snz-size'); } catch {} }
+    let vis = cards.filter(c => (!col || c.dataset.sub === col) && (!sz || JSON.parse(c.dataset.sizes || '[]').some(k => sizeFits(k, sz))));
+    $$('.sz', grid).forEach(b => b.classList.toggle('is-match', !!sz && !b.disabled && sizeFits(JSON.parse(b.dataset.key), sz)));
     const key = { pa: (a, b) => a.dataset.price - b.dataset.price, pd: (a, b) => b.dataset.price - a.dataset.price, off: (a, b) => b.dataset.off - a.dataset.off, rec: (a, b) => (b.dataset.stock - a.dataset.stock) || (a.dataset.i - b.dataset.i) }[sort];
     vis.sort(key);
     cards.forEach(c => c.hidden = true); vis.forEach(c => { c.hidden = false; grid.appendChild(c); });
@@ -122,6 +137,18 @@ if (listing) {
   if (want) { const b = $$('[data-f-col]', listing).find(x => norm(x.dataset.fCol).includes(want)); if (b) { col = b.dataset.fCol; $$('[data-f-col]', listing).forEach(x => x.setAttribute('aria-pressed', x === b ? 'true' : 'false')); } }
   apply();
 }
+
+/* ---------- mărimea ținută minte -> preselectată pe pagina de produs ---------- */
+(() => {
+  const box = $('[data-sizes]'); if (!box) return;
+  let v = ''; try { v = localStorage.getItem('snz-size') || ''; } catch {} if (!v) return;
+  const key = r => { const m = (r.dataset.range || '').match(/^(\d+(?:[.,]\d+)?)\s*[–-]\s*(\d+(?:[.,]\d+)?)$/); return m ? [parseFloat(m[1].replace(',', '.')), parseFloat(m[2].replace(',', '.'))] : (r.dataset.range || r.dataset.size); };
+  setTimeout(() => {
+    if ($('input:checked', box)) return;
+    const ok = $$('input', box).filter(r => !r.disabled && !r.closest('label').hidden && sizeFits(key(r), v));
+    if (ok.length === 1) { ok[0].checked = true; ok[0].dispatchEvent(new Event('change', { bubbles: true })); }
+  }, 400);
+})();
 
 /* ---------- culoare + mărime pe pagina de produs ---------- */
 const colorBox = $('[data-colors]');

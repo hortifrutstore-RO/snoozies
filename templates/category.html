@@ -11,21 +11,21 @@
   {% endif %}
   <div class="listing" data-listing>
     <div class="toolbar">
-      {% if subs|length > 1 %}
-      <div class="chips" role="group" aria-label="Filtrează după colecție">
-        <button type="button" class="chip" data-f-col="" aria-pressed="true">Toate</button>
-        {% for s in subs %}<button type="button" class="chip" data-f-col="{{ s.name }}" aria-pressed="false">{{ s.name }}</button>{% endfor %}
-      </div>
-      {% else %}<span></span>{% endif %}
-      <div class="right">
-        <span data-count>{{ products|length }} {{ 'produs' if products|length == 1 else 'produse' }}</span>
-        <label>Sortează <select data-sort>
+      <div class="tb-row" role="group" aria-label="Filtre și sortare">
+        {% if size_opts %}<label class="chip chip-select chip-size"><span class="vh">Mărimea ta</span><select data-f-size aria-label="Mărimea ta"><option value="">Mărimea ta</option>{% for o in size_opts %}<option value="{{ o }}">{{ o if not o[0].isdigit() or '–' in o else 'Mărimea ' ~ o }}</option>{% endfor %}</select></label>{% endif %}
+        <label class="chip chip-select"><span class="vh">Sortează</span><select data-sort aria-label="Sortează">
           <option value="rec">Recomandate</option><option value="pa">Preț crescător</option><option value="pd">Preț descrescător</option><option value="off">Reduceri</option>
         </select></label>
+        {% if subs|length > 1 %}
+        <span class="tb-sep" aria-hidden="true"></span>
+        <button type="button" class="chip" data-f-col="" aria-pressed="true">Toate</button>
+        {% for s in subs %}<button type="button" class="chip" data-f-col="{{ s.name }}" aria-pressed="false">{{ s.name }}</button>{% endfor %}
+        {% endif %}
       </div>
+      <div class="tb-meta"><span data-count>{{ products|length }} {{ 'produs' if products|length == 1 else 'produse' }}</span>{% include "_rating.html" %}</div>
     </div>
-    <div class="grid" data-grid>{% for p in products %}{{ card(p) }}{% endfor %}</div>
-    <div class="empty" data-empty hidden>Niciun produs în această colecție.</div>
+    <div class="grid" data-grid>{% for p in products %}{{ card(p, False) }}{% endfor %}</div>
+    <div class="empty" data-empty hidden>Niciun produs nu se potrivește. Încearcă altă mărime sau colecție.</div>
   </div>
 </div>
 {% endblock %}
