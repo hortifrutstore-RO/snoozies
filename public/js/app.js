@@ -405,9 +405,9 @@ const ono = $('[data-order-no]'); if (ono) ono.textContent = new URLSearchParams
 let gLoaded = false;
 // Consent mode avansat: tag-ul se încarcă mereu; fără acord trimite doar semnale fără cookie-uri (Google modelează conversiile).
 function loadGoogle() {
-  if (gLoaded || !(S.ga4 || S.ads)) return; gLoaded = true;
-  const id = S.ga4 || S.ads; const s = document.createElement('script'); s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=' + id; document.head.appendChild(s);
-  gtag('js', new Date()); if (S.ga4) gtag('config', S.ga4); if (S.ads) gtag('config', S.ads);
+  if (gLoaded || !(S.ga4 || S.ads || S.ads2)) return; gLoaded = true;
+  const id = S.ga4 || S.ads || S.ads2; const s = document.createElement('script'); s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=' + id; document.head.appendChild(s);
+  gtag('js', new Date()); if (S.ga4) gtag('config', S.ga4); if (S.ads) gtag('config', S.ads); if (S.ads2) gtag('config', S.ads2);
 }
 function consent(all) {
   store.set('consent', { all, t: Date.now() });
@@ -429,6 +429,7 @@ loadGoogle();
   let b = null; try { b = JSON.parse(sessionStorage.getItem('buy') || 'null'); sessionStorage.removeItem('buy'); } catch {}
   if (!b || !$('[data-order-no]')) return;
   if (S.ads && S.adsBuy) gtag('event', 'conversion', { send_to: S.ads + '/' + S.adsBuy, value: b.value, currency: 'RON', transaction_id: b.id });
+  if (S.ads2 && S.adsBuy2) gtag('event', 'conversion', { send_to: S.ads2 + '/' + S.adsBuy2, value: b.value, currency: 'RON', transaction_id: b.id });
   if (S.ga4) gtag('event', 'purchase', { transaction_id: b.id, value: b.value, currency: 'RON', items: b.items });
 })();
 if (ck) ck.addEventListener('click', e => { const b = e.target.closest('[data-ck]'); if (!b) return; consent(b.dataset.ck === 'all'); ck.classList.remove('show'); });
