@@ -12,7 +12,7 @@
     </div>
   </div>
   <div class="hero-pic">
-    <img class="hero-img" src="{{ site.hero.image }}" alt="{{ site.hero.imageAlt }}" width="1100" height="1100" fetchpriority="high">
+    <img class="hero-img" src="{{ site.hero.image }}"{{ imgset(site.hero.image, "(max-width:900px) 100vw, 620px") }} alt="{{ site.hero.imageAlt }}" width="1100" height="1100" fetchpriority="high">
     {% if site.hero.sticker %}<span class="sticker" aria-hidden="true">{{ site.hero.sticker }}</span>{% endif %}
   </div>
 </section>
@@ -40,7 +40,7 @@
   <div class="cats">
   {% for c in cats %}
     <a class="cat" href="/categorie/{{ c.slug }}/">
-      <div class="cat-img"><img src="{{ c.img }}" alt="" loading="lazy" width="600" height="750"></div>
+      <div class="cat-img"><img src="{{ c.img }}"{{ imgset(c.img, "(max-width:600px) 50vw, 300px") }} alt="" loading="lazy" width="600" height="750"></div>
       <strong>{{ c.name }} <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></strong>
       <span>{{ c.count }} {{ 'model' if c.count == 1 else 'modele' }}</span>
     </a>
@@ -52,7 +52,7 @@
 <section class="story" style="margin-top:0">
   <svg class="wave" viewBox="0 0 1440 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40C240 0 480 0 720 20s480 20 720-10v30z" fill="#2F5D50"/></svg>
   <div class="wrap">
-    <img src="{{ site.story.image }}" alt="{{ site.story.imageAlt }}" loading="lazy" width="1000" height="1000">
+    <img src="{{ site.story.image }}"{{ imgset(site.story.image, "(max-width:900px) 100vw, 600px") }} alt="{{ site.story.imageAlt }}" loading="lazy" width="1000" height="1000">
     <div class="story-text">
       {% if site.story.eyebrow %}<span class="eyebrow pink">{{ site.story.eyebrow }}</span>{% endif %}
       <h2>{{ site.story.title }}</h2>

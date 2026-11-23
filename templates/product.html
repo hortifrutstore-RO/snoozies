@@ -11,12 +11,12 @@
   <section class="pdp">
     <div class="gallery" data-gallery>
       <div class="gallery-main">
-        <img src="/img/p/{{ p.images[0] }}" alt="{{ p.name }}" width="1000" height="1000" data-main>
+        <img src="/img/p/{{ p.images[0] }}"{{ imgset("/img/p/" ~ p.images[0], "(max-width:900px) 100vw, 620px") }} alt="{{ p.name }}" width="1000" height="1000" fetchpriority="high" data-main>
         {% if not p.inStock %}<span class="badge out">Stoc epuizat</span>{% elif p.off %}<span class="badge pink">−{{ p.off }}%</span>{% elif p.sub %}<span class="badge{% if p.sub != 'Crăciun' %} pink{% endif %}">{{ p.sub }}</span>{% endif %}
       </div>
       {% if p.images|length > 1 %}
       <div class="thumbs">
-        {% for im in p.images %}<button type="button" data-img-color="{{ p.imgColor[loop.index0] }}" aria-label="Imaginea {{ loop.index }}" aria-current="{{ 'true' if loop.first else 'false' }}" data-src="/img/p/{{ im }}"><img src="/img/p/{{ im }}" alt="" loading="lazy"></button>{% endfor %}
+        {% for im in p.images %}<button type="button" data-img-color="{{ p.imgColor[loop.index0] }}" aria-label="Imaginea {{ loop.index }}" aria-current="{{ 'true' if loop.first else 'false' }}" data-src="/img/p/{{ im }}" data-srcset="{{ srcset("/img/p/" ~ im) }}"><img src="/img/p/{{ im }}"{{ imgset("/img/p/" ~ im, "100px") }} alt="" loading="lazy"></button>{% endfor %}
       </div>
       {% endif %}
     </div>
@@ -29,7 +29,7 @@
       {% if p.colors %}
       <fieldset class="color-pick" data-colors>
         <legend>Culoare: <span data-color-name>{{ p.colors[0].name }}</span></legend>
-        {% for c in p.colors %}<label class="swatch" title="{{ c.name }}"><input type="radio" name="color" value="{{ c.name }}" data-img="{{ ('/img/p/' ~ c.image) if c.image else '' }}"{% if loop.first %} checked{% endif %}><span>{% if c.image %}<img src="/img/p/{{ c.image }}" alt="" loading="lazy">{% else %}<i style="background:{{ c.hex or '#D9C7AE' }}"></i>{% endif %}<b class="sr">{{ c.name }}</b></span></label>{% endfor %}
+        {% for c in p.colors %}<label class="swatch" title="{{ c.name }}"><input type="radio" name="color" value="{{ c.name }}" data-img="{{ ('/img/p/' ~ c.image) if c.image else '' }}" data-srcset="{{ srcset('/img/p/' ~ c.image) if c.image else '' }}"{% if loop.first %} checked{% endif %}><span>{% if c.image %}<img src="/img/p/{{ c.image }}" alt="" loading="lazy">{% else %}<i style="background:{{ c.hex or '#D9C7AE' }}"></i>{% endif %}<b class="sr">{{ c.name }}</b></span></label>{% endfor %}
       </fieldset>
       {% endif %}
       {% if p.sizes %}

@@ -99,7 +99,7 @@ liveStock().then(st => {
 /* ---------- product page ---------- */
 $$('[data-qty]').forEach(b => b.addEventListener('click', () => { const i = $('[data-qty-input]'); i.value = Math.max(1, Math.min(parseInt(i.max, 10) || 99, (parseInt(i.value, 10) || 1) + parseInt(b.dataset.qty, 10))); }));
 const gal = $('[data-gallery]');
-if (gal) gal.addEventListener('click', e => { const t = e.target.closest('[data-src]'); if (!t) return; $('[data-main]', gal).src = t.dataset.src; $$('[data-src]', gal).forEach(x => x.setAttribute('aria-current', x === t ? 'true' : 'false')); });
+if (gal) gal.addEventListener('click', e => { const t = e.target.closest('[data-src]'); if (!t) return; const mi = $('[data-main]', gal); if (t.dataset.srcset) mi.srcset = t.dataset.srcset; else mi.removeAttribute('srcset'); mi.src = t.dataset.src; $$('[data-src]', gal).forEach(x => x.setAttribute('aria-current', x === t ? 'true' : 'false')); });
 
 /* ---------- category filters ---------- */
 const listing = $('[data-listing]');
@@ -130,7 +130,7 @@ if (colorBox) {
   const pickColor = () => {
     const c = $('input:checked', colorBox); if (!c) return;
     $('[data-color-name]').textContent = c.value;
-    if (c.dataset.img && main) { main.src = c.dataset.img; $$('.thumbs button').forEach(b => { b.setAttribute('aria-current', b.dataset.src === c.dataset.img ? 'true' : 'false'); b.hidden = !!b.dataset.imgColor && b.dataset.imgColor !== c.value; }); }
+    if (c.dataset.img && main) { if (c.dataset.srcset) main.srcset = c.dataset.srcset; else main.removeAttribute('srcset'); main.src = c.dataset.img; $$('.thumbs button').forEach(b => { b.setAttribute('aria-current', b.dataset.src === c.dataset.img ? 'true' : 'false'); b.hidden = !!b.dataset.imgColor && b.dataset.imgColor !== c.value; }); }
     if (!sizeBox) return;
     const labels = $$('.size', sizeBox);
     labels.forEach(l => { const on = l.dataset.color === c.value; l.hidden = !on; if (!on) $('input', l).checked = false; });

@@ -1,6 +1,7 @@
 """Generează site-ul static în dist/ din data/*.json, templates/ și content/.
 Rulare: python3 build/build.py"""
 import json, os, shutil, datetime, re, html
+from markupsafe import Markup
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 import bleach
 
@@ -104,6 +105,59 @@ def render(tpl, path, **kw):
 if os.path.exists(DIST): shutil.rmtree(DIST)
 shutil.copytree(os.path.join(ROOT, 'public'), DIST)
 
+# Variante WebP pentru poze (originalele rămân neatinse; se generează la fiecare publicare)
+VARIANTS = {}
+def _webp_job(a):
+    src, outs = a
+    from PIL import Image
+    im = Image.open(src); im.load()
+    keep_alpha = im.mode in ('RGBA', 'LA') or (im.mode == 'P' and 'transparency' in im.info)
+    im = im.convert('RGBA' if keep_alpha else 'RGB')
+    q = 88 if src.lower().endswith('.png') else 82
+    for w, out in outs:
+        x = im if w >= im.width else im.resize((w, round(im.height * w / im.width)), Image.LANCZOS)
+        x.save(out, 'WEBP', quality=q, method=4)
+def make_webp():
+    try:
+        import PIL  # noqa
+    except ImportError:
+        import subprocess, sys
+        subprocess.run([sys.executable, '-m', 'pip', 'install', '-q', 'pillow'], check=False)
+    try:
+        from PIL import Image
+    except ImportError:
+        print('ATENȚIE: Pillow lipsește, pozele rămân doar JPEG/PNG'); return
+    from concurrent.futures import ProcessPoolExecutor
+    jobs = []
+    for sub in ('img/p', 'img/site'):
+        d = os.path.join(DIST, sub)
+        for fn in sorted(os.listdir(d)):
+            base, ext = os.path.splitext(fn)
+            if ext.lower() not in ('.jpg', '.jpeg', '.png') or base in ('favicon', 'logo-email'): continue
+            src = os.path.join(d, fn)
+            try: w = Image.open(src).width
+            except Exception: continue
+            outs = [(x, os.path.join(d, f'{base}-{x}.webp')) for x in (400, 800) if x < w] + [(w, os.path.join(d, base + '.webp'))]
+            VARIANTS[f'/{sub}/{fn}'] = [(x, f'/{sub}/' + os.path.basename(o)) for x, o in outs]
+            jobs.append((src, outs))
+    try:
+        with ProcessPoolExecutor() as ex: list(ex.map(_webp_job, jobs, chunksize=4))
+    except Exception as e:
+        print('ATENȚIE: conversia WebP a eșuat:', e); VARIANTS.clear(); return
+    print(f'WebP: {len(jobs)} poze')
+def srcset(url):
+    v = VARIANTS.get(url or '')
+    return ', '.join(f'{u} {w}w' for w, u in v) if v else ''
+def imgset(url, sizes):
+    ss = srcset(url)
+    return Markup(f' srcset="{ss}" sizes="{sizes}"') if ss else ''
+def small(url):
+    v = VARIANTS.get(url or '')
+    return v[0][1] if v else url
+env.globals.update(srcset=srcset, imgset=imgset)
+if __name__ == '__main__': make_webp()
+base['webp'] = bool(VARIANTS)
+
 # Prima pagină
 featured = sorted([p for p in products if p.get('featured') and p['inStock']], key=lambda p: p.get('featuredOrder') or 0)[:8] or [p for p in products if p['inStock']][:8]
 cats = []
@@ -168,7 +222,7 @@ open(os.path.join(DIST, '404.html'), 'w', encoding='utf-8').write(env.get_templa
 # Index pentru căutare și coș (public, doar date de afișare)
 os.makedirs(os.path.join(DIST, 'data'), exist_ok=True)
 idx = [dict(sku=p['sku'], slug=p['slug'], name=p['name'], cat=p['categoryName'], catSlug=p['category'], sub=p.get('sub'),
-            price=p['price'], old=p.get('oldPrice'), off=p['off'], inStock=p['inStock'], img=p['images'][0], featured=p.get('featured', False),
+            price=p['price'], old=p.get('oldPrice'), off=p['off'], inStock=p['inStock'], img=small('/img/p/' + p['images'][0]).split('/img/p/', 1)[-1], featured=p.get('featured', False),
             sizes=[dict(s=z['size'], c=z.get('color', ''), r=z.get('range', ''), sku=v['sku'], n=v['name'], i=v['inStock']) for z, v in zip(p['sizes'], variants(p))] if p['sizes'] else None)
        for p in products]
 json.dump(idx, open(os.path.join(DIST, 'data/search.json'), 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))

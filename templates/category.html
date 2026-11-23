@@ -5,7 +5,7 @@
 <div class="wrap">
   <nav class="crumbs" aria-label="Navigare"><a href="/">Acasă</a><span aria-hidden="true">/</span><span>{{ cat.name }}</span></nav>
   {% if cat.image %}
-  <div class="cat-hero"><img src="{{ cat.image }}" alt="" width="1600" height="600"><div class="box"><h1>{{ cat.title or cat.name }}</h1><p>{{ cat.intro }}</p></div></div>
+  <div class="cat-hero"><img src="{{ cat.image }}"{{ imgset(cat.image, "(max-width:1320px) 100vw, 1280px") }} alt="" width="1600" height="600" fetchpriority="high"><div class="box"><h1>{{ cat.title or cat.name }}</h1><p>{{ cat.intro }}</p></div></div>
   {% else %}
   <div class="page-head"><h1>{{ cat.name }}</h1><p>{{ cat.intro }}</p></div>
   {% endif %}

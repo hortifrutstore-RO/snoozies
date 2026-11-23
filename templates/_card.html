@@ -1,7 +1,7 @@
 {% macro card(p) -%}
 <article class="card{% if not p.inStock %} is-out{% endif %}" data-sku="{{ p.sku }}" data-price="{{ p.price }}" data-sub="{{ p.sub or '' }}" data-stock="{{ 1 if p.inStock else 0 }}" data-name="{{ p.name }}" data-off="{{ p.off or 0 }}"{% if p.sizes %} data-sized{% endif %}>
   <a class="card-img" href="/produs/{{ p.slug }}/" tabindex="-1" aria-hidden="true">
-    <img src="/img/p/{{ p.images[0] }}" alt="" loading="lazy" width="600" height="600">
+    <img src="/img/p/{{ p.images[0] }}"{{ imgset("/img/p/" ~ p.images[0], "(max-width:600px) 66vw, 300px") }} alt="" loading="lazy" width="600" height="600">
   </a>
   {% if not p.inStock %}<span class="badge out">Stoc epuizat</span>{% elif p.off %}<span class="badge pink">−{{ p.off }}%</span>{% elif p.sub == 'Crăciun' %}<span class="badge">Crăciun</span>{% elif p.sub %}<span class="badge pink">{{ p.sub }}</span>{% endif %}
   <div class="card-body">
