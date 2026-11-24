@@ -46,3 +46,9 @@ npx wrangler pages dev dist
 - Cu ele: la comandă apare harta oficială de easybox; în panou, butonul „Emite AWB Sameday” (serviciul 24H la adresă, Locker NextDay la easybox, PUDO la punctele Sameday), eticheta PDF A6/A4, anularea AWB-ului și verificarea automată a livrării la deschiderea panoului.
 - Serviciile și punctul de ridicare se citesc din contul Sameday (păstrate 24 h). Greutatea implicită: `shipping.weightPerItem` × bucăți, modificabilă la emitere.
 - Codul e în `functions/_lib/sameday.js`, `functions/api/admin/orders/[id]/awb.js`, `label.js`, `functions/api/admin/sameday/`, `functions/api/easybox.js` — același pe magazin-horticol.ro.
+## Plata cu cardul (NETOPIA Payments, API v2)
+- Variabile în Cloudflare Pages (Settings → Variables and secrets): `NETOPIA_API_KEY` (secret), `NETOPIA_POS` (semnătura punctului de vânzare), `NETOPIA_PUBLIC_KEY` (conținutul fișierului .cer „Cheie publică”, inclusiv liniile BEGIN/END), `NETOPIA_LIVE` = `1` doar pentru plăți reale.
+- Fără `NETOPIA_LIVE=1` se folosește sandbox-ul, iar opțiunea „Card” apare în coș doar dacă ești autentificat în /admin/ (clienții nu o văd).
+- Fluxul: `/api/order` creează comanda (status plată `pending`) și trimite clientul la Netopia → Netopia anunță rezultatul la `/api/pay/ipn` (verificat cu cheia publică) → pagina `/comanda-plasata/` afișează rezultatul (`/api/pay/status`), cu „Încearcă din nou” sau „Plătesc la livrare” dacă plata eșuează.
+- Emailurile de confirmare pentru comenzile cu cardul pleacă abia după confirmarea plății. În panou, comenzile neplătite nu pot primi AWB.
+- La trecerea în producție: se schimbă `NETOPIA_POS` și `NETOPIA_PUBLIC_KEY` cu cele live, cheia API live și `NETOPIA_LIVE=1`.

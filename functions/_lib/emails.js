@@ -59,16 +59,16 @@ export function confirmation(o, { base, shop }) {
     card(h2('Ce urmează') + `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
       ${step(1, 'Pregătim coletul', 'Verificăm produsele și le împachetăm cu grijă.')}
       ${step(2, 'Îl predăm curierului ' + esc(shop.carrier || 'Sameday'), o.delivery === 'easybox' ? 'Primești un email cu numărul AWB, iar când coletul ajunge în easybox, Sameday îți trimite prin SMS codul de deschidere.' : 'Primești un email cu numărul AWB și linkul de urmărire.')}
-      ${step(3, 'Plătești la livrare', o.delivery === 'easybox' ? `Suma de <b>${lei(o.total)}</b> se achită la ridicarea coletului din easybox.` : `Suma de <b>${lei(o.total)}</b> se achită curierului, la primirea coletului.`)}</table>`) +
+      ${o.payment === 'card' ? step(3, 'Plata e făcută', `Am primit plata de <b>${lei(o.total)}</b> cu cardul. La livrare nu mai ai nimic de plătit.`) : step(3, 'Plătești la livrare', o.delivery === 'easybox' ? `Suma de <b>${lei(o.total)}</b> se achită la ridicarea coletului din easybox.` : `Suma de <b>${lei(o.total)}</b> se achită curierului, la primirea coletului.`)}</table>`) +
     card(h2('Produsele comandate') + itemsTable(o.items, base) + totals({ ...o, carrier: shop.carrier })) +
     card(`<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
       <td valign="top" width="50%" style="padding-right:12px;font:14px/1.6 ${SANS};color:${C.text}"><div style="font:bold 12px ${SANS};letter-spacing:1px;text-transform:uppercase;color:${C.muted};margin-bottom:6px">Livrare</div><b style="color:${C.ink}">${esc(o.name)}</b><br>${where(o)}</td>
-      <td valign="top" width="50%" style="font:14px/1.6 ${SANS};color:${C.text}"><div style="font:bold 12px ${SANS};letter-spacing:1px;text-transform:uppercase;color:${C.muted};margin-bottom:6px">Contact și plată</div>${esc(o.phone)}<br>${esc(o.email)}<br>Ramburs, la livrare${company(o)}</td>
+      <td valign="top" width="50%" style="font:14px/1.6 ${SANS};color:${C.text}"><div style="font:bold 12px ${SANS};letter-spacing:1px;text-transform:uppercase;color:${C.muted};margin-bottom:6px">Contact și plată</div>${esc(o.phone)}<br>${esc(o.email)}<br>${o.payment === 'card' ? 'Card online – plătită' : 'Ramburs, la livrare'}${company(o)}</td>
     </tr></table>${o.notes ? `<div style="margin-top:14px;padding-top:12px;border-top:1px solid ${C.line};font:14px/1.5 ${SANS};color:${C.text}"><b>Observațiile tale:</b> ${esc(o.notes)}</div>` : ''}
     <div style="margin-top:14px;font:13px/1.5 ${SANS};color:${C.muted}">Ceva nu e corect în adresă sau telefon? Răspunde la acest email și corectăm înainte de expediere.</div>`) +
     card(`${h2('Ai o întrebare?')}<div style="font:14px/1.6 ${SANS};color:${C.text};margin:0 0 16px">Răspunde direct la acest email, sună la <a href="tel:+${esc(shop.whatsapp || '40746242877')}" style="color:${C.berry};font-weight:bold;text-decoration:none">${esc(shop.phone || '0746 242 877')}</a>${wa ? ' sau scrie-ne pe WhatsApp' : ''}. Ai 14 zile să returnezi produsele, dacă nu se potrivesc. Comenzile tale le vezi oricând în <a href="${base}/cont/" style="color:${C.berry};font-weight:bold">contul tău</a>.</div>
       ${wa ? btn(wa, 'Scrie-ne pe WhatsApp') : ''}`);
-  return { subject: `Comanda ${o.number} a fost înregistrată`, html: layout({ base, shop, preheader: `Mulțumim! Total ${lei(o.total)}, plata la livrare. Coletul pleacă în 1–2 zile lucrătoare.`, body }) };
+  return { subject: `Comanda ${o.number} a fost înregistrată`, html: layout({ base, shop, preheader: `Mulțumim! Total ${lei(o.total)}, ${o.payment === 'card' ? 'plătit cu cardul' : 'plata la livrare'}. Coletul pleacă în 1–2 zile lucrătoare.`, body }) };
 }
 
 // 2. Magazinul: comandă nouă
@@ -77,14 +77,14 @@ export function notification(o, { base, shop }) {
   const body =
     card(`<div style="font:bold 12px ${SANS};letter-spacing:1.5px;text-transform:uppercase;color:${C.berry};margin:0 0 8px">Comandă nouă · ${esc(o.number)}</div>
       <div style="font:bold 28px/1.2 ${SERIF};color:${C.ink};margin:0 0 6px">${lei(o.total)}</div>
-      <div style="font:14px ${SANS};color:${C.muted};margin:0 0 18px">${fmtDate(o.created_at)} · ramburs · ${o.items.reduce((a, i) => a + i.qty, 0)} buc.</div>
+      <div style="font:14px ${SANS};color:${C.muted};margin:0 0 18px">${fmtDate(o.created_at)} · ${o.payment === 'card' ? 'PLĂTITĂ CU CARDUL' : 'ramburs'} · ${o.items.reduce((a, i) => a + i.qty, 0)} buc.</div>
       ${btn(base + '/admin/', 'Deschide în panou')}`) +
     card(`<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
       <td valign="top" width="50%" style="padding-right:12px;font:14px/1.6 ${SANS};color:${C.text}"><b style="color:${C.ink}">${esc(o.name)}</b><br><a href="tel:+${tel}" style="color:${C.berry}">${esc(o.phone)}</a> · <a href="https://wa.me/${tel}" style="color:${C.berry}">WhatsApp</a><br><a href="mailto:${esc(o.email)}" style="color:${C.berry}">${esc(o.email)}</a>${company(o)}</td>
       <td valign="top" width="50%" style="font:14px/1.6 ${SANS};color:${C.text}">${where(o)}</td></tr></table>
       ${o.notes ? `<div style="margin-top:12px;padding:10px 14px;background:${C.pink2};border-radius:12px;font:14px/1.5 ${SANS};color:${C.ink}"><b>Observații:</b> ${esc(o.notes)}</div>` : ''}`) +
     card(itemsTable(o.items, base, true) + totals({ ...o, carrier: shop.carrier }));
-  return { subject: `Comandă nouă ${o.number} – ${lei(o.total)} – ${o.name}`, html: layout({ base, shop, preheader: `${o.name}, ${o.city} · ${lei(o.total)}`, body }) };
+  return { subject: `Comandă nouă ${o.number} – ${lei(o.total)}${o.payment === 'card' ? ' (plătită cu cardul)' : ''} – ${o.name}`, html: layout({ base, shop, preheader: `${o.name}, ${o.city} · ${lei(o.total)}`, body }) };
 }
 
 // 3. Clientul: coletul a fost expediat

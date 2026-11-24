@@ -377,6 +377,12 @@ if (co) (async () => {
   const tglEb = () => { const eb = co.delivery.value === 'easybox'; $('[data-easybox]').hidden = !eb; co.easybox.required = eb && !ebMap; $('[data-address]').hidden = eb; co.address.required = !eb; };
   $('[data-company-toggle]').addEventListener('change', tglCo); $$('input[name=delivery]').forEach(r => r.addEventListener('change', () => { tglEb(); render(); }));
   render(); tglCo(); tglEb();
+  // Plata cu cardul (NETOPIA): apare doar dacă e configurată pe server.
+  fetch('/api/pay/config', { credentials: 'same-origin', cache: 'no-store' }).then(r => r.json()).then(c => {
+    if (!c.card) return; $('[data-pay-card]').hidden = false; if (c.test) $('[data-pay-test]').hidden = false;
+  }).catch(() => {});
+  const subLbl = () => co.payment.value === 'card' ? 'Plasează comanda și plătește' : 'Plasează comanda';
+  co.addEventListener('change', e => { if (e.target.name === 'payment') $('[data-submit]').textContent = subLbl(); });
   co.addEventListener('submit', async e => {
     e.preventDefault();
     const msg = $('[data-form-msg]'); msg.classList.remove('show');
@@ -394,12 +400,51 @@ if (co) (async () => {
       if (r.status === 409 && j.stock) { j.stock.forEach(x => { if (idx.by[x.sku]) { idx.by[x.sku].left = x.left; idx.by[x.sku].inStock = x.left > 0; } }); render(); }
       if (!r.ok || !j.ok) throw new Error(j.error || 'Comanda nu a putut fi trimisă.');
       // conversia se trimite pe pagina de mulțumire (redirectul imediat ar pierde hitul)
-      try { sessionStorage.setItem('buy', JSON.stringify({ id: j.number, value: +(j.subtotal ?? j.total) || 0, items: fd.items.map(x => ({ item_id: x.sku, item_name: (idx.by[x.sku] || {}).name || x.sku, price: (idx.by[x.sku] || {}).price || 0, quantity: x.qty })) })); } catch {}
+      try { sessionStorage.setItem(j.payUrl ? 'buyCard' : 'buy', JSON.stringify({ id: j.number, value: +(j.subtotal ?? j.total) || 0, items: fd.items.map(x => ({ item_id: x.sku, item_name: (idx.by[x.sku] || {}).name || x.sku, price: (idx.by[x.sku] || {}).price || 0, quantity: x.qty })) })); } catch {}
+      if (j.payUrl) { cart.clear(); btn.textContent = 'Te trimitem la plată…'; location.href = j.payUrl; return; }
       cart.clear(); location.href = '/comanda-plasata/?nr=' + encodeURIComponent(j.number);
-    } catch (err) { msg.textContent = err.message + ' Încearcă din nou sau sună-ne.'; msg.classList.add('show'); btn.disabled = false; btn.textContent = 'Plasează comanda'; }
+    } catch (err) { msg.textContent = err.message + ' Încearcă din nou sau sună-ne.'; msg.classList.add('show'); btn.disabled = false; btn.textContent = subLbl(); }
   });
 })();
 const ono = $('[data-order-no]'); if (ono) ono.textContent = new URLSearchParams(location.search).get('nr') || '';
+
+/* ---------- întoarcerea de la plata cu cardul (NETOPIA) ---------- */
+const payBox = $('[data-pay-box]');
+if (payBox && new URLSearchParams(location.search).get('t')) (async () => {
+  const q = new URLSearchParams(location.search), nr = q.get('nr'), t = q.get('t');
+  const msg = $('[data-pay-msg]'), acts = $('[data-pay-actions]'), normal = $('[data-pay-normal]');
+  payBox.hidden = false; normal.hidden = true;
+  const lei2 = n => Number(n).toFixed(2).replace('.', ',') + ' lei';
+  const show = j => {
+    acts.hidden = true;
+    if (j.pay === 'paid') { msg.innerHTML = `Plata pentru comanda <strong>${esc(j.number)}</strong> (${lei2(j.total)}) a fost confirmată. Îți trimitem confirmarea pe email, iar când predăm coletul curierului primești și numărul AWB.`; cardBuy(j.number, j.total); return true; }
+    if (j.pay === 'cod') { msg.innerHTML = `Comanda <strong>${esc(j.number)}</strong> a fost înregistrată cu plata la livrare (${lei2(j.total)}). Confirmarea vine pe email.`; cardBuy(j.number, j.total); return true; }
+    if (j.cancelled) { msg.textContent = 'Comanda a fost anulată.'; return true; }
+    if (j.pay === 'failed') { msg.innerHTML = `Plata pentru comanda <strong>${esc(j.number)}</strong> nu a reușit. Comanda e păstrată: poți încerca din nou cu cardul sau poți plăti la livrare.`; acts.hidden = false; return true; }
+    if (j.pay === 'review') { msg.innerHTML = `Plata pentru comanda <strong>${esc(j.number)}</strong> este în verificare la bancă. Te anunțăm pe email.`; return true; }
+    msg.innerHTML = `Așteptăm confirmarea plății pentru comanda <strong>${esc(j.number)}</strong>…`; return false;
+  };
+  const get = () => fetch(`/api/pay/status?nr=${encodeURIComponent(nr)}&t=${encodeURIComponent(t)}`, { cache: 'no-store' }).then(r => r.json());
+  let done = false;
+  for (let i = 0; i < 12 && !done; i++) {
+    try { const j = await get(); if (!j.ok) { msg.textContent = j.error || 'Comanda nu a fost găsită.'; return; } done = show(j); } catch {}
+    if (!done) await new Promise(r => setTimeout(r, i < 4 ? 2500 : 5000));
+  }
+  if (!done) { msg.innerHTML += '<br>Dacă ai plătit, confirmarea vine pe email în câteva minute. Dacă plata nu s-a finalizat, poți încerca din nou.'; acts.hidden = false; }
+  const act = async method => {
+    $$('button', acts).forEach(b => b.disabled = true);
+    try {
+      const r = await fetch('/api/pay/status', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ nr, t, method }) });
+      const j = await r.json();
+      if (!j.ok) throw new Error(j.error);
+      if (j.payUrl) { location.href = j.payUrl; return; }
+      show(j);
+    } catch (e) { msg.textContent = (e.message || 'A apărut o eroare.') + ' Sună-ne dacă problema persistă.'; }
+    $$('button', acts).forEach(b => b.disabled = false);
+  };
+  $('[data-pay-retry]').addEventListener('click', () => act('card'));
+  $('[data-pay-cod]').addEventListener('click', () => act('cod'));
+})();
 
 /* ---------- cookies + Google ---------- */
 let gLoaded = false;
@@ -425,13 +470,20 @@ if (coStart) coStart.addEventListener('focusin', () => { if (coStart.dataset.sta
 const ck = $('[data-cookie]'); const c0 = store.get('consent', null);
 if (c0) consent(c0.all); else if (ck) ck.classList.add('show');
 loadGoogle();
-(() => {
-  let b = null; try { b = JSON.parse(sessionStorage.getItem('buy') || 'null'); sessionStorage.removeItem('buy'); } catch {}
-  if (!b || !$('[data-order-no]')) return;
+function fireBuy(b) {
   if (S.ads && S.adsBuy) gtag('event', 'conversion', { send_to: S.ads + '/' + S.adsBuy, value: b.value, currency: 'RON', transaction_id: b.id });
   if (S.ads2 && S.adsBuy2) gtag('event', 'conversion', { send_to: S.ads2 + '/' + S.adsBuy2, value: b.value, currency: 'RON', transaction_id: b.id });
   if (S.ga4) gtag('event', 'purchase', { transaction_id: b.id, value: b.value, currency: 'RON', items: b.items });
+}
+(() => {
+  let b = null; try { b = JSON.parse(sessionStorage.getItem('buy') || 'null'); sessionStorage.removeItem('buy'); } catch {}
+  if (b && $('[data-order-no]')) fireBuy(b);
 })();
+// Plata cu cardul: conversia se trimite doar după confirmarea plății (sau trecerea pe ramburs).
+const cardBuy = (nr, total) => {
+  let b = null; try { b = JSON.parse(sessionStorage.getItem('buyCard') || 'null'); sessionStorage.removeItem('buyCard'); } catch {}
+  if (b && b.id === nr) fireBuy(b);
+};
 if (ck) ck.addEventListener('click', e => { const b = e.target.closest('[data-ck]'); if (!b) return; consent(b.dataset.ck === 'all'); ck.classList.remove('show'); });
 $$('[data-cookie-settings]').forEach(a => a.addEventListener('click', e => { e.preventDefault(); ck.classList.add('show'); }));
 

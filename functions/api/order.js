@@ -2,8 +2,9 @@
 // Prețurile și transportul se recalculează aici, din catalogul de pe server, nu din browser.
 import CATALOG from './_catalog.json';
 import SHOP from './_shop.json';
-import { sendMail } from '../_lib/mail.js';
-import { confirmation, notification } from '../_lib/emails.js';
+import { sendOrderMails } from '../_lib/order-mail.js';
+import { checkSession } from '../_lib/auth.js';
+import { netopiaReady, netopiaLive, startPayment } from '../_lib/netopia.js';
 import { reserve, restore, syncCatalogStock } from '../_lib/stock.js';
 
 const json = (o, s = 200) => new Response(JSON.stringify(o), { status: s, headers: { 'content-type': 'application/json; charset=utf-8' } });
@@ -17,7 +18,7 @@ export async function onRequestPost({ request, env, waitUntil }) {
   const o = {
     name: str(b.name, 120), phone: str(b.phone, 30), email: str(b.email, 160), county: str(b.county, 40), city: str(b.city, 80),
     zip: str(b.zip, 10), address: str(b.address, 250), delivery: b.delivery === 'easybox' ? 'easybox' : 'address', easybox: str(b.easybox, 200),
-    payment: 'cod', // deocamdată doar ramburs
+    payment: b.payment === 'card' ? 'card' : 'cod',
     company: !!b.company, companyName: str(b.companyName, 160), companyCui: str(b.companyCui, 20),
     notes: str(b.notes, 1000), newsletter: !!b.newsletter
   };
@@ -35,6 +36,8 @@ export async function onRequestPost({ request, env, waitUntil }) {
   if (o.delivery === 'easybox' && (o.easybox.length < 3 || (env.SAMEDAY_USER && !locker))) errs.push('easybox (alege-l de pe hartă)');
   if (o.company && (!o.companyName || !o.companyCui)) errs.push('date firmă');
   if (b.terms !== true) errs.push('acceptarea termenilor');
+  if (o.payment === 'card' && !(netopiaReady(env) && (netopiaLive(env) || await checkSession(request, env.SESSION_SECRET))))
+    return json({ ok: false, error: 'Plata cu cardul nu este disponibilă momentan. Alege plata la livrare.' }, 400);
   if (errs.length) return json({ ok: false, error: 'Verifică: ' + errs.join(', ') + '.' }, 400);
 
   const items = [];
@@ -65,14 +68,26 @@ export async function onRequestPost({ request, env, waitUntil }) {
   } catch (e) { await restore(env, items); throw e; }
   if (rs.zeroed.length) waitUntil(syncCatalogStock(env, rs.zeroed));
 
-  const ord = { ...o, number, created_at: d.toISOString(), items, subtotal, shipping, total };
-  const ctx = { base: new URL(request.url).origin, shop: SHOP };
-  const c = confirmation(ord, ctx), n = notification(ord, ctx);
+  const row = { ...o, number, created_at: d.toISOString(), company_name: o.company ? o.companyName : null, company_cui: o.company ? o.companyCui : null,
+    items, items_json: JSON.stringify(items), subtotal, shipping, total };
+  const origin = new URL(request.url).origin;
+
+  // Card: clientul merge la Netopia; emailurile pleacă abia după confirmarea plății (IPN).
+  if (o.payment === 'card') {
+    const token = crypto.randomUUID().replace(/-/g, '');
+    const p = await startPayment(env, origin, row, items, 1, token);
+    if (!p.ok) {
+      await env.DB.prepare('DELETE FROM orders WHERE number = ?1').bind(number).run();
+      await restore(env, items); if (rs.zeroed.length) waitUntil(syncCatalogStock(env, rs.zeroed));
+      console.log('Netopia start', number, p.error, JSON.stringify(p.raw || {}));
+      return json({ ok: false, error: 'Plata cu cardul nu a putut fi inițiată. Încearcă din nou sau alege plata la livrare.' }, 502);
+    }
+    await env.DB.prepare("UPDATE orders SET pay_status = 'pending', pay_token = ?1, pay_ntp = ?2, pay_attempt = 1 WHERE number = ?3").bind(token, p.ntpID, number).run();
+    return json({ ok: true, number, total, subtotal, payUrl: p.url });
+  }
+
   // Emailurile pleacă după răspuns, ca să nu încetinească pagina de comandă.
-  waitUntil(Promise.all([
-    sendMail(env, { to: o.email, replyTo: SHOP.email, subject: c.subject, html: c.html }),
-    sendMail(env, { to: env.NOTIFY_EMAIL || SHOP.email, replyTo: o.email, subject: n.subject, html: n.html })
-  ]));
+  waitUntil(sendOrderMails(env, origin, row));
   return json({ ok: true, number, total, subtotal });
 }
 
