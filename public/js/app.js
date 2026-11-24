@@ -783,13 +783,14 @@ const drawer = (() => {
     else {
       const start = fromX ? `translateX(${fromX}px)` : 'none';
       panel.style.transform = 'none'; const to = toIcon();
-      anim(bg, [{ opacity: getComputedStyle(bg).opacity }, { opacity: 0 }], { duration: 340, easing: 'ease-in' });
+      anim(bg, [{ opacity: getComputedStyle(bg).opacity }, { opacity: 0 }], { duration: 380, easing: 'ease-in', fill: 'forwards' });
       anim(inner, [{ opacity: 1 }, { opacity: 0 }], { duration: 140, fill: 'forwards' });
       await anim(panel, [{ transform: start, borderRadius: '28px 0 0 28px', opacity: 1 }, { transform: to, borderRadius: '999px', opacity: .7 }],
-        { duration: 380, easing: 'cubic-bezier(.55,0,.75,.4)' });
-      inner.getAnimations && inner.getAnimations().forEach(a => a.cancel());
+        { duration: 380, easing: 'cubic-bezier(.55,0,.75,.4)', fill: 'forwards' });
     }
-    wrap.hidden = true; isOpen = busy = false; panel.style.transform = ''; panel.style.transition = ''; bg.style.opacity = '';
+    wrap.hidden = true; isOpen = busy = false; panel.style.transform = ''; panel.style.transition = '';
+    // abia după ce sertarul e ascuns renunțăm la starea finală a animațiilor (altfel ar clipi un cadru)
+    [panel, bg, inner].forEach(el => el.getAnimations && el.getAnimations().forEach(a => a.cancel())); bg.style.opacity = '';
     document.documentElement.classList.remove('cd-lock');
     link.classList.remove('cd-bump'); void link.offsetWidth; link.classList.add('cd-bump');
     if (lastFocus && lastFocus.focus) lastFocus.focus({ preventScroll: true });
