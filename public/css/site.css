@@ -521,4 +521,4 @@ main{overflow-x:clip}
 .sz.added{border-color:var(--pine);background:var(--pine);color:#fff}
 @media (max-width:640px){.sz{min-width:0;flex:1 1 auto;padding:6px 6px;font-size:13px}.cs-label{font-size:11px}}
 
-.pay-logos{display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px;padding-bottom:24px}.pay-logos a{display:inline-flex;margin:0}.pay-logos img{display:block;width:auto;height:40px;background:#fff;border-radius:8px}
+.site-footer .wrap.pay-logos{display:flex;padding-top:0;flex-wrap:wrap;align-items:center;gap:14px 22px;padding-bottom:24px}.pay-logos a{display:inline-flex;margin:0}.pay-logos img{display:block;width:auto;height:40px;background:#fff;border-radius:8px}
