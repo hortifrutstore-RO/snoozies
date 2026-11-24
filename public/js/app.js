@@ -328,7 +328,7 @@ if (co) (async () => {
     $('[data-sum-label]').textContent = `Produse (${n})`;
     $('[data-sum-sub]').textContent = lei(sub);
     $('[data-sum-ship]').textContent = ship ? lei(ship) : 'Gratuit';
-    const fh = $('[data-free-hint]'); if (fh) { const lip = S.freeQty > 0 && !free ? S.freeQty - n : 0; fh.hidden = lip <= 0; if (lip > 0) fh.textContent = `Mai adaugă ${lip === 1 ? 'o pereche' : lip + ' perechi'} și transportul e gratuit.`; }
+    const fh = $('[data-free-hint]'); if (fh) { const lip = S.freeQty > 0 && !free ? S.freeQty - n : 0; fh.hidden = lip <= 0; if (lip > 0) fh.innerHTML = `Mai adaugă <strong>${lip === 1 ? 'o pereche' : lip + ' perechi'}</strong> și transportul e <strong>gratuit</strong>.`; }
     $$('[data-ship-label]').forEach(e => e.textContent = free ? 'Gratuit' : lei(e.dataset.shipLabel === 'easybox' ? (S.shipEb ?? S.ship) : S.ship));
     $('[data-sum-total]').textContent = lei(sub + ship);
   };

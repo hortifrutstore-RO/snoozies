@@ -251,6 +251,8 @@ h1,h2,.serif{font-family:var(--serif);font-weight:700;color:var(--ink);letter-sp
 .summary{flex:1 1 340px;max-width:420px;min-width:0;background:var(--pine);color:#fff;border-radius:28px;padding:32px;display:flex;flex-direction:column;gap:18px;position:sticky;top:170px}
 .summary h2{color:#fff;margin:0;font-size:30px}
 .summary .row{display:flex;justify-content:space-between;font-size:16px}.summary .row span:first-child{color:var(--pine-2)}
+.summary .free-hint{margin:0;font-family:var(--serif);font-weight:600;font-size:18px;line-height:1.35;color:#2b2118;background:#FFE7A3;padding:13px 16px;border-radius:14px}
+.summary .free-hint strong{font-weight:800;color:#a8322f}
 .summary .total{border-top:1px solid #4C7569;padding-top:16px;align-items:baseline}
 .summary .total strong:last-child{font-family:var(--serif);font-size:34px}
 .summary small{font-size:13px;color:#CFE0D9;line-height:1.5}
