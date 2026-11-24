@@ -84,6 +84,11 @@ document.addEventListener('click', e => {
     if (m) m.hidden = true; sku = r.value;
   }
   cart.add(sku, q);
+  track('add_to_cart', { items: [{ item_id: sku, quantity: q }] });
+  if (drawer.ok()) {
+    b.classList.add('added'); if (!b.classList.contains('sz')) { const old = b.textContent; b.textContent = 'Adăugat ✓'; setTimeout(() => { b.classList.remove('added'); b.textContent = old; }, 1600); } else setTimeout(() => b.classList.remove('added'), 1400);
+    drawer.open(sku); return;
+  }
   if (b.classList.contains('sz')) {
     b.classList.add('added'); setTimeout(() => b.classList.remove('added'), 1400);
     const c = b.closest('.card'), nm = c ? c.dataset.name.replace(/^Papuci de casă\s+(femei |bărbați |copii |bebeluși )?/i, '').replace(/^Snoozies\s+/i, '') : '';
@@ -93,7 +98,6 @@ document.addEventListener('click', e => {
     setTimeout(() => { b.classList.remove('added'); b.textContent = old; }, 1600);
     toast('Produsul a fost adăugat în coș <a href="/cos/">Vezi coșul</a>');
   }
-  track('add_to_cart', { items: [{ item_id: sku, quantity: q }] });
 });
 
 /* ---------- stoc în timp real ---------- */
@@ -689,6 +693,144 @@ $$('[data-cf]').forEach(cf => {
   };
   window.addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(upd); } }, { passive: true });
   hdr.addEventListener('focusin', () => hdr.classList.remove('is-hidden'));
+})();
+
+/* ---------- coșul lateral (sertar) ----------
+   Se deschide din iconița coșului (crește din colțul din dreapta sus) și se închide înapoi în ea.
+   Închidere: săgeata › de pe marginea stângă, swipe spre dreapta, tap în afară sau Esc. */
+const drawer = (() => {
+  const link = $('.cart-link'), hdr = $('.site-header');
+  const onCheckout = !!$('[data-checkout]');
+  const ok = () => !!link && !onCheckout;
+  if (!ok()) return { ok, open() {} };
+  const still = matchMedia('(prefers-reduced-motion: reduce)');
+  const pairs = n => n === 1 ? 'o pereche' : n + ' perechi';
+
+  const wrap = document.createElement('div');
+  wrap.className = 'cd'; wrap.hidden = true;
+  wrap.innerHTML = `<div class="cd-bg" data-cd-close></div>
+  <aside class="cd-panel" role="dialog" aria-modal="true" aria-labelledby="cd-t" tabindex="-1">
+    <button type="button" class="cd-x" data-cd-close aria-label="Închide coșul"><svg viewBox="0 0 24 48" aria-hidden="true"><path d="M6 6l12 18L6 42"/></svg></button>
+    <div class="cd-in">
+      <div class="cd-head"><h2 id="cd-t" class="serif">Coșul tău</h2><span class="cd-n" data-cd-n></span></div>
+      <div class="cd-free" data-cd-free><p data-cd-free-t></p><div class="cd-bar"><i data-cd-bar></i></div></div>
+      <div class="cd-lines" data-cd-lines></div>
+      <div class="cd-foot" data-cd-foot>
+        <div class="cd-sub"><span>Subtotal</span><strong data-cd-sub></strong></div>
+        <small>Transportul și plata le alegi la pasul următor.</small>
+        <a class="btn" href="/cos/" data-cd-go>Finalizează comanda</a>
+        <button type="button" class="link-btn" data-cd-close>Continuă cumpărăturile</button>
+      </div>
+    </div>
+  </aside>`;
+  document.body.appendChild(wrap);
+  const panel = $('.cd-panel', wrap), bg = $('.cd-bg', wrap), inner = $('.cd-in', wrap), lines = $('[data-cd-lines]', wrap);
+  let isOpen = false, busy = false, lastFocus = null, idx = null;
+
+  async function render(fresh) {
+    idx = idx || await catalog();
+    const it = cart.items().filter(x => idx.by[x.sku] && idx.by[x.sku].inStock && !idx.by[x.sku].sizes);
+    let sub = 0, n = 0;
+    lines.innerHTML = it.length ? it.map(x => { const p = idx.by[x.sku]; sub += p.price * x.qty; n += x.qty;
+      const max = p.left ?? 99;
+      return `<div class="cd-line${x.sku === fresh ? ' is-new' : ''}" data-sku="${esc(p.sku)}"><img src="/img/p/${esc(p.img)}" alt=""><div class="cd-info"><a href="/produs/${esc(p.slug)}/">${esc(p.name)}</a><small>${lei(p.price)} / pereche</small>
+        <div class="cd-qty"><button type="button" data-cd-q="-1" aria-label="Scade cantitatea"${x.qty <= 1 ? ' disabled' : ''}>−</button><span>${x.qty}</span><button type="button" data-cd-q="1" aria-label="Crește cantitatea"${x.qty >= max ? ' disabled' : ''}>+</button><button type="button" class="cd-rm" data-cd-rm>Elimină</button></div></div>
+        <strong class="cd-tot">${lei(p.price * x.qty)}</strong></div>`; }).join('')
+      : '<p class="cd-empty">Coșul este gol. <a href="/categorie/femei/">Vezi papucii</a></p>';
+    $('[data-cd-n]', wrap).textContent = n ? '· ' + (n === 1 ? '1 pereche' : n + ' perechi') : '';
+    $('[data-cd-sub]', wrap).textContent = lei(sub);
+    $('[data-cd-foot]', wrap).hidden = !n;
+    const fq = S.freeQty || 0, free = n > 0 && ((fq > 0 && n >= fq) || sub >= S.freeOver);
+    const box = $('[data-cd-free]', wrap); box.hidden = !n || !(fq > 0); box.classList.toggle('ok', free);
+    if (fq > 0) {
+      $('[data-cd-free-t]', wrap).innerHTML = free ? '<strong>Transport gratuit</strong> pentru comanda ta ✓'
+        : `Mai adaugă <strong>${pairs(fq - n)}</strong> și transportul e <strong>gratuit</strong>.`;
+      $('[data-cd-bar]', wrap).style.width = Math.min(100, n / fq * 100) + '%';
+    }
+  }
+
+  // Transformarea care „strânge” sertarul în iconița coșului
+  function toIcon() {
+    if (hdr && hdr.classList.contains('is-hidden')) { hdr.style.transition = 'none'; hdr.classList.remove('is-hidden'); void hdr.offsetHeight; hdr.style.transition = ''; }
+    const a = link.getBoundingClientRect(), b = panel.getBoundingClientRect();
+    const sx = a.width / b.width, sy = a.height / b.height;
+    const dx = (a.left + a.width / 2) - (b.left + b.width / 2), dy = (a.top + a.height / 2) - (b.top + b.height / 2);
+    return `translate(${dx}px,${dy}px) scale(${sx},${sy})`;
+  }
+  const anim = (el, k, o) => el.animate ? el.animate(k, o).finished.catch(() => {}) : Promise.resolve();
+
+  async function open(fresh) {
+    await render(fresh);
+    if (isOpen) { flashNew(); return; }
+    isOpen = busy = true; lastFocus = document.activeElement;
+    wrap.hidden = false; document.documentElement.classList.add('cd-lock');
+    panel.style.transform = ''; bg.style.opacity = '';
+    if (still.matches) { await anim(wrap, [{ opacity: 0 }, { opacity: 1 }], { duration: 150 }); }
+    else {
+      const from = toIcon();
+      anim(bg, [{ opacity: 0 }, { opacity: 1 }], { duration: 300, easing: 'ease-out' });
+      anim(inner, [{ opacity: 0 }, { opacity: 0, offset: .4 }, { opacity: 1 }], { duration: 560 });
+      await anim(panel, [{ transform: from, borderRadius: '999px' }, { transform: 'none', borderRadius: '28px 0 0 28px' }],
+        { duration: 560, easing: 'cubic-bezier(.2,.8,.2,1)' });
+    }
+    busy = false; panel.focus({ preventScroll: true }); flashNew();
+  }
+  function flashNew() { const l = $('.cd-line.is-new', wrap); if (l) { l.scrollIntoView({ block: 'nearest' }); setTimeout(() => l.classList.remove('is-new'), 1600); } }
+
+  async function close(fromX) {
+    if (!isOpen || busy) return; busy = true;
+    if (still.matches) await anim(wrap, [{ opacity: 1 }, { opacity: 0 }], { duration: 150 });
+    else {
+      const start = fromX ? `translateX(${fromX}px)` : 'none';
+      panel.style.transform = 'none'; const to = toIcon();
+      anim(bg, [{ opacity: getComputedStyle(bg).opacity }, { opacity: 0 }], { duration: 340, easing: 'ease-in' });
+      anim(inner, [{ opacity: 1 }, { opacity: 0 }], { duration: 140, fill: 'forwards' });
+      await anim(panel, [{ transform: start, borderRadius: '28px 0 0 28px', opacity: 1 }, { transform: to, borderRadius: '999px', opacity: .7 }],
+        { duration: 380, easing: 'cubic-bezier(.55,0,.75,.4)' });
+      inner.getAnimations && inner.getAnimations().forEach(a => a.cancel());
+    }
+    wrap.hidden = true; isOpen = busy = false; panel.style.transform = ''; panel.style.transition = ''; bg.style.opacity = '';
+    document.documentElement.classList.remove('cd-lock');
+    link.classList.remove('cd-bump'); void link.offsetWidth; link.classList.add('cd-bump');
+    if (lastFocus && lastFocus.focus) lastFocus.focus({ preventScroll: true });
+  }
+
+  link.addEventListener('click', e => { if (e.ctrlKey || e.metaKey || e.shiftKey || e.button) return; e.preventDefault(); open(); });
+  wrap.addEventListener('click', e => {
+    if (e.target.closest('[data-cd-close]')) { close(); return; }
+    const l = e.target.closest('.cd-line'); if (!l) return; const sku = l.dataset.sku;
+    if (e.target.closest('[data-cd-rm]')) { cart.remove(sku); render(); return; }
+    const q = e.target.closest('[data-cd-q]'); if (q) { const x = cart.items().find(i => i.sku === sku); if (x) { cart.setQty(sku, x.qty + parseInt(q.dataset.cdQ, 10)); render(); } }
+  });
+  $('[data-cd-go]', wrap).addEventListener('click', () => track('begin_checkout', {}));
+  document.addEventListener('keydown', e => {
+    if (!isOpen) return;
+    if (e.key === 'Escape') close();
+    if (e.key === 'Tab') { const f = $$('a[href],button:not([disabled])', panel).filter(x => x.offsetParent); if (!f.length) return;
+      if (e.shiftKey && document.activeElement === f[0]) { e.preventDefault(); f[f.length - 1].focus(); }
+      else if (!e.shiftKey && document.activeElement === f[f.length - 1]) { e.preventDefault(); f[0].focus(); } }
+  });
+
+  // Swipe spre dreapta: sertarul urmează degetul; peste prag (sau un gest rapid) se închide
+  let sx = 0, sy = 0, st = 0, t0 = 0, dx = 0, drag = null;
+  panel.addEventListener('pointerdown', e => { if (e.pointerType === 'mouse' || busy) return; sx = e.clientX; sy = e.clientY; st = t0 = e.timeStamp; dx = 0; drag = null; });
+  panel.addEventListener('pointermove', e => {
+    if (e.pointerType === 'mouse' || busy || !st) return;
+    const mx = e.clientX - sx, my = e.clientY - sy;
+    if (drag === null && (Math.abs(mx) > 8 || Math.abs(my) > 8)) { drag = mx > 0 && Math.abs(mx) > Math.abs(my) * 1.2; if (drag) panel.setPointerCapture(e.pointerId); }
+    if (!drag) return;
+    dx = Math.max(0, mx); panel.style.transition = 'none'; panel.style.transform = `translateX(${dx}px)`;
+    bg.style.opacity = String(Math.max(0, 1 - dx / panel.offsetWidth));
+  });
+  const end = e => {
+    if (!st) return; const was = drag; st = 0; drag = null; if (!was) return;
+    const fast = dx > 40 && (e.timeStamp - t0) < 250; // gest rapid scurt
+    if (dx > panel.offsetWidth * .3 || fast) close(dx);
+    else { panel.style.transition = 'transform .25s ease'; panel.style.transform = ''; bg.style.opacity = ''; setTimeout(() => panel.style.transition = '', 260); }
+  };
+  panel.addEventListener('pointerup', end); panel.addEventListener('pointercancel', end);
+
+  return { ok, open };
 })();
 
 })();
