@@ -2463,8 +2463,8 @@
     "size": "XL",
     "range": "40–42",
     "color": "",
-    "stock": null,
-    "inStock": true,
+    "stock": 0,
+    "inStock": false,
     "sku": "Snz-07SnowXLBarb"
    }
   ]
