@@ -89,6 +89,7 @@ window.SITE={gid:"{{ site.googleClientId or '' }}",freeOver:{{ site.shipping.fre
       {% if site.emagUrl %}<a class="emag" href="{{ site.emagUrl }}" rel="noopener" target="_blank">Ne găsești și pe eMAG</a>{% endif %}
     </div>
   </div>
+  {% if site.payLogos %}<div class="wrap pay-logos" aria-label="Plăți securizate">{% for l in site.payLogos %}<a href="{{ l.href }}" rel="noopener" target="_blank"><img src="{{ l.src }}" alt="{{ l.alt }}" height="{{ l.h or 32 }}" loading="lazy"></a>{% endfor %}</div>{% endif %}
   <div class="foot-bottom"><div class="wrap"><span>© {{ year }} {{ site.company.name }} · {{ site.name }}</span><span>Firma nu este plătitoare de TVA. Prețurile afișate sunt prețuri finale.</span></div></div>
 </footer>
 <div class="cookie" role="dialog" aria-labelledby="ck-t" data-cookie>
