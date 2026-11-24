@@ -57,6 +57,8 @@ function pdpFreeHint() {
     ? `Mai adaugă <strong>${lip === 1 ? 'o pereche' : lip + ' perechi'}</strong> și transportul e <strong>gratuit</strong>.`
     : `<strong>Transport gratuit</strong> pentru comanda ta ✓`;
 }
+document.addEventListener('input', e => { if (e.target.matches('[data-qty-input]')) pdpFreeHint(); });
+document.addEventListener('click', e => { if (e.target.closest('[data-qty]')) setTimeout(pdpFreeHint); });
 function toast(html) {
   const t = $('[data-toast]'); if (!t) return;
   t.innerHTML = html; t.classList.add('show'); clearTimeout(t._h); t._h = setTimeout(() => t.classList.remove('show'), 3200);
@@ -691,6 +693,3 @@ $$('[data-cf]').forEach(cf => {
 
 })();
 
-document.addEventListener('input', e => { if (e.target.matches('[data-qty-input]')) pdpFreeHint(); });
-document.addEventListener('click', e => { if (e.target.closest('[data-qty]')) setTimeout(pdpFreeHint); });
-pdpFreeHint();
