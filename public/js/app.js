@@ -42,8 +42,20 @@ const cart = {
   clear() { this.save([]); }
 };
 function updateCount() {
+  setTimeout(pdpFreeHint);
   const n = cart.items().reduce((a, x) => a + x.qty, 0);
   $$('[data-cart-count]').forEach(el => { el.textContent = n; el.dataset.n = n; });
+}
+// Pagina de produs: câte perechi mai lipsesc până la transport gratuit (coș + cantitatea aleasă).
+function pdpFreeHint() {
+  const h = $('[data-pdp-free-hint]'); if (!h || !(S.freeQty > 0)) return;
+  const inCart = cart.items().reduce((a, x) => a + x.qty, 0);
+  const qi = $('[data-qty-input]'), q = Math.max(1, parseInt(qi && qi.value, 10) || 1);
+  const lip = S.freeQty - inCart - q;
+  h.hidden = false; h.classList.toggle('ok', lip <= 0);
+  h.innerHTML = lip > 0
+    ? `Mai adaugă <strong>${lip === 1 ? 'o pereche' : lip + ' perechi'}</strong> și transportul e <strong>gratuit</strong>.`
+    : `<strong>Transport gratuit</strong> pentru comanda ta ✓`;
 }
 function toast(html) {
   const t = $('[data-toast]'); if (!t) return;
@@ -678,3 +690,7 @@ $$('[data-cf]').forEach(cf => {
 })();
 
 })();
+
+document.addEventListener('input', e => { if (e.target.matches('[data-qty-input]')) pdpFreeHint(); });
+document.addEventListener('click', e => { if (e.target.closest('[data-qty]')) setTimeout(pdpFreeHint); });
+pdpFreeHint();
