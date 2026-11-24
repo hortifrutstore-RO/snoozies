@@ -106,6 +106,7 @@ function orderHtml(o) {
       <div><b>Plată</b>${payText(o)}<br>Transport: ${o.shipping ? lei(o.shipping) : 'gratuit'}${o.newsletter ? '<br>Acceptă oferte pe email' : ''}</div>
     </div>
     ${o.notes ? `<div class="hint">Observații client: ${esc(o.notes)}</div>` : ''}
+    ${o.admin_note ? `<div class="hint pay-bad">${esc(o.admin_note).replace(/\n/g, '<br>')}</div>` : ''}
     <div class="ord-items">${o.items.map(i => `<div>${i.img ? `<img src="${esc(i.img)}" alt="" loading="lazy">` : ''}<span class="nm">${i.qty} × ${esc(i.model || i.name)}${i.opt ? `<br><small>${esc(i.opt)}</small>` : ''} <small class="hint">${esc(i.sku)}</small></span><span>${lei(i.total)}</span></div>`).join('')}</div>
     ${unpaid(o) && o.status === 'noua' ? `<div class="hint pay-bad">Comanda nu este plătită: nu o expedia. Dacă nu se plătește, anuleaz-o (produsele revin în stoc).</div>` : ''}
     ${SD.ready && !o.awb && o.status !== 'anulata' && !unpaid(o) ? `<div class="ord-sd"><button class="btn" data-mkawb>Emite AWB Sameday</button><span class="hint">Eticheta PDF și emailul cu urmărirea pleacă automat.</span></div>` : ''}

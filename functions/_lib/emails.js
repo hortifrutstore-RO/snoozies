@@ -20,7 +20,7 @@ function layout({ base, shop, preheader, body }) {
   ${body}
   <tr><td align="center" style="padding:26px 20px 0;font:12px/1.6 ${SANS};color:${C.muted}">
     ${esc(co.name || 'HORTIFRUT CONSULTING SRL')} · CUI ${esc(co.cui || '')} · ${esc(co.reg || '')}<br>${esc(co.address || '')}<br>
-    <a href="${base}/" style="color:${C.muted}">snoozies.ro</a> · <a href="${base}/termeni-si-conditii/" style="color:${C.muted}">Termeni</a> · <a href="${base}/retur/" style="color:${C.muted}">Retur</a> · <a href="${base}/confidentialitate/" style="color:${C.muted}">Confidențialitate</a>
+    <a href="${base}/" style="color:${C.muted}">snoozies.ro</a> · <a href="${base}/termeni-si-conditii/" style="color:${C.muted}">Termeni</a> · <a href="${base}/retur/" style="color:${C.muted}">Retur</a> · <a href="${base}/retragere/" style="color:${C.muted}">Retragere din contract</a> · <a href="${base}/confidentialitate/" style="color:${C.muted}">Confidențialitate</a>
   </td></tr>
 </table></td></tr></table></body></html>`;
 }
@@ -112,4 +112,34 @@ export function loginLink({ link, minutes }, { base, shop }) {
       ${btn(link, 'Intră în cont')}
       <div style="font:13px/1.6 ${SANS};color:${C.muted};margin-top:20px">Nu ai cerut tu acest email? Îl poți ignora liniștit: nimeni nu poate intra în cont fără acest link.</div>`);
   return { subject: `Linkul tău de conectare la ${shop.name || 'snoozies.ro'}`, html: layout({ base, shop, preheader: `Linkul e valabil ${minutes} de minute.`, body }) };
+}
+
+// 5. Retragere din contract / anularea comenzii (art. 11¹ OUG 34/2014): confirmarea de primire pentru client și notificarea magazinului
+function withdrawalRows(w) {
+  const row = (k, v) => v ? `<tr><td style="padding:6px 12px 6px 0;font:13px/1.5 ${SANS};color:${C.muted};vertical-align:top;white-space:nowrap">${k}</td><td style="padding:6px 0;font:14px/1.5 ${SANS};color:${C.text}">${esc(v).replace(/\n/g, '<br>')}</td></tr>` : '';
+  return `<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:4px 0 0">
+    ${row('Tip cerere', w.kind === 'anulare' ? 'Anularea comenzii' : 'Retragere din contract')}${row('Număr cerere', w.ref)}${row('Primită la', fmtDate(w.at))}
+    ${row('Comanda', w.number)}${row('Nume', w.name)}${row('Email', w.email)}${row('Telefon', w.phone)}
+    ${row('Produse', w.items || 'Toate produsele din comandă')}${row('IBAN rambursare', w.iban)}${row('Mesaj', w.message)}</table>`;
+}
+export function withdrawalReceipt(w, { base, shop }) {
+  const anul = w.kind === 'anulare';
+  const next = anul
+    ? 'Dacă coletul nu a plecat încă, anulăm comanda și îți confirmăm pe email. Dacă a plecat deja, poți refuza coletul la livrare sau îl poți returna în 14 zile de la primire.'
+    : `Trimite produsele în cel mult 14 zile de la această cerere. Îți scriem în cel mult o zi lucrătoare cu detaliile returului. Îți returnăm banii în cel mult 14 zile de la primirea acestei cereri; putem aștepta până primim produsele sau dovada expedierii lor.`;
+  const body = card(`<div style="font:bold 12px ${SANS};letter-spacing:1.5px;text-transform:uppercase;color:${C.berry};margin:0 0 8px">Confirmare de primire</div>
+      <div style="font:bold 26px/1.2 ${SERIF};color:${C.ink};margin:0 0 12px">Am primit cererea ta, ${first(w.name)}</div>
+      <div style="font:15px/1.6 ${SANS};color:${C.text};margin:0 0 18px">Confirmăm că am primit cererea de ${anul ? 'anulare a comenzii' : 'retragere din contract'} trimisă prin site, cu datele de mai jos. Păstrează acest email: este dovada cererii tale.</div>
+      ${withdrawalRows(w)}`)
+    + card(`${h2('Ce urmează')}<div style="font:14px/1.6 ${SANS};color:${C.text}">${next} Ai întrebări? Răspunde la acest email sau sună la <a href="tel:+${esc(shop.whatsapp || '40746242877')}" style="color:${C.berry};font-weight:bold;text-decoration:none">${esc(shop.phone || '0746 242 877')}</a>.</div>`);
+  return { subject: `Am primit cererea ta de ${anul ? 'anulare' : 'retragere'} – ${w.number}`, html: layout({ base, shop, preheader: `Cererea ${w.ref}, primită la ${fmtDate(w.at)}.`, body }) };
+}
+export function withdrawalNotice(w, { base, shop }) {
+  const anul = w.kind === 'anulare';
+  const status = !w.matched ? 'Numărul comenzii și emailul NU se potrivesc cu nicio comandă din baza de date: verifică manual.'
+    : w.shipped ? 'Comanda are deja AWB / e expediată.' : 'Comanda nu are încă AWB: nu o expedia.';
+  const body = card(`<div style="font:bold 22px/1.25 ${SERIF};color:${C.ink};margin:0 0 10px">${anul ? 'Cerere de ANULARE' : 'Cerere de RETRAGERE din contract'}</div>
+      <div style="font:14px/1.6 ${SANS};color:${C.berry};font-weight:bold;margin:0 0 14px">${status}</div>${withdrawalRows(w)}
+      <div style="font:13px/1.6 ${SANS};color:${C.muted};margin-top:16px">Clientul a primit automat confirmarea de primire. Rambursarea: în cel mult 14 zile de la cerere (se poate amâna până la primirea produselor).</div>`);
+  return { subject: `${anul ? 'ANULARE' : 'RETRAGERE'} ${w.number} – ${w.name}`, html: layout({ base, shop, preheader: status, body }) };
 }

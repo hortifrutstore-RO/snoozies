@@ -26,3 +26,7 @@ CREATE TABLE IF NOT EXISTS stock (sku TEXT PRIMARY KEY, qty INTEGER NOT NULL);
 CREATE TABLE IF NOT EXISTS kv (k TEXT PRIMARY KEY, v TEXT NOT NULL, exp TEXT);
 CREATE TABLE IF NOT EXISTS login_tokens (hash TEXT PRIMARY KEY, email TEXT NOT NULL, ip TEXT, created_at TEXT NOT NULL, expires_at TEXT NOT NULL, used_at TEXT);
 CREATE INDEX IF NOT EXISTS orders_email ON orders(email COLLATE NOCASE);
+
+-- Cererile de anulare / retragere din contract trimise din /retragere/ (tabela se creează și automat la prima cerere)
+CREATE TABLE IF NOT EXISTS withdrawals (id INTEGER PRIMARY KEY AUTOINCREMENT, ref TEXT UNIQUE NOT NULL, created_at TEXT NOT NULL,
+  kind TEXT NOT NULL, order_number TEXT, order_id INTEGER, name TEXT, email TEXT, phone TEXT, items TEXT, iban TEXT, message TEXT, ip TEXT);
