@@ -4,7 +4,7 @@ import CATALOG from './_catalog.json';
 import SHOP from './_shop.json';
 import { sendOrderMails } from '../_lib/order-mail.js';
 import { checkSession } from '../_lib/auth.js';
-import { netopiaReady, netopiaLive, startPayment } from '../_lib/netopia.js';
+import { netopiaReady, netopiaPublic, startPayment } from '../_lib/netopia.js';
 import { reserve, restore, syncCatalogStock } from '../_lib/stock.js';
 
 const json = (o, s = 200) => new Response(JSON.stringify(o), { status: s, headers: { 'content-type': 'application/json; charset=utf-8' } });
@@ -36,7 +36,7 @@ export async function onRequestPost({ request, env, waitUntil }) {
   if (o.delivery === 'easybox' && (o.easybox.length < 3 || (env.SAMEDAY_USER && !locker))) errs.push('easybox (alege-l de pe hartă)');
   if (o.company && (!o.companyName || !o.companyCui)) errs.push('date firmă');
   if (b.terms !== true) errs.push('acceptarea termenilor');
-  if (o.payment === 'card' && !(netopiaReady(env) && (netopiaLive(env) || await checkSession(request, env.SESSION_SECRET))))
+  if (o.payment === 'card' && !(netopiaReady(env) && (netopiaPublic(env) || await checkSession(request, env.SESSION_SECRET))))
     return json({ ok: false, error: 'Plata cu cardul nu este disponibilă momentan. Alege plata la livrare.' }, 400);
   if (errs.length) return json({ ok: false, error: 'Verifică: ' + errs.join(', ') + '.' }, 400);
 

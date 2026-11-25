@@ -8,6 +8,8 @@
 
 export const netopiaReady = env => !!(env.NETOPIA_API_KEY && env.NETOPIA_POS && env.NETOPIA_PUBLIC_KEY);
 export const netopiaLive = env => env.NETOPIA_LIVE === '1';
+// NETOPIA_PUBLIC_TEST = "1": în sandbox, opțiunea „Card (TEST)” apare și vizitatorilor (pentru verificarea făcută de NETOPIA). Se șterge după aprobare.
+export const netopiaPublic = env => netopiaLive(env) || env.NETOPIA_PUBLIC_TEST === '1';
 const base = env => netopiaLive(env) ? 'https://secure.mobilpay.ro/pay' : 'https://secure-sandbox.netopia-payments.com';
 
 // Statusuri Netopia → statusul plății în comanda noastră
