@@ -53,7 +53,7 @@ export function confirmation(o, { base, shop }) {
   const body =
     card(`<div style="font:bold 12px ${SANS};letter-spacing:1.5px;text-transform:uppercase;color:${C.berry};margin:0 0 8px">Comandă înregistrată</div>
       <div style="font:bold 28px/1.2 ${SERIF};color:${C.ink};margin:0 0 12px">Mulțumim, ${first(o.name)}!</div>
-      <div style="font:15px/1.6 ${SANS};color:${C.text};margin:0 0 18px">Am primit comanda ta și ne apucăm de ea. Papucii pleacă spre tine în 1–2 zile lucrătoare.</div>
+      <div style="font:15px/1.6 ${SANS};color:${C.text};margin:0 0 18px">Am primit comanda ta și ne apucăm de ea. Expediem comanda în cel mult o zi lucrătoare, iar curierul ${esc(shop.carrier || 'Sameday')} o livrează de regulă în 1–2 zile lucrătoare.</div>
       <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td style="background:${C.pink2};border-radius:12px;padding:10px 16px;font:14px ${SANS};color:${C.ink}">Număr comandă: <b style="letter-spacing:.5px">${esc(o.number)}</b></td></tr></table>
       <div style="font:12px ${SANS};color:${C.muted};margin-top:8px">${fmtDate(o.created_at)}</div>`) +
     card(h2('Ce urmează') + `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
@@ -68,7 +68,7 @@ export function confirmation(o, { base, shop }) {
     <div style="margin-top:14px;font:13px/1.5 ${SANS};color:${C.muted}">Ceva nu e corect în adresă sau telefon? Răspunde la acest email și corectăm înainte de expediere.</div>`) +
     card(`${h2('Ai o întrebare?')}<div style="font:14px/1.6 ${SANS};color:${C.text};margin:0 0 16px">Răspunde direct la acest email, sună la <a href="tel:+${esc(shop.whatsapp || '40746242877')}" style="color:${C.berry};font-weight:bold;text-decoration:none">${esc(shop.phone || '0746 242 877')}</a>${wa ? ' sau scrie-ne pe WhatsApp' : ''}. Ai 14 zile să returnezi produsele, dacă nu se potrivesc. Comenzile tale le vezi oricând în <a href="${base}/cont/" style="color:${C.berry};font-weight:bold">contul tău</a>.</div>
       ${wa ? btn(wa, 'Scrie-ne pe WhatsApp') : ''}`);
-  return { subject: `Comanda ${o.number} a fost înregistrată`, html: layout({ base, shop, preheader: `Mulțumim! Total ${lei(o.total)}, ${o.payment === 'card' ? 'plătit cu cardul' : 'plata la livrare'}. Coletul pleacă în 1–2 zile lucrătoare.`, body }) };
+  return { subject: `Comanda ${o.number} a fost înregistrată`, html: layout({ base, shop, preheader: `Mulțumim! Total ${lei(o.total)}, ${o.payment === 'card' ? 'plătit cu cardul' : 'plata la livrare'}. Expediem în cel mult o zi lucrătoare.`, body }) };
 }
 
 // 2. Magazinul: comandă nouă

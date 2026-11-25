@@ -1,6 +1,6 @@
 {% extends "base.html" %}{% from "_card.html" import card with context %}{% from "_carousel.html" import carousel with context %}
 {% block title %}{{ p.name }} | Snoozies{% endblock %}
-{% block desc %}{{ (p.short or (p.name ~ ' – papuci de casă moi și călduroși. Plata la livrare, livrare Sameday în 1–2 zile.'))[:155] }}{% endblock %}
+{% block desc %}{{ (p.short or (p.name ~ ' – papuci de casă moi și călduroși. Plata la livrare, livrare Sameday în 1–3 zile lucrătoare.'))[:155] }}{% endblock %}
 {% block og %}<meta property="og:image" content="{{ site.url }}/img/p/{{ p.images[0] }}"><meta property="og:type" content="product">{% endblock %}
 {% block head %}
 <script type="application/ld+json">{{ ld|safe }}</script>
@@ -40,7 +40,7 @@
       </fieldset>
       <p class="size-msg" data-size-msg role="alert" hidden>Alege mai întâi mărimea.</p>
       {% endif %}
-      <div class="stock"><i aria-hidden="true"></i><span><strong>În stoc</strong> · expediere în {{ site.shipping.days }} prin {{ site.shipping.carrier }}</span></div>
+      <div class="stock"><i aria-hidden="true"></i><span><strong>În stoc</strong> · expediere în cel mult o zi lucrătoare prin {{ site.shipping.carrier }}</span></div>
       <div class="buy-row">
         <div class="qty"><button type="button" aria-label="Scade cantitatea" data-qty="-1">−</button><label class="sr" for="qty">Cantitate</label><input id="qty" type="number" min="1" max="99" value="1" inputmode="numeric" data-qty-input><button type="button" aria-label="Crește cantitatea" data-qty="1">+</button></div>
         <button class="btn btn-cart" data-add="{{ p.sku }}" data-with-qty{% if p.sizes %} data-needs-size{% endif %}>Adaugă în coș</button>
@@ -54,11 +54,11 @@
         <div class="fact"><strong>{% if p.price >= site.shipping.freeOver %}Livrare gratuită{% else %}Livrare de la {{ [site.shipping.cost, site.shipping.easyboxCost or site.shipping.cost]|min|lei }}{% endif %}</strong><span>Gratuit {% if site.shipping.freeQty %}de la {{ site.shipping.freeQty }} perechi{% else %}peste {{ site.shipping.freeOver }} lei{% endif %}</span></div>
         <div class="fact"><strong>Plata la livrare</strong><span>Plătești curierului, la primire</span></div>
         <div class="fact"><strong>Retur în 14 zile</strong><span>Transportul de retur: {{ site.shipping.returnCost|lei }}</span></div>
-        <div class="fact"><strong>{{ site.shipping.carrier }}</strong><span>Livrare în {{ site.shipping.days }}</span></div>
+        <div class="fact"><strong>{{ site.shipping.carrier }}</strong><span>Livrare în 1–3 zile lucrătoare</span></div>
       </div>
       <div class="acc">
         {% if site.sizeGuide and p.sizes and p.category != 'sosete' %}<details id="ghid"><summary>Ghid de mărimi</summary><div class="prose">{{ site.sizeGuide|safe }}</div></details>{% endif %}
-        <details><summary>Livrare și retur</summary><div class="prose"><p>Livrăm prin {{ site.shipping.carrier }}, la adresă sau în easybox, în {{ site.shipping.days }}. Poți returna produsul în 14 zile de la primire; costul transportului de retur este suportat de client. Detalii în <a href="/retur/">pagina de retur</a>.</p></div></details>
+        <details><summary>Livrare și retur</summary><div class="prose"><p>Expediem comanda în cel mult o zi lucrătoare, iar curierul {{ site.shipping.carrier }} o livrează la adresă sau în easybox, de regulă în {{ site.shipping.days }}. Poți returna produsul în 14 zile de la primire; costul transportului de retur este suportat de client. Detalii în <a href="/retur/">pagina de retur</a>.</p></div></details>
       </div>
       <a href="tel:{{ site.contact.phoneHref }}" style="font-weight:700">Ai întrebări? Sună la {{ site.contact.phone }}</a>
     </div>

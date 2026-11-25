@@ -1,6 +1,6 @@
 Livrare și plată
 <h2>Livrare</h2>
-<p>Livrăm în toată România prin curierul {{ site.shipping.carrier }}, la adresă sau într-un easybox {{ site.shipping.carrier }}. Comenzile confirmate până la ora 14:00 în zilele lucrătoare se predau curierului în aceeași zi sau în ziua lucrătoare următoare. Termenul obișnuit de livrare este de {{ site.shipping.days }}.</p>
+<p>Livrăm în toată România prin curierul {{ site.shipping.carrier }}, la adresă sau într-un easybox {{ site.shipping.carrier }}. Comenzile confirmate până la ora 14:00 în zilele lucrătoare se predau curierului în aceeași zi sau în ziua lucrătoare următoare. După predare, curierul livrează de regulă în {{ site.shipping.days }}, deci coletul ajunge la tine în 1–3 zile lucrătoare de la confirmarea comenzii.</p>
 <ul>
 {% if site.shipping.freeQty %}<li>Comenzi de cel puțin {{ site.shipping.freeQty }} perechi (orice modele, inclusiv șosete): livrare gratuită.</li>
 <li>Comenzi sub {{ site.shipping.freeQty }} perechi:{% else %}<li>Comenzi de peste {{ site.shipping.freeOver }} lei: livrare gratuită.</li>

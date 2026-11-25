@@ -111,14 +111,14 @@ liveStock().then(st => {
     const radios = $$('[data-sizes] input');
     radios.forEach(r => { const q = st[r.value]; if (q !== undefined && q <= 0) { r.disabled = true; r.checked = false; } });
     const sync = () => { const r = radios.find(x => x.checked); const q = r ? st[r.value] : undefined; qi.max = q !== undefined ? q : 99; if (+qi.value > +qi.max) qi.value = qi.max;
-      const sp = $('.stock span'); if (sp) sp.innerHTML = q !== undefined && q <= 5 ? `<strong>Ultimele ${q} ${q === 1 ? 'pereche' : 'perechi'}</strong>${r.dataset.size !== 'U' ? ' în mărimea ' + esc(r.dataset.size) : ''}` : '<strong>În stoc</strong> · expediere în 1–2 zile lucrătoare'; };
+      const sp = $('.stock span'); if (sp) sp.innerHTML = q !== undefined && q <= 5 ? `<strong>Ultimele ${q} ${q === 1 ? 'pereche' : 'perechi'}</strong>${r.dataset.size !== 'U' ? ' în mărimea ' + esc(r.dataset.size) : ''}` : '<strong>În stoc</strong> · expediere în cel mult o zi lucrătoare'; };
     radios.forEach(r => r.addEventListener('change', () => { const m = $('[data-size-msg]'); if (m) m.hidden = true; sync(); }));
     if (radios.every(r => r.disabled)) { $('.buy-row').outerHTML = '<div class="stock out"><i aria-hidden="true"></i><span><strong>Stoc epuizat</strong> în toate mărimile</span></div>'; const s0 = $('.stock:not(.out)'); if (s0) s0.remove(); }
     return;
   }
   const q = st[buy.dataset.add]; if (q === undefined) return;
   if (q <= 0) { $('.buy-row').outerHTML = '<div class="stock out"><i aria-hidden="true"></i><span><strong>Stoc epuizat</strong> momentan</span></div>'; const s0 = $('.stock:not(.out)'); if (s0) s0.remove(); }
-  else { qi.max = q; if (q <= 5) { const sp = $('.stock span'); if (sp) sp.innerHTML = `<strong>Ultimele ${q} ${q === 1 ? 'bucată' : 'bucăți'}</strong> · expediere în 1–2 zile lucrătoare`; } }
+  else { qi.max = q; if (q <= 5) { const sp = $('.stock span'); if (sp) sp.innerHTML = `<strong>Ultimele ${q} ${q === 1 ? 'bucată' : 'bucăți'}</strong> · expediere în cel mult o zi lucrătoare`; } }
 });
 
 /* ---------- product page ---------- */
