@@ -4,6 +4,17 @@ import { json } from '../../../../_lib/auth.js';
 import { mailReady } from '../../../../_lib/mail.js';
 import { samedayReady, createAwb, deleteAwb } from '../../../../_lib/sameday.js';
 import { sendShipped } from '../../../../_lib/notify.js';
+import CATALOG from '../../../_catalog.json';
+
+// Rândul de produse pe AWB, citit de aplicația de ambalare: „Products: <EAN sau cod> x<cant>, …”.
+// Sameday acceptă 200 de caractere la observații; dacă nu încap toate, pun câte încap și „+N”.
+function productsLine(o, max) {
+  let items = []; try { items = JSON.parse(o.items_json || '[]'); } catch {}
+  const parts = items.map(it => `${(CATALOG[it.sku] && CATALOG[it.sku].ean) || it.sku} x${it.qty}`);
+  let line = 'Products: ' + parts.join(', ');
+  for (let k = parts.length - 1; line.length > max && k > 0; k--) line = 'Products: ' + parts.slice(0, k).join(', ') + ` +${parts.length - k}`;
+  return parts.length ? line.slice(0, max) : '';
+}
 const get = (env, id) => env.DB.prepare('SELECT * FROM orders WHERE id = ?1').bind(parseInt(id, 10)).first();
 
 export async function onRequestPost({ request, env, params }) {
@@ -13,6 +24,9 @@ export async function onRequestPost({ request, env, params }) {
   if (o.status === 'anulata') return json({ ok: false, error: 'Comanda este anulată.' }, 400);
   if (o.awb) return json({ ok: false, error: `Comanda are deja AWB-ul ${o.awb}. Anulează-l întâi dacă vrei altul.` }, 409);
   let b = {}; try { b = await request.json(); } catch {}
+  const prod = productsLine(o, 200);
+  const extra = String(b.observation || '').trim();
+  b.observation = [prod, extra].filter(Boolean).join(' · ').slice(0, 200);
   let r;
   try { r = await createAwb(env, o, b); } catch (e) { console.log('AWB error', e.message); return json({ ok: false, error: e.message }, 422); }
   await env.DB.prepare("UPDATE orders SET awb = ?1, status = 'expediata', awb_status = ?2, awb_checked_at = NULL, awb_notified_at = NULL WHERE id = ?3")
