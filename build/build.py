@@ -91,8 +91,8 @@ def vlabel(p, z):
     bits = [z.get('color') or '', ('mărimea ' + z['size'] + (f" ({z['range']})" if z.get('range') else '')) if z['size'] != 'U' else '']
     return p['name'] + ' – ' + ', '.join(b for b in bits if b)
 def variants(p):
-    if not p['sizes']: return [dict(sku=p['sku'], name=p['name'], size=None, inStock=p['inStock'])]
-    return [dict(sku=vsku(p, z), name=vlabel(p, z), size=z['size'], color=z.get('color') or '', inStock=z.get('inStock', True)) for z in p['sizes']]
+    if not p['sizes']: return [dict(sku=p['sku'], name=p['name'], size=None, inStock=p['inStock'], ean=p.get('ean') or '')]
+    return [dict(sku=vsku(p, z), name=vlabel(p, z), size=z['size'], color=z.get('color') or '', inStock=z.get('inStock', True), ean=z.get('ean') or '') for z in p['sizes']]
 
 def write(path, htmltext):
     out = os.path.join(DIST, path.strip('/'), 'index.html') if not path.endswith('.html') else os.path.join(DIST, path.strip('/'))
@@ -254,7 +254,7 @@ def vimg(p, v):
     if c and p.get('imgColor') and c in p['imgColor']: return '/img/p/' + p['images'][p['imgColor'].index(c)]
     return '/img/p/' + p['images'][0] if p['images'] else ''
 def vopt(p, v): return v['name'][len(p['name']):].lstrip(' –') if v['name'].startswith(p['name']) else ''
-json.dump({v['sku']: dict(name=v['name'], model=p['name'], opt=vopt(p, v), img=vimg(p, v), url='/produs/' + p['slug'] + '/', price=p['price'], inStock=v['inStock']) for p in products for v in variants(p)},
+json.dump({v['sku']: dict(name=v['name'], model=p['name'], opt=vopt(p, v), img=vimg(p, v), url='/produs/' + p['slug'] + '/', price=p['price'], inStock=v['inStock'], ean=v.get('ean') or '') for p in products for v in variants(p)},
           open(os.path.join(ROOT, 'functions/api/_catalog.json'), 'w', encoding='utf-8'), ensure_ascii=False)
 json.dump(dict(googleClientId=site.get('googleClientId',''), freeOver=site['shipping']['freeOver'], freeQty=site['shipping'].get('freeQty') or 0, cost=site['shipping']['cost'], easyboxCost=site['shipping'].get('easyboxCost', site['shipping']['cost']), email=site['contact']['email'], name=site['name'], carrier=site['shipping']['carrier'], phone=site['contact'].get('phone',''), whatsapp=site['contact'].get('whatsapp',''), company=site['company'], trackingUrl=site['shipping'].get('trackingUrl') or 'https://sameday.ro/status-colet/?awb={awb}'),
           open(os.path.join(ROOT, 'functions/api/_shop.json'), 'w', encoding='utf-8'), ensure_ascii=False)
